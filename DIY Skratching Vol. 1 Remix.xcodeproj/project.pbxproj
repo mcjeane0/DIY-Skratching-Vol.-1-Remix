@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
+		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
+		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
+		FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */; };
+		FB78AC00214C10040010039E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABFF214C10040010039E /* Assets.xcassets */; };
+		FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78AC01214C10040010039E /* LaunchScreen.storyboard */; };
+		FB78AC0E214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78AC0D214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift */; };
+		FB78AC19214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78AC18214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB78AC0A214C10040010039E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB78ABEA214C10030010039E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB78ABF1214C10030010039E;
+			remoteInfo = "DIY Skratching Vol. 1 Remix";
+		};
+		FB78AC15214C10040010039E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB78ABEA214C10030010039E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB78ABF1214C10030010039E;
+			remoteInfo = "DIY Skratching Vol. 1 Remix";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB78ABFA214C10030010039E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB78ABFD214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DIY_Skratching_Vol__1_Remix.xcdatamodel; sourceTree = "<group>"; };
+		FB78ABFF214C10040010039E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB78AC02214C10040010039E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB78AC04214C10040010039E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB78AC09214C10040010039E /* DIY Skratching Vol. 1 RemixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DIY Skratching Vol. 1 RemixTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB78AC0D214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIY_Skratching_Vol__1_RemixTests.swift; sourceTree = "<group>"; };
+		FB78AC0F214C10040010039E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB78AC14214C10040010039E /* DIY Skratching Vol. 1 RemixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DIY Skratching Vol. 1 RemixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB78AC18214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIY_Skratching_Vol__1_RemixUITests.swift; sourceTree = "<group>"; };
+		FB78AC1A214C10040010039E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB78ABEF214C10030010039E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC06214C10040010039E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC11214C10040010039E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB78ABE9214C10030010039E = {
+			isa = PBXGroup;
+			children = (
+				FB78ABF4214C10030010039E /* DIY Skratching Vol. 1 Remix */,
+				FB78AC0C214C10040010039E /* DIY Skratching Vol. 1 RemixTests */,
+				FB78AC17214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */,
+				FB78ABF3214C10030010039E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB78ABF3214C10030010039E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */,
+				FB78AC09214C10040010039E /* DIY Skratching Vol. 1 RemixTests.xctest */,
+				FB78AC14214C10040010039E /* DIY Skratching Vol. 1 RemixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB78ABF4214C10030010039E /* DIY Skratching Vol. 1 Remix */ = {
+			isa = PBXGroup;
+			children = (
+				FB78ABF5214C10030010039E /* AppDelegate.swift */,
+				FB78ABF7214C10030010039E /* ViewController.swift */,
+				FB78ABF9214C10030010039E /* Main.storyboard */,
+				FB78ABFF214C10040010039E /* Assets.xcassets */,
+				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
+				FB78AC04214C10040010039E /* Info.plist */,
+				FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */,
+			);
+			path = "DIY Skratching Vol. 1 Remix";
+			sourceTree = "<group>";
+		};
+		FB78AC0C214C10040010039E /* DIY Skratching Vol. 1 RemixTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB78AC0D214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift */,
+				FB78AC0F214C10040010039E /* Info.plist */,
+			);
+			path = "DIY Skratching Vol. 1 RemixTests";
+			sourceTree = "<group>";
+		};
+		FB78AC17214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB78AC18214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift */,
+				FB78AC1A214C10040010039E /* Info.plist */,
+			);
+			path = "DIY Skratching Vol. 1 RemixUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB78ABF1214C10030010039E /* DIY Skratching Vol. 1 Remix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 Remix" */;
+			buildPhases = (
+				FB78ABEE214C10030010039E /* Sources */,
+				FB78ABEF214C10030010039E /* Frameworks */,
+				FB78ABF0214C10030010039E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DIY Skratching Vol. 1 Remix";
+			productName = "DIY Skratching Vol. 1 Remix";
+			productReference = FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB78AC08214C10040010039E /* DIY Skratching Vol. 1 RemixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB78AC20214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 RemixTests" */;
+			buildPhases = (
+				FB78AC05214C10040010039E /* Sources */,
+				FB78AC06214C10040010039E /* Frameworks */,
+				FB78AC07214C10040010039E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB78AC0B214C10040010039E /* PBXTargetDependency */,
+			);
+			name = "DIY Skratching Vol. 1 RemixTests";
+			productName = "DIY Skratching Vol. 1 RemixTests";
+			productReference = FB78AC09214C10040010039E /* DIY Skratching Vol. 1 RemixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB78AC13214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB78AC23214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 RemixUITests" */;
+			buildPhases = (
+				FB78AC10214C10040010039E /* Sources */,
+				FB78AC11214C10040010039E /* Frameworks */,
+				FB78AC12214C10040010039E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB78AC16214C10040010039E /* PBXTargetDependency */,
+			);
+			name = "DIY Skratching Vol. 1 RemixUITests";
+			productName = "DIY Skratching Vol. 1 RemixUITests";
+			productReference = FB78AC14214C10040010039E /* DIY Skratching Vol. 1 RemixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB78ABEA214C10030010039E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Jeane Limited Liability Corporation";
+				TargetAttributes = {
+					FB78ABF1214C10030010039E = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					FB78AC08214C10040010039E = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FB78ABF1214C10030010039E;
+					};
+					FB78AC13214C10040010039E = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FB78ABF1214C10030010039E;
+					};
+				};
+			};
+			buildConfigurationList = FB78ABED214C10030010039E /* Build configuration list for PBXProject "DIY Skratching Vol. 1 Remix" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB78ABE9214C10030010039E;
+			productRefGroup = FB78ABF3214C10030010039E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB78ABF1214C10030010039E /* DIY Skratching Vol. 1 Remix */,
+				FB78AC08214C10040010039E /* DIY Skratching Vol. 1 RemixTests */,
+				FB78AC13214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB78ABF0214C10030010039E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
+				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
+				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC07214C10040010039E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC12214C10040010039E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB78ABEE214C10030010039E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB78ABF8214C10030010039E /* ViewController.swift in Sources */,
+				FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */,
+				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC05214C10040010039E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB78AC0E214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB78AC10214C10040010039E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB78AC19214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB78AC0B214C10040010039E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB78ABF1214C10030010039E /* DIY Skratching Vol. 1 Remix */;
+			targetProxy = FB78AC0A214C10040010039E /* PBXContainerItemProxy */;
+		};
+		FB78AC16214C10040010039E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB78ABF1214C10030010039E /* DIY Skratching Vol. 1 Remix */;
+			targetProxy = FB78AC15214C10040010039E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB78ABF9214C10030010039E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB78ABFA214C10030010039E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB78AC01214C10040010039E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB78AC02214C10040010039E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB78AC1B214C10040010039E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB78AC1C214C10040010039E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB78AC1E214C10040010039E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-Remix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB78AC1F214C10040010039E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-Remix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB78AC21214C10040010039E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 RemixTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-RemixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIY Skratching Vol. 1 Remix.app/DIY Skratching Vol. 1 Remix";
+			};
+			name = Debug;
+		};
+		FB78AC22214C10040010039E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 RemixTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-RemixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIY Skratching Vol. 1 Remix.app/DIY Skratching Vol. 1 Remix";
+			};
+			name = Release;
+		};
+		FB78AC24214C10040010039E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 RemixUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-RemixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DIY Skratching Vol. 1 Remix";
+			};
+			name = Debug;
+		};
+		FB78AC25214C10040010039E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BRTG95Y5KR;
+				INFOPLIST_FILE = "DIY Skratching Vol. 1 RemixUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-RemixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DIY Skratching Vol. 1 Remix";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB78ABED214C10030010039E /* Build configuration list for PBXProject "DIY Skratching Vol. 1 Remix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB78AC1B214C10040010039E /* Debug */,
+				FB78AC1C214C10040010039E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 Remix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB78AC1E214C10040010039E /* Debug */,
+				FB78AC1F214C10040010039E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB78AC20214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 RemixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB78AC21214C10040010039E /* Debug */,
+				FB78AC22214C10040010039E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB78AC23214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 RemixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB78AC24214C10040010039E /* Debug */,
+				FB78AC25214C10040010039E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB78ABFD214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodel */,
+			);
+			currentVersion = FB78ABFD214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodel */;
+			path = DIY_Skratching_Vol__1_Remix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FB78ABEA214C10030010039E /* Project object */;
+}

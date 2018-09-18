@@ -10,13 +10,20 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+
+extension AppDelegate : ViewControllerDelegate {
+
+
+
+}
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     @objc func viewDidLoad(_ notification:Notification){
         if let viewController = notification.object as? ViewController {
-            
+            viewController.delegate = self
         }
     }
 

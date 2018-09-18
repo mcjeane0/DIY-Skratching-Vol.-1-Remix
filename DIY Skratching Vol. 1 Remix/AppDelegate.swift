@@ -23,7 +23,7 @@ class ThudRumbleVideoClip {
         self.name = name
         self.loop = loop
         self.angles = angles
-        self.tracks = string
+        self.tracks = tracks
         self.url = url
 
     }

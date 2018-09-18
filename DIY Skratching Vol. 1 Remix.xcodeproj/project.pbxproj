@@ -10,6 +10,7 @@
 		FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */; };
 		FB43C5D42150730700C43954 /* SkratchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */; };
 		FB43C5D62150731500C43954 /* BattlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */; };
+		FB43C5DA2151B6CC00C43954 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D92151B6CC00C43954 /* Key.swift */; };
 		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
 		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSetupMenuTableViewCell.swift; sourceTree = "<group>"; };
 		FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkratchesTableViewCell.swift; sourceTree = "<group>"; };
 		FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesTableViewCell.swift; sourceTree = "<group>"; };
+		FB43C5D92151B6CC00C43954 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */,
 				FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */,
 				FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */,
+				FB43C5D92151B6CC00C43954 /* Key.swift */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
 				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
 				FB78AC04214C10040010039E /* Info.plist */,
@@ -315,6 +318,7 @@
 				FB78ABF8214C10030010039E /* ViewController.swift in Sources */,
 				FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */,
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
+				FB43C5DA2151B6CC00C43954 /* Key.swift in Sources */,
 				FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */,
 				FB78AC27214F2C340010039E /* MainMenuTableViewCell.swift in Sources */,
 			);

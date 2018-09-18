@@ -15,12 +15,16 @@ class ThudRumbleVideoClip {
 
     var name : String
     var loop : CMTimeRange?
-    var angles : [String]?
-    var tracks : [String]?
-    var url : URL?
+    var angles : [String]
+    var tracks : [String]
+    var url : URL
 
-    init(name:String){
+    init(name:String,loop:CMTimeRange?,angles:[String],tracks:[String],url:URL){
         self.name = name
+        self.loop = loop
+        self.angles = angles
+        self.tracks = string
+        self.url = url
 
     }
 
@@ -29,19 +33,55 @@ class ThudRumbleVideoClip {
 extension AppDelegate : ViewControllerDelegate {
 
     func didSelectRowInBattlesTable(indexPath: IndexPath) {
+        let selectedVideo = videos["Battles"]![indexPath.row]
+        loadVideoByName(selectedVideo.name) { (completed) in
+            if completed {
 
+            }
+            else {
+
+            }
+        }
     }
 
     func didSelectRowInSkratchesTable(indexPath: IndexPath) {
+        let selectedVideo = videos["Skratches"]![indexPath.row]
+        loadVideoByName(selectedVideo.name) { (completed) in
+            if completed {
 
+            }
+            else {
+
+            }
+        }
     }
 
     func didSelectRowInMainMenuTable(indexPath: IndexPath) {
-
+        switch indexPath.row {
+        case 0:
+            viewController.showEquipmentSetupTable()
+            break
+        case 1:
+            viewController.showSkratchesTable()
+            break
+        case 2:
+            viewController.showBattlesTable()
+            break
+        default:
+            break
+        }
     }
 
     func didSelectRowInEquipmentSetupTable(indexPath: IndexPath) {
+        let selectedVideo = videos["Equipment Setup"]![indexPath.row]
+        loadVideoByName(selectedVideo.name) { (completed) in
+            if completed {
 
+            }
+            else {
+
+            }
+        }
     }
 
 
@@ -53,29 +93,90 @@ extension AppDelegate : ViewControllerDelegate {
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var videos : [ThudRumbleVideoClip] = [
+    var selectedTrack : Int = 1
+    var selectedAngle : Int = 1
 
-                                            ]
+    var viewController : ViewController!
+
+    var lastVideoWatched : String {
+        get {
+            if let value = UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) {
+                return value
+            }
+            return "none"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.lastVideoWatched.rawValue)
+        }
+    }
+
+
+    var videos : [String:[ThudRumbleVideoClip]] = [
+                                    "Skratches":[
+                                        ThudRumbleVideoClip(name: "baby", loop: CMTimeRange(start: CMTimeMakeWithSeconds(13.0, 1), duration: CMTimeMakeWithSeconds(13.0, 1)), angles: ["baby1","baby3","baby4"], tracks: ["baby1","baby2"], url: Bundle.main.url(forResource: "baby", withExtension: ".mp4")),
+                                        
+                                    ],
+                                    "Equipment Setup":[
+
+                                    ],
+                                    "Battles":[
+
+                                    ],
+                                                ]
     var playerLooper : AVPlayerLooper?
     var window: UIWindow?
 
-    func loadVideoByName(_ string:String){
-        if let matchingVideo = videos.filter { (video) -> Bool in
+    func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
+        let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
+
+            let (key, value) = arg
+            return value
+        }
+        let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
+        let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
             if video.name == string {
                 return true
             }
             else {
                 return false
             }
-        }.first {
-            playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo.first!.url!), timeRange: videos.first!.loop!)
+        }.first
+        if matchingVideo != nil {
+            if matchingVideo!.loop != nil {
+                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo!.url!), timeRange: matchingVideo!.loop!)
+            }
+            else {
+                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url:matchingVideo!.url!))
+            }
+
+            viewController.setLayerPlayerLooper(playerLooper!)
+            completion(true)
+        }
+        else {
+            completion(false)
         }
     }
 
     @objc func viewDidLoad(_ notification:Notification){
         if let viewController = notification.object as? ViewController {
             viewController.delegate = self
-
+            self.viewController = viewController
+            loadVideoByName(lastVideoWatched) { (completed) in
+                if completed {
+                    NSLog("completed")
+                    switch lastVideoWatched {
+                    case "none":
+                        // MARK: Show main menu
+                        viewController.showMainMenuTable()
+                        break
+                    default:
+                        break
+                    }
+                }
+                else {
+                    NSLog("!completed")
+                }
+            }
         }
     }
 

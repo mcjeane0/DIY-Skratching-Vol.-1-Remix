@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func viewDidLoad(_ notification:Notification){
+    @objc func viewDidLoad(_ notification:Notification){
         if let viewController = notification.object as? ViewController {
             
         }

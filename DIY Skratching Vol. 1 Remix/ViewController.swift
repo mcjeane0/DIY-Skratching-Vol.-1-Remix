@@ -76,7 +76,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainMenuTable: UITableView!
 
 
-    func setLayerPlayerLooper(_ player:AVPlayerLooper)
+    func setLayerPlayerLooper(_ player:AVPlayerLooper) {
+        
+    }
 
     func showBattlesTable(){
         DispatchQueue.main.async {

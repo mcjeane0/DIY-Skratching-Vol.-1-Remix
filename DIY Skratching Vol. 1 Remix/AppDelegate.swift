@@ -113,7 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var videos : [String:[ThudRumbleVideoClip]] = [
                                     "Skratches":[
-                                        ThudRumbleVideoClip(name: "baby", loop: CMTimeRange(start: CMTimeMakeWithSeconds(13.0, 1), duration: CMTimeMakeWithSeconds(13.0, 1)), angles: ["baby1","baby3","baby4"], tracks: ["baby1","baby2"], url: Bundle.main.url(forResource: "baby", withExtension: ".mp4")),
+                                        ThudRumbleVideoClip(name: "baby", loop: CMTimeRange(start: CMTimeMakeWithSeconds(13.0, 1), duration: CMTimeMakeWithSeconds(13.0, 1)), angles: ["baby1","baby3","baby4"], tracks: ["baby1","baby2"], url: Bundle.main.url(forResource: "baby", withExtension: ".mp4")!),
 
                                     ],
                                     "Equipment Setup":[

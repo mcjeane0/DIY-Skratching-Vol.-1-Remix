@@ -14,9 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func viewDidLoad(_ notification:Notification){
+        if let viewController = notification.object as? ViewController {
+            
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad(_:)), name: ViewController.viewDidLoadNotification, object: nil)
         return true
     }
 

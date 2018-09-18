@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */; };
+		FB43C5D42150730700C43954 /* SkratchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */; };
+		FB43C5D62150731500C43954 /* BattlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */; };
 		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
 		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -15,6 +18,7 @@
 		FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78AC01214C10040010039E /* LaunchScreen.storyboard */; };
 		FB78AC0E214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78AC0D214C10040010039E /* DIY_Skratching_Vol__1_RemixTests.swift */; };
 		FB78AC19214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78AC18214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift */; };
+		FB78AC27214F2C340010039E /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78AC26214F2C340010039E /* MainMenuTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSetupMenuTableViewCell.swift; sourceTree = "<group>"; };
+		FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkratchesTableViewCell.swift; sourceTree = "<group>"; };
+		FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesTableViewCell.swift; sourceTree = "<group>"; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		FB78AC14214C10040010039E /* DIY Skratching Vol. 1 RemixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DIY Skratching Vol. 1 RemixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78AC18214C10040010039E /* DIY_Skratching_Vol__1_RemixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIY_Skratching_Vol__1_RemixUITests.swift; sourceTree = "<group>"; };
 		FB78AC1A214C10040010039E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB78AC26214F2C340010039E /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,10 @@
 				FB78ABF5214C10030010039E /* AppDelegate.swift */,
 				FB78ABF7214C10030010039E /* ViewController.swift */,
 				FB78ABF9214C10030010039E /* Main.storyboard */,
+				FB78AC26214F2C340010039E /* MainMenuTableViewCell.swift */,
+				FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */,
+				FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */,
+				FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
 				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
 				FB78AC04214C10040010039E /* Info.plist */,
@@ -135,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 Remix" */;
 			buildPhases = (
+				FB43C5D72151B22100C43954 /* ShellScript */,
 				FB78ABEE214C10030010039E /* Sources */,
 				FB78ABEF214C10030010039E /* Frameworks */,
 				FB78ABF0214C10030010039E /* Resources */,
+				FB43C5D82151B22300C43954 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,14 +268,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FB43C5D72151B22100C43954 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\ngit commit -a -m \"Build $versionNumber($buildNumber) built on `date +' %F at %r'`\"\n";
+		};
+		FB43C5D82151B22300C43954 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB78ABEE214C10030010039E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB43C5D62150731500C43954 /* BattlesTableViewCell.swift in Sources */,
+				FB43C5D42150730700C43954 /* SkratchesTableViewCell.swift in Sources */,
 				FB78ABF8214C10030010039E /* ViewController.swift in Sources */,
 				FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */,
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
+				FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */,
+				FB78AC27214F2C340010039E /* MainMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

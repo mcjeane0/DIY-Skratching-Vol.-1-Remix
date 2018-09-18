@@ -114,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var videos : [String:[ThudRumbleVideoClip]] = [
                                     "Skratches":[
                                         ThudRumbleVideoClip(name: "baby", loop: CMTimeRange(start: CMTimeMakeWithSeconds(13.0, 1), duration: CMTimeMakeWithSeconds(13.0, 1)), angles: ["baby1","baby3","baby4"], tracks: ["baby1","baby2"], url: Bundle.main.url(forResource: "baby", withExtension: ".mp4")),
-                                        
+
                                     ],
                                     "Equipment Setup":[
 
@@ -143,10 +143,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }.first
         if matchingVideo != nil {
             if matchingVideo!.loop != nil {
-                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo!.url!), timeRange: matchingVideo!.loop!)
+                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo!.url), timeRange: matchingVideo!.loop!)
             }
             else {
-                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url:matchingVideo!.url!))
+                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url:matchingVideo!.url))
             }
 
             viewController.setLayerPlayerLooper(playerLooper!)

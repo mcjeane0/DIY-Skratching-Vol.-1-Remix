@@ -8,22 +8,74 @@
 
 import UIKit
 import CoreData
+import AVKit
 
-@UIApplicationMain
+
+class ThudRumbleVideoClip {
+
+    var name : String
+    var loop : CMTimeRange?
+    var angles : [String]?
+    var tracks : [String]?
+    var url : URL?
+
+    init(name:String){
+        self.name = name
+
+    }
+
+}
 
 extension AppDelegate : ViewControllerDelegate {
+
+    func didSelectRowInBattlesTable(indexPath: IndexPath) {
+
+    }
+
+    func didSelectRowInSkratchesTable(indexPath: IndexPath) {
+
+    }
+
+    func didSelectRowInMainMenuTable(indexPath: IndexPath) {
+
+    }
+
+    func didSelectRowInEquipmentSetupTable(indexPath: IndexPath) {
+
+    }
+
 
 
 
 }
 
+@UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var videos : [ThudRumbleVideoClip] = [
+
+                                            ]
+    var playerLooper : AVPlayerLooper?
     var window: UIWindow?
+
+    func loadVideoByName(_ string:String){
+        if let matchingVideo = videos.filter { (video) -> Bool in
+            if video.name == string {
+                return true
+            }
+            else {
+                return false
+            }
+        }.first {
+            playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo.first!.url!), timeRange: videos.first!.loop!)
+        }
+    }
 
     @objc func viewDidLoad(_ notification:Notification){
         if let viewController = notification.object as? ViewController {
             viewController.delegate = self
+
         }
     }
 

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */; };
-		FB43C5D42150730700C43954 /* SkratchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */; };
-		FB43C5D62150731500C43954 /* BattlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */; };
-		FB43C5DA2151B6CC00C43954 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43C5D92151B6CC00C43954 /* Key.swift */; };
+		FB1904BE2154234C0092640A /* EquipmentSetupMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904BB2154234C0092640A /* EquipmentSetupMenuTableViewCell.swift */; };
+		FB1904BF2154234C0092640A /* BattlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904BC2154234C0092640A /* BattlesTableViewCell.swift */; };
+		FB1904C02154234C0092640A /* SkratchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */; };
+		FB1904C4215424950092640A /* Baby.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB1904C3215424950092640A /* Baby.m4v */; };
+		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
 		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
 		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -40,10 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSetupMenuTableViewCell.swift; sourceTree = "<group>"; };
-		FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkratchesTableViewCell.swift; sourceTree = "<group>"; };
-		FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesTableViewCell.swift; sourceTree = "<group>"; };
-		FB43C5D92151B6CC00C43954 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		FB1904BB2154234C0092640A /* EquipmentSetupMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentSetupMenuTableViewCell.swift; sourceTree = "<group>"; };
+		FB1904BC2154234C0092640A /* BattlesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableViewCell.swift; sourceTree = "<group>"; };
+		FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkratchesTableViewCell.swift; sourceTree = "<group>"; };
+		FB1904C3215424950092640A /* Baby.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Baby.m4v; path = "Video Files/Baby.m4v"; sourceTree = SOURCE_ROOT; };
+		FB1904C52154358B0092640A /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,14 +112,15 @@
 			isa = PBXGroup;
 			children = (
 				FB78ABF5214C10030010039E /* AppDelegate.swift */,
+				FB1904C52154358B0092640A /* Key.swift */,
 				FB78ABF7214C10030010039E /* ViewController.swift */,
 				FB78ABF9214C10030010039E /* Main.storyboard */,
 				FB78AC26214F2C340010039E /* MainMenuTableViewCell.swift */,
-				FB43C5D1215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift */,
-				FB43C5D32150730700C43954 /* SkratchesTableViewCell.swift */,
-				FB43C5D52150731500C43954 /* BattlesTableViewCell.swift */,
-				FB43C5D92151B6CC00C43954 /* Key.swift */,
+				FB1904BC2154234C0092640A /* BattlesTableViewCell.swift */,
+				FB1904BB2154234C0092640A /* EquipmentSetupMenuTableViewCell.swift */,
+				FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
+				FB1904C3215424950092640A /* Baby.m4v */,
 				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
 				FB78AC04214C10040010039E /* Info.plist */,
 				FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */,
@@ -150,11 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "DIY Skratching Vol. 1 Remix" */;
 			buildPhases = (
-				FB43C5D72151B22100C43954 /* ShellScript */,
+				FB89D5BD21737969002FAB5D /* ShellScript */,
 				FB78ABEE214C10030010039E /* Sources */,
 				FB78ABEF214C10030010039E /* Frameworks */,
 				FB78ABF0214C10030010039E /* Resources */,
-				FB43C5D82151B22300C43954 /* ShellScript */,
+				FB89D5BC21737968002FAB5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -252,6 +255,7 @@
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
 				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,
+				FB1904C4215424950092640A /* Baby.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,24 +276,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FB43C5D72151B22100C43954 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\ngit commit -a -m \"Build $versionNumber($buildNumber) built on `date +' %F at %r'`\"\n";
-		};
-		FB43C5D82151B22300C43954 /* ShellScript */ = {
+		FB89D5BC21737968002FAB5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,6 +293,23 @@
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
+		FB89D5BD21737969002FAB5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\ngit commit -a -m \"Build $versionNumber($buildNumber) built on `date +' %F at %r'`\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,13 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB43C5D62150731500C43954 /* BattlesTableViewCell.swift in Sources */,
-				FB43C5D42150730700C43954 /* SkratchesTableViewCell.swift in Sources */,
 				FB78ABF8214C10030010039E /* ViewController.swift in Sources */,
+				FB1904C02154234C0092640A /* SkratchesTableViewCell.swift in Sources */,
 				FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */,
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
-				FB43C5DA2151B6CC00C43954 /* Key.swift in Sources */,
-				FB43C5D2215072EA00C43954 /* EquipmentSetupMenuTableViewCell.swift in Sources */,
+				FB1904BF2154234C0092640A /* BattlesTableViewCell.swift in Sources */,
+				FB1904C62154358B0092640A /* Key.swift in Sources */,
+				FB1904BE2154234C0092640A /* EquipmentSetupMenuTableViewCell.swift in Sources */,
 				FB78AC27214F2C340010039E /* MainMenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +500,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

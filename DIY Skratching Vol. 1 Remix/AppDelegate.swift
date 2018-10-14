@@ -18,6 +18,30 @@ class ThudRumbleVideoClip {
     var angles : [String]
     var tracks : [String]
     var url : URL
+    var rate : Float {
+        get {
+            let value = UserDefaults.standard.float(forKey: "\(name)Rate")
+            if value == 0.0 {
+                UserDefaults.standard.set(1.0, forKey:name)
+                return 1.0
+            }
+            return value
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "\(name)Rate")
+        }
+    }
+    var pitchAlgorithm : AVAudioTimePitchAlgorithm {
+        get {
+            if let rawValue = UserDefaults.standard.string(forKey: Key.pitchAlgorithm.rawValue){
+                return AVAudioTimePitchAlgorithm(rawValue: rawValue)
+            }
+            return AVAudioTimePitchAlgorithm.varispeed
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Key.pitchAlgorithm.rawValue)
+        }
+    }
 
     init(name:String,loop:CMTimeRange?,angles:[String],tracks:[String],url:URL){
         self.name = name
@@ -96,7 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedTrack : Int = 1
     var selectedAngle : Int = 1
 
-    var viewController : ViewController!
+    var viewController : Face!
 
     var lastVideoWatched : String {
         get {
@@ -111,21 +135,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    var videos : [String:[ThudRumbleVideoClip]] = [
-                                    "Skratches":[
-                                        ThudRumbleVideoClip(name: "baby", loop: CMTimeRange(start: CMTimeMakeWithSeconds(13.0, 1), duration: CMTimeMakeWithSeconds(13.0, 1)), angles: ["baby1","baby3","baby4"], tracks: ["baby1","baby2"], url: Bundle.main.url(forResource: "baby", withExtension: ".mp4")!),
-
-                                    ],
-                                    "Equipment Setup":[
-
-                                    ],
-                                    "Battles":[
-
-                                    ],
-                                                ]
+    var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[],
+                                                   Key.EquipmentSetup.rawValue:[],
+                                                   Key.Battles.rawValue:[]]
     var playerLooper : AVPlayerLooper?
     var window: UIWindow?
 
+    var skratchNames = ["baby","orbit","flare","crab","swipes","waves","zig zags", "clover tears", "needle dropping", "scribbles", "phazers", "lazers", "chirp flare", "chirps", "drag", "transformer", "tip", "tears", "dicing", "marches", "reverse cutting", "cutting", "long-short tip tears", "1-click flare", "fades", "2-click flares"]
+    
+    func loadAssetsFromBundleIntoTables(){
+        
+        // MARK: Where your assets from your bundle get put into your tables
+        
+        for skratchName in skratchNames {
+            
+            loadSkratchAssetForName(skratchName)
+            
+        }
+        
+        
+    }
+    
+    func loadSkratchAssetForName(_ name:String){
+        
+        let babyURL = Bundle.main.url(forResource: name, withExtension: "mp4")!
+        let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "mp4")!
+        let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "mp4")!
+        let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "mp4")!
+        
+        
+        let babyVideo = ThudRumbleVideoClip(name: "name", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
+        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
+        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
+        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: [name,"\(name)2","\(name)3"
+            ], tracks: [], url: baby4URL)
+        
+        
+        videos[Key.Skratches.rawValue]?.append(babyVideo)
+        videos[Key.Skratches.rawValue]?.append(baby2Video)
+        videos[Key.Skratches.rawValue]?.append(baby3Video)
+        videos[Key.Skratches.rawValue]?.append(baby4Video)
+        
+        
+    }
+    
     func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
@@ -158,7 +211,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     @objc func viewDidLoad(_ notification:Notification){
-        if let viewController = notification.object as? ViewController {
+        if let viewController = notification.object as? Face {
             viewController.delegate = self
             self.viewController = viewController
             loadVideoByName(lastVideoWatched) { (completed) in
@@ -167,7 +220,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     switch lastVideoWatched {
                     case "none":
                         // MARK: Show main menu
-                        viewController.showMainMenuTable()
+                        viewController.showSkratchesTable()
                         break
                     default:
                         break
@@ -182,7 +235,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad(_:)), name: ViewController.viewDidLoadNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad(_:)), name: Face.viewDidLoadNotification, object: nil)
+        loadAssetsFromBundleIntoTables()
         return true
     }
 

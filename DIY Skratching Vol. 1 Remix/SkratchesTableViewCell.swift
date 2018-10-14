@@ -9,6 +9,13 @@
 import UIKit
 
 class SkratchesTableViewCell: UITableViewCell {
+    
+    var skratchName : String!
+    {
+        didSet  {
+            textLabel?.text = skratchName
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

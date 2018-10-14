@@ -10,6 +10,12 @@ import UIKit
 
 class EquipmentSetupMenuTableViewCell: UITableViewCell {
 
+    var equipmentSetupName : String! {
+        didSet {
+            textLabel?.text = equipmentSetupName
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

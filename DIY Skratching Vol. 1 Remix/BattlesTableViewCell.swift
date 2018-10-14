@@ -10,6 +10,12 @@ import UIKit
 
 class BattlesTableViewCell: UITableViewCell {
 
+    var battleName : String! {
+        didSet {
+            textLabel?.text = battleName
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

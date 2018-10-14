@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 
 
-extension ViewController : UITableViewDelegate {
+extension Face : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
@@ -40,13 +40,17 @@ protocol ViewControllerDelegate {
     func didSelectRowInEquipmentSetupTable(indexPath:IndexPath)
 }
 
-class ViewController: UIViewController {
+class Face: UIViewController {
 
+    @IBOutlet weak var equipmentVideoView: UIView!
+
+    @IBOutlet weak var battleVideoView: UIView!
+
+    var rightSwipeBattleVideoGestureRecognizer : UISwipeGestureRecognizer?
+    
+    var rightSwipeEquipmentVideoGestureRecognizer : UISwipeGestureRecognizer?
+    
     var videoLayer : AVPlayerLayer?
-
-    @IBOutlet weak var audioTrackButton: UIButton!
-    @IBOutlet weak var videoAngleButton: UIButton!
-
 
     var rightSwipeEquipmentSetupGestureRecognizer : UISwipeGestureRecognizer?
 
@@ -62,6 +66,8 @@ class ViewController: UIViewController {
     var leftSwipeSkratchVideoGestureRecognizer : UISwipeGestureRecognizer?
 
     var rightSwipeSkratchMenuGestureRecognizer : UISwipeGestureRecognizer?
+    
+    var leftEdgePanGestureRecognizer : UIScreenEdgePanGestureRecognizer?
 
 
     static let viewDidLoadNotification = Notification.Name("ViewControllerViewDidLoad")
@@ -77,7 +83,7 @@ class ViewController: UIViewController {
 
 
     func setLayerPlayerLooper(_ player:AVPlayerLooper) {
-        
+
     }
 
     func showBattlesTable(){
@@ -120,7 +126,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.post(name: ViewController.viewDidLoadNotification, object: self)
+        NotificationCenter.default.post(name: Face.viewDidLoadNotification, object: self)
 
     }
 

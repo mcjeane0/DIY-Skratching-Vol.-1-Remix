@@ -11,4 +11,8 @@ import Foundation
 
 enum Key : String {
     case lastVideoWatched = "lastVideoWatched"
+    case Skratches = "Skratches"
+    case EquipmentSetup = "Equipment Setup"
+    case Battles = "Battles"
+    case pitchAlgorithm = "pitchAlgorithm"
 }

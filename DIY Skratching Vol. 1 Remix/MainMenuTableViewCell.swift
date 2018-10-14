@@ -9,6 +9,9 @@
 import UIKit
 
 class MainMenuTableViewCell: UITableViewCell {
+    
+    
+    var subMenuName : String!
 
     override func awakeFromNib() {
         super.awakeFromNib()

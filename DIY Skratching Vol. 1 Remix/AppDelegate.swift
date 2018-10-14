@@ -325,7 +325,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    @objc func viewDidLoad(_ notification:Notification){
+    @objc func faceDidAppear(_ notification:Notification){
         if let viewController = notification.object as? Face {
             viewController.delegate = self
             self.viewController = viewController
@@ -335,7 +335,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad(_:)), name: Face.viewDidLoadNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)
         loadAssetsFromBundleIntoTables()
         return true
     }

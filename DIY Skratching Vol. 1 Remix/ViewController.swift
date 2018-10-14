@@ -40,7 +40,7 @@ class Face: UIViewController {
     
     var videoLayer : AVPlayerLayer?
     
-    static let viewDidLoadNotification = Notification.Name("ViewControllerViewDidLoad")
+    static let didAppearNotification = Notification.Name("FaceDidAppear")
 
     var delegate : FaceDelegate?
 
@@ -86,10 +86,14 @@ class Face: UIViewController {
         videoLayer?.frame = self.view.frame
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Face.didAppearNotification, object: self)
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.post(name: Face.viewDidLoadNotification, object: self)
 
     }
 

@@ -12,6 +12,57 @@
 		FB1904C02154234C0092640A /* SkratchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */; };
 		FB1904C4215424950092640A /* Baby.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB1904C3215424950092640A /* Baby.m4v */; };
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
+		FB716DC72173F7B6008D090E /* Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D942173F7B3008D090E /* Cutting.m4v */; };
+		FB716DC82173F7B6008D090E /* Battle Gasmask.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D952173F7B3008D090E /* Battle Gasmask.m4v */; };
+		FB716DC92173F7B6008D090E /* Scratch movie trailer.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D962173F7B3008D090E /* Scratch movie trailer.m4v */; };
+		FB716DCA2173F7B6008D090E /* 1-click Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D972173F7B3008D090E /* 1-click Flare.m4v */; };
+		FB716DCB2173F7B6008D090E /* Wave Twisters trailer.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D982173F7B3008D090E /* Wave Twisters trailer.m4v */; };
+		FB716DCC2173F7B6008D090E /* Battle Smiley.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D992173F7B3008D090E /* Battle Smiley.m4v */; };
+		FB716DCD2173F7B6008D090E /* Tuner Control Spray.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9A2173F7B3008D090E /* Tuner Control Spray.m4v */; };
+		FB716DCE2173F7B6008D090E /* Chirp Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9B2173F7B3008D090E /* Chirp Flare.m4v */; };
+		FB716DCF2173F7B6008D090E /* Battle Devil.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9C2173F7B3008D090E /* Battle Devil.m4v */; };
+		FB716DD02173F7B6008D090E /* Turntable Adjustments.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9D2173F7B3008D090E /* Turntable Adjustments.m4v */; };
+		FB716DD12173F7B6008D090E /* Cleaning Needles.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9E2173F7B3008D090E /* Cleaning Needles.m4v */; };
+		FB716DD22173F7B6008D090E /* Q-Bert Freestyle.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716D9F2173F7B3008D090E /* Q-Bert Freestyle.m4v */; };
+		FB716DD32173F7B6008D090E /* Crabs (Crepes).m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA02173F7B3008D090E /* Crabs (Crepes).m4v */; };
+		FB716DD42173F7B6008D090E /* Chirps.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA12173F7B3008D090E /* Chirps.m4v */; };
+		FB716DD52173F7B6008D090E /* 2-Click Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA22173F7B4008D090E /* 2-Click Flare.m4v */; };
+		FB716DD62173F7B6008D090E /* Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA32173F7B4008D090E /* Flare.m4v */; };
+		FB716DD72173F7B6008D090E /* Scribbles.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA42173F7B4008D090E /* Scribbles.m4v */; };
+		FB716DD82173F7B6008D090E /* Battle Football.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA52173F7B4008D090E /* Battle Football.m4v */; };
+		FB716DD92173F7B6008D090E /* Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA62173F7B4008D090E /* Tears.m4v */; };
+		FB716DDA2173F7B6008D090E /* Marches.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA72173F7B4008D090E /* Marches.m4v */; };
+		FB716DDB2173F7B6008D090E /* Tip.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA82173F7B4008D090E /* Tip.m4v */; };
+		FB716DDC2173F7B6008D090E /* Drags.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DA92173F7B4008D090E /* Drags.m4v */; };
+		FB716DDD2173F7B6008D090E /* Long-short Tip Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAA2173F7B4008D090E /* Long-short Tip Tears.m4v */; };
+		FB716DDE2173F7B6008D090E /* Plugging In Turntables.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAB2173F7B4008D090E /* Plugging In Turntables.m4v */; };
+		FB716DDF2173F7B6008D090E /* Slipmats Part 2.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAC2173F7B4008D090E /* Slipmats Part 2.m4v */; };
+		FB716DE02173F7B6008D090E /* Swipes.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAD2173F7B4008D090E /* Swipes.m4v */; };
+		FB716DE12173F7B6008D090E /* Transformer.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAE2173F7B4008D090E /* Transformer.m4v */; };
+		FB716DE22173F7B6008D090E /* Phazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DAF2173F7B4008D090E /* Phazers.m4v */; };
+		FB716DE32173F7B6008D090E /* Getting better adhesion.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB02173F7B4008D090E /* Getting better adhesion.m4v */; };
+		FB716DE42173F7B6008D090E /* Clover Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB12173F7B5008D090E /* Clover Tears.m4v */; };
+		FB716DE52173F7B6008D090E /* Zig Zags.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB22173F7B5008D090E /* Zig Zags.m4v */; };
+		FB716DE62173F7B6008D090E /* Needle Dropping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB32173F7B5008D090E /* Needle Dropping.m4v */; };
+		FB716DE72173F7B6008D090E /* On Off Switch Adjustment.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */; };
+		FB716DE82173F7B6008D090E /* Battle Bunny.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB52173F7B5008D090E /* Battle Bunny.m4v */; };
+		FB716DE92173F7B6008D090E /* Preventing skipping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB62173F7B5008D090E /* Preventing skipping.m4v */; };
+		FB716DEA2173F7B6008D090E /* Fades.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB72173F7B5008D090E /* Fades.m4v */; };
+		FB716DEB2173F7B6008D090E /* Reverse Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */; };
+		FB716DEC2173F7B6008D090E /* Lazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB92173F7B5008D090E /* Lazers.m4v */; };
+		FB716DED2173F7B6008D090E /* More Ways To Prevent Skipping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBA2173F7B5008D090E /* More Ways To Prevent Skipping.m4v */; };
+		FB716DEE2173F7B6008D090E /* Dicing.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBB2173F7B5008D090E /* Dicing.m4v */; };
+		FB716DEF2173F7B6008D090E /* Crescent Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBC2173F7B5008D090E /* Crescent Flare.m4v */; };
+		FB716DF02173F7B6008D090E /* Cueing.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBD2173F7B5008D090E /* Cueing.m4v */; };
+		FB716DF12173F7B6008D090E /* How to seal leaky pipes.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBE2173F7B5008D090E /* How to seal leaky pipes.m4v */; };
+		FB716DF22173F7B6008D090E /* Slipmats Part 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DBF2173F7B6008D090E /* Slipmats Part 1.m4v */; };
+		FB716DF32173F7B6008D090E /* Counting Bars.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC02173F7B6008D090E /* Counting Bars.m4v */; };
+		FB716DF42173F7B6008D090E /* Waves.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC12173F7B6008D090E /* Waves.m4v */; };
+		FB716DF52173F7B6008D090E /* Fader Caps Adjustment.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC22173F7B6008D090E /* Fader Caps Adjustment.m4v */; };
+		FB716DF62173F7B6008D090E /* Battle Spiderman.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC32173F7B6008D090E /* Battle Spiderman.m4v */; };
+		FB716DF72173F7B6008D090E /* EQ Scratching.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC42173F7B6008D090E /* EQ Scratching.m4v */; };
+		FB716DF82173F7B6008D090E /* Setting Up Headshells.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */; };
+		FB716DF92173F7B6008D090E /* Mixer Basics.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC62173F7B6008D090E /* Mixer Basics.m4v */; };
 		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
 		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -46,6 +97,57 @@
 		FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkratchesTableViewCell.swift; sourceTree = "<group>"; };
 		FB1904C3215424950092640A /* Baby.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Baby.m4v; path = "Video Files/Baby.m4v"; sourceTree = SOURCE_ROOT; };
 		FB1904C52154358B0092640A /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		FB716D942173F7B3008D090E /* Cutting.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cutting.m4v; path = "Video Files/Cutting.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D952173F7B3008D090E /* Battle Gasmask.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Gasmask.m4v"; path = "Video Files/Battle Gasmask.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D962173F7B3008D090E /* Scratch movie trailer.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Scratch movie trailer.m4v"; path = "Video Files/Scratch movie trailer.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D972173F7B3008D090E /* 1-click Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "1-click Flare.m4v"; path = "Video Files/1-click Flare.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D982173F7B3008D090E /* Wave Twisters trailer.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Wave Twisters trailer.m4v"; path = "Video Files/Wave Twisters trailer.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D992173F7B3008D090E /* Battle Smiley.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Smiley.m4v"; path = "Video Files/Battle Smiley.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9A2173F7B3008D090E /* Tuner Control Spray.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tuner Control Spray.m4v"; path = "Video Files/Tuner Control Spray.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9B2173F7B3008D090E /* Chirp Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Chirp Flare.m4v"; path = "Video Files/Chirp Flare.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9C2173F7B3008D090E /* Battle Devil.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Devil.m4v"; path = "Video Files/Battle Devil.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9D2173F7B3008D090E /* Turntable Adjustments.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Turntable Adjustments.m4v"; path = "Video Files/Turntable Adjustments.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9E2173F7B3008D090E /* Cleaning Needles.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cleaning Needles.m4v"; path = "Video Files/Cleaning Needles.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716D9F2173F7B3008D090E /* Q-Bert Freestyle.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Q-Bert Freestyle.m4v"; path = "Video Files/Q-Bert Freestyle.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA02173F7B3008D090E /* Crabs (Crepes).m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Crabs (Crepes).m4v"; path = "Video Files/Crabs (Crepes).m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA12173F7B3008D090E /* Chirps.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Chirps.m4v; path = "Video Files/Chirps.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA22173F7B4008D090E /* 2-Click Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "2-Click Flare.m4v"; path = "Video Files/2-Click Flare.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA32173F7B4008D090E /* Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Flare.m4v; path = "Video Files/Flare.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA42173F7B4008D090E /* Scribbles.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Scribbles.m4v; path = "Video Files/Scribbles.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA52173F7B4008D090E /* Battle Football.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Football.m4v"; path = "Video Files/Battle Football.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA62173F7B4008D090E /* Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tears.m4v; path = "Video Files/Tears.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA72173F7B4008D090E /* Marches.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Marches.m4v; path = "Video Files/Marches.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA82173F7B4008D090E /* Tip.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Tip.m4v; path = "Video Files/Tip.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DA92173F7B4008D090E /* Drags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Drags.m4v; path = "Video Files/Drags.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAA2173F7B4008D090E /* Long-short Tip Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Long-short Tip Tears.m4v"; path = "Video Files/Long-short Tip Tears.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAB2173F7B4008D090E /* Plugging In Turntables.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Plugging In Turntables.m4v"; path = "Video Files/Plugging In Turntables.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAC2173F7B4008D090E /* Slipmats Part 2.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Slipmats Part 2.m4v"; path = "Video Files/Slipmats Part 2.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAD2173F7B4008D090E /* Swipes.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Swipes.m4v; path = "Video Files/Swipes.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAE2173F7B4008D090E /* Transformer.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Transformer.m4v; path = "Video Files/Transformer.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DAF2173F7B4008D090E /* Phazers.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Phazers.m4v; path = "Video Files/Phazers.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB02173F7B4008D090E /* Getting better adhesion.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Getting better adhesion.m4v"; path = "Video Files/Getting better adhesion.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB12173F7B5008D090E /* Clover Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Clover Tears.m4v"; path = "Video Files/Clover Tears.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB22173F7B5008D090E /* Zig Zags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Zig Zags.m4v"; path = "Video Files/Zig Zags.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB32173F7B5008D090E /* Needle Dropping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Needle Dropping.m4v"; path = "Video Files/Needle Dropping.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "On Off Switch Adjustment.m4v"; path = "Video Files/On Off Switch Adjustment.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB52173F7B5008D090E /* Battle Bunny.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Bunny.m4v"; path = "Video Files/Battle Bunny.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB62173F7B5008D090E /* Preventing skipping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Preventing skipping.m4v"; path = "Video Files/Preventing skipping.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB72173F7B5008D090E /* Fades.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fades.m4v; path = "Video Files/Fades.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Reverse Cutting.m4v"; path = "Video Files/Reverse Cutting.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB92173F7B5008D090E /* Lazers.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Lazers.m4v; path = "Video Files/Lazers.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBA2173F7B5008D090E /* More Ways To Prevent Skipping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "More Ways To Prevent Skipping.m4v"; path = "Video Files/More Ways To Prevent Skipping.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBB2173F7B5008D090E /* Dicing.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Dicing.m4v; path = "Video Files/Dicing.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBC2173F7B5008D090E /* Crescent Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Crescent Flare.m4v"; path = "Video Files/Crescent Flare.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBD2173F7B5008D090E /* Cueing.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cueing.m4v; path = "Video Files/Cueing.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBE2173F7B5008D090E /* How to seal leaky pipes.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "How to seal leaky pipes.m4v"; path = "Video Files/How to seal leaky pipes.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DBF2173F7B6008D090E /* Slipmats Part 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Slipmats Part 1.m4v"; path = "Video Files/Slipmats Part 1.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC02173F7B6008D090E /* Counting Bars.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Counting Bars.m4v"; path = "Video Files/Counting Bars.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC12173F7B6008D090E /* Waves.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Waves.m4v; path = "Video Files/Waves.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC22173F7B6008D090E /* Fader Caps Adjustment.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Fader Caps Adjustment.m4v"; path = "Video Files/Fader Caps Adjustment.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC32173F7B6008D090E /* Battle Spiderman.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Spiderman.m4v"; path = "Video Files/Battle Spiderman.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC42173F7B6008D090E /* EQ Scratching.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "EQ Scratching.m4v"; path = "Video Files/EQ Scratching.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Setting Up Headshells.m4v"; path = "Video Files/Setting Up Headshells.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DC62173F7B6008D090E /* Mixer Basics.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mixer Basics.m4v"; path = "Video Files/Mixer Basics.m4v"; sourceTree = SOURCE_ROOT; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +223,57 @@
 				FB1904BD2154234C0092640A /* SkratchesTableViewCell.swift */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
 				FB1904C3215424950092640A /* Baby.m4v */,
+				FB716D972173F7B3008D090E /* 1-click Flare.m4v */,
+				FB716DA22173F7B4008D090E /* 2-Click Flare.m4v */,
+				FB716DB52173F7B5008D090E /* Battle Bunny.m4v */,
+				FB716D9C2173F7B3008D090E /* Battle Devil.m4v */,
+				FB716DA52173F7B4008D090E /* Battle Football.m4v */,
+				FB716D952173F7B3008D090E /* Battle Gasmask.m4v */,
+				FB716D992173F7B3008D090E /* Battle Smiley.m4v */,
+				FB716DC32173F7B6008D090E /* Battle Spiderman.m4v */,
+				FB716D9B2173F7B3008D090E /* Chirp Flare.m4v */,
+				FB716DA12173F7B3008D090E /* Chirps.m4v */,
+				FB716D9E2173F7B3008D090E /* Cleaning Needles.m4v */,
+				FB716DB12173F7B5008D090E /* Clover Tears.m4v */,
+				FB716DC02173F7B6008D090E /* Counting Bars.m4v */,
+				FB716DA02173F7B3008D090E /* Crabs (Crepes).m4v */,
+				FB716DBC2173F7B5008D090E /* Crescent Flare.m4v */,
+				FB716DBD2173F7B5008D090E /* Cueing.m4v */,
+				FB716D942173F7B3008D090E /* Cutting.m4v */,
+				FB716DBB2173F7B5008D090E /* Dicing.m4v */,
+				FB716DA92173F7B4008D090E /* Drags.m4v */,
+				FB716DC42173F7B6008D090E /* EQ Scratching.m4v */,
+				FB716DC22173F7B6008D090E /* Fader Caps Adjustment.m4v */,
+				FB716DB72173F7B5008D090E /* Fades.m4v */,
+				FB716DA32173F7B4008D090E /* Flare.m4v */,
+				FB716DB02173F7B4008D090E /* Getting better adhesion.m4v */,
+				FB716DBE2173F7B5008D090E /* How to seal leaky pipes.m4v */,
+				FB716DB92173F7B5008D090E /* Lazers.m4v */,
+				FB716DAA2173F7B4008D090E /* Long-short Tip Tears.m4v */,
+				FB716DA72173F7B4008D090E /* Marches.m4v */,
+				FB716DC62173F7B6008D090E /* Mixer Basics.m4v */,
+				FB716DBA2173F7B5008D090E /* More Ways To Prevent Skipping.m4v */,
+				FB716DB32173F7B5008D090E /* Needle Dropping.m4v */,
+				FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */,
+				FB716DAF2173F7B4008D090E /* Phazers.m4v */,
+				FB716DAB2173F7B4008D090E /* Plugging In Turntables.m4v */,
+				FB716DB62173F7B5008D090E /* Preventing skipping.m4v */,
+				FB716D9F2173F7B3008D090E /* Q-Bert Freestyle.m4v */,
+				FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */,
+				FB716D962173F7B3008D090E /* Scratch movie trailer.m4v */,
+				FB716DA42173F7B4008D090E /* Scribbles.m4v */,
+				FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */,
+				FB716DBF2173F7B6008D090E /* Slipmats Part 1.m4v */,
+				FB716DAC2173F7B4008D090E /* Slipmats Part 2.m4v */,
+				FB716DAD2173F7B4008D090E /* Swipes.m4v */,
+				FB716DA62173F7B4008D090E /* Tears.m4v */,
+				FB716DA82173F7B4008D090E /* Tip.m4v */,
+				FB716DAE2173F7B4008D090E /* Transformer.m4v */,
+				FB716D9A2173F7B3008D090E /* Tuner Control Spray.m4v */,
+				FB716D9D2173F7B3008D090E /* Turntable Adjustments.m4v */,
+				FB716D982173F7B3008D090E /* Wave Twisters trailer.m4v */,
+				FB716DC12173F7B6008D090E /* Waves.m4v */,
+				FB716DB22173F7B5008D090E /* Zig Zags.m4v */,
 				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
 				FB78AC04214C10040010039E /* Info.plist */,
 				FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */,
@@ -255,10 +408,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB716DD12173F7B6008D090E /* Cleaning Needles.m4v in Resources */,
+				FB716DDB2173F7B6008D090E /* Tip.m4v in Resources */,
+				FB716DF72173F7B6008D090E /* EQ Scratching.m4v in Resources */,
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
+				FB716DE72173F7B6008D090E /* On Off Switch Adjustment.m4v in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
+				FB716DCD2173F7B6008D090E /* Tuner Control Spray.m4v in Resources */,
+				FB716DE92173F7B6008D090E /* Preventing skipping.m4v in Resources */,
+				FB716DD02173F7B6008D090E /* Turntable Adjustments.m4v in Resources */,
+				FB716DC92173F7B6008D090E /* Scratch movie trailer.m4v in Resources */,
+				FB716DEA2173F7B6008D090E /* Fades.m4v in Resources */,
+				FB716DF42173F7B6008D090E /* Waves.m4v in Resources */,
+				FB716DEF2173F7B6008D090E /* Crescent Flare.m4v in Resources */,
+				FB716DF92173F7B6008D090E /* Mixer Basics.m4v in Resources */,
+				FB716DDE2173F7B6008D090E /* Plugging In Turntables.m4v in Resources */,
+				FB716DE02173F7B6008D090E /* Swipes.m4v in Resources */,
+				FB716DF22173F7B6008D090E /* Slipmats Part 1.m4v in Resources */,
+				FB716DE42173F7B6008D090E /* Clover Tears.m4v in Resources */,
+				FB716DEE2173F7B6008D090E /* Dicing.m4v in Resources */,
+				FB716DED2173F7B6008D090E /* More Ways To Prevent Skipping.m4v in Resources */,
+				FB716DCE2173F7B6008D090E /* Chirp Flare.m4v in Resources */,
+				FB716DD82173F7B6008D090E /* Battle Football.m4v in Resources */,
+				FB716DDC2173F7B6008D090E /* Drags.m4v in Resources */,
+				FB716DD22173F7B6008D090E /* Q-Bert Freestyle.m4v in Resources */,
+				FB716DE22173F7B6008D090E /* Phazers.m4v in Resources */,
+				FB716DE52173F7B6008D090E /* Zig Zags.m4v in Resources */,
+				FB716DF12173F7B6008D090E /* How to seal leaky pipes.m4v in Resources */,
+				FB716DF02173F7B6008D090E /* Cueing.m4v in Resources */,
+				FB716DE32173F7B6008D090E /* Getting better adhesion.m4v in Resources */,
 				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,
+				FB716DD52173F7B6008D090E /* 2-Click Flare.m4v in Resources */,
+				FB716DF82173F7B6008D090E /* Setting Up Headshells.m4v in Resources */,
+				FB716DDA2173F7B6008D090E /* Marches.m4v in Resources */,
+				FB716DCA2173F7B6008D090E /* 1-click Flare.m4v in Resources */,
+				FB716DD42173F7B6008D090E /* Chirps.m4v in Resources */,
+				FB716DD62173F7B6008D090E /* Flare.m4v in Resources */,
+				FB716DD92173F7B6008D090E /* Tears.m4v in Resources */,
+				FB716DE62173F7B6008D090E /* Needle Dropping.m4v in Resources */,
+				FB716DD32173F7B6008D090E /* Crabs (Crepes).m4v in Resources */,
+				FB716DDD2173F7B6008D090E /* Long-short Tip Tears.m4v in Resources */,
+				FB716DDF2173F7B6008D090E /* Slipmats Part 2.m4v in Resources */,
+				FB716DEB2173F7B6008D090E /* Reverse Cutting.m4v in Resources */,
+				FB716DE82173F7B6008D090E /* Battle Bunny.m4v in Resources */,
 				FB1904C4215424950092640A /* Baby.m4v in Resources */,
+				FB716DC82173F7B6008D090E /* Battle Gasmask.m4v in Resources */,
+				FB716DE12173F7B6008D090E /* Transformer.m4v in Resources */,
+				FB716DEC2173F7B6008D090E /* Lazers.m4v in Resources */,
+				FB716DF62173F7B6008D090E /* Battle Spiderman.m4v in Resources */,
+				FB716DD72173F7B6008D090E /* Scribbles.m4v in Resources */,
+				FB716DF52173F7B6008D090E /* Fader Caps Adjustment.m4v in Resources */,
+				FB716DCF2173F7B6008D090E /* Battle Devil.m4v in Resources */,
+				FB716DCB2173F7B6008D090E /* Wave Twisters trailer.m4v in Resources */,
+				FB716DC72173F7B6008D090E /* Cutting.m4v in Resources */,
+				FB716DCC2173F7B6008D090E /* Battle Smiley.m4v in Resources */,
+				FB716DF32173F7B6008D090E /* Counting Bars.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

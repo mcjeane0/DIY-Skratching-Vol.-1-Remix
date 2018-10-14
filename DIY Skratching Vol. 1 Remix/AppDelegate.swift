@@ -114,6 +114,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var playerItem : AVPlayerItem?
     var window: UIWindow?
 
+    var skratchLoops : [String:CMTimeRange] = ["baby":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"orbit":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"flare":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"crab":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"swipes":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"waves":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)),"zig zags":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "clover tears":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "needle dropping":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "scribbles":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "phazers":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "lazers":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "chirp flare":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "chirps":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "drag":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "transformer":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "tip":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "tears":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "dicing":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "marches":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "reverse cutting":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "cutting":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "long-short tip tears":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "1-click flare":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "fades":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0)), "2-click flares":CMTimeRange(start: CMTimeMake(0, 0), duration: CMTimeMake(0, 0))]
+    
     var skratchNames = ["baby","orbit","flare","crab","swipes","waves","zig zags", "clover tears", "needle dropping", "scribbles", "phazers", "lazers", "chirp flare", "chirps", "drag", "transformer", "tip", "tears", "dicing", "marches", "reverse cutting", "cutting", "long-short tip tears", "1-click flare", "fades", "2-click flares"]
     
     var battleNames = ["Battle Football", "Battle Smiley", "Battle Bunny", "Battle Spiderman", "Battle Gasmask", "Battle Devil", "Q-Bert Freestyle"]
@@ -129,7 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         for skratchName in skratchNames {
             
-            loadSkratchAssetForName(skratchName)
+            loadSkratchAssetForName(skratchName,loop:skratchLoops[skratchName]!)
             
         }
         

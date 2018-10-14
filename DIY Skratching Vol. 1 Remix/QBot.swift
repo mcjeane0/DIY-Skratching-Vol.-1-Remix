@@ -263,7 +263,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func loadBattleAssetForName(_ name:String){
         NSLog("\(name)")
 
-        let battleURL = Bundle.main.url(forResource: name, withExtension:".m4v")!
+        let battleURL = Bundle.main.url(forResource: name, withExtension:"m4v")!
         
         let battleVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: battleURL)
         
@@ -274,7 +274,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func loadEquipmentSetupAssetForName(_ name:String){
         NSLog("\(name)")
 
-        let equipmentSetupURL = Bundle.main.url(forResource: name, withExtension: ".m4v")!
+        let equipmentSetupURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
         
         let equipmentSetupVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: equipmentSetupURL)
         
@@ -285,10 +285,10 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func loadSkratchAssetForName(_ name:String,loop:CMTimeRange){
         NSLog("\(name)")
-        let babyURL = Bundle.main.url(forResource: name, withExtension: ".m4v")!
-        //let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: ".m4v")!
-        //let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: ".m4v")!
-        //let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: ".m4v")!
+        let babyURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
+        //let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "m4v")!
+        //let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "m4v")!
+        //let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "m4v")!
         
         
         let babyVideo = ThudRumbleVideoClip(name: name, loop: loop, angles: [] /*["\(name)2","\(name)3","\(name)4"]*/, tracks: [], url: babyURL)

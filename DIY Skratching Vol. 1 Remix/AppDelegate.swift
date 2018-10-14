@@ -136,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func loadSkratchAssetForName(_ name:String,loop:CMTimeRange, duration:CMTime){
+    func loadSkratchAssetForName(_ name:String,loop:CMTimeRange){
         
         let babyURL = Bundle.main.url(forResource: name, withExtension: "mp4")!
         let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "mp4")!
@@ -144,10 +144,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "mp4")!
         
         
-        let babyVideo = ThudRumbleVideoClip(name: "name", loop: loop, duration: duration, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
-        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, duration: duration, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
-        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, duration: duration, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
-        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, duration: duration, angles: [name,"\(name)2","\(name)3"
+        let babyVideo = ThudRumbleVideoClip(name: "name", loop: loop, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
+        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
+        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
+        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, angles: [name,"\(name)2","\(name)3"
             ], tracks: [], url: baby4URL)
         
         

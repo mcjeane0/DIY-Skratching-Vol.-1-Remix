@@ -57,18 +57,66 @@ class ThudRumbleVideoClip {
 extension AppDelegate : FaceDelegate {
     
     func handleSwipeUp() {
-        let nextPossibleSection = self.faceIndexPath.section + 1
+        let nextPossibleSectionIndex = (self.faceIndexPath.section + 1) % sections.count
+        let nextSection = sections[nextPossibleSectionIndex]
+        switch nextSection {
+        case Key.Skratches.rawValue:
+            let rowIndex = skratchNames.firstIndex(of: lastSkratchVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        case Key.Battles.rawValue:
+            let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        case Key.EquipmentSetup.rawValue:
+            let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        default:
+            break
+        }
+        
+        loadVideoAtFaceIndexPath()
     }
     
     func handleSwipeDown() {
+        let nextPossibleSectionIndex = (self.faceIndexPath.section - 1) % sections.count
+        let nextSection = sections[nextPossibleSectionIndex]
+        switch nextSection {
+        case Key.Skratches.rawValue:
+            let rowIndex = skratchNames.firstIndex(of: lastSkratchVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        case Key.Battles.rawValue:
+            let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        case Key.EquipmentSetup.rawValue:
+            let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
+            faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
+            break
+        default:
+            break
+        }
         
+        loadVideoAtFaceIndexPath()
     }
     
     func handleSwipeLeft() {
+        let currentSection = sections[self.faceIndexPath.section]
+        let nextPossibleRowIndex = (self.faceIndexPath.row + 1) % videos[currentSection]!.count
+        
+        faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
+        loadVideoAtFaceIndexPath()
         
     }
     
     func handleSwipeRight() {
+        let currentSection = sections[self.faceIndexPath.section]
+        let nextPossibleRowIndex = (self.faceIndexPath.row - 1) % videos[currentSection]!.count
+        
+        faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
+        loadVideoAtFaceIndexPath()
         
     }
 
@@ -77,7 +125,43 @@ extension AppDelegate : FaceDelegate {
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var lastVideoWatched : String {
+        get {
+            return UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) ?? "baby"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.lastVideoWatched.rawValue)
+        }
+    }
+    
+    var lastEquipmentSetupVideo : String {
+        get {
+            return UserDefaults.standard.string(forKey: Key.lastEquipmentSetupVideoWatched.rawValue) ?? "Cueing"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.lastEquipmentSetupVideoWatched.rawValue)
+        }
+    }
+    
+    var lastBattleVideo : String {
+        get {
+            return UserDefaults.standard.string(forKey: Key.lastBattleVideoWatched.rawValue) ?? "Battle Devil"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.lastBattleVideoWatched.rawValue)
+        }
+    }
+    
+    var lastSkratchVideo : String {
+        get {
+            return UserDefaults.standard.string(forKey: Key.lastSkratchVideoWatched.rawValue) ?? "baby"
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.lastSkratchVideoWatched.rawValue)
+        }
+    }
+    
     var faceIndexPath : IndexPath {
         get {
             return IndexPath(row: UserDefaults.standard.integer(forKey: Key.rowIndex.rawValue), section: UserDefaults.standard.integer(forKey: Key.sectionIndex.rawValue))
@@ -92,18 +176,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var selectedAngle : Int = 1
 
     var viewController : Face!
-
-    var lastVideoWatched : String {
-        get {
-            if let value = UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) {
-                return value
-            }
-            return "none"
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.lastVideoWatched.rawValue)
-        }
-    }
 
 
     var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[],
@@ -122,8 +194,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
     
-    var sections = ["skratches","battles","equipment"]
+    var sections = [Key.Skratches.rawValue,Key.Battles.rawValue,Key.EquipmentSetup.rawValue]
     
+    func loadVideoAtFaceIndexPath(){
+        
+        let section = sections[faceIndexPath.section]
+        switch section {
+        case Key.Skratches.rawValue:
+            lastSkratchVideo = skratchNames[faceIndexPath.row]
+            lastVideoWatched = lastSkratchVideo
+            break
+        case Key.Battles.rawValue:
+            lastBattleVideo = battleNames[faceIndexPath.row]
+            lastVideoWatched = lastBattleVideo
+            break
+        case Key.EquipmentSetup.rawValue:
+            lastEquipmentSetupVideo = equipmentSetupNames[faceIndexPath.row]
+            lastVideoWatched = lastEquipmentSetupVideo
+            break
+        default:
+            break
+        }
+        
+        loadVideoByName(lastVideoWatched) { (completed) in
+            
+        }
+        
+    }
     
     func loadAssetsFromBundleIntoTables(){
         
@@ -180,7 +277,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "m4v")!
         
         
-        let babyVideo = ThudRumbleVideoClip(name: name, loop: loop, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
+        let babyVideo = ThudRumbleVideoClip(name: name, loop: loop, angles: [] /*["\(name)2","\(name)3","\(name)4"]*/, tracks: [], url: babyURL)
         //let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
         //let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
         //let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, angles: [name,"\(name)2","\(name)3"], tracks: [], url: baby4URL)
@@ -232,26 +329,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let viewController = notification.object as? Face {
             viewController.delegate = self
             self.viewController = viewController
-            loadVideoByName(lastVideoWatched) { (completed) in
-                if completed {
-                    NSLog("completed")
-                    switch lastVideoWatched {
-                    case "none":
-                        // MARK: Show main menu
-                        
-                        break
-                    default:
-                        break
-                    }
-                }
-                else {
-                    NSLog("!completed")
-                }
-            }
+            loadVideoAtFaceIndexPath()
         }
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(viewDidLoad(_:)), name: Face.viewDidLoadNotification, object: nil)
         loadAssetsFromBundleIntoTables()

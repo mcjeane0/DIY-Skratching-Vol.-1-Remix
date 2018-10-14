@@ -84,6 +84,7 @@ class Face: UIViewController {
 
     func setLayerPlayerLooper(_ player:AVQueuePlayer) {
         self.videoLayer?.removeFromSuperlayer()
+        NSLog("player.items():\(player.items())")
         videoLayer? = AVPlayerLayer(player: player)
         self.view.layer.addSublayer(videoLayer!)
         videoLayer?.frame = self.view.frame

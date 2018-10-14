@@ -135,31 +135,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        for equipmentSetupName in equipmentSetupNames {
+            loadEquipmentSetupAssetForName(equipmentSetupName)
+        }
+        
+        for battleName in battleNames {
+            
+            loadBattleAssetForName(battleName)
+            
+        }
+        
+        
         
     }
     
+    
+    
+    func loadBattleAssetForName(_ name:String){
+        
+        let battleURL = Bundle.main.url(forResource: name, withExtension:"m4v")!
+        
+        let battleVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: battleURL)
+        
+        videos[Key.Battles.rawValue]?.append(battleVideo)
+        
+    }
+    
+    func loadEquipmentSetupAssetForName(_ name:String){
+        
+        let equipmentSetupURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
+        
+        let equipmentSetupVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: equipmentSetupURL)
+        
+        videos[Key.EquipmentSetup.rawValue]?.append(equipmentSetupVideo)
+        
+    }
+    
+    
     func loadSkratchAssetForName(_ name:String,loop:CMTimeRange){
         
-        let babyURL = Bundle.main.url(forResource: name, withExtension: "mp4")!
-        let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "mp4")!
-        let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "mp4")!
-        let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "mp4")!
+        let babyURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
+        //let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "m4v")!
+        //let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "m4v")!
+        //let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "m4v")!
         
         
-        let babyVideo = ThudRumbleVideoClip(name: "name", loop: loop, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
-        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
-        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
-        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, angles: [name,"\(name)2","\(name)3"
-            ], tracks: [], url: baby4URL)
+        let babyVideo = ThudRumbleVideoClip(name: name, loop: loop, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
+        //let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
+        //let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
+        //let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, angles: [name,"\(name)2","\(name)3"], tracks: [], url: baby4URL)
         
         
         videos[Key.Skratches.rawValue]?.append(babyVideo)
-        videos[Key.Skratches.rawValue]?.append(baby2Video)
-        videos[Key.Skratches.rawValue]?.append(baby3Video)
-        videos[Key.Skratches.rawValue]?.append(baby4Video)
+        //videos[Key.Skratches.rawValue]?.append(baby2Video)
+        //videos[Key.Skratches.rawValue]?.append(baby3Video)
+        //videos[Key.Skratches.rawValue]?.append(baby4Video)
         
         
     }
+    
     
     func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in

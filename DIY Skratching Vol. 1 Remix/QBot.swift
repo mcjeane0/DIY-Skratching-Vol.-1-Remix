@@ -211,6 +211,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func loadVideoAtFaceIndexPath(){
         
         let section = sections[faceIndexPath.section]
+        NSLog("\(faceIndexPath)")
         switch section {
         case Key.Skratches.rawValue:
             lastSkratchVideo = skratchNames[faceIndexPath.row]

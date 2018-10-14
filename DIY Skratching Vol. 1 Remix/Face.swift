@@ -22,6 +22,9 @@ protocol FaceDelegate {
 
 class Face: UIViewController {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     @IBOutlet weak var videoLabel: UILabel!
     
@@ -83,8 +86,6 @@ class Face: UIViewController {
     }
 
     func setLayerPlayerLooper(_ player:AVQueuePlayer) {
-        self.videoLayer?.removeFromSuperlayer()
-        NSLog("player.items():\(player.items())")
         videoLayer? = AVPlayerLayer(player: player)
         self.view.layer.addSublayer(videoLayer!)
         videoLayer?.frame = self.view.frame

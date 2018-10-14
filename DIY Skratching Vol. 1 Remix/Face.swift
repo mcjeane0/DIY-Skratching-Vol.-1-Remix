@@ -15,6 +15,9 @@ protocol FaceDelegate {
     func handleSwipeDown()
     func handleSwipeLeft()
     func handleSwipeRight()
+    func handleTwoFingerTap()
+    func handleTap()
+    func handleLongPress()
 }
 
 class Face: UIViewController {

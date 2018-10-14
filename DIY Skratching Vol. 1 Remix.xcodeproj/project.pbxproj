@@ -63,6 +63,7 @@
 		FB716DF72173F7B6008D090E /* EQ Scratching.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC42173F7B6008D090E /* EQ Scratching.m4v */; };
 		FB716DF82173F7B6008D090E /* Setting Up Headshells.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */; };
 		FB716DF92173F7B6008D090E /* Mixer Basics.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC62173F7B6008D090E /* Mixer Basics.m4v */; };
+		FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB716DFC2173FB18008D090E /* CloudKit.framework */; };
 		FB78ABF6214C10030010039E /* QBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* QBot.swift */; };
 		FB78ABF8214C10030010039E /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* Face.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -148,6 +149,8 @@
 		FB716DC42173F7B6008D090E /* EQ Scratching.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "EQ Scratching.m4v"; path = "Video Files/EQ Scratching.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Setting Up Headshells.m4v"; path = "Video Files/Setting Up Headshells.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DC62173F7B6008D090E /* Mixer Basics.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mixer Basics.m4v"; path = "Video Files/Mixer Basics.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIY Skratching Vol. 1 Remix.entitlements"; sourceTree = "<group>"; };
+		FB716DFC2173FB18008D090E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* QBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBot.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +194,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB716DFB2173FB18008D090E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB716DFC2173FB18008D090E /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB78ABE9214C10030010039E = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +209,7 @@
 				FB78AC0C214C10040010039E /* DIY Skratching Vol. 1 RemixTests */,
 				FB78AC17214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */,
 				FB78ABF3214C10030010039E /* Products */,
+				FB716DFB2173FB18008D090E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +226,7 @@
 		FB78ABF4214C10030010039E /* DIY Skratching Vol. 1 Remix */ = {
 			isa = PBXGroup;
 			children = (
+				FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */,
 				FB78ABF5214C10030010039E /* QBot.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
 				FB78ABF7214C10030010039E /* Face.swift */,
@@ -370,6 +384,14 @@
 					FB78ABF1214C10030010039E = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					FB78AC08214C10040010039E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -704,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
@@ -723,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";

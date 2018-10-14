@@ -44,7 +44,7 @@ class Face: UIViewController {
     
     var videoAnimationView : UIView!
     
-    var videoLayer : AVPlayerLayer?
+    var videoLayer : AVPlayerLayer = AVPlayerLayer(player: nil)
     
     static let didAppearNotification = Notification.Name("FaceDidAppear")
 
@@ -86,11 +86,14 @@ class Face: UIViewController {
     }
 
     func setLayerPlayerLooper(_ player:AVQueuePlayer) {
-        videoLayer? = AVPlayerLayer(player: player)
-        self.view.layer.addSublayer(videoLayer!)
-        videoLayer?.frame = self.view.frame
+        videoLayer.player = player
+        self.view.layer.addSublayer(videoLayer)
     }
 
+    override func viewWillLayoutSubviews() {
+        videoLayer.frame = self.view.frame
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: Face.didAppearNotification, object: self)
 

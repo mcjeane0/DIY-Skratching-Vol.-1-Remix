@@ -10,117 +10,80 @@ import UIKit
 import AVKit
 
 
-extension Face : UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch tableView {
-        case battlesTable:
-            delegate?.didSelectRowInBattlesTable(indexPath: indexPath)
-            break
-        case skratchesTable:
-            delegate?.didSelectRowInSkratchesTable(indexPath: indexPath)
-            break
-        case mainMenuTable:
-            delegate?.didSelectRowInMainMenuTable(indexPath: indexPath)
-            break
-        case equipmentSetupTable:
-            delegate?.didSelectRowInEquipmentSetupTable(indexPath: indexPath)
-            break
-        default:
-            break
-        }
-    }
-
-}
-
-protocol ViewControllerDelegate {
-    func didSelectRowInBattlesTable(indexPath:IndexPath)
-    func didSelectRowInSkratchesTable(indexPath:IndexPath)
-    func didSelectRowInMainMenuTable(indexPath:IndexPath)
-    func didSelectRowInEquipmentSetupTable(indexPath:IndexPath)
+protocol FaceDelegate {
+    func handleSwipeUp()
+    func handleSwipeDown()
+    func handleSwipeLeft()
+    func handleSwipeRight()
 }
 
 class Face: UIViewController {
-
-    @IBOutlet weak var equipmentVideoView: UIView!
-
-    @IBOutlet weak var battleVideoView: UIView!
-
-    var rightSwipeBattleVideoGestureRecognizer : UISwipeGestureRecognizer?
     
-    var rightSwipeEquipmentVideoGestureRecognizer : UISwipeGestureRecognizer?
+    
+    @IBOutlet weak var videoLabel: UILabel!
+    
+    var swipeDown : UISwipeGestureRecognizer!
+    
+    var swipeUp : UISwipeGestureRecognizer!
+    
+    var swipeRight: UISwipeGestureRecognizer!
+    
+    var swipeLeft : UISwipeGestureRecognizer!
+    
+    var twoFingerTap : UITapGestureRecognizer!
+    
+    var tap : UITapGestureRecognizer!
+    
+    var longPress : UILongPressGestureRecognizer!
+    
+    var videoAnimationView : UIView!
     
     var videoLayer : AVPlayerLayer?
-
-    var rightSwipeEquipmentSetupGestureRecognizer : UISwipeGestureRecognizer?
-
-    var rightSwipeBattleGestureRecognizer : UISwipeGestureRecognizer?
-
-    var twoFingerTapSkratchVideoGestureRecognizer : UITapGestureRecognizer?
-    var longPressSkratchVideoGestureRecognizer : UILongPressGestureRecognizer?
-    var tapSkratchVideoGestureRecognizer : UITapGestureRecognizer?
-    var panSkratchVideoGestureRecognizer : UIPanGestureRecognizer?
-    var downSwipeSkratchVideoGestureRecognizer : UISwipeGestureRecognizer?
-    var upSwipeSkratchVideoGestureRecognizer : UISwipeGestureRecognizer?
-    var rightSwipeSkratchVideoGestureRecognizer : UISwipeGestureRecognizer?
-    var leftSwipeSkratchVideoGestureRecognizer : UISwipeGestureRecognizer?
-
-    var rightSwipeSkratchMenuGestureRecognizer : UISwipeGestureRecognizer?
     
-    var leftEdgePanGestureRecognizer : UIScreenEdgePanGestureRecognizer?
-
-
     static let viewDidLoadNotification = Notification.Name("ViewControllerViewDidLoad")
 
-    @IBOutlet weak var skratchVideoView : UIView!
+    var delegate : FaceDelegate?
 
-    var delegate : ViewControllerDelegate?
-
-    @IBOutlet weak var battlesTable: UITableView!
-    @IBOutlet weak var skratchesTable: UITableView!
-    @IBOutlet weak var equipmentSetupTable: UITableView!
-    @IBOutlet weak var mainMenuTable: UITableView!
-
-
-    func setLayerPlayerLooper(_ player:AVPlayerLooper) {
-
-    }
-
-    func showBattlesTable(){
+    
+    func dispatchText(_ string:String, for seconds:Double = 3.0){
         DispatchQueue.main.async {
-            self.battlesTable.isHidden = false
-            self.skratchesTable.isHidden = true
-            self.equipmentSetupTable.isHidden = true
-            self.mainMenuTable.isHidden = true
+            self.videoLabel.text = string
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
+                self.videoLabel.text = ""
+            })
         }
     }
-
-    func showEquipmentSetupTable(){
-        DispatchQueue.main.async {
-            self.battlesTable.isHidden = true
-            self.skratchesTable.isHidden = true
-            self.equipmentSetupTable.isHidden = false
-            self.mainMenuTable.isHidden = true
-        }
+    
+    @objc func handleSwipeUp(_ gestureRecognizer:UISwipeGestureRecognizer){
+        // MARK: Change video category
+        delegate?.handleSwipeUp()
+        
+        
+    }
+    
+    @objc func handleSwipeDown(_ gestureRecognizer:UISwipeGestureRecognizer){
+        // MARK: Change video category
+        
+        delegate?.handleSwipeDown()
+    }
+    
+    @objc func handleSwipeLeft(_ gestureRecognizer:UISwipeGestureRecognizer){
+        
+        delegate?.handleSwipeLeft()
+        
+    }
+    
+    @objc func handleSwipeRight(_ gestureRecognizer:UISwipeGestureRecognizer){
+        
+        delegate?.handleSwipeRight()
+        
     }
 
-    func showSkratchesTable(){
-        DispatchQueue.main.async {
-            self.battlesTable.isHidden = true
-            self.skratchesTable.isHidden = false
-            self.equipmentSetupTable.isHidden = true
-            self.mainMenuTable.isHidden = true
-        }
-    }
-
-    func showMainMenuTable(){
-        DispatchQueue.main.async {
-            self.battlesTable.isHidden = true
-            self.skratchesTable.isHidden = true
-            self.equipmentSetupTable.isHidden = true
-            self.mainMenuTable.isHidden = false
-        }
-
+    func setLayerPlayerLooper(_ player:AVQueuePlayer) {
+        self.videoLayer?.removeFromSuperlayer()
+        videoLayer? = AVPlayerLayer(player: player)
+        self.view.layer.addSublayer(videoLayer!)
+        videoLayer?.frame = self.view.frame
     }
 
     override func viewDidLoad() {

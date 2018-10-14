@@ -54,62 +54,23 @@ class ThudRumbleVideoClip {
 
 }
 
-extension AppDelegate : ViewControllerDelegate {
-
-    func didSelectRowInBattlesTable(indexPath: IndexPath) {
-        let selectedVideo = videos["Battles"]![indexPath.row]
-        loadVideoByName(selectedVideo.name) { (completed) in
-            if completed {
-
-            }
-            else {
-
-            }
-        }
+extension AppDelegate : FaceDelegate {
+    
+    func handleSwipeUp() {
+        let nextPossibleSection = self.faceIndexPath.section + 1
     }
-
-    func didSelectRowInSkratchesTable(indexPath: IndexPath) {
-        let selectedVideo = videos["Skratches"]![indexPath.row]
-        loadVideoByName(selectedVideo.name) { (completed) in
-            if completed {
-
-            }
-            else {
-
-            }
-        }
+    
+    func handleSwipeDown() {
+        
     }
-
-    func didSelectRowInMainMenuTable(indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            viewController.showEquipmentSetupTable()
-            break
-        case 1:
-            viewController.showSkratchesTable()
-            break
-        case 2:
-            viewController.showBattlesTable()
-            break
-        default:
-            break
-        }
+    
+    func handleSwipeLeft() {
+        
     }
-
-    func didSelectRowInEquipmentSetupTable(indexPath: IndexPath) {
-        let selectedVideo = videos["Equipment Setup"]![indexPath.row]
-        loadVideoByName(selectedVideo.name) { (completed) in
-            if completed {
-
-            }
-            else {
-
-            }
-        }
+    
+    func handleSwipeRight() {
+        
     }
-
-
-
 
 }
 
@@ -117,6 +78,16 @@ extension AppDelegate : ViewControllerDelegate {
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var faceIndexPath : IndexPath {
+        get {
+            return IndexPath(row: UserDefaults.standard.integer(forKey: Key.rowIndex.rawValue), section: UserDefaults.standard.integer(forKey: Key.sectionIndex.rawValue))
+        }
+        set{
+            UserDefaults.standard.set(newValue.row, forKey: Key.rowIndex.rawValue)
+            UserDefaults.standard.set(newValue.section, forKey: Key.sectionIndex.rawValue)
+        }
+    }
+    
     var selectedTrack : Int = 1
     var selectedAngle : Int = 1
 
@@ -139,9 +110,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                    Key.EquipmentSetup.rawValue:[],
                                                    Key.Battles.rawValue:[]]
     var playerLooper : AVPlayerLooper?
+    var queuePlayer : AVQueuePlayer?
+    var playerItem : AVPlayerItem?
     var window: UIWindow?
 
     var skratchNames = ["baby","orbit","flare","crab","swipes","waves","zig zags", "clover tears", "needle dropping", "scribbles", "phazers", "lazers", "chirp flare", "chirps", "drag", "transformer", "tip", "tears", "dicing", "marches", "reverse cutting", "cutting", "long-short tip tears", "1-click flare", "fades", "2-click flares"]
+    
+    var battleNames = ["Battle Football", "Battle Smiley", "Battle Bunny", "Battle Spiderman", "Battle Gasmask", "Battle Devil", "Q-Bert Freestyle"]
+    
+    var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
+    
+    var sections = ["skratches","battles","equipment"]
+    
     
     func loadAssetsFromBundleIntoTables(){
         
@@ -156,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func loadSkratchAssetForName(_ name:String){
+    func loadSkratchAssetForName(_ name:String,loop:CMTimeRange, duration:CMTime){
         
         let babyURL = Bundle.main.url(forResource: name, withExtension: "mp4")!
         let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "mp4")!
@@ -164,10 +144,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "mp4")!
         
         
-        let babyVideo = ThudRumbleVideoClip(name: "name", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
-        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
-        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
-        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: CMTimeRange(start: CMTimeMake(13, 1), duration: CMTimeMake(13, 1)), angles: [name,"\(name)2","\(name)3"
+        let babyVideo = ThudRumbleVideoClip(name: "name", loop: loop, duration: duration, angles: ["\(name)2","\(name)3","\(name)4"], tracks: [], url: babyURL)
+        let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, duration: duration, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
+        let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, duration: duration, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
+        let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, duration: duration, angles: [name,"\(name)2","\(name)3"
             ], tracks: [], url: baby4URL)
         
         
@@ -182,7 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
-            let (key, value) = arg
+            let (_, value) = arg
             return value
         }
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
@@ -195,14 +175,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }.first
         if matchingVideo != nil {
+            playerItem = AVPlayerItem(url: matchingVideo!.url)
+            queuePlayer = AVQueuePlayer(playerItem: playerItem)
             if matchingVideo!.loop != nil {
-                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url: matchingVideo!.url), timeRange: matchingVideo!.loop!)
+                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
             }
             else {
-                playerLooper = AVPlayerLooper(player: AVQueuePlayer(playerItem: nil), templateItem: AVPlayerItem(url:matchingVideo!.url))
+                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
             }
 
-            viewController.setLayerPlayerLooper(playerLooper!)
+            viewController.setLayerPlayerLooper(queuePlayer!)
             completion(true)
         }
         else {
@@ -220,7 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     switch lastVideoWatched {
                     case "none":
                         // MARK: Show main menu
-                        viewController.showSkratchesTable()
+                        
                         break
                     default:
                         break

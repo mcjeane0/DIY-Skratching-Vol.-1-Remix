@@ -18,98 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mOY-Ke-mMf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wyB-h0-IrJ" customClass="MainMenuTableViewCell" customModule="DIY_Skratching_Vol__1_Remix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wyB-h0-IrJ" id="UZb-5G-FbS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuF-fW-Yl6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Fvu-q9-fcn" customClass="EquipmentSetupMenuTableViewCell" customModule="DIY_Skratching_Vol__1_Remix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fvu-q9-fcn" id="npf-zo-tU9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g8d-qf-n1b">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="K5i-T2-mDW" customClass="SkratchesTableViewCell" customModule="DIY_Skratching_Vol__1_Remix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5i-T2-mDW" id="UQu-h4-HhM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BIx-kh-ZVw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MkG-Kq-6rs" customClass="BattlesTableViewCell" customModule="DIY_Skratching_Vol__1_Remix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MkG-Kq-6rs" id="4Yt-3P-Vd2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-h5-cPR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QbS-tq-SvO">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3Ik-h5-cPR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1j2-wW-d8f"/>
-                            <constraint firstItem="BIx-kh-ZVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1tE-3h-9hr"/>
-                            <constraint firstItem="3Ik-h5-cPR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4cW-4l-9GV"/>
-                            <constraint firstItem="ZuF-fW-Yl6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="9FR-4Q-Z8G"/>
-                            <constraint firstItem="3Ik-h5-cPR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="A20-6y-mKj"/>
-                            <constraint firstItem="BIx-kh-ZVw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="B78-4P-dha"/>
-                            <constraint firstItem="BIx-kh-ZVw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="DhS-7p-PFy"/>
-                            <constraint firstItem="g8d-qf-n1b" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="EN9-QR-Bay"/>
-                            <constraint firstItem="BIx-kh-ZVw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GVt-gS-RNE"/>
-                            <constraint firstItem="ZuF-fW-Yl6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GZB-jf-mFQ"/>
-                            <constraint firstItem="mOY-Ke-mMf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="S9x-Jd-OUW"/>
-                            <constraint firstItem="ZuF-fW-Yl6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ykq-eb-jey"/>
-                            <constraint firstItem="g8d-qf-n1b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZE9-1P-d0g"/>
-                            <constraint firstItem="3Ik-h5-cPR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c75-yF-CUh"/>
-                            <constraint firstItem="g8d-qf-n1b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dyx-Ww-B2y"/>
-                            <constraint firstItem="mOY-Ke-mMf" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="eVp-tK-3Tf"/>
-                            <constraint firstItem="g8d-qf-n1b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h30-op-q3I"/>
-                            <constraint firstItem="mOY-Ke-mMf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="hBI-uL-LtF"/>
-                            <constraint firstItem="ZuF-fW-Yl6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jgm-kV-d9M"/>
-                            <constraint firstItem="mOY-Ke-mMf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="llg-aQ-hSK"/>
+                            <constraint firstItem="QbS-tq-SvO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5SY-zi-8wq"/>
+                            <constraint firstItem="QbS-tq-SvO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8hF-lM-5Pf"/>
+                            <constraint firstItem="QbS-tq-SvO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nau-D0-TUg"/>
+                            <constraint firstItem="QbS-tq-SvO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zf0-uj-WLq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="battlesTable" destination="BIx-kh-ZVw" id="dff-0W-8Yn"/>
-                        <outlet property="equipmentSetupTable" destination="ZuF-fW-Yl6" id="ktp-IH-Iiy"/>
-                        <outlet property="mainMenuTable" destination="mOY-Ke-mMf" id="9lT-fy-jde"/>
-                        <outlet property="skratchVideoView" destination="3Ik-h5-cPR" id="Mwy-QQ-Rxb"/>
-                        <outlet property="skratchesTable" destination="g8d-qf-n1b" id="Zq7-yA-CEa"/>
+                        <outlet property="videoLabel" destination="QbS-tq-SvO" id="DLz-Db-2Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

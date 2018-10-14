@@ -15,4 +15,6 @@ enum Key : String {
     case EquipmentSetup = "Equipment Setup"
     case Battles = "Battles"
     case pitchAlgorithm = "pitchAlgorithm"
+    case rowIndex = "rowIndex"
+    case sectionIndex = "sectionIndex"
 }

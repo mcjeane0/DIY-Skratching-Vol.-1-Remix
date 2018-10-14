@@ -46,7 +46,7 @@
 		FB716DE62173F7B6008D090E /* Needle Dropping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB32173F7B5008D090E /* Needle Dropping.m4v */; };
 		FB716DE72173F7B6008D090E /* On Off Switch Adjustment.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */; };
 		FB716DE82173F7B6008D090E /* Battle Bunny.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB52173F7B5008D090E /* Battle Bunny.m4v */; };
-		FB716DE92173F7B6008D090E /* Preventing skipping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB62173F7B5008D090E /* Preventing skipping.m4v */; };
+		FB716DE92173F7B6008D090E /* Preventing Skipping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB62173F7B5008D090E /* Preventing Skipping.m4v */; };
 		FB716DEA2173F7B6008D090E /* Fades.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB72173F7B5008D090E /* Fades.m4v */; };
 		FB716DEB2173F7B6008D090E /* Reverse Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */; };
 		FB716DEC2173F7B6008D090E /* Lazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DB92173F7B5008D090E /* Lazers.m4v */; };
@@ -132,7 +132,7 @@
 		FB716DB32173F7B5008D090E /* Needle Dropping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Needle Dropping.m4v"; path = "Video Files/Needle Dropping.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "On Off Switch Adjustment.m4v"; path = "Video Files/On Off Switch Adjustment.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DB52173F7B5008D090E /* Battle Bunny.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Battle Bunny.m4v"; path = "Video Files/Battle Bunny.m4v"; sourceTree = SOURCE_ROOT; };
-		FB716DB62173F7B5008D090E /* Preventing skipping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Preventing skipping.m4v"; path = "Video Files/Preventing skipping.m4v"; sourceTree = SOURCE_ROOT; };
+		FB716DB62173F7B5008D090E /* Preventing Skipping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Preventing Skipping.m4v"; path = "Video Files/Preventing Skipping.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DB72173F7B5008D090E /* Fades.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fades.m4v; path = "Video Files/Fades.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Reverse Cutting.m4v"; path = "Video Files/Reverse Cutting.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DB92173F7B5008D090E /* Lazers.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = Lazers.m4v; path = "Video Files/Lazers.m4v"; sourceTree = SOURCE_ROOT; };
@@ -271,7 +271,7 @@
 				FB716DB42173F7B5008D090E /* On Off Switch Adjustment.m4v */,
 				FB716DAF2173F7B4008D090E /* Phazers.m4v */,
 				FB716DAB2173F7B4008D090E /* Plugging In Turntables.m4v */,
-				FB716DB62173F7B5008D090E /* Preventing skipping.m4v */,
+				FB716DB62173F7B5008D090E /* Preventing Skipping.m4v */,
 				FB716D9F2173F7B3008D090E /* Q-Bert Freestyle.m4v */,
 				FB716DB82173F7B5008D090E /* Reverse Cutting.m4v */,
 				FB716D962173F7B3008D090E /* Scratch movie trailer.m4v */,
@@ -437,7 +437,7 @@
 				FB716DE72173F7B6008D090E /* On Off Switch Adjustment.m4v in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
 				FB716DCD2173F7B6008D090E /* Tuner Control Spray.m4v in Resources */,
-				FB716DE92173F7B6008D090E /* Preventing skipping.m4v in Resources */,
+				FB716DE92173F7B6008D090E /* Preventing Skipping.m4v in Resources */,
 				FB716DD02173F7B6008D090E /* Turntable Adjustments.m4v in Resources */,
 				FB716DC92173F7B6008D090E /* Scratch movie trailer.m4v in Resources */,
 				FB716DEA2173F7B6008D090E /* Fades.m4v in Resources */,

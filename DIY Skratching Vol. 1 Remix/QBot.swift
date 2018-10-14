@@ -204,7 +204,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var battleNames = ["Battle Football", "Battle Smiley", "Battle Bunny", "Battle Spiderman", "Battle Gasmask", "Battle Devil", "Q-Bert Freestyle"]
     
-    var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
+    var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping", "Getting better adhesion","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
     
     var sections = [Key.Skratches.rawValue,Key.Battles.rawValue,Key.EquipmentSetup.rawValue]
     
@@ -261,7 +261,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func loadBattleAssetForName(_ name:String){
-        
+        NSLog("\(name)")
+
         let battleURL = Bundle.main.url(forResource: name, withExtension:".m4v")!
         
         let battleVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: battleURL)
@@ -271,7 +272,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     func loadEquipmentSetupAssetForName(_ name:String){
-        
+        NSLog("\(name)")
+
         let equipmentSetupURL = Bundle.main.url(forResource: name, withExtension: ".m4v")!
         
         let equipmentSetupVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: equipmentSetupURL)

@@ -282,7 +282,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func loadSkratchAssetForName(_ name:String,loop:CMTimeRange){
-        
+        NSLog("\(name)")
         let babyURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
         //let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "m4v")!
         //let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "m4v")!

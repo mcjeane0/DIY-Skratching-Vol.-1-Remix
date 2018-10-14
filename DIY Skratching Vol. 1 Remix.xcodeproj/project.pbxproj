@@ -63,8 +63,8 @@
 		FB716DF72173F7B6008D090E /* EQ Scratching.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC42173F7B6008D090E /* EQ Scratching.m4v */; };
 		FB716DF82173F7B6008D090E /* Setting Up Headshells.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */; };
 		FB716DF92173F7B6008D090E /* Mixer Basics.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB716DC62173F7B6008D090E /* Mixer Basics.m4v */; };
-		FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* AppDelegate.swift */; };
-		FB78ABF8214C10030010039E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* ViewController.swift */; };
+		FB78ABF6214C10030010039E /* QBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* QBot.swift */; };
+		FB78ABF8214C10030010039E /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* Face.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
 		FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABFC214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld */; };
 		FB78AC00214C10040010039E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABFF214C10040010039E /* Assets.xcassets */; };
@@ -149,8 +149,8 @@
 		FB716DC52173F7B6008D090E /* Setting Up Headshells.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Setting Up Headshells.m4v"; path = "Video Files/Setting Up Headshells.m4v"; sourceTree = SOURCE_ROOT; };
 		FB716DC62173F7B6008D090E /* Mixer Basics.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mixer Basics.m4v"; path = "Video Files/Mixer Basics.m4v"; sourceTree = SOURCE_ROOT; };
 		FB78ABF2214C10030010039E /* DIY Skratching Vol. 1 Remix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIY Skratching Vol. 1 Remix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB78ABF5214C10030010039E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB78ABF7214C10030010039E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB78ABF5214C10030010039E /* QBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBot.swift; sourceTree = "<group>"; };
+		FB78ABF7214C10030010039E /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
 		FB78ABFA214C10030010039E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB78ABFD214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DIY_Skratching_Vol__1_Remix.xcdatamodel; sourceTree = "<group>"; };
 		FB78ABFF214C10040010039E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -213,9 +213,9 @@
 		FB78ABF4214C10030010039E /* DIY Skratching Vol. 1 Remix */ = {
 			isa = PBXGroup;
 			children = (
-				FB78ABF5214C10030010039E /* AppDelegate.swift */,
+				FB78ABF5214C10030010039E /* QBot.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
-				FB78ABF7214C10030010039E /* ViewController.swift */,
+				FB78ABF7214C10030010039E /* Face.swift */,
 				FB78ABF9214C10030010039E /* Main.storyboard */,
 				FB78AC26214F2C340010039E /* MainMenuTableViewCell.swift */,
 				FB1904BC2154234C0092640A /* BattlesTableViewCell.swift */,
@@ -524,9 +524,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB78ABF8214C10030010039E /* ViewController.swift in Sources */,
+				FB78ABF8214C10030010039E /* Face.swift in Sources */,
 				FB1904C02154234C0092640A /* SkratchesTableViewCell.swift in Sources */,
-				FB78ABF6214C10030010039E /* AppDelegate.swift in Sources */,
+				FB78ABF6214C10030010039E /* QBot.swift in Sources */,
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
 				FB1904BF2154234C0092640A /* BattlesTableViewCell.swift in Sources */,
 				FB1904C62154358B0092640A /* Key.swift in Sources */,

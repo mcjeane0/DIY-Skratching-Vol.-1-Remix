@@ -20,7 +20,7 @@ protocol FaceDelegate {
     func handleLongPress()
 }
 
-class Face: UIViewController {
+class Face: UIViewController : UIGestureRecognizerDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -50,6 +50,8 @@ class Face: UIViewController {
 
     var delegate : FaceDelegate?
 
+    
+    
     
     func dispatchText(_ string:String, for seconds:Double = 3.0){
         DispatchQueue.main.async {

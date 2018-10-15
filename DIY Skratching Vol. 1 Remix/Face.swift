@@ -117,8 +117,9 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         swipeRight.direction = .right
         swipeRight.delegate = self
         swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft(_:)))
+        swipeLeft.direction = .left
         swipeLeft.delegate = self
-        
+
         view.addGestureRecognizer(swipeUp)
         view.addGestureRecognizer(swipeDown)
         view.addGestureRecognizer(swipeLeft)

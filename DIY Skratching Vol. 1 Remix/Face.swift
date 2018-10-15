@@ -108,10 +108,13 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp(_:)))
+        swipeUp.direction = .up
         swipeUp.delegate = self
         swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown(_:)))
+        swipeDown.direction = .down
         swipeDown.delegate = self
         swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight(_:)))
+        swipeRight.direction = .right
         swipeRight.delegate = self
         swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft(_:)))
         swipeLeft.delegate = self

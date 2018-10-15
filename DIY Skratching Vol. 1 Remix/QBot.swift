@@ -69,7 +69,9 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeUp() {
-        let nextPossibleSectionIndex = (self.faceIndexPath.section + 1) % sections.count
+        let maxSectionIndex = sections.count - 1
+        let incrementedSectionIndex = self.faceIndexPath.section + 1
+        let nextPossibleSectionIndex = incrementedSectionIndex > maxSectionIndex ? 0 : incrementedSectionIndex
         let nextSection = sections[nextPossibleSectionIndex]
         switch nextSection {
         case Key.Skratches.rawValue:
@@ -92,7 +94,9 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeDown() {
-        let nextPossibleSectionIndex = ((self.faceIndexPath.section - 1) > 0 ? self.faceIndexPath.section - 1 : 0) % sections.count
+        let maxSectionIndex = sections.count - 1
+        let decrementedSectionIndex = self.faceIndexPath.section - 1
+        let nextPossibleSectionIndex = decrementedSectionIndex < 0 ? maxSectionIndex : decrementedSectionIndex
         let nextSection = sections[nextPossibleSectionIndex]
         switch nextSection {
         case Key.Skratches.rawValue:
@@ -116,7 +120,9 @@ extension QBot : FaceDelegate {
     
     func handleSwipeLeft() {
         let currentSection = sections[self.faceIndexPath.section]
-        let nextPossibleRowIndex = (self.faceIndexPath.row + 1) % videos[currentSection]!.count
+        let maxItemCount = videos[currentSection]!.count-1
+        let incrementedIndex = self.faceIndexPath.row + 1
+        let nextPossibleRowIndex = incrementedIndex > maxItemCount ? 0 : incrementedIndex
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()
@@ -125,7 +131,9 @@ extension QBot : FaceDelegate {
     
     func handleSwipeRight() {
         let currentSection = sections[self.faceIndexPath.section]
-        let nextPossibleRowIndex = (self.faceIndexPath.row - 1) > 0 ? self.faceIndexPath.row - 1 : videos[currentSection]!.count-1
+        let maxItemCount = videos[currentSection]!.count - 1
+        let decrementedIndex = self.faceIndexPath.row - 1
+        let nextPossibleRowIndex = decrementedIndex < 0 ? maxItemCount : decrementedIndex
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()

@@ -92,7 +92,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeDown() {
-        let nextPossibleSectionIndex = (self.faceIndexPath.section - 1) % sections.count
+        let nextPossibleSectionIndex = (self.faceIndexPath.section - 1) > 0 ? self.faceIndexPath.section -1 : 0 % sections.count
         let nextSection = sections[nextPossibleSectionIndex]
         switch nextSection {
         case Key.Skratches.rawValue:
@@ -125,7 +125,7 @@ extension QBot : FaceDelegate {
     
     func handleSwipeRight() {
         let currentSection = sections[self.faceIndexPath.section]
-        let nextPossibleRowIndex = (self.faceIndexPath.row - 1) % videos[currentSection]!.count
+        let nextPossibleRowIndex = (self.faceIndexPath.row - 1) > 0 ? self.faceIndexPath.row - 1 : 0 % videos[currentSection]!.count
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()

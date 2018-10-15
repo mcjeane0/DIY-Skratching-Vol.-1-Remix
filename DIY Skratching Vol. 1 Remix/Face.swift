@@ -20,7 +20,7 @@ protocol FaceDelegate {
     func handleLongPress()
 }
 
-class Face: UIViewController : UIGestureRecognizerDelegate {
+class Face: UIViewController, UIGestureRecognizerDelegate {
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -51,7 +51,9 @@ class Face: UIViewController : UIGestureRecognizerDelegate {
     var delegate : FaceDelegate?
 
     
-    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
     
     func dispatchText(_ string:String, for seconds:Double = 3.0){
         DispatchQueue.main.async {
@@ -106,9 +108,13 @@ class Face: UIViewController : UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeUp(_:)))
+        swipeUp.delegate = self
         swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown(_:)))
+        swipeDown.delegate = self
         swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRight(_:)))
+        swipeRight.delegate = self
         swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeft(_:)))
+        swipeLeft.delegate = self
         
         view.addGestureRecognizer(swipeUp)
         view.addGestureRecognizer(swipeDown)

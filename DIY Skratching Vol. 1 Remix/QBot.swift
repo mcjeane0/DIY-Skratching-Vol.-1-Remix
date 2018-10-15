@@ -92,7 +92,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeDown() {
-        let nextPossibleSectionIndex = (self.faceIndexPath.section - 1) > 0 ? self.faceIndexPath.section -1 : 0 % sections.count
+        let nextPossibleSectionIndex = ((self.faceIndexPath.section - 1) > 0 ? self.faceIndexPath.section - 1 : 0) % sections.count
         let nextSection = sections[nextPossibleSectionIndex]
         switch nextSection {
         case Key.Skratches.rawValue:

@@ -67,11 +67,11 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     @objc func handleSwipeUp(_ gestureRecognizer:UISwipeGestureRecognizer){
         // MARK: Change video category
         delegate?.handleSwipeUp()
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.transform = CGAffineTransform(translationX: 0.0, y: 10.0)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.view.transform = CGAffineTransform(translationX: 0.0, y: 50.0)
         }) { (completed) in
             UIView.animate(withDuration: 0.0, animations: {
-                self.view.transform = CGAffineTransform(translationX: 0.0, y: -10.0)
+                self.view.transform = CGAffineTransform(translationX: 0.0, y: -50.0)
             })
         }
         

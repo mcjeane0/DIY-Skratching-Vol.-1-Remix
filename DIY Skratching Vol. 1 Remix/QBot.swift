@@ -240,7 +240,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(lastVideoWatched) { (completed) in
             queuePlayer?.rate = 0.0
             queuePlayer?.seek(to: CMTime.zero)
-            queuePlayer?.rate = 0.73
+            queuePlayer?.rate = 0.50
             queuePlayer?.play()
         }
         

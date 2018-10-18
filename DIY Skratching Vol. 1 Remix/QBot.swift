@@ -241,7 +241,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             queuePlayer?.play()
             queuePlayer?.rate = 0.0
             queuePlayer?.seek(to: CMTime.zero)
-            queuePlayer?.rate = 1.0
+            queuePlayer?.rate = 0.73
 
         }
         

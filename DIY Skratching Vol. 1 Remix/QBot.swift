@@ -57,7 +57,12 @@ class ThudRumbleVideoClip {
 extension QBot : FaceDelegate {
     
     func handleTwoFingerTap() {
-        
+        if let rate = queuePlayer?.rate, rate > 1/64 {
+            queuePlayer?.pause()
+        }
+        else {
+            queuePlayer?.play()
+        }
     }
     
     func handleLongPress() {

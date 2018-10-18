@@ -336,7 +336,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }.first
         if matchingVideo != nil {
             playerItem = AVPlayerItem(url: matchingVideo!.url)
-            playerItem?.audioTimePitchAlgorithm = .spectral
+            playerItem?.audioTimePitchAlgorithm = .lowQualityZeroLatency
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
@@ -344,7 +344,6 @@ class QBot: UIResponder, UIApplicationDelegate {
             else {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
             }
-
             viewController.setLayerPlayerLooper(queuePlayer!)
             completion(true)
         }

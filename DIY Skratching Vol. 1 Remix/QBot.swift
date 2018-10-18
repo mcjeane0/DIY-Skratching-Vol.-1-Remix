@@ -317,7 +317,18 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         
     }
-    
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let playerItem = object as? AVPlayerItem {
+            switch playerItem.status {
+            case .readyToPlay:
+                playerItem.audioTimePitchAlgorithm = .varispeed
+                break
+            default:
+                break
+            }
+        }
+    }
     
     func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
@@ -336,8 +347,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         }.first
         if matchingVideo != nil {
             playerItem = AVPlayerItem(url: matchingVideo!.url)
+            observeValue(forKeyPath: "status", of: playerItem, change: nil, context: nil)
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
-            playerItem?.audioTimePitchAlgorithm = .varispeed
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
             }

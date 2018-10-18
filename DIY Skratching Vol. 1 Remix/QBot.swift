@@ -322,7 +322,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         if let playerItem = object as? AVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                playerItem.audioTimePitchAlgorithm = .varispeed
+                playerItem.audioTimePitchAlgorithm = .spectral
                 break
             default:
                 break

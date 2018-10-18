@@ -63,11 +63,15 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
             })
         }
     }
+
+    @objc func handleTwoFingerTap(_ gestureRecognizer:UITapGestureRecognizer){
+        delegate?.handleTwoFingerTap()
+    }
     
     @objc func handleSwipeUp(_ gestureRecognizer:UISwipeGestureRecognizer){
         // MARK: Change video category
         delegate?.handleSwipeUp()
-        
+
         
         
     }
@@ -121,6 +125,12 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         swipeLeft.direction = .left
         swipeLeft.delegate = self
 
+        twoFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleTwoFingerTap(_:)))
+        twoFingerTap.delegate = self
+        twoFingerTap.numberOfTouchesRequired = 2
+
+
+        view.addGestureRecognizer(twoFingerTap)
         view.addGestureRecognizer(swipeUp)
         view.addGestureRecognizer(swipeDown)
         view.addGestureRecognizer(swipeLeft)

@@ -237,7 +237,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             break
         }
         
-        loadVideoByName(lastVideoWatched) { (completed) in
+        loadVideoByName(lastVideoWatched,looped: false) { (completed) in
             queuePlayer?.play()
             queuePlayer?.rate = 0.0
             queuePlayer?.rate = 1.0
@@ -329,8 +329,15 @@ class QBot: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
-    func loadVideoByName(_ string:String,completion:(_ completed:Bool)->()){
+
+    @objc func playbackEnded(says notification:Notification) {
+        NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
+        loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
+            
+        }
+    }
+
+    func loadVideoByName(_ string:String,looped:Bool,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
             let (_, value) = arg
@@ -349,13 +356,18 @@ class QBot: UIResponder, UIApplicationDelegate {
             playerItem = AVPlayerItem(url: matchingVideo!.url)
             playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
+
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
             }
             else {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
             }
-            playerLooper?.disableLooping()
+            if !looped{
+                NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+
+                playerLooper?.disableLooping()
+            }
             viewController.setLayerPlayerLooper(queuePlayer!)
             completion(true)
         }

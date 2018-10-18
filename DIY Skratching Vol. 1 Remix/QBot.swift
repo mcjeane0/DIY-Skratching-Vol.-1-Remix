@@ -239,7 +239,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         loadVideoByName(lastVideoWatched) { (completed) in
             queuePlayer?.play()
-            queuePlayer?.currentItem?.audioTimePitchAlgorithm = .varispeed
             queuePlayer?.rate = 0.0
             queuePlayer?.seek(to: CMTime.zero)
             queuePlayer?.rate = 0.50
@@ -348,7 +347,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }.first
         if matchingVideo != nil {
             playerItem = AVPlayerItem(url: matchingVideo!.url)
-            observeValue(forKeyPath: "status", of: playerItem, change: nil, context: nil)
+            playerItem?.addObserver(self, forKeyPath: "status", options: nil, context: nil)
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)

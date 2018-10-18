@@ -240,8 +240,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(lastVideoWatched) { (completed) in
             queuePlayer?.play()
             queuePlayer?.rate = 0.0
-            queuePlayer?.seek(to: CMTime.zero)
-            queuePlayer?.rate = 0.73
+            queuePlayer?.rate = 1.0
 
         }
         
@@ -322,7 +321,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         if let playerItem = object as? AVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                playerItem.audioTimePitchAlgorithm = .spectral
+                playerItem.audioTimePitchAlgorithm = .varispeed
+                playerItem.seek(to: CMTime.zero, completionHandler: nil)
                 break
             default:
                 break

@@ -333,7 +333,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func playbackEnded(says notification:Notification) {
         NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
         loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
-            
+            queuePlayer?.play()
         }
     }
 

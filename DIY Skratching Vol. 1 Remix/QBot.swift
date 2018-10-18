@@ -239,7 +239,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         loadVideoByName(lastVideoWatched) { (completed) in
             queuePlayer?.play()
-            queuePlayer?.currentItem.audioTimePitchAlgorithm = .varispeed
+            queuePlayer?.currentItem?.audioTimePitchAlgorithm = .varispeed
             queuePlayer?.rate = 0.0
             queuePlayer?.seek(to: CMTime.zero)
             queuePlayer?.rate = 0.50

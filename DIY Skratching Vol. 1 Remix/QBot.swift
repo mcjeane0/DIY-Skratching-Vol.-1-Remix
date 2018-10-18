@@ -335,6 +335,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }.first
         if matchingVideo != nil {
             playerItem = AVPlayerItem(url: matchingVideo!.url)
+            playerItem?.audioTimePitchAlgorithm = .varispeed
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)

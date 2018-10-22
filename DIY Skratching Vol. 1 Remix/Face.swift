@@ -243,7 +243,7 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         view.addGestureRecognizer(swipeDown)
         view.addGestureRecognizer(swipeLeft)
         view.addGestureRecognizer(swipeRight)
-        view.addGestureRecognizer(pan)
+        //view.addGestureRecognizer(pan)
 
     }
 

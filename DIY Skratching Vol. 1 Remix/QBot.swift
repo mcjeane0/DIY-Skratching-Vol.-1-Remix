@@ -55,6 +55,7 @@ class ThudRumbleVideoClip {
 }
 
 extension QBot : FaceDelegate {
+
     
     func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer){
         
@@ -62,15 +63,16 @@ extension QBot : FaceDelegate {
         case .began:
             break
         case .changed:
+            pinchFactor = Double(gestureRecognizer.scale)
             break
         case .ended, .cancelled:
             DispatchQueue.main.async {
                 
                 if let currentRate = self.queuePlayer?.rate {
-                    let product = Float(gestureRecognizer.scale)
+                    let product = self.pinchFactor
                     let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
                     let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
-                    self.playbackRate = greaterThanMinimumAndLessThanMaximumProduct
+                    self.playbackRate = Float(greaterThanMinimumAndLessThanMaximumProduct)
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
                     //self.queuePlayer?.rate = nextRate
                     self.face.dispatchText("📶", for: 3.0)
@@ -233,6 +235,7 @@ extension QBot : FaceDelegate {
 
 class QBot: UIResponder, UIApplicationDelegate {
 
+    var pinchFactor = 1.0
     
     var playbackRate : Float {
         get {

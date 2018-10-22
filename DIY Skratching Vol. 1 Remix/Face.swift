@@ -30,6 +30,8 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var videoLabel: UILabel!
     
+    var pan : UIPanGestureRecognizer!
+    
     var pinch : UIPinchGestureRecognizer!
     
     var swipeDown : UISwipeGestureRecognizer!
@@ -73,6 +75,23 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
                 self.videoLabel.text = ""
             })
+        }
+    }
+    
+    @objc func handlePan(_ gestureRecognizer: UIPanGestureRecognizer){
+        switch gestureRecognizer.state {
+        case .changed:
+            let translation = gestureRecognizer.translation(in: self.view)
+            UIView.animate(withDuration: 0.0) {
+                self.view.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+            }
+            break
+        case .ended:
+            UIView.animate(withDuration: 0.2) {
+                self.view.center = self.viewCenter
+            }
+        default:
+            break
         }
     }
 
@@ -165,6 +184,12 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         self.view.layer.addSublayer(videoLayer)
     }
 
+    var viewCenter : CGPoint!
+    
+    override func viewDidLayoutSubviews() {
+        viewCenter = view.center
+    }
+    
     override func viewWillLayoutSubviews() {
         videoLayer.frame = self.view.frame
     }
@@ -203,6 +228,8 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         
         pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
         pinch.delegate = self
+        
+        pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
 
         view.addGestureRecognizer(twoFingerTap)
         view.addGestureRecognizer(tap)
@@ -212,6 +239,7 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         view.addGestureRecognizer(swipeDown)
         view.addGestureRecognizer(swipeLeft)
         view.addGestureRecognizer(swipeRight)
+        view.addGestureRecognizer(pan)
 
     }
 

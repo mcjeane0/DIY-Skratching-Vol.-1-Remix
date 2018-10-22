@@ -56,13 +56,42 @@ class ThudRumbleVideoClip {
 
 extension QBot : FaceDelegate {
     
+    func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer){
+        
+        switch gestureRecognizer.state {
+        case .began:
+            break
+        case .changed:
+            if let currentRate = queuePlayer?.rate {
+                let product = Float(gestureRecognizer.scale) * currentRate
+                let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
+                let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
+                let nextRate = greaterThanMinimumAndLessThanMaximumProduct
+                queuePlayer?.rate = nextRate
+            }
+            break
+        case .ended, .cancelled:
+            break
+        default:
+            break
+        }
+        
+    }
+    
+    func handleFourFingerTap(){
+        
+        
+    }
+    
+    func handleThreeFingerTap(){
+        let nextTrack = selectedTrack + 1 > 3 ? 0 : selectedTrack + 1
+        loadTrackForVideo(nextTrack)
+    }
+    
     func handleTwoFingerTap() {
-        if let rate = queuePlayer?.rate, rate > 1/64 {
-            queuePlayer?.pause()
-        }
-        else {
-            queuePlayer?.play()
-        }
+        let nextAngle = selectedAngle + 1 > 4 ? 0 : selectedAngle + 1
+        selectedAngle = nextAngle
+        loadVideoAtFaceIndexPath()
     }
     
     func handleLongPress() {
@@ -70,7 +99,12 @@ extension QBot : FaceDelegate {
     }
     
     func handleTap() {
-        
+        if let rate = queuePlayer?.rate, rate > 1/64 {
+            queuePlayer?.pause()
+        }
+        else {
+            queuePlayer?.play()
+        }
     }
     
     func handleSwipeUp() {
@@ -379,9 +413,6 @@ class QBot: UIResponder, UIApplicationDelegate {
             NSLog("loopCount: \(loopCount)")
         }
         NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
-        loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
-            queuePlayer?.play()
-        }
     }
 
     func loadTrackForVideo(_ trackNumber:Int){

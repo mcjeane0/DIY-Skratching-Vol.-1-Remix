@@ -11,10 +11,12 @@ import AVKit
 
 
 protocol FaceDelegate {
+    func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer)
     func handleSwipeUp()
     func handleSwipeDown()
     func handleSwipeLeft()
     func handleSwipeRight()
+    func handleThreeFingerTap()
     func handleTwoFingerTap()
     func handleTap()
     func handleLongPress()
@@ -28,6 +30,8 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var videoLabel: UILabel!
     
+    var pinch : UIPinchGestureRecognizer!
+    
     var swipeDown : UISwipeGestureRecognizer!
     
     var swipeUp : UISwipeGestureRecognizer!
@@ -35,6 +39,8 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     var swipeRight: UISwipeGestureRecognizer!
     
     var swipeLeft : UISwipeGestureRecognizer!
+    
+    var threeFingerTap : UITapGestureRecognizer!
     
     var twoFingerTap : UITapGestureRecognizer!
     
@@ -64,8 +70,20 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
+    @objc func handlePinch(_ gestureRecognizer: UIPinchGestureRecognizer){
+        delegate?.handlePinch(gestureRecognizer)
+    }
+    
+    @objc func handleThreeFingerTap(_ gestureRecognizer:UITapGestureRecognizer){
+        delegate?.handleThreeFingerTap()
+    }
+    
     @objc func handleTwoFingerTap(_ gestureRecognizer:UITapGestureRecognizer){
         delegate?.handleTwoFingerTap()
+    }
+    
+    @objc func handleTap(_ gestureRecognizer:UITapGestureRecognizer){
+        delegate?.handleTap()
     }
     
     @objc func handleSwipeUp(_ gestureRecognizer:UISwipeGestureRecognizer){
@@ -129,8 +147,19 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         twoFingerTap.delegate = self
         twoFingerTap.numberOfTouchesRequired = 2
 
+        tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tap.delegate = self
+        
+        threeFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleThreeFingerTap(_:)))
+        threeFingerTap.delegate = self
+        
+        pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
+        pinch.delegate = self
 
         view.addGestureRecognizer(twoFingerTap)
+        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(threeFingerTap)
+        view.addGestureRecognizer(pinch)
         view.addGestureRecognizer(swipeUp)
         view.addGestureRecognizer(swipeDown)
         view.addGestureRecognizer(swipeLeft)

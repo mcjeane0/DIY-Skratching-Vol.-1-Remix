@@ -73,7 +73,7 @@ extension QBot : FaceDelegate {
                     self.playbackRate = greaterThanMinimumAndLessThanMaximumProduct
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
                     //self.queuePlayer?.rate = nextRate
-                    self.face.dispatchText("📶", for: 1.0)
+                    self.face.dispatchText("📶", for: 3.0)
                     
                 }
             }
@@ -96,13 +96,13 @@ extension QBot : FaceDelegate {
             loadTrackForVideo(nextTrack)
             switch nextTrack {
             case 1:
-                face.dispatchText("1️⃣", for: 1.0)
+                face.dispatchText("1️⃣", for: 3.0)
                 break
             case 2:
-                face.dispatchText("2️⃣", for: 1.0)
+                face.dispatchText("2️⃣", for: 3.0)
                 break
             case 3:
-                face.dispatchText("3️⃣", for: 1.0)
+                face.dispatchText("3️⃣", for: 3.0)
                 break
             default:
                 break
@@ -134,16 +134,16 @@ extension QBot : FaceDelegate {
     func handleTap() {
         if let rate = queuePlayer?.rate, rate > 1/64 {
             queuePlayer?.pause()
-            face.dispatchText("⏸", for: 1.0)
+            face.dispatchText("⏸", for: 3.0)
         }
         else {
             queuePlayer?.play()
-            face.dispatchText("▶️", for: 1.0)
+            face.dispatchText("▶️", for: 3.0)
         }
     }
     
     func handleSwipeUp() {
-        face.dispatchText("⏫", for: 1.0)
+        face.dispatchText("⏫", for: 3.0)
         let maxSectionIndex = sections.count - 1
         let incrementedSectionIndex = self.faceIndexPath.section + 1
         let nextPossibleSectionIndex = incrementedSectionIndex > maxSectionIndex ? 0 : incrementedSectionIndex
@@ -173,7 +173,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeDown() {
-        face.dispatchText("⏬", for: 1.0)
+        face.dispatchText("⏬", for: 3.0)
         let maxSectionIndex = sections.count - 1
         let decrementedSectionIndex = self.faceIndexPath.section - 1
         let nextPossibleSectionIndex = decrementedSectionIndex < 0 ? maxSectionIndex : decrementedSectionIndex
@@ -203,7 +203,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeLeft() {
-        face.dispatchText("⏮", for: 1.0)
+        face.dispatchText("⏮", for: 3.0)
         let currentSection = sections[self.faceIndexPath.section]
         let maxItemCount = videos[currentSection]!.count-1
         let incrementedIndex = self.faceIndexPath.row + 1
@@ -215,7 +215,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeRight() {
-        face.dispatchText("⏭", for: 1.0)
+        face.dispatchText("⏭", for: 3.0)
         let currentSection = sections[self.faceIndexPath.section]
         let maxItemCount = videos[currentSection]!.count - 1
         let decrementedIndex = self.faceIndexPath.row - 1
@@ -469,7 +469,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         if let playerLooper = object as? AVPlayerLooper {
             NSLog("loopCount:\(playerLooper.loopCount)")
-            face.dispatchText("\(playerLooper.loopCount)", for: 1.0)
+            face.dispatchText("\(playerLooper.loopCount)", for: 3.0)
         }
     }
 

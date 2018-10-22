@@ -81,8 +81,9 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     func dispatchText(_ string:String, for seconds:Double = 3.0){
         DispatchQueue.main.async {
             self.videoLabel.text = string
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
-                self.videoLabel.text = ""
+            self.videoLabel.alpha = 1.0
+            UIView.animate(withDuration: 3.0, animations: {
+                self.videoLabel.alpha = 0.0
             })
         }
     }

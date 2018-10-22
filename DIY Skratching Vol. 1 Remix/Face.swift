@@ -66,6 +66,9 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == pan {
+            return true
+        }
         return false
     }
     
@@ -187,11 +190,12 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     var viewCenter : CGPoint!
     
     override func viewDidLayoutSubviews() {
-        viewCenter = view.center
     }
     
     override func viewWillLayoutSubviews() {
         videoLayer.frame = self.view.frame
+        viewCenter = view.center
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

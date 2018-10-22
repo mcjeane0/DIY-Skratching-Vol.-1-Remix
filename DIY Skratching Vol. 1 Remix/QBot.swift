@@ -62,6 +62,8 @@ extension QBot : FaceDelegate {
         case .began:
             break
         case .changed:
+            break
+        case .ended, .cancelled:
             DispatchQueue.main.async {
                 if let currentRate = self.queuePlayer?.rate {
                     let product = Float(gestureRecognizer.scale)
@@ -74,8 +76,6 @@ extension QBot : FaceDelegate {
                     
                 }
             }
-            break
-        case .ended, .cancelled:
             break
         default:
             break

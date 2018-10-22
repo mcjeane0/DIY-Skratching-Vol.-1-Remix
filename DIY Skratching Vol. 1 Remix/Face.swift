@@ -56,9 +56,15 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
 
     var delegate : FaceDelegate?
 
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == twoFingerTap && otherGestureRecognizer == pinch {
+            return true
+        }
+        return false
+    }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+        return false
     }
     
     func dispatchText(_ string:String, for seconds:Double = 3.0){

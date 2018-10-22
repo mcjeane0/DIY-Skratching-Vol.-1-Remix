@@ -473,7 +473,9 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         if let playerLooper = object as? AVPlayerLooper {
             NSLog("loopCount:\(playerLooper.loopCount)")
-            face.dispatchText("\(playerLooper.loopCount)", for: 3.0)
+            queuePlayer?.rate = playbackRate
+            face.dispatchText("\(playerLooper.loopCount)")
+            //
         }
     }
 

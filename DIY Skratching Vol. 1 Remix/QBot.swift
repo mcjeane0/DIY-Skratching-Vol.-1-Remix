@@ -136,14 +136,14 @@ extension QBot : FaceDelegate {
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.Battles.rawValue:
-            selectedAngle = 1
-            selectedTrack = 1
+            //selectedAngle = 1
+            //selectedTrack = 1
             let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.EquipmentSetup.rawValue:
-            selectedAngle = 1
-            selectedTrack = 1
+            //selectedAngle = 1
+            //selectedTrack = 1
             let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
@@ -165,14 +165,14 @@ extension QBot : FaceDelegate {
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.Battles.rawValue:
-            selectedAngle = 1
-            selectedTrack = 1
+            //selectedAngle = 1
+            //selectedTrack = 1
             let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.EquipmentSetup.rawValue:
-            selectedAngle = 1
-            selectedTrack = 1
+            //selectedAngle = 1
+            //selectedTrack = 1
             let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
@@ -210,6 +210,7 @@ extension QBot : FaceDelegate {
 @UIApplicationMain
 
 class QBot: UIResponder, UIApplicationDelegate {
+
     
     var playbackRate : Float {
         get {

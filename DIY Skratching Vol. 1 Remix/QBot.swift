@@ -62,12 +62,16 @@ extension QBot : FaceDelegate {
         case .began:
             break
         case .changed:
-            if let currentRate = queuePlayer?.rate {
-                let product = Float(gestureRecognizer.scale) * currentRate
-                let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
-                let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
-                let nextRate = greaterThanMinimumAndLessThanMaximumProduct
-                queuePlayer?.rate = nextRate
+            DispatchQueue.main.async {
+                if let currentRate = self.queuePlayer?.rate {
+                    let product = Float(gestureRecognizer.scale) * currentRate
+                    let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
+                    let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
+                    let nextRate = greaterThanMinimumAndLessThanMaximumProduct
+                    self.queuePlayer?.rate = nextRate
+                    
+                    
+                }
             }
             break
         case .ended, .cancelled:
@@ -84,14 +88,18 @@ extension QBot : FaceDelegate {
     }
     
     func handleThreeFingerTap(){
-        let nextTrack = selectedTrack + 1 > 3 ? 0 : selectedTrack + 1
-        loadTrackForVideo(nextTrack)
+        if lastVideoWatched == lastSkratchVideo {
+            let nextTrack = selectedTrack + 1 > 3 ? 0 : selectedTrack + 1
+            loadTrackForVideo(nextTrack)
+        }
     }
     
     func handleTwoFingerTap() {
-        let nextAngle = selectedAngle + 1 > 4 ? 0 : selectedAngle + 1
-        selectedAngle = nextAngle
-        loadVideoAtFaceIndexPath()
+        if lastVideoWatched == lastSkratchVideo {
+            let nextAngle = selectedAngle + 1 > 4 ? 0 : selectedAngle + 1
+            selectedAngle = nextAngle
+            loadVideoAtFaceIndexPath()
+        }
     }
     
     func handleLongPress() {
@@ -420,7 +428,12 @@ class QBot: UIResponder, UIApplicationDelegate {
             if trackNumber > 0 && trackNumber < 4{
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[trackNumber-1]
-                queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
+                DispatchQueue.main.async {
+                    
+                   self.queuePlayer?.pause()
+                    self.queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
+                    self.queuePlayer?.play()
+                }
             }
         }
     }

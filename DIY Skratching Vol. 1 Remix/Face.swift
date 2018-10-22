@@ -227,14 +227,16 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         swipeLeft.delegate = self
 
         twoFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleTwoFingerTap(_:)))
-        twoFingerTap.delegate = self
         twoFingerTap.numberOfTouchesRequired = 2
+        twoFingerTap.delegate = self
 
         tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.delegate = self
         
         threeFingerTap = UITapGestureRecognizer(target: self, action: #selector(handleThreeFingerTap(_:)))
+        threeFingerTap.numberOfTouchesRequired = 3
         threeFingerTap.delegate = self
+        
         
         pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
         pinch.delegate = self

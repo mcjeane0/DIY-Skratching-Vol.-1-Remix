@@ -136,13 +136,13 @@ extension QBot : FaceDelegate {
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.Battles.rawValue:
-            selectedAngle =  1
+            selectedAngle = 1
             selectedTrack = 1
             let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.EquipmentSetup.rawValue:
-            selectedAngle =  1
+            selectedAngle = 1
             selectedTrack = 1
             let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
@@ -165,10 +165,14 @@ extension QBot : FaceDelegate {
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.Battles.rawValue:
+            selectedAngle = 1
+            selectedTrack = 1
             let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.EquipmentSetup.rawValue:
+            selectedAngle = 1
+            selectedTrack = 1
             let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
@@ -538,24 +542,24 @@ class QBot: UIResponder, UIApplicationDelegate {
                         playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
                         playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                        
-                        
+                    
+                    
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
-                        
+                    
                         if matchingVideo!.loop != nil {
                             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
                         }
                         else {
                             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
                         }
-                        
+                    
                         if !looped{
                             NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
                             
                             playerLooper?.disableLooping()
                         }
                         viewController.setLayerPlayerLooper(queuePlayer!)
-                        
+                    
                         completion(true)
                     
             }

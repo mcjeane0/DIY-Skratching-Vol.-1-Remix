@@ -208,9 +208,10 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewWillLayoutSubviews() {
+        self.videoView.frame = self.view.bounds
         videoLayer.frame = self.videoView.frame
         viewCenter = view.center
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

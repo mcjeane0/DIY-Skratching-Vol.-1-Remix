@@ -79,10 +79,11 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func dispatchText(_ string:String, for seconds:Double = 3.0){
-        DispatchQueue.main.async {
+        UIView.transition(with: videoLabel, duration: 0.0, options: .curveLinear, animations: {
             self.videoLabel.text = string
             self.videoLabel.alpha = 1.0
-            UIView.transition(with: self.videoLabel, duration: seconds, options: UIView.AnimationOptions.curveEaseOut, animations: {
+        }) { (completed) in
+            UIView.transition(with: self.videoLabel, duration: seconds, options: .curveEaseOut, animations: {
                 self.videoLabel.alpha = 0.01
             }, completion: nil)
         }

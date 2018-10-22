@@ -617,6 +617,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)
         loadAssetsFromBundleIntoTables()
+        configureAudioSession()
         return true
     }
 
@@ -633,6 +634,7 @@ class QBot: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        configureAudioSession()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -643,6 +645,16 @@ class QBot: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func configureAudioSession(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .spokenAudio, options: [.allowBluetoothA2DP, .allowAirPlay, .mixWithOthers,.defaultToSpeaker])
+            try AVAudioSession.sharedInstance().setActive(true, options: AVAudioSession.SetActiveOptions.notifyOthersOnDeactivation)
+        }
+        catch{
+            NSLog("catch configure audio session")
+        }
     }
 
     // MARK: - Core Data stack

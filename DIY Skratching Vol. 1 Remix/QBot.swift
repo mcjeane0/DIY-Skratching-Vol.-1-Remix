@@ -64,11 +64,12 @@ extension QBot : FaceDelegate {
         case .changed:
             DispatchQueue.main.async {
                 if let currentRate = self.queuePlayer?.rate {
-                    let product = Float(gestureRecognizer.scale) * currentRate
+                    let product = Float(gestureRecognizer.scale)
                     let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
                     let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
-                    let nextRate = greaterThanMinimumAndLessThanMaximumProduct
-                    self.queuePlayer?.rate = nextRate
+                    self.playbackRate = greaterThanMinimumAndLessThanMaximumProduct
+                    //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
+                    //self.queuePlayer?.rate = nextRate
                     
                     
                 }
@@ -89,16 +90,24 @@ extension QBot : FaceDelegate {
     
     func handleThreeFingerTap(){
         if lastVideoWatched == lastSkratchVideo {
-            let nextTrack = selectedTrack + 1 > 3 ? 0 : selectedTrack + 1
+            let nextTrack = selectedTrack + 1 > 3 ? 1 : selectedTrack + 1
             loadTrackForVideo(nextTrack)
         }
     }
     
     func handleTwoFingerTap() {
         if lastVideoWatched == lastSkratchVideo {
-            let nextAngle = selectedAngle + 1 > 4 ? 0 : selectedAngle + 1
+            let nextAngle = selectedAngle + 1 > 4 ? 1 : selectedAngle + 1
             selectedAngle = nextAngle
-            loadVideoAtFaceIndexPath()
+            
+            DispatchQueue.main.async {
+                self.queuePlayer?.pause()
+                let seekToTime = self.queuePlayer?.currentTime()
+                self.loadVideoAtFaceIndexPath()
+                if seekToTime != nil {
+                    self.queuePlayer?.seek(to: seekToTime!)
+                }
+            }
         }
     }
     
@@ -126,10 +135,14 @@ extension QBot : FaceDelegate {
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.Battles.rawValue:
+            selectedAngle =  1
+            selectedTrack = 1
             let rowIndex = battleNames.firstIndex(of: lastBattleVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
         case Key.EquipmentSetup.rawValue:
+            selectedAngle =  1
+            selectedTrack = 1
             let rowIndex = equipmentSetupNames.firstIndex(of: lastEquipmentSetupVideo)!
             faceIndexPath = IndexPath(row: rowIndex, section: nextPossibleSectionIndex)
             break
@@ -193,7 +206,18 @@ extension QBot : FaceDelegate {
 
 class QBot: UIResponder, UIApplicationDelegate {
     
-    
+    var playbackRate : Float {
+        get {
+            let oldValue = UserDefaults.standard.float(forKey: Key.rate.rawValue)
+            return oldValue > 0.0 ? oldValue : 1.0
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Key.rate.rawValue)
+            DispatchQueue.main.async {
+                self.queuePlayer?.rate = newValue
+            }
+        }
+    }
     
     var speechRecognitionRecorder : AVAudioRecorder?
     var speechRecognizer : SFSpeechRecognizer = SFSpeechRecognizer(locale: Locale.current)!
@@ -320,10 +344,10 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         
         loadVideoByName(lastVideoWatched,looped: false) { (completed) in
+            loadTrackForVideo(selectedTrack)
             queuePlayer?.play()
-            queuePlayer?.rate = 0.0
-            queuePlayer?.rate = 1.0
-
+            queuePlayer?.rate = playbackRate
+            
         }
         
     }

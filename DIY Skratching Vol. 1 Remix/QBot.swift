@@ -91,6 +91,7 @@ extension QBot : FaceDelegate {
     func handleThreeFingerTap(){
         if lastVideoWatched == lastSkratchVideo {
             let nextTrack = selectedTrack + 1 > 3 ? 1 : selectedTrack + 1
+            selectedTrack = nextTrack
             loadTrackForVideo(nextTrack)
         }
     }

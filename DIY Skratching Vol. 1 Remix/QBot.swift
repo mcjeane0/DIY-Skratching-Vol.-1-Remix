@@ -206,7 +206,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var selectedTrack : Int = 1
-    var selectedAngle : Int = 1
+    var selectedAngle : Int = 2
 
     var viewController : Face!
 

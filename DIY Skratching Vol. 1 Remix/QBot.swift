@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVKit
+import AVFoundation
 import Speech
 
 class ThudRumbleVideoClip {
@@ -464,7 +465,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerItem.status {
             case .readyToPlay:
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                playerItem.seek(to: CMTime.zero, completionHandler: nil)
+                queuePlayer?.rate = playbackRate
                 break
             default:
                 break

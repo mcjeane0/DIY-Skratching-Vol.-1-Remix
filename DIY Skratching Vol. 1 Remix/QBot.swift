@@ -516,6 +516,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                     
                     completion(true)
                 }
+            }
+            else {
+                completion(false)
+            }
         }
             else {
                 let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
@@ -528,7 +532,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                     }.first
                 if matchingVideo != nil {
                     
-                        asset = AVAsset(url: matchingAngleVideo!.url)
+                        asset = AVAsset(url: matchingVideo!.url)
                         let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
                         let audioTracks = asset!.tracks
                         playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
@@ -536,7 +540,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
                         
                         
-                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
+                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
                         
                         if matchingVideo!.loop != nil {
                             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
@@ -555,11 +559,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                         completion(true)
                     
             }
-        
-        }
-        else {
-            completion(false)
-        }
+                else {
+                completion(false)
+                }
+            }
     }
 
     @objc func faceDidAppear(_ notification:Notification){

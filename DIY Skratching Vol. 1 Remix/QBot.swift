@@ -619,7 +619,13 @@ class QBot: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)
-        loadAssetsFromBundleIntoTables()
+        let resourceRequest = NSBundleResourceRequest(tags: Set<String>(arrayLiteral:"all"))
+        resourceRequest.beginAccessingResources { (possibleError) in
+            if possibleError != nil {
+                NSLog("possibleError:\(possibleError)")
+            }
+            self.loadAssetsFromBundleIntoTables()
+        }
         configureAudioSession()
         return true
     }

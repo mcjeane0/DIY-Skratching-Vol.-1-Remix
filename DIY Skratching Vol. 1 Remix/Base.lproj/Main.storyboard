@@ -33,11 +33,11 @@
                         <constraints>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5SY-zi-8wq"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8hF-lM-5Pf"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HU2-m3-NKy"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JKU-cN-cV5"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VwG-0s-WXa"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="dfu-aS-UCe"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="GNp-Bc-sEb"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="g9l-j0-2lR"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nau-D0-TUg"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vUq-Od-mf0"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wPh-wf-UER"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zf0-uj-WLq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

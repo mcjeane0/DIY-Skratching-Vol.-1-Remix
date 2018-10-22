@@ -11,6 +11,7 @@ import CoreData
 import AVKit
 import AVFoundation
 import Speech
+import MediaPlayer
 
 class ThudRumbleVideoClip {
 
@@ -381,7 +382,10 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(lastVideoWatched,looped: false) { (completed) in
             loadTrackForVideo(selectedTrack)
             queuePlayer?.play()
-            queuePlayer?.rate = playbackRate
+            DispatchQueue.main.async {
+                self.queuePlayer?.rate = self.playbackRate
+            }
+            
             
         }
         
@@ -489,6 +493,9 @@ class QBot: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
         loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
             queuePlayer?.play()
+            DispatchQueue.main.async {
+                self.queuePlayer?.rate = self.playbackRate
+            }
         }
     }
 
@@ -502,6 +509,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                    self.queuePlayer?.pause()
                     self.queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
                     self.queuePlayer?.play()
+                    DispatchQueue.main.async {
+                        self.queuePlayer?.rate = self.playbackRate
+                    }
                 }
             }
         }
@@ -632,11 +642,17 @@ class QBot: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        let nowPlayingInfo = [MPMediaItemPropertyTitle:"DIY Skratching Vol 1"]
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
         
     }
 

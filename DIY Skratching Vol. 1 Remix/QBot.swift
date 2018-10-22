@@ -423,7 +423,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 return false
             }.first
             if matchingAngleVideo != nil {
-                asset = AVAsset(url: matchingVideo!.url)
+                asset = AVAsset(url: matchingAngleVideo!.url)
                 let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
                 let audioTracks = asset!.tracks
                 playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
@@ -431,7 +431,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
                 
                 
-                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: chapters.last?.timeRange ?? CMTimeRange.invalid)
+                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
                 
                 if matchingVideo!.loop != nil {
                     playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)

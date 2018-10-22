@@ -65,6 +65,7 @@ extension QBot : FaceDelegate {
             break
         case .ended, .cancelled:
             DispatchQueue.main.async {
+                
                 if let currentRate = self.queuePlayer?.rate {
                     let product = Float(gestureRecognizer.scale)
                     let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
@@ -72,7 +73,7 @@ extension QBot : FaceDelegate {
                     self.playbackRate = greaterThanMinimumAndLessThanMaximumProduct
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
                     //self.queuePlayer?.rate = nextRate
-                    
+                    face.dispatchText("📶", for: 1.0)
                     
                 }
             }

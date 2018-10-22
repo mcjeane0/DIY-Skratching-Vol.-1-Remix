@@ -473,51 +473,89 @@ class QBot: UIResponder, UIApplicationDelegate {
         var name : String = string
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
             name = "\(string) Angle 1"
-
-        }
-        let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
-            if video.name == name {
-                return true
-            }
-            else {
-                return false
-            }
-        }.first
-        if matchingVideo != nil {
-            let matchingAngleName = "\(string) Angle \(selectedAngle)"
-            let matchingAngleVideo = matchingVideo!.angles.filter { (video) -> Bool in
-                if video.name == matchingAngleName {
+            let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
+                if video.name == name {
                     return true
                 }
-                return false
-            }.first
-            if matchingAngleVideo != nil {
-                asset = AVAsset(url: matchingAngleVideo!.url)
-                let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-                let audioTracks = asset!.tracks
-                playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
-                playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
-                queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                
-                
-                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
-                
-                if matchingVideo!.loop != nil {
-                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
-                }
                 else {
-                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
+                    return false
                 }
-                
-                if !looped{
-                    NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+                }.first
+            if matchingVideo != nil {
+                let matchingAngleName = "\(string) Angle \(selectedAngle)"
+                let matchingAngleVideo = matchingVideo!.angles.filter { (video) -> Bool in
+                    if video.name == matchingAngleName {
+                        return true
+                    }
+                    return false
+                    }.first
+                if matchingAngleVideo != nil {
+                    asset = AVAsset(url: matchingAngleVideo!.url)
+                    let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+                    let audioTracks = asset!.tracks
+                    playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
+                    playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
+                    queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
-                    playerLooper?.disableLooping()
+                    
+                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
+                    
+                    if matchingVideo!.loop != nil {
+                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
+                    }
+                    else {
+                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
+                    }
+                    
+                    if !looped{
+                        NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+                        
+                        playerLooper?.disableLooping()
+                    }
+                    viewController.setLayerPlayerLooper(queuePlayer!)
+                    
+                    completion(true)
                 }
-                viewController.setLayerPlayerLooper(queuePlayer!)
-                
-                completion(true)
+        }
+            else {
+                let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
+                    if video.name == name {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                    }.first
+                if matchingVideo != nil {
+                    
+                        asset = AVAsset(url: matchingAngleVideo!.url)
+                        let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+                        let audioTracks = asset!.tracks
+                        playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
+                        playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
+                        queuePlayer = AVQueuePlayer(playerItem: playerItem)
+                        
+                        
+                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
+                        
+                        if matchingVideo!.loop != nil {
+                            playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
+                        }
+                        else {
+                            playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
+                        }
+                        
+                        if !looped{
+                            NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+                            
+                            playerLooper?.disableLooping()
+                        }
+                        viewController.setLayerPlayerLooper(queuePlayer!)
+                        
+                        completion(true)
+                    
             }
+        
         }
         else {
             completion(false)

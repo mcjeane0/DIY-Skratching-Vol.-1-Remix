@@ -73,7 +73,7 @@ extension QBot : FaceDelegate {
                     self.playbackRate = greaterThanMinimumAndLessThanMaximumProduct
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
                     //self.queuePlayer?.rate = nextRate
-                    face.dispatchText("📶", for: 1.0)
+                    self.face.dispatchText("📶", for: 1.0)
                     
                 }
             }

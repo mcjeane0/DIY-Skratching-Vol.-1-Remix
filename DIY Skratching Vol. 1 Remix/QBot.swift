@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import AVKit
-
+import Speech
 
 class ThudRumbleVideoClip {
 
@@ -151,9 +151,17 @@ extension QBot : FaceDelegate {
 
 class QBot: UIResponder, UIApplicationDelegate {
     
+    
+    
+    var speechRecognitionRecorder : AVAudioRecorder?
+    var speechRecognizer : SFSpeechRecognizer = SFSpeechRecognizer(locale: Locale.current)!
+    
+    
+    var speechSynthesizer : AVSpeechSynthesizer = AVSpeechSynthesizer()
+    
     var lastVideoWatched : String {
         get {
-            return UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) ?? "baby"
+            return UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) ?? SkratchName.baby.rawValue
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Key.lastVideoWatched.rawValue)
@@ -180,7 +188,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var lastSkratchVideo : String {
         get {
-            return UserDefaults.standard.string(forKey: Key.lastSkratchVideoWatched.rawValue) ?? "baby"
+            return UserDefaults.standard.string(forKey: Key.lastSkratchVideoWatched.rawValue) ?? SkratchName.baby.rawValue
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Key.lastSkratchVideoWatched.rawValue)
@@ -209,13 +217,14 @@ class QBot: UIResponder, UIApplicationDelegate {
     var playerLooper : AVPlayerLooper?
     var queuePlayer : AVQueuePlayer?
     var playerItem : AVPlayerItem?
+    var asset : AVAsset?
     var window: UIWindow?
 
-    var skratchLoops : [String:CMTimeRange] = ["Baby":CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)),"Flare":CMTimeRange(start: CMTime(seconds: 133, preferredTimescale: 1), end: CMTime(seconds: 166, preferredTimescale: 1)),"Crabs (Crepes)":CMTimeRange(start: CMTime(seconds: 100, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)),"Swipes":CMTimeRange(start: CMTime(seconds: 61, preferredTimescale: 1), end: CMTime(seconds: 80, preferredTimescale: 1)),"Waves":CMTimeRange(start: CMTime(seconds: 58, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)),"Zig Zags":CMTimeRange(start: CMTime(seconds: 50, preferredTimescale: 1), end: CMTime(seconds: 69, preferredTimescale: 1)), "Clover Tears":CMTimeRange(start: CMTime(seconds: 63, preferredTimescale: 1), end: CMTime(seconds: 81, preferredTimescale: 1)), "Needle Dropping":CMTimeRange(start: CMTime(seconds: 81, preferredTimescale: 1), end: CMTime(seconds: 109, preferredTimescale: 1)), "Scribbles":CMTimeRange(start: CMTime(seconds: 90, preferredTimescale: 1), end: CMTime(seconds: 137, preferredTimescale: 1)), "Phazers":CMTimeRange(start: CMTime(seconds: 44, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)), "Lazers":CMTimeRange(start: CMTime(seconds: 64, preferredTimescale: 1), end: CMTime(seconds: 85, preferredTimescale: 1)), "Chirp Flare":CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)), "Chirps":CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 103, preferredTimescale: 1)), "Drags":CMTimeRange(start: CMTime(seconds: 54, preferredTimescale: 1), end: CMTime(seconds: 94, preferredTimescale: 1)), "Transformer":CMTimeRange(start: CMTime(seconds: 95, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)), "Tip":CMTimeRange(start: CMTime(seconds: 45, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)), "Tears":CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 121, preferredTimescale: 1)), "Dicing":CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 124, preferredTimescale: 1)), "Marches":CMTimeRange(start: CMTime(seconds: 71, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)), "Reverse Cutting":CMTimeRange(start: CMTime(seconds: 47, preferredTimescale: 1), end: CMTime(seconds: 93, preferredTimescale: 1)), "Cutting":CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)), "Long-short Tip Tears":CMTimeRange(start: CMTime(seconds: 85, preferredTimescale: 1), end: CMTime(seconds: 122, preferredTimescale: 1)), "1-Click Flare":CMTimeRange(start: CMTime(seconds: 111, preferredTimescale: 1), end: CMTime(seconds: 156, preferredTimescale: 1)), "Fades":CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)), "2-Click Flare":CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 112, preferredTimescale: 1))]
+    var skratchLoops : [String:CMTimeRange] = [SkratchName.baby.rawValue:CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)),SkratchName.flare.rawValue:CMTimeRange(start: CMTime(seconds: 133, preferredTimescale: 1), end: CMTime(seconds: 166, preferredTimescale: 1)),SkratchName.crabsCrepes.rawValue:CMTimeRange(start: CMTime(seconds: 100, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)),SkratchName.swipes.rawValue:CMTimeRange(start: CMTime(seconds: 61, preferredTimescale: 1), end: CMTime(seconds: 80, preferredTimescale: 1)),SkratchName.waves.rawValue:CMTimeRange(start: CMTime(seconds: 58, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)),"Zig Zags":CMTimeRange(start: CMTime(seconds: 50, preferredTimescale: 1), end: CMTime(seconds: 69, preferredTimescale: 1)), "Clover Tears":CMTimeRange(start: CMTime(seconds: 63, preferredTimescale: 1), end: CMTime(seconds: 81, preferredTimescale: 1)), "Needle Dropping":CMTimeRange(start: CMTime(seconds: 81, preferredTimescale: 1), end: CMTime(seconds: 109, preferredTimescale: 1)), "Scribbles":CMTimeRange(start: CMTime(seconds: 90, preferredTimescale: 1), end: CMTime(seconds: 137, preferredTimescale: 1)), "Phazers":CMTimeRange(start: CMTime(seconds: 44, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)), "Lazers":CMTimeRange(start: CMTime(seconds: 64, preferredTimescale: 1), end: CMTime(seconds: 85, preferredTimescale: 1)), "Chirp Flare":CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)), "Chirps":CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 103, preferredTimescale: 1)), "Drags":CMTimeRange(start: CMTime(seconds: 54, preferredTimescale: 1), end: CMTime(seconds: 94, preferredTimescale: 1)), "Transformer":CMTimeRange(start: CMTime(seconds: 95, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)), "Tip":CMTimeRange(start: CMTime(seconds: 45, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)), "Tears":CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 121, preferredTimescale: 1)), "Dicing":CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 124, preferredTimescale: 1)), "Marches":CMTimeRange(start: CMTime(seconds: 71, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)), SkratchName.reverseCutting.rawValue:CMTimeRange(start: CMTime(seconds: 47, preferredTimescale: 1), end: CMTime(seconds: 93, preferredTimescale: 1)), SkratchName.cutting.rawValue:CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)), "Long-short Tip Tears":CMTimeRange(start: CMTime(seconds: 85, preferredTimescale: 1), end: CMTime(seconds: 122, preferredTimescale: 1)), "1-Click Flare":CMTimeRange(start: CMTime(seconds: 111, preferredTimescale: 1), end: CMTime(seconds: 156, preferredTimescale: 1)), "Fades":CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)), "2-Click Flare":CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 112, preferredTimescale: 1))]
     
-    var skratchNames = ["Baby","Flare","Crabs (Crepes)","Swipes","Waves","Zig Zags", "Clover Tears", "Needle Dropping", "Scribbles", "Phazers", "Lazers", "Chirp Flare", "Chirps", "Drags", "Transformer", "Tip", "Tears", "Dicing", "Marches", "Reverse Cutting", "Cutting", "Long-short Tip Tears", "1-Click Flare", "Fades", "2-Click Flare"]
+    var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue,SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue,SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.lazers.rawValue,SkratchName.phazers.rawValue,SkratchName.scribbles.rawValue,SkratchName.fades.rawValue,SkratchName.cloverTears.rawValue,SkratchName.needleDropping.rawValue,SkratchName.zigZags.rawValue,SkratchName.waves.rawValue,SkratchName.swipes.rawValue,SkratchName.flare.rawValue,SkratchName.twoClickFlare.rawValue,SkratchName.crabsCrepes.rawValue]
     
-    var battleNames = ["Battle Football", "Battle Smiley", "Battle Bunny", "Battle Spiderman", "Battle Gasmask", "Battle Devil", "Q-Bert Freestyle"]
+    var battleNames = ["Battle Devil", "Battle Football", "Battle Gasmask", "Battle Spiderman", "Battle Smiley", "Battle Bunny", "Q-Bert Freestyle"]
     
     var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping", "Getting better adhesion","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
     
@@ -300,25 +309,29 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     
-    func loadSkratchAssetForName(_ name:String,loop:CMTimeRange){
-        NSLog("\(name)")
-        let babyURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
-        //let baby2URL = Bundle.main.url(forResource: "\(name)2", withExtension: "m4v")!
-        //let baby3URL = Bundle.main.url(forResource: "\(name)3", withExtension: "m4v")!
-        //let baby4URL = Bundle.main.url(forResource: "\(name)4", withExtension: "m4v")!
+    func loadSkratchAssetForName(_ string:String,loop:CMTimeRange){
+        NSLog("\(string)")
+        let angle1 = "\(string) Angle 1"
+        let angle2 = "\(string) Angle 2"
+        let angle3 = "\(string) Angle 3"
+        let angle4 = "\(string) Angle 4"
+        let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
+        let angle2URL = Bundle.main.url(forResource: angle2, withExtension: "m4v")!
+        let angle3URL = Bundle.main.url(forResource: angle3, withExtension: "m4v")!
+        let angle4URL = Bundle.main.url(forResource: angle4, withExtension: "m4v")!
+
+        
+        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [angle2,angle3,angle4], tracks: [], url: angle1URL)
+        let angle2Video = ThudRumbleVideoClip(name: angle2, loop: loop, angles: [angle3,angle4,angle1], tracks: [], url: angle2URL)
+        let angle3Video = ThudRumbleVideoClip(name: angle3, loop: loop, angles: [angle4,angle1,angle2], tracks: [], url: angle3URL)
+        let angle4Video = ThudRumbleVideoClip(name: angle4, loop: loop, angles: [angle1,angle2,angle3], tracks: [], url: angle4URL)
         
         
-        let babyVideo = ThudRumbleVideoClip(name: name, loop: loop, angles: [] /*["\(name)2","\(name)3","\(name)4"]*/, tracks: [], url: babyURL)
-        //let baby2Video = ThudRumbleVideoClip(name: "\(name)2", loop: loop, angles: ["\(name)3","\(name)4",name], tracks: [], url: baby2URL)
-        //let baby3Video = ThudRumbleVideoClip(name: "\(name)3", loop: loop, angles: ["\(name)4",name,"\(name)2"], tracks: [], url: baby3URL)
-        //let baby4Video = ThudRumbleVideoClip(name: "\(name)4", loop: loop, angles: [name,"\(name)2","\(name)3"], tracks: [], url: baby4URL)
         
-        
-        videos[Key.Skratches.rawValue]?.append(babyVideo)
-        //videos[Key.Skratches.rawValue]?.append(baby2Video)
-        //videos[Key.Skratches.rawValue]?.append(baby3Video)
-        //videos[Key.Skratches.rawValue]?.append(baby4Video)
-        
+        videos[Key.Skratches.rawValue]?.append(angle1Video)
+        videos[Key.Skratches.rawValue]?.append(angle2Video)
+        videos[Key.Skratches.rawValue]?.append(angle3Video)
+        videos[Key.Skratches.rawValue]?.append(angle4Video)
         
     }
 
@@ -342,6 +355,16 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func loadTrackForVideo(_ trackNumber:Int){
+        if lastVideoWatched.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+            if trackNumber > 0 && trackNumber < 4{
+                let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
+                let selectedOption = selectionGroup.options[trackNumber-1]
+                queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
+            }
+        }
+    }
+    
     func loadVideoByName(_ string:String,looped:Bool,completion:(_ completed:Bool)->()){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
@@ -349,31 +372,47 @@ class QBot: UIResponder, UIApplicationDelegate {
             return value
         }
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
+        var name : String = string
+        if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+            name = "\(string) Angle \(selectedAngle)"
+
+        }
         let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
-            if video.name == string {
+            if video.name == name {
                 return true
             }
             else {
                 return false
             }
         }.first
+        if matchingVideo == nil {
+            
+        }
         if matchingVideo != nil {
-            playerItem = AVPlayerItem(url: matchingVideo!.url)
+            asset = AVAsset(url: matchingVideo!.url)
+            let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+            let audioTracks = asset!.tracks
+            playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
             playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
             queuePlayer = AVQueuePlayer(playerItem: playerItem)
 
+            
+            playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: chapters.last?.timeRange ?? CMTimeRange.invalid)
+            /*
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
             }
             else {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
             }
+            */
             if !looped{
                 NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
 
                 playerLooper?.disableLooping()
             }
             viewController.setLayerPlayerLooper(queuePlayer!)
+            
             completion(true)
         }
         else {

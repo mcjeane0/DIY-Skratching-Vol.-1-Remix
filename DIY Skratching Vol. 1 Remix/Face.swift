@@ -62,6 +62,12 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         if gestureRecognizer == twoFingerTap && otherGestureRecognizer == pinch {
             return true
         }
+        else if gestureRecognizer == threeFingerTap && otherGestureRecognizer == twoFingerTap {
+            return true
+        }
+        else if gestureRecognizer == twoFingerTap && otherGestureRecognizer == tap {
+            return true
+        }
         return false
     }
     

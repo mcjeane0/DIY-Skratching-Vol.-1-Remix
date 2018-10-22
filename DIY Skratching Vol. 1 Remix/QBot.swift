@@ -349,7 +349,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             break
         }
         
-        loadVideoByName(lastVideoWatched,looped: true) { (completed) in
+        loadVideoByName(lastVideoWatched,looped: false) { (completed) in
             loadTrackForVideo(selectedTrack)
             queuePlayer?.play()
             queuePlayer?.rate = playbackRate
@@ -445,13 +445,17 @@ class QBot: UIResponder, UIApplicationDelegate {
                 break
             }
         }
+        if let playerLooper = object as? AVPlayerLooper {
+            NSLog("loopCount:\(playerLooper.loopCount)")
+        }
     }
 
     @objc func playbackEnded(says notification:Notification) {
-        if let loopCount = playerLooper?.loopCount {
-            NSLog("loopCount: \(loopCount)")
-        }
+        
         NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
+        loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
+            queuePlayer?.play()
+        }
     }
 
     func loadTrackForVideo(_ trackNumber:Int){
@@ -519,6 +523,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         
                         playerLooper?.disableLooping()
                     }
+                    playerLooper?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
                     viewController.setLayerPlayerLooper(queuePlayer!)
                     
                     completion(true)
@@ -562,6 +567,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                             
                             playerLooper?.disableLooping()
                         }
+                        playerLooper?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
                         viewController.setLayerPlayerLooper(queuePlayer!)
                     
                         completion(true)

@@ -15,7 +15,7 @@ class ThudRumbleVideoClip {
 
     var name : String
     var loop : CMTimeRange?
-    var angles : [String]
+    var angles : [ThudRumbleVideoClip]
     var tracks : [String]
     var url : URL
     var rate : Float {
@@ -43,7 +43,7 @@ class ThudRumbleVideoClip {
         }
     }
 
-    init(name:String,loop:CMTimeRange?,angles:[String],tracks:[String],url:URL){
+    init(name:String,loop:CMTimeRange?,angles:[ThudRumbleVideoClip],tracks:[String],url:URL){
         self.name = name
         self.loop = loop
         self.angles = angles
@@ -346,18 +346,18 @@ class QBot: UIResponder, UIApplicationDelegate {
         let angle3URL = Bundle.main.url(forResource: angle3, withExtension: "m4v")!
         let angle4URL = Bundle.main.url(forResource: angle4, withExtension: "m4v")!
 
+        let angle2Video = ThudRumbleVideoClip(name: angle2, loop: loop, angles: [], tracks: [], url: angle2URL)
+        let angle3Video = ThudRumbleVideoClip(name: angle3, loop: loop, angles: [], tracks: [], url: angle3URL)
+        let angle4Video = ThudRumbleVideoClip(name: angle4, loop: loop, angles: [], tracks: [], url: angle4URL)
+        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [angle2Video,angle3Video,angle4Video], tracks: [], url: angle1URL)
+        angle2Video.angles = [angle3Video,angle4Video,angle1Video]
+        angle3Video.angles = [angle4Video,angle1Video,angle2Video]
+        angle4Video.angles = [angle1Video,angle2Video,angle3Video]
         
-        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [angle2,angle3,angle4], tracks: [], url: angle1URL)
-        let angle2Video = ThudRumbleVideoClip(name: angle2, loop: loop, angles: [angle3,angle4,angle1], tracks: [], url: angle2URL)
-        let angle3Video = ThudRumbleVideoClip(name: angle3, loop: loop, angles: [angle4,angle1,angle2], tracks: [], url: angle3URL)
-        let angle4Video = ThudRumbleVideoClip(name: angle4, loop: loop, angles: [angle1,angle2,angle3], tracks: [], url: angle4URL)
         
         
         
         videos[Key.Skratches.rawValue]?.append(angle1Video)
-        videos[Key.Skratches.rawValue]?.append(angle2Video)
-        videos[Key.Skratches.rawValue]?.append(angle3Video)
-        videos[Key.Skratches.rawValue]?.append(angle4Video)
         
     }
 
@@ -403,7 +403,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
         var name : String = string
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-            name = "\(string) Angle \(selectedAngle)"
+            name = "\(string) Angle 1"
 
         }
         let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
@@ -414,35 +414,41 @@ class QBot: UIResponder, UIApplicationDelegate {
                 return false
             }
         }.first
-        if matchingVideo == nil {
-            
-        }
         if matchingVideo != nil {
-            asset = AVAsset(url: matchingVideo!.url)
-            let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-            let audioTracks = asset!.tracks
-            playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
-            playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
-            queuePlayer = AVQueuePlayer(playerItem: playerItem)
-
-            
-            playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: chapters.last?.timeRange ?? CMTimeRange.invalid)
-            
-            if matchingVideo!.loop != nil {
-                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
+            let matchingAngleName = "\(string) Angle \(selectedAngle)"
+            let matchingAngleVideo = matchingVideo!.angles.filter { (video) -> Bool in
+                if video.name == matchingAngleName {
+                    return true
+                }
+                return false
+            }.first
+            if matchingAngleVideo != nil {
+                asset = AVAsset(url: matchingVideo!.url)
+                let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+                let audioTracks = asset!.tracks
+                playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
+                playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
+                queuePlayer = AVQueuePlayer(playerItem: playerItem)
+                
+                
+                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: chapters.last?.timeRange ?? CMTimeRange.invalid)
+                
+                if matchingVideo!.loop != nil {
+                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
+                }
+                else {
+                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
+                }
+                
+                if !looped{
+                    NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
+                    
+                    playerLooper?.disableLooping()
+                }
+                viewController.setLayerPlayerLooper(queuePlayer!)
+                
+                completion(true)
             }
-            else {
-                playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
-            }
-            
-            if !looped{
-                NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-
-                playerLooper?.disableLooping()
-            }
-            viewController.setLayerPlayerLooper(queuePlayer!)
-            
-            completion(true)
         }
         else {
             completion(false)

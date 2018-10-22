@@ -421,9 +421,10 @@ class QBot: UIResponder, UIApplicationDelegate {
         let angle3Video = ThudRumbleVideoClip(name: angle3, loop: loop, angles: [], tracks: [], url: angle3URL)
         let angle4Video = ThudRumbleVideoClip(name: angle4, loop: loop, angles: [], tracks: [], url: angle4URL)
         let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [angle2Video,angle3Video,angle4Video], tracks: [], url: angle1URL)
-        angle2Video.angles = [angle3Video,angle4Video,angle1Video]
-        angle3Video.angles = [angle4Video,angle1Video,angle2Video]
-        angle4Video.angles = [angle1Video,angle2Video,angle3Video]
+        angle1Video.angles.append(angle1Video)
+        angle2Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
+        angle3Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
+        angle4Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
         
         
         

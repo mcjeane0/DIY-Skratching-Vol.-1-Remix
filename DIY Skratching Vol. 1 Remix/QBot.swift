@@ -497,9 +497,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                     }.first
                 if matchingAngleVideo != nil {
                     asset = AVAsset(url: matchingAngleVideo!.url)
-                    let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-                    let audioTracks = asset!.tracks
-                    playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
+                    //let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+                    //let audioTracks = asset!.tracks
+                    playerItem = AVPlayerItem(url: matchingAngleVideo!.url)
                     playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                     queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
@@ -541,7 +541,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         asset = AVAsset(url: matchingVideo!.url)
                         let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
                         let audioTracks = asset!.tracks
-                        playerItem = AVPlayerItem(asset: asset!, automaticallyLoadedAssetKeys: nil)
+                        playerItem = AVPlayerItem(url: matchingVideo!.url)
                         playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     

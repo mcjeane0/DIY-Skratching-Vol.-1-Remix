@@ -349,7 +349,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             break
         }
         
-        loadVideoByName(lastVideoWatched,looped: false) { (completed) in
+        loadVideoByName(lastVideoWatched,looped: true) { (completed) in
             loadTrackForVideo(selectedTrack)
             queuePlayer?.play()
             queuePlayer?.rate = playbackRate

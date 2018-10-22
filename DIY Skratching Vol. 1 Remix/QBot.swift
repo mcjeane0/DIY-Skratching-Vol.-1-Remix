@@ -503,8 +503,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                     playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                     queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
-                    
+                    /*
                     playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
+                    */
                     
                     if matchingVideo!.loop != nil {
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
@@ -545,8 +546,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                         playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
-                    
+                    /*
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
+                    */
                     
                         if matchingVideo!.loop != nil {
                             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)

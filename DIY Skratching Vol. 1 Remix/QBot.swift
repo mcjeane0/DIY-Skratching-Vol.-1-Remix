@@ -141,6 +141,9 @@ extension QBot : FaceDelegate {
         }
         else {
             queuePlayer?.play()
+            DispatchQueue.main.async {
+                self.queuePlayer?.rate = self.playbackRate
+            }
             face.dispatchText("▶️", for: 3.0)
         }
     }

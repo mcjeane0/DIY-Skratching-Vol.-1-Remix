@@ -93,10 +93,24 @@ extension QBot : FaceDelegate {
             let nextTrack = selectedTrack + 1 > 3 ? 1 : selectedTrack + 1
             selectedTrack = nextTrack
             loadTrackForVideo(nextTrack)
+            switch nextTrack {
+            case 1:
+                face.dispatchText("1️⃣", for: 1.0)
+                break
+            case 2:
+                face.dispatchText("2️⃣", for: 1.0)
+                break
+            case 3:
+                face.dispatchText("3️⃣", for: 1.0)
+                break
+            default:
+                break
+            }
         }
     }
     
     func handleTwoFingerTap() {
+        face.dispatchText("🎦", for: 0.5)
         if lastVideoWatched == lastSkratchVideo {
             let nextAngle = selectedAngle + 1 > 4 ? 1 : selectedAngle + 1
             selectedAngle = nextAngle
@@ -119,13 +133,16 @@ extension QBot : FaceDelegate {
     func handleTap() {
         if let rate = queuePlayer?.rate, rate > 1/64 {
             queuePlayer?.pause()
+            face.dispatchText("⏸", for: 1.0)
         }
         else {
             queuePlayer?.play()
+            face.dispatchText("▶️", for: 1.0)
         }
     }
     
     func handleSwipeUp() {
+        face.dispatchText("⏫", for: 1.0)
         let maxSectionIndex = sections.count - 1
         let incrementedSectionIndex = self.faceIndexPath.section + 1
         let nextPossibleSectionIndex = incrementedSectionIndex > maxSectionIndex ? 0 : incrementedSectionIndex
@@ -155,6 +172,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeDown() {
+        face.dispatchText("⏬", for: 1.0)
         let maxSectionIndex = sections.count - 1
         let decrementedSectionIndex = self.faceIndexPath.section - 1
         let nextPossibleSectionIndex = decrementedSectionIndex < 0 ? maxSectionIndex : decrementedSectionIndex
@@ -184,6 +202,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeLeft() {
+        face.dispatchText("⏮", for: 1.0)
         let currentSection = sections[self.faceIndexPath.section]
         let maxItemCount = videos[currentSection]!.count-1
         let incrementedIndex = self.faceIndexPath.row + 1
@@ -195,6 +214,7 @@ extension QBot : FaceDelegate {
     }
     
     func handleSwipeRight() {
+        face.dispatchText("⏭", for: 1.0)
         let currentSection = sections[self.faceIndexPath.section]
         let maxItemCount = videos[currentSection]!.count - 1
         let decrementedIndex = self.faceIndexPath.row - 1
@@ -202,6 +222,7 @@ extension QBot : FaceDelegate {
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()
+        
         
     }
 
@@ -280,7 +301,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var selectedTrack : Int = 1
     var selectedAngle : Int = 2
 
-    var viewController : Face!
+    var face : Face!
 
 
     var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[],
@@ -501,9 +522,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                     }.first
                 if matchingAngleVideo != nil {
                     asset = AVAsset(url: matchingAngleVideo!.url)
-                    //let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-                    //let audioTracks = asset!.tracks
-                    playerItem = AVPlayerItem(url: matchingAngleVideo!.url)
+                    let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
+                    let audioTracks = asset!.tracks
+                    playerItem = AVPlayerItem(asset: asset!)
                     playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                     queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
@@ -524,7 +545,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         playerLooper?.disableLooping()
                     }
                     playerLooper?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
-                    viewController.setLayerPlayerLooper(queuePlayer!)
+                    face.setLayerPlayerLooper(queuePlayer!)
                     
                     completion(true)
                 }
@@ -547,7 +568,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         asset = AVAsset(url: matchingVideo!.url)
                         let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
                         let audioTracks = asset!.tracks
-                        playerItem = AVPlayerItem(url: matchingVideo!.url)
+                        playerItem = AVPlayerItem(asset: asset!)
                         playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
                     
@@ -568,7 +589,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                             playerLooper?.disableLooping()
                         }
                         playerLooper?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
-                        viewController.setLayerPlayerLooper(queuePlayer!)
+                        face.setLayerPlayerLooper(queuePlayer!)
                     
                         completion(true)
                     
@@ -582,7 +603,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func faceDidAppear(_ notification:Notification){
         if let viewController = notification.object as? Face {
             viewController.delegate = self
-            self.viewController = viewController
+            self.face = viewController
             loadVideoAtFaceIndexPath()
         }
     }

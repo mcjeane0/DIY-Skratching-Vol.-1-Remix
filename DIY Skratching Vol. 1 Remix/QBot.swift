@@ -375,6 +375,9 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
 
     @objc func playbackEnded(says notification:Notification) {
+        if let loopCount = playerLooper?.loopCount {
+            NSLog("loopCount: \(loopCount)")
+        }
         NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
         loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
             queuePlayer?.play()
@@ -424,14 +427,14 @@ class QBot: UIResponder, UIApplicationDelegate {
 
             
             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: chapters.last?.timeRange ?? CMTimeRange.invalid)
-            /*
+            
             if matchingVideo!.loop != nil {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
             }
             else {
                 playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem:playerItem!)
             }
-            */
+            
             if !looped{
                 NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
 

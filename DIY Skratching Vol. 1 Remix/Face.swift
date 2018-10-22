@@ -81,20 +81,45 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func handleThreeFingerTap(_ gestureRecognizer:UITapGestureRecognizer){
-        delegate?.handleThreeFingerTap()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleThreeFingerTap()
+            break
+        default:
+            break
+        }
     }
     
     @objc func handleTwoFingerTap(_ gestureRecognizer:UITapGestureRecognizer){
-        delegate?.handleTwoFingerTap()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleTwoFingerTap()
+            break
+        default:
+            break
+        }
     }
     
     @objc func handleTap(_ gestureRecognizer:UITapGestureRecognizer){
-        delegate?.handleTap()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleTap()
+            break
+        default:
+            break
+        }
     }
     
     @objc func handleSwipeUp(_ gestureRecognizer:UISwipeGestureRecognizer){
         // MARK: Change video category
-        delegate?.handleSwipeUp()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleSwipeUp()
+
+            break
+        default:
+            break
+        }
 
         
         
@@ -102,19 +127,36 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func handleSwipeDown(_ gestureRecognizer:UISwipeGestureRecognizer){
         // MARK: Change video category
-        
-        delegate?.handleSwipeDown()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleSwipeDown()
+
+            break
+        default:
+            break
+        }
     }
     
     @objc func handleSwipeLeft(_ gestureRecognizer:UISwipeGestureRecognizer){
-        
-        delegate?.handleSwipeLeft()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleSwipeLeft()
+
+            break
+        default:
+            break
+        }
         
     }
     
     @objc func handleSwipeRight(_ gestureRecognizer:UISwipeGestureRecognizer){
-        
-        delegate?.handleSwipeRight()
+        switch gestureRecognizer.state {
+        case .ended:
+            delegate?.handleSwipeRight()
+            break
+        default:
+            break
+        }
         
     }
 

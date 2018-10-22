@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-uU-9N8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QbS-tq-SvO">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
@@ -29,6 +33,10 @@
                         <constraints>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5SY-zi-8wq"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8hF-lM-5Pf"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HU2-m3-NKy"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JKU-cN-cV5"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VwG-0s-WXa"/>
+                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="dfu-aS-UCe"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="nau-D0-TUg"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zf0-uj-WLq"/>
                         </constraints>
@@ -36,6 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="videoLabel" destination="QbS-tq-SvO" id="DLz-Db-2Xg"/>
+                        <outlet property="videoView" destination="ZJA-uU-9N8" id="rox-Yg-rHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -24,6 +24,7 @@ protocol FaceDelegate {
 
 class Face: UIViewController, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var videoView: UIView!
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -198,7 +199,7 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
 
     func setLayerPlayerLooper(_ player:AVQueuePlayer) {
         videoLayer.player = player
-        self.view.layer.addSublayer(videoLayer)
+        self.videoView.layer.addSublayer(videoLayer)
     }
 
     var viewCenter : CGPoint!
@@ -207,7 +208,7 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewWillLayoutSubviews() {
-        videoLayer.frame = self.view.frame
+        videoLayer.frame = self.videoView.frame
         viewCenter = view.center
 
     }

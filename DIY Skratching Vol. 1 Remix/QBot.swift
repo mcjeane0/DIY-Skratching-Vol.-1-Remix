@@ -119,11 +119,14 @@ extension QBot : FaceDelegate {
             selectedAngle = nextAngle
             
             DispatchQueue.main.async {
-                self.queuePlayer?.pause()
                 let seekToTime = self.queuePlayer?.currentTime()
+                self.queuePlayer?.pause()
                 self.loadVideoAtFaceIndexPath()
                 if seekToTime != nil {
+                    self.queuePlayer?.pause()
                     self.queuePlayer?.seek(to: seekToTime!)
+                    self.queuePlayer?.play()
+                    self.queuePlayer?.rate = self.playbackRate
                 }
             }
         }
@@ -353,7 +356,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping", "Getting better adhesion","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
     
-    var sections = [Key.Skratches.rawValue,Key.Battles.rawValue,Key.EquipmentSetup.rawValue]
+    var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]
     
     func loadVideoAtFaceIndexPath(){
         

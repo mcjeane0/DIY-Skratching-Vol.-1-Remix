@@ -483,7 +483,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.async {
                self.queuePlayer?.rate = self.playbackRate
             }
-            face.dispatchText("\(playerLooper.loopCount)",for:3.0)
+            face.dispatchText("\(playerLooper.loopCount)",for:5.0)
             //
         }
     }

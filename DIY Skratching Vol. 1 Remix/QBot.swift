@@ -400,11 +400,11 @@ class QBot: UIResponder, UIApplicationDelegate {
             loadSkratchAssetForName(skratchName,loop:skratchLoops[skratchName]!)
             
         }
-        
+        /*
         for equipmentSetupName in equipmentSetupNames {
             loadEquipmentSetupAssetForName(equipmentSetupName)
         }
-        
+        */
         for battleName in battleNames {
             
             loadBattleAssetForName(battleName)

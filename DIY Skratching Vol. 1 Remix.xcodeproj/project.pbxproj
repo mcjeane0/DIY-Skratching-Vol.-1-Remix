@@ -1073,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = all;
+				ON_DEMAND_RESOURCES_PREFETCH_ORDER = all;
 				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-Remix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1094,7 +1094,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ON_DEMAND_RESOURCES_INITIAL_INSTALL_TAGS = all;
+				ON_DEMAND_RESOURCES_PREFETCH_ORDER = all;
 				PRODUCT_BUNDLE_IDENTIFIER = "party.wonderverse.DIY-Skratching-Vol--1-Remix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

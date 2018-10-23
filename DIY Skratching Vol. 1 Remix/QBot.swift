@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import AVKit
-import AVFoundation
 import MediaPlayer
 
 class ThudRumbleVideoClip {
@@ -632,12 +631,6 @@ class QBot: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)
-        let bundleResourceRequest = NSBundleResourceRequest(tags: Set<String>(arrayLiteral:"all"))
-        bundleResourceRequest.beginAccessingResources { (possibleError) in
-            if possibleError != nil {
-                NSLog("possibleError")
-            }
-        }
         loadAssetsFromBundleIntoTables()
         configureAudioSession()
         return true

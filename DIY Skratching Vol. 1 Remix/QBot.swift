@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import AVKit
 import AVFoundation
-import Speech
 import MediaPlayer
 
 class ThudRumbleVideoClip {
@@ -255,8 +254,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var speechRecognitionRecorder : AVAudioRecorder?
-    var speechRecognizer : SFSpeechRecognizer = SFSpeechRecognizer(locale: Locale.current)!
+
     
     
     var speechSynthesizer : AVSpeechSynthesizer = AVSpeechSynthesizer()

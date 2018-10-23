@@ -598,7 +598,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                     /*
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
                     */
-                    
+                    //
                         if matchingVideo!.loop != nil {
                             playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop!)
                         }

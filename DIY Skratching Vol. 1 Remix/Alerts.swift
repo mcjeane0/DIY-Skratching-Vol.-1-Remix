@@ -15,13 +15,14 @@ extension QBot {
         Play.firstSwipeUp.markUnfinished()
         Play.firstOneFingerTap.markUnfinished()
         Play.firstPinchIn.markUnfinished()
-        let welcomeAlert = UIAlertController(title: "Hello", message: "Would you like a brief tutorial on how to use this app?", preferredStyle: .alert)
+        let welcomeAlert = UIAlertController(title: "Would you like a brief tutorial?", message: "Learn how to use the app, through a brief tutorial.", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
             self.play = .beginningTutorial
             self.beginningTutorialAlert()
         }
         let noAction = UIAlertAction(title: "No", style: .default) { (action) in
             self.play = .training
+            self.face.enableAllGestures()
             self.loadVideoAtFaceIndexPath()
         }
         welcomeAlert.addAction(yesAction)
@@ -30,6 +31,7 @@ extension QBot {
     }
     
     func beginningTutorialAlert(){
+        face.disableAllGestures()
         let alert = UIAlertController(title: "So you want to learn how to scratch?", message: "Well first, you need to learn some gestures. What would you like to learn?", preferredStyle: .alert)
         let tapsAction = UIAlertAction(title: "Taps", style: .default) { (action) in
             self.play = .beginningTapsTutorial

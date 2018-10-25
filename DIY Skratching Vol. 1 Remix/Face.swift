@@ -141,11 +141,11 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func enableSwipeDown(){
-        swipeDown.isEnabled = false
+        swipeDown.isEnabled = true
     }
     
     func disableSwipeDown(){
-        swipeDown.isEnabled = true
+        swipeDown.isEnabled = false
     }
     
     func disableSwipes(){
@@ -204,8 +204,8 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     
     
-    func dispatchText(_ string:String, for seconds:Double=10.0){
-        UIView.transition(with: videoLabel, duration: 0.0, options: .curveLinear, animations: {
+    func dispatchText(_ string:String, for seconds:Double=60.0){
+        UIView.transition(with: videoLabel, duration: 0.0, options: .curveEaseIn, animations: {
             let strokeTextAttributes: [NSAttributedString.Key : Any] = [
                 .strokeColor : UIColor.black,
                 .foregroundColor : UIColor.white,

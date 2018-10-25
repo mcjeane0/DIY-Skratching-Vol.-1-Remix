@@ -133,6 +133,7 @@
 		FBADD67F217E27F900A5EB31 /* 2-Click Flare 39 Angle 4.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FBADD5FD217E27F900A5EB31 /* 2-Click Flare 39 Angle 4.m4v */; };
 		FBADD680217E27F900A5EB31 /* Flare 38 Angle 3.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FBADD5FE217E27F900A5EB31 /* Flare 38 Angle 3.m4v */; };
 		FBADD682217E27F900A5EB31 /* Lazers 15 Angle 2.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FBADD600217E27F900A5EB31 /* Lazers 15 Angle 2.m4v */; };
+		FBC68BA921812F1E006E7C8A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC68BA821812F1E006E7C8A /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +287,7 @@
 		FBADD5FD217E27F900A5EB31 /* 2-Click Flare 39 Angle 4.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "2-Click Flare 39 Angle 4.m4v"; path = "Video Files/2-Click Flare 39 Angle 4.m4v"; sourceTree = SOURCE_ROOT; };
 		FBADD5FE217E27F900A5EB31 /* Flare 38 Angle 3.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Flare 38 Angle 3.m4v"; path = "Video Files/Flare 38 Angle 3.m4v"; sourceTree = SOURCE_ROOT; };
 		FBADD600217E27F900A5EB31 /* Lazers 15 Angle 2.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lazers 15 Angle 2.m4v"; path = "Video Files/Lazers 15 Angle 2.m4v"; sourceTree = SOURCE_ROOT; };
+		FBC68BA821812F1E006E7C8A /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */,
+				FBC68BA821812F1E006E7C8A /* Alerts.swift */,
 				FBADD57D217E15FB00A5EB31 /* SkratchName.swift */,
 				FB78ABF5214C10030010039E /* QBot.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
@@ -794,6 +797,7 @@
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
 				FBADD57A217BC2C100A5EB31 /* Mouth.swift in Sources */,
 				FBADD576217BC2AF00A5EB31 /* Play.swift in Sources */,
+				FBC68BA921812F1E006E7C8A /* Alerts.swift in Sources */,
 				FBADD57C217BC2D200A5EB31 /* Ears.swift in Sources */,
 				FB1904C62154358B0092640A /* Key.swift in Sources */,
 				FBADD57E217E15FB00A5EB31 /* SkratchName.swift in Sources */,

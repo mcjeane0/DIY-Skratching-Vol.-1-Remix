@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import AVKit
 import MediaPlayer
+import Speech
 
 class ThudRumbleVideoClip {
 
@@ -54,7 +55,8 @@ class ThudRumbleVideoClip {
 
 }
 
-extension QBot : FaceDelegate {
+typealias Head = QBot
+extension Head : FaceDelegate {
 
     
     func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer){
@@ -67,7 +69,7 @@ extension QBot : FaceDelegate {
             break
         case .ended, .cancelled:
             DispatchQueue.main.async {
-                
+               
                 if let currentRate = self.queuePlayer?.rate {
                     let product = self.pinchFactor
                     let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
@@ -76,6 +78,21 @@ extension QBot : FaceDelegate {
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct
                     //self.queuePlayer?.rate = nextRate
                     self.face.dispatchText("📶", for: 3.0)
+                    
+                    switch self.play {
+                    case .beginningPinchOut:
+                        if self.pinchFactor >= 1.0 {
+                            self.completedPinchOutTutorialAlert()
+                        }
+                        break
+                    case .beginningPinchIn:
+                        if self.pinchFactor <= 1.0 {
+                            self.completedPinchInTutorialAlert()
+                        }
+                        break
+                    default:
+                        break
+                    }
                     
                 }
             }
@@ -109,6 +126,15 @@ extension QBot : FaceDelegate {
             default:
                 break
             }
+            
+            switch play {
+            case .beginningThreeFingerTap:
+                self.completedThreeFingerTapTutorialAlert()
+                break
+            default:
+                break
+            }
+            
         }
     }
     
@@ -129,6 +155,13 @@ extension QBot : FaceDelegate {
                     self.queuePlayer?.rate = self.playbackRate
                 }
             }
+            switch play {
+            case .beginningTwoFingerTap:
+                self.completedTwoFingerTapTutorialAlert()
+                break
+            default:
+                break
+            }
         }
     }
     
@@ -147,6 +180,13 @@ extension QBot : FaceDelegate {
                 self.queuePlayer?.rate = self.playbackRate
             }
             face.dispatchText("▶️", for: 3.0)
+        }
+        switch play {
+        case .beginningOneFingerTap:
+            self.completedOneFingerTapTutorialAlert()
+            break
+        default:
+            break
         }
     }
     
@@ -178,6 +218,15 @@ extension QBot : FaceDelegate {
         }
         
         loadVideoAtFaceIndexPath()
+        
+        switch play {
+        case .beginningVerticalSwipesTutorial:
+            completedVerticalSwipesAlert()
+            break
+        default:
+            break
+        }
+        
     }
     
     func handleSwipeDown() {
@@ -208,6 +257,13 @@ extension QBot : FaceDelegate {
         }
         
         loadVideoAtFaceIndexPath()
+        switch play {
+        case .beginningVerticalSwipesTutorial:
+            completedVerticalSwipesAlert()
+            break
+        default:
+            break
+        }
     }
     
     func handleSwipeLeft() {
@@ -219,7 +275,13 @@ extension QBot : FaceDelegate {
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()
-        
+        switch play {
+        case .beginningHorizontalSwipesTutorial:
+            completedHorizontalSwipesAlert()
+            break
+        default:
+            break
+        }
     }
     
     func handleSwipeRight() {
@@ -231,7 +293,13 @@ extension QBot : FaceDelegate {
         
         faceIndexPath = IndexPath(row: nextPossibleRowIndex, section: self.faceIndexPath.section)
         loadVideoAtFaceIndexPath()
-        
+        switch play {
+        case .beginningHorizontalSwipesTutorial:
+            completedHorizontalSwipesAlert()
+            break
+        default:
+            break
+        }
         
     }
 
@@ -241,6 +309,34 @@ extension QBot : FaceDelegate {
 
 class QBot: UIResponder, UIApplicationDelegate {
 
+    var play : Play {
+        get {
+            if let rawValue = UserDefaults.standard.string(forKey: Key.play.rawValue){
+                if let ripeValue = Play(rawValue:rawValue) {
+                    return ripeValue
+                }
+            }
+            return .appDownloadedFromAppStore
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Key.play.rawValue)
+        }
+    }
+    
+    var state : State {
+        get {
+            if let rawValue = UserDefaults.standard.string(forKey: Key.state.rawValue) {
+                if let ripeValue = State(rawValue: rawValue) {
+                    return ripeValue
+                }
+            }
+            return .hello
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: Key.state.rawValue)
+        }
+    }
+    
     var pinchFactor = 1.0
     
     var playbackRate : Float {
@@ -627,7 +723,16 @@ class QBot: UIResponder, UIApplicationDelegate {
         if let viewController = notification.object as? Face {
             viewController.delegate = self
             self.face = viewController
-            loadVideoAtFaceIndexPath()
+            switch play {
+            case .appDownloadedFromAppStore:
+                face.disableAllGestures()
+                appDownloadedFromAppStoreAlert()
+                break
+            default:
+                loadVideoAtFaceIndexPath()
+                break
+            }
+            
         }
     }
 //

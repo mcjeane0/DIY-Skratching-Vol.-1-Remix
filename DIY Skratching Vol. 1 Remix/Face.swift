@@ -59,6 +59,129 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
 
     var delegate : FaceDelegate?
 
+    func disableThreeFingerTap(){
+        threeFingerTap.isEnabled = false
+    }
+    
+    func enableThreeFingerTap(){
+        threeFingerTap.isEnabled = true
+        
+    }
+    
+    func disableTwoFingerTap(){
+        twoFingerTap.isEnabled = false
+    }
+    
+    func enableTwoFingerTap(){
+        twoFingerTap.isEnabled = true
+    }
+    
+    func disableOneFingerTap(){
+        tap.isEnabled = false
+    }
+    
+    func enableOneFingerTap(){
+        tap.isEnabled = true
+    }
+    
+    func enableTaps(){
+        enableOneFingerTap()
+        enableTwoFingerTap()
+        enableThreeFingerTap()
+    }
+    
+    func disableTaps(){
+        disableOneFingerTap()
+        disableTwoFingerTap()
+        disableThreeFingerTap()
+    }
+    
+    func enableHorizontalSwipes(){
+        enableSwipeLeft()
+        enableSwipeRight()
+    }
+    
+    func disableHorizontalSwipes(){
+        disableSwipeLeft()
+        disableSwipeRight()
+    }
+    
+    func enableVerticalSwipes(){
+        enableSwipeUp()
+        enableSwipeDown()
+    }
+    
+    func disableVerticalSwipes(){
+        disableSwipeDown()
+        disableSwipeUp()
+    }
+    
+    func enableSwipeRight(){
+        swipeRight.isEnabled = true
+    }
+    
+    func disableSwipeRight(){
+        swipeRight.isEnabled = false
+    }
+    
+    func enableSwipeLeft(){
+        swipeLeft.isEnabled = true
+    }
+    
+    func disableSwipeLeft(){
+        swipeLeft.isEnabled = false
+    }
+    
+    func enableSwipeUp(){
+        swipeUp.isEnabled = true
+    }
+    
+    func disableSwipeUp(){
+        swipeUp.isEnabled = false
+    }
+    
+    func enableSwipeDown(){
+        swipeDown.isEnabled = false
+    }
+    
+    func disableSwipeDown(){
+        swipeDown.isEnabled = true
+    }
+    
+    func disableSwipes(){
+        swipeUp.isEnabled = false
+        swipeDown.isEnabled = false
+        swipeLeft.isEnabled = false
+        swipeRight.isEnabled = false
+    }
+    
+    func enableSwipes(){
+        swipeUp.isEnabled = true
+        swipeDown.isEnabled = true
+        swipeLeft.isEnabled = true
+        swipeRight.isEnabled = true
+    }
+    
+    func disableAllGestures(){
+        disableSwipes()
+        disableTaps()
+        disablePinch()
+    }
+    
+    func enableAllGestures(){
+        enableSwipes()
+        enableTaps()
+        enablePinch()
+    }
+    
+    func enablePinch(){
+        pinch.isEnabled = true
+    }
+    
+    func disablePinch(){
+        pinch.isEnabled = false
+    }
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == twoFingerTap && otherGestureRecognizer == pinch {
             return true

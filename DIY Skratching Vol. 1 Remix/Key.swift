@@ -10,6 +10,8 @@ import Foundation
 
 
 enum Key : String {
+    case play = "play"
+    case state = "state"
     case rate = "rate"
     case lastVideoWatched = "lastVideoWatched"
     case lastSkratchVideoWatched = "lastSkratchVideoWatched"

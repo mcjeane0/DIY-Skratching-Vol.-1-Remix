@@ -206,7 +206,13 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     func dispatchText(_ string:String, for seconds:Double=10.0){
         UIView.transition(with: videoLabel, duration: 0.0, options: .curveLinear, animations: {
-            self.videoLabel.text = string
+            let strokeTextAttributes: [NSAttributedString.Key : Any] = [
+                .strokeColor : UIColor.black,
+                .foregroundColor : UIColor.white,
+                .strokeWidth : -2.0,
+                ]
+            
+            self.videoLabel.attributedText = NSAttributedString(string: string, attributes: strokeTextAttributes)
             self.videoLabel.alpha = 1.0
         }) { (completed) in
             UIView.transition(with: self.videoLabel, duration: seconds, options: .curveEaseOut, animations: {

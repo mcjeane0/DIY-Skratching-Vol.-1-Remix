@@ -36,12 +36,16 @@ enum Play : String {
     case finishedTutorial = "finishedTutorial"
     case training = "training"
     
-    func finishedOnce()->Bool {
+    func isFinished()->Bool {
         return UserDefaults.standard.bool(forKey: self.rawValue)
     }
     
     func markUnfinished(){
         UserDefaults.standard.set(false, forKey: self.rawValue)
+    }
+    
+    func markFinished(){
+        UserDefaults.standard.set(true, forKey: self.rawValue)
     }
     
 }

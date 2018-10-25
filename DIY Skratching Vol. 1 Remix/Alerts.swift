@@ -43,21 +43,23 @@ extension QBot {
             self.play = .beginningPinchesTutorial
             self.beginningPinchesTutorialAlert()
         }
-        if !Play.firstSwipeUp.finishedOnce() {
+        if !Play.firstSwipeUp.isFinished() {
             alert.addAction(swipesAction)
 
         }
-        if !Play.firstOneFingerTap.finishedOnce(){
+        if !Play.firstOneFingerTap.isFinished(){
             alert.addAction(tapsAction)
 
         }
         
-        if !Play.firstPinchIn.finishedOnce(){
+        if !Play.firstPinchIn.isFinished(){
             alert.addAction(pinchAction)
 
         }
         if alert.actions.count > 0 {
-            face.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
         }
         else {
             completedTutorialAlert()
@@ -72,7 +74,10 @@ extension QBot {
             self.face.dispatchText("Try swiping up or down, with one finger")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     func completedVerticalSwipesAlert(){
@@ -84,8 +89,9 @@ extension QBot {
             self.face.dispatchText("Try swiping left or right, with one finger")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
-        
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func completedHorizontalSwipesAlert(){
@@ -95,7 +101,9 @@ extension QBot {
             self.completedSwipesTutorialAlert()
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -105,7 +113,9 @@ extension QBot {
             self.beginningTutorialAlert()
         }
         alert.addAction(yesAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func beginningTapsTutorialAlert(){
@@ -116,7 +126,9 @@ extension QBot {
             self.face.dispatchText("Tap with one finger to pause and play the video")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func completedOneFingerTapTutorialAlert(){
@@ -128,7 +140,9 @@ extension QBot {
             self.face.dispatchText("Tap with two fingers to change the video angle")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
 
     }
     
@@ -142,7 +156,9 @@ extension QBot {
             self.face.dispatchText("Tap with three fingers to change the audio tracks")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
 
     }
     
@@ -153,7 +169,9 @@ extension QBot {
             self.beginningTutorialAlert()
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
 
     }
     
@@ -165,7 +183,9 @@ extension QBot {
             self.face.dispatchText("Try pinching the screen, by placing two fingers on the screen, and sliding them towards each other")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func completedPinchInTutorialAlert(){
@@ -176,7 +196,9 @@ extension QBot {
             self.face.dispatchText("Now try the opposite motion, moving your two fingers on the screen, and sliding them away from each other")
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func completedPinchOutTutorialAlert(){
@@ -186,7 +208,9 @@ extension QBot {
             self.beginningTutorialAlert()
         }
         alert.addAction(okAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
     func completedTutorialAlert(){
@@ -201,7 +225,9 @@ extension QBot {
         }
         alert.addAction(yesAction)
         alert.addAction(noAction)
-        face.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.face.present(alert, animated: true, completion: nil)
+        }
     }
     
 }

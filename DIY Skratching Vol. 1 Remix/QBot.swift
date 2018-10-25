@@ -82,11 +82,13 @@ extension Head : FaceDelegate {
                     switch self.play {
                     case .beginningPinchOut:
                         if self.pinchFactor >= 1.0 {
+                            Play.firstPinchIn.markFinished()
                             self.completedPinchOutTutorialAlert()
                         }
                         break
                     case .beginningPinchIn:
                         if self.pinchFactor <= 1.0 {
+                            Play.firstPinchOut.markFinished()
                             self.completedPinchInTutorialAlert()
                         }
                         break
@@ -129,6 +131,7 @@ extension Head : FaceDelegate {
             
             switch play {
             case .beginningThreeFingerTap:
+                Play.firstThreeFingerTap.markFinished()
                 self.completedThreeFingerTapTutorialAlert()
                 break
             default:
@@ -157,6 +160,7 @@ extension Head : FaceDelegate {
             }
             switch play {
             case .beginningTwoFingerTap:
+                Play.firstTwoFingerTap.markFinished()
                 self.completedTwoFingerTapTutorialAlert()
                 break
             default:
@@ -183,6 +187,7 @@ extension Head : FaceDelegate {
         }
         switch play {
         case .beginningOneFingerTap:
+            Play.firstOneFingerTap.markFinished()
             self.completedOneFingerTapTutorialAlert()
             break
         default:
@@ -221,6 +226,7 @@ extension Head : FaceDelegate {
         
         switch play {
         case .beginningVerticalSwipesTutorial:
+            Play.firstSwipeUp.markFinished()
             completedVerticalSwipesAlert()
             break
         default:
@@ -259,6 +265,7 @@ extension Head : FaceDelegate {
         loadVideoAtFaceIndexPath()
         switch play {
         case .beginningVerticalSwipesTutorial:
+            Play.firstSwipeDown.markFinished()
             completedVerticalSwipesAlert()
             break
         default:
@@ -277,6 +284,7 @@ extension Head : FaceDelegate {
         loadVideoAtFaceIndexPath()
         switch play {
         case .beginningHorizontalSwipesTutorial:
+            Play.firstSwipeLeft.markFinished()
             completedHorizontalSwipesAlert()
             break
         default:
@@ -295,6 +303,7 @@ extension Head : FaceDelegate {
         loadVideoAtFaceIndexPath()
         switch play {
         case .beginningHorizontalSwipesTutorial:
+            Play.firstSwipeRight.markFinished()
             completedHorizontalSwipesAlert()
             break
         default:

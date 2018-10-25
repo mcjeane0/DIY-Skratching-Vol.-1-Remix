@@ -72,7 +72,7 @@ extension Head : FaceDelegate {
                
                 if let currentRate = self.queuePlayer?.rate {
                     let product = self.pinchFactor
-                    let lessThanMaximumProduct = product > 1.5 ? 1.5 : product
+                    let lessThanMaximumProduct = product > 1.25 ? 1.25 : product
                     let greaterThanMinimumAndLessThanMaximumProduct = product < 0.1 ? 0.1 : product
                     self.playbackRate = Float(greaterThanMinimumAndLessThanMaximumProduct)
                     //let nextRate = greaterThanMinimumAndLessThanMaximumProduct

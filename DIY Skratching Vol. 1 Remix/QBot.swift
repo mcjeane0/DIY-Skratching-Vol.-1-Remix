@@ -59,6 +59,10 @@ typealias Head = QBot
 extension Head : FaceDelegate {
 
     
+    func handleTwoFingerLongPress() {
+        
+    }
+    
     func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer){
         
         switch gestureRecognizer.state {

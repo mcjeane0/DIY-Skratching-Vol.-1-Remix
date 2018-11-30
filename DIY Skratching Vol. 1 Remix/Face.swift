@@ -20,9 +20,13 @@ protocol FaceDelegate {
     func handleTwoFingerTap()
     func handleTap()
     func handleLongPress()
+    func handleTwoFingerLongPress()
 }
 
 class Face: UIViewController, UIGestureRecognizerDelegate {
+    
+    
+    var twoFingerLongPress : UILongPressGestureRecognizer!
     
     @IBOutlet weak var videoView: UIView!
     override var prefersStatusBarHidden: Bool {
@@ -58,6 +62,19 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     static let didAppearNotification = Notification.Name("FaceDidAppear")
 
     var delegate : FaceDelegate?
+    
+    
+    @objc func handleTwoFingerLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        switch gestureRecognizer.state {
+        case .began:
+            break
+        case .ended,.cancelled:
+            break
+        default:
+            break
+        }
+        
+    }
 
     func disableThreeFingerTap(){
         threeFingerTap.isEnabled = false

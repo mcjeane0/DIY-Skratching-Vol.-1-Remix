@@ -404,19 +404,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                     playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
                     */
                     
-                    if matchingVideo!.loop != nil {
-                        player = AVPlayer(playerItem: playerItem!)
-                    }
-                    else {
-                         player = AVPlayer(playerItem: playerItem!)
-                    }
                     
-                    if !looped{
-                        NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-                        
-                        
-                    }
-                    player?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
+                   
                     face.setLayerPlayerLooper(queuePlayer!)
                     
                     completion(true)
@@ -448,19 +437,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
                     */
                     //
-                        if matchingVideo!.loop != nil {
-                            player = AVPlayer(playerItem: playerItem!)
-                        }
-                        else {
-                             player = AVPlayer(playerItem: playerItem!)
-                        }
-                    
-                        if !looped{
-                            NotificationCenter.default.addObserver(self, selector: #selector(playbackEnded(says:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-                            
-                            
-                        }
-                        player?.addObserver(self, forKeyPath: "loopCount", options: [], context: nil)
+                       
                         face.setLayerPlayerLooper(queuePlayer!)
                     
                         completion(true)

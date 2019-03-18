@@ -472,22 +472,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             }
     }
 
-    @objc func faceDidAppear(_ notification:Notification){
-        if let viewController = notification.object as? Face {
-            viewController.delegate = self
-            self.face = viewController
-            switch play {
-            case .appDownloadedFromAppStore:
-                face.disableAllGestures()
-                appDownloadedFromAppStoreAlert()
-                break
-            default:
-                loadVideoAtFaceIndexPath()
-                break
-            }
-            
-        }
-    }
+   
 //
 //    //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

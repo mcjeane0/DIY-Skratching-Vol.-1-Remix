@@ -38,13 +38,12 @@ extension Head : FaceDelegate {
     func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer){
         
         switch gestureRecognizer.state {
-        case .began:
-            break
-        case .changed:
-            pinchFactor = Double(gestureRecognizer.scale)
-            break
-        case .ended, .cancelled:
+        case .ended:
+            
+            /*
             DispatchQueue.main.async {
+                
+                
                 
                 if let currentRate = self.queuePlayer?.rate {
                     let product = self.pinchFactor
@@ -74,6 +73,7 @@ extension Head : FaceDelegate {
                     
                 }
             }
+            */
             break
         default:
             break

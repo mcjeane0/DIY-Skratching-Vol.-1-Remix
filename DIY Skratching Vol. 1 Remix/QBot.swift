@@ -301,6 +301,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
         var name : String = string
+        NSLog("name:\(name)")
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
             name = "\(string) Angle 1"
             let matchingVideo = arrayOfVideos.filter { (video) -> Bool in

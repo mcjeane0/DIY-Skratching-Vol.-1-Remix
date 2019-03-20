@@ -324,7 +324,9 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
                 queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:loop.end)], queue: nil, using: {
-                    self.playerItem?.seek(to: loop.start)
+                    self.loadVideoByName(self.skratchNames[Int(arc4random_uniform(UInt32(skratchNames.count-1)))], looped: false, completion: { (completed) in
+                        
+                    })
                 })
                 
                 face.setLayerPlayerLooper(queuePlayer!)

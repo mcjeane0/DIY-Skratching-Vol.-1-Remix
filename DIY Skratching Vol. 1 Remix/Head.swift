@@ -11,16 +11,18 @@ import UIKit
 
 typealias Head = QBot
 
-extension Head {
+extension Head : FaceDelegate {
     
     @objc func faceDidAppear(_ notification:Notification){
         if let viewController = notification.object as? Face {
             self.face = viewController
+            viewController.delegate = self
+
             switch play {
-            case .appDownloadedFromAppStore:
-                
-                break
             default:
+                loadVideoByName(SkratchName.baby.rawValue, looped: false) { (completed) in
+                    
+                }
                 break
             }
             

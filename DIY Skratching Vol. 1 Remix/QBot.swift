@@ -276,17 +276,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
 
-    @objc func playbackEnded(says notification:Notification) {
-        
-        NotificationCenter.default.removeObserver(self, name: nil, object: notification.object)
-        loadVideoByName(lastVideoWatched,looped:true) { (loaded) in
-            queuePlayer?.play()
-            DispatchQueue.main.async {
-                self.queuePlayer?.rate = self.playbackRate
-            }
-        }
-    }
-
+   
     func loadTrackForVideo(_ trackNumber:Int){
         if lastVideoWatched.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
             if trackNumber > 0 && trackNumber < 4{
@@ -325,9 +315,14 @@ class QBot: UIResponder, UIApplicationDelegate {
                 asset = AVAsset(url: matchingVideo!.url)
                
                 playerItem = AVPlayerItem(asset: asset!)
+                let loop = skratchLoops[string]!
+                
+                playerItem?.seek(to: loop.start)
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                
+                queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:loop.end)], queue: nil, using: {
+                    self.playerItem?.seek(to: loop.start)
+                })
                 
                 face.setLayerPlayerLooper(queuePlayer!)
                 
@@ -358,7 +353,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
                     */
                     //
-                       
+                    
                         face.setLayerPlayerLooper(queuePlayer!)
                     
                         completion(true)

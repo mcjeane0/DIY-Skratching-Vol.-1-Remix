@@ -320,7 +320,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem?.seek(to: loop.start)
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
-                let selectedOption = selectionGroup.options[2]
+                let selectedOption = selectionGroup.options[1]
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
                 queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:loop.end)], queue: nil, using: {

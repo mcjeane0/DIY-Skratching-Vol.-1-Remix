@@ -23,6 +23,7 @@ import AVKit
     @objc optional func handleDifficultyButtonTapped()
     @objc optional func handlePointsButtonTapped()
     @objc optional func handleLoopButtonTapped()
+    @objc optional func handleScratchButtonTapped()
 }
 
 

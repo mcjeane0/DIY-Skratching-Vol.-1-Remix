@@ -396,14 +396,14 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
         
         pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
 
-        view.addGestureRecognizer(twoFingerTap)
-        view.addGestureRecognizer(tap)
-        view.addGestureRecognizer(threeFingerTap)
-        view.addGestureRecognizer(pinch)
-        view.addGestureRecognizer(swipeUp)
-        view.addGestureRecognizer(swipeDown)
-        view.addGestureRecognizer(swipeLeft)
-        view.addGestureRecognizer(swipeRight)
+        //view.addGestureRecognizer(twoFingerTap)
+        //view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(threeFingerTap)
+        //view.addGestureRecognizer(pinch)
+        //view.addGestureRecognizer(swipeUp)
+        //view.addGestureRecognizer(swipeDown)
+        //view.addGestureRecognizer(swipeLeft)
+        //view.addGestureRecognizer(swipeRight)
         //view.addGestureRecognizer(pan)
 
     }

@@ -117,15 +117,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var lastEquipmentSetupVideo : String {
-        get {
-            return UserDefaults.standard.string(forKey: Key.lastEquipmentSetupVideoWatched.rawValue) ?? "Cueing"
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.lastEquipmentSetupVideoWatched.rawValue)
-        }
-    }
-    
     var lastBattleVideo : String {
         get {
             return UserDefaults.standard.string(forKey: Key.lastBattleVideoWatched.rawValue) ?? "Battle Devil"
@@ -155,7 +146,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var selectedTrack : Int = 1
-    var selectedAngle : Int = 2
+    var selectedAngle : Int = 1
 
     var face : Face!
 
@@ -201,44 +192,10 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var skratchBPMs : [String:Double] = [:]
     
-    var battleNames = ["Battle Devil", "Battle Football", "Battle Gasmask", "Battle Spiderman", "Battle Smiley", "Battle Bunny", "Q-Bert Freestyle"]
-    
-    var equipmentSetupNames = ["Counting Bars",  "Cueing", "Slipmats Part 1", "Slipmats Part 2", "Setting Up Headshells", "Plugging In Turntables", "Turntable Adjustments","Mixer Basics", "EQ Scratching", "Preventing Skipping", "More Ways To Prevent Skipping", "Getting better adhesion","Cleaning Needles", "Fader Caps Adjustment", "Tuner Control Spray", "On Off Switch Adjustment", "How to seal leaky pipes"]
+    var battleNames = ["Deck Demon", "DJ Spy-D & The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
+
     
     var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]
-    
-    func loadVideoAtFaceIndexPath(){
-        
-        let section = sections[faceIndexPath.section]
-        NSLog("\(faceIndexPath)")
-        switch section {
-        case Key.Skratches.rawValue:
-            lastSkratchVideo = skratchNames[faceIndexPath.row]
-            lastVideoWatched = lastSkratchVideo
-            break
-        case Key.Battles.rawValue:
-            lastBattleVideo = battleNames[faceIndexPath.row]
-            lastVideoWatched = lastBattleVideo
-            break
-        case Key.EquipmentSetup.rawValue:
-            lastEquipmentSetupVideo = equipmentSetupNames[faceIndexPath.row]
-            lastVideoWatched = lastEquipmentSetupVideo
-            break
-        default:
-            break
-        }
-        
-        loadVideoByName(lastVideoWatched,looped: false) { (completed) in
-            loadTrackForVideo(selectedTrack)
-            queuePlayer?.play()
-            DispatchQueue.main.async {
-                self.queuePlayer?.rate = self.playbackRate
-            }
-            
-            
-        }
-        
-    }
     
     func loadAssetsFromBundleIntoTables(){
         
@@ -292,26 +249,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     func loadSkratchAssetForName(_ string:String,loop:CMTimeRange){
         NSLog("\(string)")
         let angle1 = "\(string) Angle 1"
-        let angle2 = "\(string) Angle 2"
-        let angle3 = "\(string) Angle 3"
-        let angle4 = "\(string) Angle 4"
-        let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
-        let angle2URL = Bundle.main.url(forResource: angle2, withExtension: "m4v")!
-        let angle3URL = Bundle.main.url(forResource: angle3, withExtension: "m4v")!
-        let angle4URL = Bundle.main.url(forResource: angle4, withExtension: "m4v")!
-
-        let angle2Video = ThudRumbleVideoClip(name: angle2, loop: loop, angles: [], tracks: [], url: angle2URL)
-        let angle3Video = ThudRumbleVideoClip(name: angle3, loop: loop, angles: [], tracks: [], url: angle3URL)
-        let angle4Video = ThudRumbleVideoClip(name: angle4, loop: loop, angles: [], tracks: [], url: angle4URL)
-        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [angle2Video,angle3Video,angle4Video], tracks: [], url: angle1URL)
-        angle1Video.angles.append(angle1Video)
-        angle2Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
-        angle3Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
-        angle4Video.angles = [angle2Video,angle3Video,angle4Video,angle1Video]
-        
-        
-        
-        
+        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [], tracks: [], url: angle1URL)
+         let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
         videos[Key.Skratches.rawValue]?.append(angle1Video)
         
     }
@@ -357,10 +296,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                     
                    self.queuePlayer?.pause()
                     self.queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
+                    self.queuePlayer?.rate = self.playbackRate
                     self.queuePlayer?.play()
-                    DispatchQueue.main.async {
-                        self.queuePlayer?.rate = self.playbackRate
-                    }
                 }
             }
         }
@@ -385,31 +322,16 @@ class QBot: UIResponder, UIApplicationDelegate {
                 }
                 }.first
             if matchingVideo != nil {
-                let matchingAngleName = "\(string) Angle \(selectedAngle)"
-                let matchingAngleVideo = matchingVideo!.angles.filter { (video) -> Bool in
-                    if video.name == matchingAngleName {
-                        return true
-                    }
-                    return false
-                    }.first
-                if matchingAngleVideo != nil {
-                    asset = AVAsset(url: matchingAngleVideo!.url)
-                    let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-                    let audioTracks = asset!.tracks
-                    playerItem = AVPlayerItem(asset: asset!)
-                    playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
-                    queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                    
-                    /*
-                    playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingAngleVideo!.loop ?? CMTimeRange.invalid)
-                    */
-                    
-                    
-                   
-                    face.setLayerPlayerLooper(queuePlayer!)
-                    
-                    completion(true)
-                }
+                asset = AVAsset(url: matchingVideo!.url)
+               
+                playerItem = AVPlayerItem(asset: asset!)
+                playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
+                queuePlayer = AVQueuePlayer(playerItem: playerItem)
+                
+                
+                face.setLayerPlayerLooper(queuePlayer!)
+                
+                completion(true)
             }
             else {
                 completion(false)
@@ -427,8 +349,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 if matchingVideo != nil {
                     
                         asset = AVAsset(url: matchingVideo!.url)
-                        let chapters = asset!.chapterMetadataGroups(bestMatchingPreferredLanguages: [])
-                        let audioTracks = asset!.tracks
+                    
                         playerItem = AVPlayerItem(asset: asset!)
                         playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                         queuePlayer = AVQueuePlayer(playerItem: playerItem)
@@ -464,7 +385,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         
-        let nowPlayingInfo = [MPMediaItemPropertyTitle:"DIY Skratching Vol 1"]
+        let nowPlayingInfo = [MPMediaItemPropertyTitle:"Q-Bot"]
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         

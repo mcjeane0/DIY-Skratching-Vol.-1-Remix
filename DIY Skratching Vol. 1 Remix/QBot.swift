@@ -249,8 +249,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     func loadSkratchAssetForName(_ string:String,loop:CMTimeRange){
         NSLog("\(string)")
         let angle1 = "\(string) Angle 1"
+        let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
         let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [], tracks: [], url: angle1URL)
-         let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
         videos[Key.Skratches.rawValue]?.append(angle1Video)
         
     }

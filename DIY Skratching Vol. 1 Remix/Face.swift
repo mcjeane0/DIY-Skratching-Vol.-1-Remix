@@ -10,18 +10,7 @@ import UIKit
 import AVKit
 
 
-protocol FaceDelegate {
-    func handlePinch(_ gestureRecognizer:UIPinchGestureRecognizer)
-    func handleSwipeUp()
-    func handleSwipeDown()
-    func handleSwipeLeft()
-    func handleSwipeRight()
-    func handleThreeFingerTap()
-    func handleTwoFingerTap()
-    func handleTap()
-    func handleLongPress()
-    func handleTwoFingerLongPress()
-}
+
 
 class Face: UIViewController, UIGestureRecognizerDelegate {
     
@@ -59,10 +48,7 @@ class Face: UIViewController, UIGestureRecognizerDelegate {
     
     var videoLayer : AVPlayerLayer = AVPlayerLayer(player: nil)
     
-    static let didAppearNotification = Notification.Name("FaceDidAppear")
-
-    var delegate : FaceDelegate?
-    
+    static let didAppearNotification = Notification.Name("FaceDidAppear")    
     
     @objc func handleTwoFingerLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
         switch gestureRecognizer.state {

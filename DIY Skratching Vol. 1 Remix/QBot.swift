@@ -192,7 +192,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var skratchBPMs : [String:Double] = [:]
     
-    var battleNames = ["Deck Demon", "DJ Spy-D & The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
+    var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
 
     
     var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]

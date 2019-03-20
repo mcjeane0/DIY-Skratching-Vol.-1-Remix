@@ -15,7 +15,6 @@ extension Head {
     
     @objc func faceDidAppear(_ notification:Notification){
         if let viewController = notification.object as? Face {
-            viewController.delegate = self
             self.face = viewController
             switch play {
             case .appDownloadedFromAppStore:

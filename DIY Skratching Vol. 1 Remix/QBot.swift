@@ -153,7 +153,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         if let playerItem = object as? AVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                if let name = playerItem.value(forKey: "ThudRumbleVideoClipName") as? String {
+                if let name = (playerItem as WVPlayerItem).name {
                     NSLog("name ready: \(name)")
                     playerItems[SkratchName(rawValue:name)!] = playerItem
                 }

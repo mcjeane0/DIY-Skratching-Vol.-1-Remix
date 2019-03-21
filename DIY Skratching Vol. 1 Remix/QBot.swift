@@ -142,7 +142,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate var babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41002, timescale: 1000),CMTime(value: 47024, timescale: 1000),CMTime(value: 53009, timescale: 1000)]
     
-    fileprivate func loopBabyQ1(){
+    fileprivate func loopBabyQs(){
         loadVideoByName(skratchNames.first!)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
         

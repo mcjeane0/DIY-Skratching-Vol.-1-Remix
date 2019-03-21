@@ -45,19 +45,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var playbackRate : Float {
-        get {
-            let oldValue = UserDefaults.standard.float(forKey: Key.rate.rawValue)
-            return oldValue > 0.0 ? oldValue : 1.0
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.rate.rawValue)
-            DispatchQueue.main.async {
-                self.queuePlayer?.rate = newValue
-            }
-        }
-    }
-    
 
     
     
@@ -145,9 +132,9 @@ class QBot: UIResponder, UIApplicationDelegate {
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
     fileprivate func loopBabyQs(){
+        queuePlayer.rate = 2.0
         loadVideoByName(skratchNames.first!)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
-        
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(1509), { (timer) in
             
             self.queuePlayer.pause()
@@ -155,7 +142,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.queuePlayer.play()
             })
         })
-        queuePlayer.rate = 2.0
+        
         
     }
     

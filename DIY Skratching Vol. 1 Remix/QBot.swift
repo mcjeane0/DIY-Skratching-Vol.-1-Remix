@@ -320,13 +320,13 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem = AVPlayerItem(asset: asset!)
                 let loop = skratchLoops[string]!
                 
-                playerItem?.seek(to: CMTime.zero)
+                playerItem?.seek(to: loop.start)
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:CMTime(value: 1, timescale: 1))], queue: nil, using: {
+                queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:CMTime(value: loop.start.value+1, timescale: 1))], queue: nil, using: {
                     //for random scratch: Int(arc4random_uniform(UInt32(self.skratchNames.count-1)))
                     self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
                     self.loadVideoByName(self.skratchNames[self.currentSkratchIndex], looped: false, completion: { (completed) in

@@ -149,14 +149,13 @@ class QBot: UIResponder, UIApplicationDelegate {
         
     }
 
+    
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let playerItem = object as? WVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                if let name = playerItem.name {
-                    NSLog("name ready: \(name)")
-                    playerItems[SkratchName(rawValue:name)!] = playerItem
-                }
+                handlePlayerItemReadyToPlay(playerItem)
                 break
             default:
                 break
@@ -185,6 +184,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     var currentSkratchIndex = 0
     
     var playerItems : [SkratchName:AVPlayerItem] = [:]
+    
+    var loadingPlayerItems : [SkratchName:AVPlayerItem] = [:]
     
     func loadVideoByName(_ string:String){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
@@ -218,9 +219,19 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem.select(selectedOption, in: selectionGroup)
+                loadingPlayerItems[SkratchName(rawValue: name)!] = playerItem
             }
             else {
             }
+        }
+    }
+    
+    fileprivate func handlePlayerItemReadyToPlay(_ playerItem: WVPlayerItem) {
+        if let name = playerItem.name {
+            NSLog("name ready: \(name)")
+            let skratchName = SkratchName(rawValue:name)!
+            playerItems[skratchName] = playerItem
+            loadingPlayerItems.removeValue(forKey: skratchName)
         }
     }
 

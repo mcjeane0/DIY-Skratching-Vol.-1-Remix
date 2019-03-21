@@ -48,7 +48,7 @@ class Face: UIViewController {
 
    
 
-    func setLayerPlayerLooper(_ player:AVQueuePlayer) {
+    func setLayerPlayer(_ player:AVQueuePlayer) {
         videoLayer.player = player
         self.videoView.layer.addSublayer(videoLayer)
     }

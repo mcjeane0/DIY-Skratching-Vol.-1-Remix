@@ -13,19 +13,7 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
-    @objc func faceDidAppear(_ notification:Notification){
-        if let viewController = notification.object as? Face {
-            self.face = viewController
-            viewController.delegate = self
-
-            switch play {
-            default:
-                loadVideoByName(SkratchName.baby.rawValue)
-                break
-            }
-            
-        }
-    }
+    
     
     
 }

@@ -63,36 +63,25 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var speechSynthesizer : AVSpeechSynthesizer = AVSpeechSynthesizer()
     
-    var lastVideoWatched : String {
-        get {
-            return UserDefaults.standard.string(forKey: Key.lastVideoWatched.rawValue) ?? SkratchName.baby.rawValue
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.lastVideoWatched.rawValue)
-        }
-    }
-    
     
     var face : Face!
 
 
     var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[],
-                                                   Key.EquipmentSetup.rawValue:[],
                                                    Key.Battles.rawValue:[]]
-    var player : AVPlayer?
-    var queuePlayer : AVQueuePlayer?
-    var playerItem : AVPlayerItem?
-    var asset : AVAsset?
+    var queuePlayer : AVQueuePlayer!
     var window: UIWindow?
     
     var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue,SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue,SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.lazers.rawValue,SkratchName.phazers.rawValue,SkratchName.scribbles.rawValue,SkratchName.fades.rawValue,SkratchName.cloverTears.rawValue,SkratchName.needleDropping.rawValue,SkratchName.zigZags.rawValue,SkratchName.waves.rawValue,SkratchName.swipes.rawValue,SkratchName.flare.rawValue,SkratchName.twoClickFlare.rawValue,SkratchName.crabsCrepes.rawValue]
-    
-    var skratchBPMs : [String:Double] = [:]
     
     var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
 
     
     var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]
+    
+    var playerItems : [AVPlayerItem] = []
+    
+    var oneSecondTimer : Repeater!
     
     func currentNanoseconds()->Int{
         var info = mach_timebase_info()
@@ -104,18 +93,12 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func loadAssetsFromBundleIntoTables(){
         
-        // MARK: Where your assets from your bundle get put into your tables
-        
         for skratchName in skratchNames {
             
             loadSkratchAssetForName(skratchName)
             
         }
-        /*
-        for equipmentSetupName in equipmentSetupNames {
-            loadEquipmentSetupAssetForName(equipmentSetupName)
-        }
-        */
+       
         for battleName in battleNames {
             
             loadBattleAssetForName(battleName)
@@ -126,11 +109,9 @@ class QBot: UIResponder, UIApplicationDelegate {
         
     }
     
-    
-    
     func loadBattleAssetForName(_ name:String){
         NSLog("\(name)")
-
+        
         let battleURL = Bundle.main.url(forResource: name, withExtension:"m4v")!
         
         let battleVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: battleURL)
@@ -148,44 +129,32 @@ class QBot: UIResponder, UIApplicationDelegate {
         videos[Key.Skratches.rawValue]?.append(angle1Video)
         
     }
-
     
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let playerItem = object as? WVPlayerItem {
-            switch playerItem.status {
-            case .readyToPlay:
-                handlePlayerItemReadyToPlay(playerItem)
-                break
+    @objc func faceDidAppear(_ notification:Notification){
+        if let viewController = notification.object as? Face {
+            self.face = viewController
+            viewController.delegate = self
+            
+            switch play {
             default:
+                for name in skratchNames {
+                    loadVideoByName(name)
+                }
+                queuePlayer = AVQueuePlayer(playerItem: nil)
+                for item in playerItems {
+                    self.queuePlayer.insert(item, after: nil)
+                }
+                face.setLayerPlayer(queuePlayer)
+                self.queuePlayer.play()
+                oneSecondTimer = Repeater.every(Repeater.Interval.seconds(1.0), { (timer) in
+                    self.queuePlayer.advanceToNextItem()
+                })
                 break
             }
-        }
-        
-    }
-
-   
-    func loadTrackForVideo(_ trackNumber:Int){
-        if lastVideoWatched.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-            if trackNumber > 0 && trackNumber < 4{
-                let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
-                let selectedOption = selectionGroup.options[trackNumber-1]
-                DispatchQueue.main.async {
-                    
-                   self.queuePlayer?.pause()
-                    self.queuePlayer?.currentItem?.select(selectedOption, in: selectionGroup)
-                    self.queuePlayer?.rate = self.playbackRate
-                    self.queuePlayer?.play()
-                }
-            }
+            
         }
     }
-    
-    var currentSkratchIndex = 0
-    
-    var playerItems : [SkratchName:AVPlayerItem] = [:]
-    
-    var loadingPlayerItems : [SkratchName:AVPlayerItem] = [:]
     
     func loadVideoByName(_ string:String){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
@@ -209,34 +178,18 @@ class QBot: UIResponder, UIApplicationDelegate {
             if matchingVideo != nil {
                 let asset = AVAsset(url: matchingVideo!.url)
                
-                let playerItem = WVPlayerItem(asset: asset)
-                
-                //playerItem?.seek(to: loop.start)
-                playerItem.name = string
-                /*
+                let playerItem = AVPlayerItem(asset: asset)
                 playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem.select(selectedOption, in: selectionGroup)
-                */
-                playerItem.addObserver(self, forKeyPath: "status", options: [], context: nil)
-                loadingPlayerItems[SkratchName(rawValue: string)!] = playerItem
+                playerItems.append(playerItem)
             }
             else {
             }
         }
     }
-    
-    fileprivate func handlePlayerItemReadyToPlay(_ playerItem: WVPlayerItem) {
-        if let name = playerItem.name {
-            NSLog("name ready: \(name)")
-            let skratchName = SkratchName(rawValue:name)!
-            playerItems[skratchName] = playerItem
-            loadingPlayerItems.removeValue(forKey: skratchName)
-        }
-    }
-
    
 //
 //    //

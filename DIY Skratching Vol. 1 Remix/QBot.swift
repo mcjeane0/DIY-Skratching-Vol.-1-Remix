@@ -208,12 +208,13 @@ class QBot: UIResponder, UIApplicationDelegate {
             if matchingVideo != nil {
                 let asset = AVAsset(url: matchingVideo!.url)
                
-                let playerItem = AVPlayerItem(asset: asset)
+                let playerItem = WVPlayerItem(asset: asset)
                 
                 //playerItem?.seek(to: loop.start)
+                playerItem.name = name
                 playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                playerItem.setValue(name, forKey: "ThudRumbleVideoClipName")
+                //playerItem.setValue(name, forKey: "ThudRumbleVideoClipName")
                 playerItem.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]

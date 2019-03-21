@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374B67940A14BDD635836570 /* Pods_Q_Bot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */; };
+		4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */; };
+		DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */; };
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
 		FB3B42BC223FF5B3005D405F /* Zig-Zags 35 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B424D223FF5A7005D405F /* Zig-Zags 35 Angle 1.m4v */; };
 		FB3B42BE223FF5B3005D405F /* Tears 7 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B424F223FF5A7005D405F /* Tears 7 Angle 1.m4v */; };
@@ -42,6 +45,7 @@
 		FB3B431D223FF5B3005D405F /* Swipes 37 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42AE223FF5B1005D405F /* Swipes 37 Angle 1.m4v */; };
 		FB3B431F223FF5B3005D405F /* Crabs (Crepes) 40 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42B0223FF5B1005D405F /* Crabs (Crepes) 40 Angle 1.m4v */; };
 		FB3B4329223FF5F5005D405F /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B4328223FF5F5005D405F /* Head.swift */; };
+		FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */; };
 		FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB716DFC2173FB18008D090E /* CloudKit.framework */; };
 		FB78ABF6214C10030010039E /* QBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* QBot.swift */; };
 		FB78ABF8214C10030010039E /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* Face.swift */; };
@@ -76,6 +80,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_BotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_BotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_Bot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.release.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.release.xcconfig"; sourceTree = "<group>"; };
+		E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.debug.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1904C52154358B0092640A /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		FB3B424D223FF5A7005D405F /* Zig-Zags 35 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zig-Zags 35 Angle 1.m4v"; sourceTree = "<group>"; };
 		FB3B424F223FF5A7005D405F /* Tears 7 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tears 7 Angle 1.m4v"; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 		FB3B42AE223FF5B1005D405F /* Swipes 37 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swipes 37 Angle 1.m4v"; sourceTree = "<group>"; };
 		FB3B42B0223FF5B1005D405F /* Crabs (Crepes) 40 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Crabs (Crepes) 40 Angle 1.m4v"; sourceTree = "<group>"; };
 		FB3B4328223FF5F5005D405F /* Head.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Head.swift; sourceTree = "<group>"; };
+		FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThudRumbleVideoClip.swift; sourceTree = "<group>"; };
 		FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIY Skratching Vol. 1 Remix.entitlements"; sourceTree = "<group>"; };
 		FB716DFC2173FB18008D090E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FB78ABF2214C10030010039E /* Q-Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q-Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */,
+				374B67940A14BDD635836570 /* Pods_Q_Bot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,12 +170,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4CC8FD40C284FDEBDE3755F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */,
+				D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */,
+				5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */,
+				E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */,
+				5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */,
+				E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FB3B4249223FF465005D405F /* Videos */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				FB716DFC2173FB18008D090E /* CloudKit.framework */,
+				C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */,
+				9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */,
+				A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +249,7 @@
 				FB78AC17214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */,
 				FB78ABF3214C10030010039E /* Products */,
 				FB716DFB2173FB18008D090E /* Frameworks */,
+				B4CC8FD40C284FDEBDE3755F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +269,7 @@
 				FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */,
 				FBADD57D217E15FB00A5EB31 /* SkratchName.swift */,
 				FB78ABF5214C10030010039E /* QBot.swift */,
+				FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */,
 				FB3B4328223FF5F5005D405F /* Head.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
 				FB78ABF7214C10030010039E /* Face.swift */,
@@ -277,11 +312,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "Q-Bot" */;
 			buildPhases = (
+				F8FE3241523F9869FD1ACB1A /* [CP] Check Pods Manifest.lock */,
 				FB89D5BD21737969002FAB5D /* ShellScript */,
 				FB78ABEE214C10030010039E /* Sources */,
 				FB78ABEF214C10030010039E /* Frameworks */,
 				FB78ABF0214C10030010039E /* Resources */,
 				FB89D5BC21737968002FAB5D /* ShellScript */,
+				9ECB1317C536B2EDF00C62C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC20214C10040010039E /* Build configuration list for PBXNativeTarget "Q-BotTests" */;
 			buildPhases = (
+				BE8BA44EC936F5B98F72DA99 /* [CP] Check Pods Manifest.lock */,
 				FB78AC05214C10040010039E /* Sources */,
 				FB78AC06214C10040010039E /* Frameworks */,
 				FB78AC07214C10040010039E /* Resources */,
@@ -314,6 +352,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC23214C10040010039E /* Build configuration list for PBXNativeTarget "Q-BotUITests" */;
 			buildPhases = (
+				F4709956E5FDF54A37920C29 /* [CP] Check Pods Manifest.lock */,
 				FB78AC10214C10040010039E /* Sources */,
 				FB78AC11214C10040010039E /* Frameworks */,
 				FB78AC12214C10040010039E /* Resources */,
@@ -446,6 +485,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9ECB1317C536B2EDF00C62C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Q-Bot/Pods-Q-Bot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Q-Bot/Pods-Q-Bot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE8BA44EC936F5B98F72DA99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Q-BotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4709956E5FDF54A37920C29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Q-BotUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8FE3241523F9869FD1ACB1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Q-Bot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FB89D5BC21737968002FAB5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +618,7 @@
 				FB78ABF6214C10030010039E /* QBot.swift in Sources */,
 				FBADD578217BC2B500A5EB31 /* State.swift in Sources */,
 				FB78ABFE214C10030010039E /* DIY_Skratching_Vol__1_Remix.xcdatamodeld in Sources */,
+				FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */,
 				FBADD57A217BC2C100A5EB31 /* Mouth.swift in Sources */,
 				FBADD576217BC2AF00A5EB31 /* Play.swift in Sources */,
 				FBADD57C217BC2D200A5EB31 /* Ears.swift in Sources */,
@@ -667,6 +795,7 @@
 		};
 		FB78AC1E214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
@@ -687,6 +816,7 @@
 		};
 		FB78AC1F214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
@@ -707,6 +837,7 @@
 		};
 		FB78AC21214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,6 +859,7 @@
 		};
 		FB78AC22214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -749,6 +881,7 @@
 		};
 		FB78AC24214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -769,6 +902,7 @@
 		};
 		FB78AC25214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

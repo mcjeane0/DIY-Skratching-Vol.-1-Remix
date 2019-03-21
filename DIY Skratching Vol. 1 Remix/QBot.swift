@@ -11,50 +11,7 @@ import CoreData
 import AVKit
 import MediaPlayer
 import Speech
-
-class ThudRumbleVideoClip {
-
-    var name : String
-    var loop : CMTimeRange?
-    var angles : [ThudRumbleVideoClip]
-    var tracks : [String]
-    var url : URL
-    var rate : Float {
-        get {
-            let value = UserDefaults.standard.float(forKey: "\(name)Rate")
-            if value == 0.0 {
-                UserDefaults.standard.set(1.0, forKey:name)
-                return 1.0
-            }
-            return value
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "\(name)Rate")
-        }
-    }
-    var pitchAlgorithm : AVAudioTimePitchAlgorithm {
-        get {
-            if let rawValue = UserDefaults.standard.string(forKey: Key.pitchAlgorithm.rawValue){
-                return AVAudioTimePitchAlgorithm(rawValue: rawValue)
-            }
-            return AVAudioTimePitchAlgorithm.varispeed
-        }
-        set {
-            UserDefaults.standard.set(newValue.rawValue, forKey: Key.pitchAlgorithm.rawValue)
-        }
-    }
-
-    init(name:String,loop:CMTimeRange?,angles:[ThudRumbleVideoClip],tracks:[String],url:URL){
-        self.name = name
-        self.loop = loop
-        self.angles = angles
-        self.tracks = tracks
-        self.url = url
-        
-    }
-
-}
-
+import Repeat
 
 @UIApplicationMain
 
@@ -88,8 +45,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var pinchFactor = 1.0
-    
     var playbackRate : Float {
         get {
             let oldValue = UserDefaults.standard.float(forKey: Key.rate.rawValue)
@@ -117,37 +72,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var lastBattleVideo : String {
-        get {
-            return UserDefaults.standard.string(forKey: Key.lastBattleVideoWatched.rawValue) ?? "Battle Devil"
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.lastBattleVideoWatched.rawValue)
-        }
-    }
     
-    var lastSkratchVideo : String {
-        get {
-            return UserDefaults.standard.string(forKey: Key.lastSkratchVideoWatched.rawValue) ?? SkratchName.baby.rawValue
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: Key.lastSkratchVideoWatched.rawValue)
-        }
-    }
-    
-    var faceIndexPath : IndexPath {
-        get {
-            return IndexPath(row: UserDefaults.standard.integer(forKey: Key.rowIndex.rawValue), section: UserDefaults.standard.integer(forKey: Key.sectionIndex.rawValue))
-        }
-        set{
-            UserDefaults.standard.set(newValue.row, forKey: Key.rowIndex.rawValue)
-            UserDefaults.standard.set(newValue.section, forKey: Key.sectionIndex.rawValue)
-        }
-    }
-    
-    var selectedTrack : Int = 1
-    var selectedAngle : Int = 1
-
     var face : Face!
 
 
@@ -159,34 +84,6 @@ class QBot: UIResponder, UIApplicationDelegate {
     var playerItem : AVPlayerItem?
     var asset : AVAsset?
     var window: UIWindow?
-
-    var skratchLoops : [String:CMTimeRange] = [
-                                            SkratchName.baby.rawValue:CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)),
-                                               SkratchName.flare.rawValue:CMTimeRange(start: CMTime(seconds: 133, preferredTimescale: 1), end: CMTime(seconds: 166, preferredTimescale: 1)),
-                                               SkratchName.crabsCrepes.rawValue:CMTimeRange(start: CMTime(seconds: 100, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)),
-                                               SkratchName.swipes.rawValue:CMTimeRange(start: CMTime(seconds: 61, preferredTimescale: 1), end: CMTime(seconds: 80, preferredTimescale: 1)),
-                                               SkratchName.waves.rawValue:CMTimeRange(start: CMTime(seconds: 58, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)),
-                                               SkratchName.zigZags.rawValue:CMTimeRange(start: CMTime(seconds: 50, preferredTimescale: 1), end: CMTime(seconds: 69, preferredTimescale: 1)),
-                                               SkratchName.cloverTears.rawValue:CMTimeRange(start: CMTime(seconds: 63, preferredTimescale: 1), end: CMTime(seconds: 81, preferredTimescale: 1)),
-                                               SkratchName.needleDropping.rawValue:CMTimeRange(start: CMTime(seconds: 81, preferredTimescale: 1), end: CMTime(seconds: 109, preferredTimescale: 1)),
-                                               SkratchName.scribbles.rawValue:CMTimeRange(start: CMTime(seconds: 90, preferredTimescale: 1), end: CMTime(seconds: 137, preferredTimescale: 1)),
-                                               SkratchName.phazers.rawValue:CMTimeRange(start: CMTime(seconds: 44, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)),
-                                               SkratchName.lazers.rawValue:CMTimeRange(start: CMTime(seconds: 64, preferredTimescale: 1), end: CMTime(seconds: 85, preferredTimescale: 1)),
-                                               SkratchName.chirpFlare.rawValue:CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)),
-                                               SkratchName.chirps.rawValue:CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 103, preferredTimescale: 1)),
-                                               SkratchName.drags.rawValue:CMTimeRange(start: CMTime(seconds: 54, preferredTimescale: 1), end: CMTime(seconds: 94, preferredTimescale: 1)),
-                                               SkratchName.transformer.rawValue:CMTimeRange(start: CMTime(seconds: 95, preferredTimescale: 1), end: CMTime(seconds: 141, preferredTimescale: 1)),
-                                               SkratchName.tips.rawValue :CMTimeRange(start: CMTime(seconds: 45, preferredTimescale: 1), end: CMTime(seconds: 64, preferredTimescale: 1)),
-                                               SkratchName.tears.rawValue:CMTimeRange(start: CMTime(seconds: 82, preferredTimescale: 1), end: CMTime(seconds: 121, preferredTimescale: 1)),
-                                               SkratchName.dicing.rawValue:CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 124, preferredTimescale: 1)),
-                                               SkratchName.marches.rawValue:CMTimeRange(start: CMTime(seconds: 71, preferredTimescale: 1), end: CMTime(seconds: 95, preferredTimescale: 1)),
-                                               SkratchName.reverseCutting.rawValue:CMTimeRange(start: CMTime(seconds: 47, preferredTimescale: 1), end: CMTime(seconds: 93, preferredTimescale: 1)),
-                                               SkratchName.cutting.rawValue:CMTimeRange(start: CMTime(seconds: 59, preferredTimescale: 1), end: CMTime(seconds: 83, preferredTimescale: 1)),
-                                               SkratchName.longShortTipTears.rawValue:CMTimeRange(start: CMTime(seconds: 85, preferredTimescale: 1), end: CMTime(seconds: 122, preferredTimescale: 1)),
-                                               SkratchName.oneClickFlare.rawValue:CMTimeRange(start: CMTime(seconds: 111, preferredTimescale: 1), end: CMTime(seconds: 156, preferredTimescale: 1)),
-                                               SkratchName.fades.rawValue:CMTimeRange(start: CMTime(seconds: 73, preferredTimescale: 1), end: CMTime(seconds: 114, preferredTimescale: 1)),
-                                               SkratchName.twoClickFlare.rawValue:CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 112, preferredTimescale: 1)),
-                                               SkratchName.crescentFlare.rawValue: CMTimeRange(start: CMTime(seconds: 78, preferredTimescale: 1), end: CMTime(seconds: 120, preferredTimescale: 1))]
     
     var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue,SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue,SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.lazers.rawValue,SkratchName.phazers.rawValue,SkratchName.scribbles.rawValue,SkratchName.fades.rawValue,SkratchName.cloverTears.rawValue,SkratchName.needleDropping.rawValue,SkratchName.zigZags.rawValue,SkratchName.waves.rawValue,SkratchName.swipes.rawValue,SkratchName.flare.rawValue,SkratchName.twoClickFlare.rawValue,SkratchName.crabsCrepes.rawValue]
     
@@ -211,7 +108,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         for skratchName in skratchNames {
             
-            loadSkratchAssetForName(skratchName,loop:skratchLoops[skratchName]!)
+            loadSkratchAssetForName(skratchName)
             
         }
         /*
@@ -242,23 +139,12 @@ class QBot: UIResponder, UIApplicationDelegate {
         
     }
     
-    func loadEquipmentSetupAssetForName(_ name:String){
-        NSLog("\(name)")
-
-        let equipmentSetupURL = Bundle.main.url(forResource: name, withExtension: "m4v")!
-        
-        let equipmentSetupVideo = ThudRumbleVideoClip(name: name, loop: nil, angles: [], tracks: [], url: equipmentSetupURL)
-        
-        videos[Key.EquipmentSetup.rawValue]?.append(equipmentSetupVideo)
-        
-    }
     
-    
-    func loadSkratchAssetForName(_ string:String,loop:CMTimeRange){
+    func loadSkratchAssetForName(_ string:String){
         NSLog("\(string)")
         let angle1 = "\(string) Angle 1"
         let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
-        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: loop, angles: [], tracks: [], url: angle1URL)
+        let angle1Video = ThudRumbleVideoClip(name: angle1, loop: nil, angles: [], tracks: [], url: angle1URL)
         videos[Key.Skratches.rawValue]?.append(angle1Video)
         
     }
@@ -267,7 +153,10 @@ class QBot: UIResponder, UIApplicationDelegate {
         if let playerItem = object as? AVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                playerItem.audioTimePitchAlgorithm = .varispeed
+                if let name = playerItem.value(forKey: "ThudRumbleVideoClipName") as? String {
+                    NSLog("name ready: \(name)")
+                    playerItems[SkratchName(rawValue:name)!] = playerItem
+                }
                 break
             default:
                 break
@@ -295,6 +184,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var currentSkratchIndex = 0
     
+    var playerItems : [SkratchName:AVPlayerItem] = [:]
+    
     func loadVideoByName(_ string:String){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
@@ -315,63 +206,22 @@ class QBot: UIResponder, UIApplicationDelegate {
                 }
                 }.first
             if matchingVideo != nil {
-                asset = AVAsset(url: matchingVideo!.url)
+                let asset = AVAsset(url: matchingVideo!.url)
                
-                playerItem = AVPlayerItem(asset: asset!)
+                let playerItem = AVPlayerItem(asset: asset)
                 
                 //playerItem?.seek(to: loop.start)
-                playerItem?.seek(to: CMTime(seconds: 41002, preferredTimescale: 1000))
-                playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
-                let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
+                playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+                playerItem.audioTimePitchAlgorithm = .varispeed
+                playerItem.setValue(name, forKey: "ThudRumbleVideoClipName")
+                playerItem.addObserver(self, forKeyPath: "status", options: [], context: nil)
+                let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
-                playerItem?.select(selectedOption, in: selectionGroup)
-                queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.029) {
-                    //self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
-                    self.loadVideoByName(self.skratchNames[self.currentSkratchIndex])
-                }
-                /*
-                queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:CMTime(value: loop.start.value+1, timescale: 1))], queue: nil, using: {
-                    //for random scratch: Int(arc4random_uniform(UInt32(self.skratchNames.count-1)))
-                 
-                    })
-                })
-                */
-                face.setLayerPlayerLooper(queuePlayer!)
-                
+                playerItem.select(selectedOption, in: selectionGroup)
             }
             else {
             }
         }
-            else {
-                let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
-                    if video.name == name {
-                        return true
-                    }
-                    else {
-                        return false
-                    }
-                    }.first
-                if matchingVideo != nil {
-                    
-                        asset = AVAsset(url: matchingVideo!.url)
-                    
-                        playerItem = AVPlayerItem(asset: asset!)
-                        playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
-                        queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                    
-                    /*
-                        playerLooper = AVPlayerLooper(player: queuePlayer!, templateItem: playerItem!, timeRange: matchingVideo!.loop ?? CMTimeRange.invalid)
-                    */
-                    //
-                    
-                        face.setLayerPlayerLooper(queuePlayer!)
-                    
-                    
-            }
-                else {
-                }
-            }
     }
 
    

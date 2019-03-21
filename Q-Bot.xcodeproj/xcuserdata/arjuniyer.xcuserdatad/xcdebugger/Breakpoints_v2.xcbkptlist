@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.341421"
+            timestampString = "574866367.748075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
@@ -26,171 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3417701"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "loadTrackForVideo(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3420039"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
-            landmarkName = "loadVideoByName(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DIY_Skratching_Vol__1_Remix.QBot.loadVideoByName(_: Swift.String, looped: Swift.Bool, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "DIY Skratching Vol. 1 Remix"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjuniyer/Library/Mobile%20Documents/com~apple~CloudDocs/DIY%20Skratching%20Vol.%201%20Remix/DIY%20Skratching%20Vol.%201%20Remix/QBot.swift"
-                  timestampString = "561923373.202955"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "486"
-                  endingLineNumber = "486"
-                  offsetFromSymbolStart = "2008">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 (DIY_Skratching_Vol__1_Remix.ThudRumbleVideoClip) -&gt; Swift.Bool in DIY_Skratching_Vol__1_Remix.QBot.loadVideoByName(_: Swift.String, looped: Swift.Bool, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "DIY Skratching Vol. 1 Remix"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjuniyer/Library/Mobile%20Documents/com~apple~CloudDocs/DIY%20Skratching%20Vol.%201%20Remix/DIY%20Skratching%20Vol.%201%20Remix/QBot.swift"
-                  timestampString = "561923373.206935"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "487"
-                  endingLineNumber = "487"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3422199"
+            timestampString = "574866367.7482409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
             endingLineNumber = "264"
-            landmarkName = "loadSkratchAssetForName(_:loop:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3425519"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "observeValue(forKeyPath:of:change:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.34277"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "loadSkratchAssetForName(_:loop:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3431931"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
-            landmarkName = "loadTrackForVideo(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Q_Bot.QBot.loadVideoByName(_: Swift.String, looped: Swift.Bool, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Q-Bot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjuniyer/Library/Mobile%20Documents/com~apple~CloudDocs/DIY%20Skratching%20Vol.%201%20Remix/DIY%20Skratching%20Vol.%201%20Remix/QBot.swift"
-                  timestampString = "574815031.483044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "297"
-                  endingLineNumber = "297"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((key: Swift.String, value: Swift.Array&lt;Q_Bot.ThudRumbleVideoClip&gt;)) -&gt; Swift.Array&lt;Q_Bot.ThudRumbleVideoClip&gt; in Q_Bot.QBot.loadVideoByName(_: Swift.String, looped: Swift.Bool, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
-                  moduleName = "Q-Bot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjuniyer/Library/Mobile%20Documents/com~apple~CloudDocs/DIY%20Skratching%20Vol.%201%20Remix/DIY%20Skratching%20Vol.%201%20Remix/QBot.swift"
-                  timestampString = "574815031.4893301"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "299"
-                  endingLineNumber = "299"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.3434041"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
             landmarkName = "loadVideoByName(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +42,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "574866229.343617"
+            timestampString = "574866367.748282"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "loadVideoByName(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
+            timestampString = "574866367.748323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "loadVideoByName(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
+            timestampString = "574866367.748405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "loadVideoByName(_:)"
             landmarkType = "7">
          </BreakpointContent>

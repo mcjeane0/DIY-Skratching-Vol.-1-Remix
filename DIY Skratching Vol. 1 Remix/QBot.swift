@@ -151,7 +151,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             self.queuePlayer.pause()
-            self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: aMilli, toleranceAfter: aMilli, completionHandler: { (completed) in
+            self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: { (completed) in
                 self.queuePlayer.play()
             })
         })

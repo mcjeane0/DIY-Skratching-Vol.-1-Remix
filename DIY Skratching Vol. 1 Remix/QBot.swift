@@ -147,7 +147,11 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(SkratchName.reverseCutting.rawValue)
         loadVideoByName(SkratchName.marches.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
-        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
+        
+        //6036
+        //3018
+        //1509
+        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(1509), { (timer) in
             
             //self.queuePlayer.pause()
             

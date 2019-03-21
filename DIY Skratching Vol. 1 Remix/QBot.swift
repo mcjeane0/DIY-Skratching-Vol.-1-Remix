@@ -133,11 +133,19 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate func loopBabyQs(){
         loadVideoByName(skratchNames.first!)
-        playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
+        loadVideoByName(skratchNames.first!)
+        loadVideoByName(skratchNames.first!)
+        loadVideoByName(skratchNames.first!)
+        var index = 0
+        for item in playerItems {
+            item.seek(to: self.babyTimes[index], toleranceBefore: aMilli, toleranceAfter: aMilli)
+            index += 1
+        }
+        
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
-            self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+            self.queuePlayer.insert(self.playerItems[Int(arc4random_uniform(3))], after: nil)
         })
         
         

@@ -268,21 +268,12 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerItem.status {
             case .readyToPlay:
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                playerItem.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
-                queuePlayer?.rate = playbackRate
                 break
             default:
                 break
             }
         }
-        if let playerLooper = object as? AVPlayer {
-            
-            DispatchQueue.main.async {
-               self.queuePlayer?.rate = self.playbackRate
-            }
-            //face.dispatchText("\(playerLooper.loopCount)",for:5.0)
-            
-        }
+        
     }
 
    
@@ -327,15 +318,15 @@ class QBot: UIResponder, UIApplicationDelegate {
                 asset = AVAsset(url: matchingVideo!.url)
                
                 playerItem = AVPlayerItem(asset: asset!)
-                let loop = skratchLoops[string]!
                 
                 //playerItem?.seek(to: loop.start)
+                playerItem?.seek(to: CMTime(seconds: 41002, preferredTimescale: 1000))
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.018) {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.029) {
                     //self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
                     self.loadVideoByName(self.skratchNames[self.currentSkratchIndex])
                 }

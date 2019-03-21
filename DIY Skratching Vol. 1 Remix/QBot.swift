@@ -166,7 +166,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 
                 //cycleAllSkratches()
-                loopBabyQ1()
+                loopBabyQs()
                 
                 for item in playerItems {
                     self.queuePlayer.insert(item, after: nil)

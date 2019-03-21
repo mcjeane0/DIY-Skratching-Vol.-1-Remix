@@ -138,7 +138,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var skratchIndex = 0
     
     fileprivate func loopBabyAndCuttingQs(){
-        loadVideoByName(skratchNames.baby.rawValue)
+        loadVideoByName(SkratchName.baby.rawValue)
         loadVideoByName(SkratchName.cutting.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         playerItems.last!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)

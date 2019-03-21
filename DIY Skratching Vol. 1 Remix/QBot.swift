@@ -328,14 +328,15 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem = AVPlayerItem(asset: asset!)
                 let loop = skratchLoops[string]!
                 
-                playerItem?.seek(to: loop.start)
+                //playerItem?.seek(to: loop.start)
+                playerItem?.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(loop.duration.value)) {
-                    self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.018) {
+                    //self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
                     self.loadVideoByName(self.skratchNames[self.currentSkratchIndex])
                 }
                 /*

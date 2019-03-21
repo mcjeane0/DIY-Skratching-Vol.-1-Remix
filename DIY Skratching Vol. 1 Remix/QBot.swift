@@ -59,7 +59,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var queuePlayer : AVQueuePlayer!
     var window: UIWindow?
     
-    var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue,SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue,SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.lazers.rawValue,SkratchName.phazers.rawValue,SkratchName.scribbles.rawValue,SkratchName.fades.rawValue,SkratchName.cloverTears.rawValue,SkratchName.needleDropping.rawValue,SkratchName.zigZags.rawValue,SkratchName.waves.rawValue,SkratchName.swipes.rawValue,SkratchName.flare.rawValue,SkratchName.twoClickFlare.rawValue,SkratchName.crabsCrepes.rawValue]
+    var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue, SkratchName.fades.rawValue, SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue, SkratchName.twoClickFlare.rawValue,SkratchName.flare.rawValue, SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.cloverTears.rawValue, SkratchName.lazers.rawValue,SkratchName.phazers.rawValue, SkratchName.crabsCrepes.rawValue, SkratchName.scribbles.rawValue, SkratchName.zigZags.rawValue, SkratchName.swipes.rawValue, SkratchName.waves.rawValue, SkratchName.needleDropping.rawValue]
     
     var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
 
@@ -131,17 +131,22 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate let cuttingTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41008, timescale: 1000),CMTime(value: 47046, timescale: 1000),CMTime(value: 53103, timescale: 1000)]
     
-    fileprivate lazy var times = [babyTimes,cuttingTimes]
+    fileprivate let reverseCuttingTimes = [CMTime(value: 23424, timescale: 1000),CMTime(value: 29509, timescale: 1000),CMTime(value: 35492, timescale: 1000),CMTime(value: 41616, timescale: 1000)]
+    
+    fileprivate let marchesTimes = [CMTime(value: 46952, timescale: 1000),CMTime(value: 52983, timescale: 1000),CMTime(value: 59032, timescale: 1000),CMTime(value: 65854, timescale: 1000)]
+    
+    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
     var skratchIndex = 0
     
-    fileprivate func loopBabyAndCuttingQs(){
+    fileprivate func loopQs(){
         loadVideoByName(SkratchName.baby.rawValue)
         loadVideoByName(SkratchName.cutting.rawValue)
+        loadVideoByName(SkratchName.reverseCutting.rawValue)
+        loadVideoByName(SkratchName.marches.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
-        playerItems.last!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
@@ -173,7 +178,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 
                 //cycleAllSkratches()
-                loopBabyAndCuttingQs()
+                loopQs()
                 
                 
                 self.queuePlayer.insert(playerItems.first!, after: nil)

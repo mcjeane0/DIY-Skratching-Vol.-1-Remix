@@ -81,7 +81,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var playerItems : [AVPlayerItem] = []
     
-    var oneSecondTimer : Repeater!
+    var infinitePeriodicTimer : Repeater!
     
     func currentNanoseconds()->Int{
         var info = mach_timebase_info()
@@ -131,6 +131,25 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     
+    fileprivate func cycleAllSkratches() {
+        for name in skratchNames {
+            loadVideoByName(name)
+        }
+        infinitePeriodicTimer = Repeater.every(Repeater.Interval.seconds(1.0), { (timer) in
+            self.queuePlayer.advanceToNextItem()
+        })
+    }
+    
+    fileprivate func loopBabyQ1(){
+        loadVideoByName(skratchNames.first!)
+        playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
+        
+        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
+            self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
+        })
+        
+    }
+    
     @objc func faceDidAppear(_ notification:Notification){
         if let viewController = notification.object as? Face {
             self.face = viewController
@@ -138,18 +157,19 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             switch play {
             default:
-                for name in skratchNames {
-                    loadVideoByName(name)
-                }
+                
                 queuePlayer = AVQueuePlayer(playerItem: nil)
+                face.setLayerPlayer(queuePlayer)
+                
+                
+                //cycleAllSkratches()
+                loopBabyQ1()
+                
                 for item in playerItems {
                     self.queuePlayer.insert(item, after: nil)
                 }
-                face.setLayerPlayer(queuePlayer)
                 self.queuePlayer.play()
-                oneSecondTimer = Repeater.every(Repeater.Interval.seconds(1.0), { (timer) in
-                    self.queuePlayer.advanceToNextItem()
-                })
+
                 break
             }
             

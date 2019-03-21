@@ -214,7 +214,6 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem.name = name
                 playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                //playerItem.setValue(name, forKey: "ThudRumbleVideoClipName")
                 playerItem.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]

@@ -20,9 +20,7 @@ extension Head : FaceDelegate {
 
             switch play {
             default:
-                loadVideoByName(SkratchName.baby.rawValue, looped: false) { (completed) in
-                    
-                }
+                loadVideoByName(SkratchName.baby.rawValue)
                 break
             }
             

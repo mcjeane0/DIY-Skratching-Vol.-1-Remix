@@ -303,7 +303,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var currentSkratchIndex = 0
     
-    func loadVideoByName(_ string:String,looped:Bool){
+    func loadVideoByName(_ string:String){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
             let (_, value) = arg
@@ -335,14 +335,13 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem?.select(selectedOption, in: selectionGroup)
                 queuePlayer = AVQueuePlayer(playerItem: playerItem)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(loop.duration.value)) {
-                    
+                    self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
+                    self.loadVideoByName(self.skratchNames[self.currentSkratchIndex])
                 }
                 /*
                 queuePlayer?.addBoundaryTimeObserver(forTimes: [NSValue(time:CMTime(value: loop.start.value+1, timescale: 1))], queue: nil, using: {
                     //for random scratch: Int(arc4random_uniform(UInt32(self.skratchNames.count-1)))
-                    self.currentSkratchIndex = (self.currentSkratchIndex + 1) % (self.skratchNames.count - 1)
-                    self.loadVideoByName(self.skratchNames[self.currentSkratchIndex], looped: false, completion: { (completed) in
-                        
+                 
                     })
                 })
                 */

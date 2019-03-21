@@ -140,7 +140,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         })
     }
     
-    fileprivate var babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41040, timescale: 1000),CMTime(value: 47049, timescale: 1000),CMTime(value: 53009, timescale: 1000)]
+    fileprivate var babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53009, timescale: 1000)]
     
     fileprivate let aMilli = CMTime(value: 1000, timescale: 1000)
     

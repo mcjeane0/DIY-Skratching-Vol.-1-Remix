@@ -134,7 +134,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     fileprivate func loopBabyQs(){
         loadVideoByName(skratchNames.first!)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
-        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(6036), { (timer) in
+        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
             self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
@@ -163,7 +163,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 }
                 
                 self.queuePlayer.play()
-                self.queuePlayer.rate = 0.5
+                self.queuePlayer.rate = 2.0
 
 
                 break

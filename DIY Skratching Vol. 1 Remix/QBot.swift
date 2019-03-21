@@ -268,6 +268,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerItem.status {
             case .readyToPlay:
                 playerItem.audioTimePitchAlgorithm = .varispeed
+                playerItem?.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
                 queuePlayer?.rate = playbackRate
                 break
             default:
@@ -329,7 +330,6 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let loop = skratchLoops[string]!
                 
                 //playerItem?.seek(to: loop.start)
-                playerItem?.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]

@@ -136,12 +136,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(1509), { (timer) in
             
-            self.queuePlayer.pause()
-            self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: { (completed) in
-                self.queuePlayer.play()
-                self.queuePlayer.rate = 2.0
-
-            })
+            //self.queuePlayer.pause()
+            self.playerItems.first!.seek(to: self.babyTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
         })
         
         

@@ -150,10 +150,10 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let playerItem = object as? AVPlayerItem {
+        if let playerItem = object as? WVPlayerItem {
             switch playerItem.status {
             case .readyToPlay:
-                if let name = (playerItem as! WVPlayerItem).name {
+                if let name = playerItem.name {
                     NSLog("name ready: \(name)")
                     playerItems[SkratchName(rawValue:name)!] = playerItem
                 }

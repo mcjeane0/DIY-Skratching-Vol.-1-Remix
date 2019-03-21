@@ -212,14 +212,14 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let playerItem = WVPlayerItem(asset: asset)
                 
                 //playerItem?.seek(to: loop.start)
-                playerItem.name = name
+                playerItem.name = string
                 playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 playerItem.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]
                 playerItem.select(selectedOption, in: selectionGroup)
-                loadingPlayerItems[SkratchName(rawValue: name)!] = playerItem
+                loadingPlayerItems[SkratchName(rawValue: string)!] = playerItem
             }
             else {
             }

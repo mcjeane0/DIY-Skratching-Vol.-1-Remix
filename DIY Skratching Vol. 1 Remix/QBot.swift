@@ -138,7 +138,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var skratchIndex = 0
     
     fileprivate func loopBabyAndCuttingQs(){
-        loadVideoByName(skratchNames.first!)
+        loadVideoByName(skratchNames.baby.rawValue)
         loadVideoByName(SkratchName.cutting.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         playerItems.last!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
@@ -153,6 +153,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             randomItem.seek(to: itemTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
             if self.skratchIndex != nextIndex {
                 self.queuePlayer.replaceCurrentItem(with: randomItem)
+                self.skratchIndex = nextIndex
             }
         })
         

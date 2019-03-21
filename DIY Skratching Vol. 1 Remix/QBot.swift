@@ -127,25 +127,33 @@ class QBot: UIResponder, UIApplicationDelegate {
         })
     }
     
-    fileprivate var babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
+    fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
+    
+    fileprivate let cuttingTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41008, timescale: 1000),CMTime(value: 47046, timescale: 1000),CMTime(value: 53103, timescale: 1000)]
+    
+    fileprivate let times = [babyTimes,cuttingTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
-    fileprivate func loopBabyQs(){
+    var skratchIndex = 0
+    
+    fileprivate func loopBabyAndCuttingQs(){
         loadVideoByName(skratchNames.first!)
-        loadVideoByName(skratchNames.first!)
-        loadVideoByName(skratchNames.first!)
-        loadVideoByName(skratchNames.first!)
-        var index = 0
-        for item in playerItems {
-            item.seek(to: self.babyTimes[index], toleranceBefore: aMilli, toleranceAfter: aMilli)
-            index += 1
-        }
-        
+        loadVideoByName(SkratchName.cutting.rawValue)
+        playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
+        playerItems.last!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
-            self.queuePlayer.insert(self.playerItems[Int(arc4random_uniform(3))], after: nil)
+            
+            let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count) - 1))
+            let itemTimes = times[nextIndex]
+            let randomItem = self.playerItems[nextIndex]
+            
+            randomItem.seek(to: itemTimes[Int(arc4random_uniform(3))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+            if self.skratchIndex != nextIndex {
+                self.queuePlayer.replaceCurrentItem(with: randomItem)
+            }
         })
         
         
@@ -164,12 +172,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 
                 //cycleAllSkratches()
-                loopBabyQs()
+                loopBabyAndCuttingQs()
                 
-                for item in playerItems {
-                    self.queuePlayer.insert(item, after: nil)
-                }
                 
+                self.queuePlayer.insert(playerItems.first!, after: nil)
                 self.queuePlayer.play()
                 self.queuePlayer.rate = 2.0
 

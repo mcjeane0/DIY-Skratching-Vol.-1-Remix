@@ -132,7 +132,6 @@ class QBot: UIResponder, UIApplicationDelegate {
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
     fileprivate func loopBabyQs(){
-        queuePlayer.rate = 2.0
         loadVideoByName(skratchNames.first!)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000))
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(1509), { (timer) in
@@ -164,7 +163,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                 for item in playerItems {
                     self.queuePlayer.insert(item, after: nil)
                 }
+                
                 self.queuePlayer.play()
+                self.queuePlayer.rate = 2.0
+
 
                 break
             }

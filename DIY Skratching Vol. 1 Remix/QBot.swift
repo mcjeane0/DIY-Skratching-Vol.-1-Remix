@@ -131,7 +131,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate let cuttingTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41008, timescale: 1000),CMTime(value: 47046, timescale: 1000),CMTime(value: 53103, timescale: 1000)]
     
-    fileprivate let times = [babyTimes,cuttingTimes]
+    fileprivate lazy let times = [babyTimes,cuttingTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     

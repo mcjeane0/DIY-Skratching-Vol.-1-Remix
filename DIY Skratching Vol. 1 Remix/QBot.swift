@@ -268,7 +268,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerItem.status {
             case .readyToPlay:
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                playerItem?.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
+                playerItem.seek(to: CMTime(seconds: 34961, preferredTimescale: 1000))
                 queuePlayer?.rate = playbackRate
                 break
             default:

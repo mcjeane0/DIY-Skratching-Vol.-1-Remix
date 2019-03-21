@@ -320,7 +320,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem = AVPlayerItem(asset: asset!)
                 let loop = skratchLoops[string]!
                 
-                playerItem?.seek(to: loop.start)
+                playerItem?.seek(to: CMTime.zero)
                 playerItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 let selectionGroup = asset!.mediaSelectionGroup(forMediaCharacteristic: .audible)!
                 let selectedOption = selectionGroup.options[1]

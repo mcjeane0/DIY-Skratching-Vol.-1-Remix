@@ -105,10 +105,13 @@ class Face: UIViewController {
     @IBAction func tempoTapped(_ sender: Any) {
         
         if numericKeypadDisplayed && selectedButton == tempo{
-            let bpm = Float(digitComponents.joined())!
-            let roundedPeriod = Int((60.0/bpm)*1000000000)
-            tempo.setTitle("\(bpm)", for: UIControl.State.normal)
-            delegate?.handleTempoButtonTapped(bpm: bpm, period: roundedPeriod)
+            if digitComponents.count > 0 {
+                let bpm = Float(digitComponents.joined())!
+                let roundedPeriod = Int((60.0/bpm)*1000000000)
+                tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+                delegate?.handleTempoButtonTapped(bpm: bpm, period: roundedPeriod)
+            }
+            
             hideNumeric()
             digitComponents.removeAll()
         }
@@ -120,11 +123,15 @@ class Face: UIViewController {
     }
     
     @IBAction func phraseTapped(_sender: Any) {
+        
         if numericKeypadDisplayed && selectedButton == phrase{
-            let phraseCount = Float(digitComponents.joined())!
+            if digitComponents.count > 0 {
+                let phraseCount = Float(digitComponents.joined())!
+                
+                phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
+                delegate?.handlePhraseButtonTapped(count:Int(phraseCount))
+            }
             
-            phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
-            delegate?.handlePhraseButtonTapped(count:Int(phraseCount))
             hideNumeric()
             digitComponents.removeAll()
         }

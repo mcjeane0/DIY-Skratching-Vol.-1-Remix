@@ -49,7 +49,7 @@ class Face: UIViewController {
         let period = Float(intPeriod)
         let frequency : Float = 1000000000.0/period
         let bpm = frequency * 60.0
-        let roundedBPM = String.localizedStringWithFormat(format:"%.2f",bpm)
+        let roundedBPM = String.localizedStringWithFormat("%.2f",bpm)
         tempo.setTitle(roundedBPM, for: UIControl.State.normal)
         delegate?.handleTempoButtonTapped(bpm: bpm, period: intPeriod)
         

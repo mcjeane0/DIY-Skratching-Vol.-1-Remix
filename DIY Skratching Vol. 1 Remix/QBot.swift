@@ -157,7 +157,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
-    var desiredPhrase = 16
+    var desiredPhrase = 4
     
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
@@ -193,6 +193,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
+                NSLog("\(currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPause()
                 }

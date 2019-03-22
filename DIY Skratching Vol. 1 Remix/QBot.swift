@@ -155,7 +155,19 @@ class QBot: UIResponder, UIApplicationDelegate {
         })
     }
     
+    var randomItem : AVPlayerItem!
     
+    func chooseRandomItem(){
+        let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
+        let itemTimes = self.times[nextIndex]
+        self.randomItem = self.playerItems[nextIndex]
+        if self.skratchIndex != nextIndex {
+            randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+            
+            self.skratchIndex = nextIndex
+            
+        }
+    }
     
     fileprivate func loopQs(){
         loadVideoByName(SkratchName.baby.rawValue)
@@ -171,6 +183,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(SkratchName.transformer.rawValue)
         loadVideoByName(SkratchName.dicing.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
+        chooseRandomItem()
         
         //6036
         //3018
@@ -179,20 +192,14 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
-                let beforeNanoseconds = currentNanoseconds()
-                let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
-                let itemTimes = self.times[nextIndex]
-                let randomItem = self.playerItems[nextIndex]
-                randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
-                if self.skratchIndex != nextIndex {
-                    self.queuePlayer.replaceCurrentItem(with: randomItem)
-                    self.achieveDesiredTempo()
-                    self.skratchIndex = nextIndex
-                    
+                let beforeNano = currentNanoseconds()
+                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                let afterNano = currentNanoseconds()
+                self.achieveDesiredTempo()
+                DispatchQueue.main.async {
+                    self.chooseRandomItem()
+                    NSLog("\((before-after)/1000)")
                 }
-                let afterNanoseconds = currentNanoseconds()
-                NSLog("\((afterNanoseconds-beforeNanoseconds)/1000)")
-                
             }
             
             

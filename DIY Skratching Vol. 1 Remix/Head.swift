@@ -16,13 +16,13 @@ extension Head : FaceDelegate {
     func playPause(){
         if queuePlayer.rate > 0.0 {
             queuePlayer.pause()
-            infinitePeriodicTimer.pause()
+            //infinitePeriodicTimer.pause()
             face.playPause.setTitle("Play", for: UIControl.State.normal)
         }
         else {
             queuePlayer.play()
-            infinitePeriodicTimer.reset(nil)
-            infinitePeriodicTimer.start()
+            //infinitePeriodicTimer.reset(nil)
+            //infinitePeriodicTimer.start()
             achieveDesiredTempo()
             face.playPause.setTitle("Pause", for: UIControl.State.normal)
         }

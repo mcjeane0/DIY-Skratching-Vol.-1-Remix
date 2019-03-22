@@ -205,8 +205,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     func achieveDesiredTempo() {
         let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
         self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
-        NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
-        NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
+        //NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
+        //NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
     }
     
     @objc func faceDidAppear(_ notification:Notification){

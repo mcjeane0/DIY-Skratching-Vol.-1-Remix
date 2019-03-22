@@ -13,7 +13,7 @@ import AVKit
 @objc protocol FaceDelegate {
     @objc optional func handleTrackButtonTapped()
     @objc optional func handleSyncButtonTapped()
-    @objc optional func handlePlayPauseButtonTapped()
+    func handlePlayPauseButtonTapped()
     @objc optional func handleRewindButtonTapped()
     @objc optional func handleBattleButtonTapped()
     @objc optional func handleDemoButtonTapped()
@@ -29,7 +29,13 @@ import AVKit
 
 class Face: UIViewController {
     
+    @IBOutlet weak var playPause: UIButton!
     
+    @IBAction func playPauseTapped(_ sender: Any) {
+     
+        delegate?.handlePlayPauseButtonTapped()
+        
+    }
     
     @IBOutlet weak var videoView: UIView!
     override var prefersStatusBarHidden: Bool {

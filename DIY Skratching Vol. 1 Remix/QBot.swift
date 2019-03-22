@@ -178,19 +178,22 @@ class QBot: UIResponder, UIApplicationDelegate {
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
-            
-            let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
-            let itemTimes = self.times[nextIndex]
-            let randomItem = self.playerItems[nextIndex]
-            if self.skratchIndex != nextIndex {
-                self.queuePlayer.replaceCurrentItem(with: randomItem)
-                let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                //let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                self.queuePlayer.rate = (self.desiredTempo/nextItemOriginalTempo)
-                self.skratchIndex = nextIndex
-                
+            DispatchQueue.main.sync {
+                let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
+                let itemTimes = self.times[nextIndex]
+                let randomItem = self.playerItems[nextIndex]
+                if self.skratchIndex != nextIndex {
+                    self.queuePlayer.replaceCurrentItem(with: randomItem)
+                    let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+                    //let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+                    self.queuePlayer.rate = (self.desiredTempo/nextItemOriginalTempo)
+                    self.skratchIndex = nextIndex
+                    
+                }
+                randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
             }
-            randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+            
+            
             
         })
         

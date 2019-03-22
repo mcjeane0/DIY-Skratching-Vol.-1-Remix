@@ -98,7 +98,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate let dicingTimes = [CMTime(value: 33453, timescale: 1000),CMTime(value: 44733, timescale: 1000),CMTime(value: 56045, timescale: 1000),CMTime(value: 67316, timescale: 1000)]
     
-    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes]
+    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,tipsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     

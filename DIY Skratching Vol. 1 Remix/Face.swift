@@ -17,7 +17,7 @@ import AVKit
     @objc optional func handleRewindButtonTapped()
     @objc optional func handleBattleButtonTapped()
     @objc optional func handleDemoButtonTapped()
-    @objc optional func handleTempoButtonTapped()
+    func handleTempoButtonTapped(bpm:Float, period:Int)
     @objc optional func handleFastForwardButtonTapped()
     @objc optional func handleStopButtonTapped()
     @objc optional func handleDifficultyButtonTapped()
@@ -28,6 +28,31 @@ import AVKit
 
 
 class Face: UIViewController {
+    
+    @IBOutlet weak var tempo: UIButton!
+    
+    func currentNanoseconds()->Int{
+        var info = mach_timebase_info()
+        guard mach_timebase_info(&info) == KERN_SUCCESS else { return -1 }
+        let currentTime = mach_absolute_time()
+        let nanos = currentTime * UInt64(info.numer) / UInt64(info.denom)
+        return Int(nanos)
+    }
+    
+    var lastTempoTapped : Int = 0
+    
+    @IBAction func tempoTapped(_ sender: Any) {
+        
+        let currentTempoTapped = currentNanoseconds()
+        let intPeriod = currentTempoTapped - lastTempoTapped
+        let period = Float(intPeriod)
+        let frequency : Float = 1000000000.0/period
+        let bpm = frequency * 60.0
+        let roundedBPM = String(format:"%.2f",[bpm])
+        tempo.setTitle(roundedBPM, for: UIControl.State.normal)
+        delegate?.handleTempoButtonTapped(bpm: bpm, period: intPeriod)
+        
+    }
     
     @IBOutlet weak var playPause: UIButton!
     
@@ -52,7 +77,7 @@ class Face: UIViewController {
     
     var delegate : FaceDelegate?
 
-   
+
 
     func setLayerPlayer(_ player:AVQueuePlayer) {
         videoLayer.player = player

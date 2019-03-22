@@ -34,12 +34,21 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ach-dH-Jla">
                                 <rect key="frame" x="16" y="608" width="100" height="51"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
-                                <size key="titleShadowOffset" width="0.0" height="4"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXp-UA-8vC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-MY-ZkE">
+                                <rect key="frame" x="16" y="549" width="100" height="51"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
+                                <state key="normal" title="Tempo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tempoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yII-aB-q3v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,6 +57,7 @@
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="ach-dH-Jla" secondAttribute="bottom" constant="8" id="0mh-JE-ltc"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="-20" id="7YX-NJ-K2u"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="ZJA-uU-9N8" secondAttribute="bottom" id="E4z-Yt-Rex"/>
+                            <constraint firstItem="KQf-MY-ZkE" firstAttribute="centerX" secondItem="ach-dH-Jla" secondAttribute="centerX" id="EEu-E0-75C"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="-10" id="Hhc-aq-uOX"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LXO-8R-36M"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="QbS-tq-SvO" secondAttribute="bottom" constant="-10" id="QbN-er-lwL"/>
@@ -56,10 +66,12 @@
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l6y-UE-KD4"/>
                             <constraint firstItem="ach-dH-Jla" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="suq-1h-nFK"/>
                             <constraint firstAttribute="trailing" secondItem="ach-dH-Jla" secondAttribute="trailing" constant="259" id="vxw-WM-XJj"/>
+                            <constraint firstItem="ach-dH-Jla" firstAttribute="top" secondItem="KQf-MY-ZkE" secondAttribute="bottom" constant="8" id="xBa-L0-9Lr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playPause" destination="ach-dH-Jla" id="vgT-Fx-86C"/>
+                        <outlet property="tempo" destination="KQf-MY-ZkE" id="CBw-yI-net"/>
                         <outlet property="videoLabel" destination="QbS-tq-SvO" id="DLz-Db-2Xg"/>
                         <outlet property="videoView" destination="ZJA-uU-9N8" id="rox-Yg-rHZ"/>
                     </connections>

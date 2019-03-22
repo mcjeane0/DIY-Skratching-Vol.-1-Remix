@@ -61,6 +61,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue, SkratchName.fades.rawValue, SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue, SkratchName.twoClickFlare.rawValue,SkratchName.flare.rawValue, SkratchName.crescentFlare.rawValue,SkratchName.chirpFlare.rawValue,SkratchName.cloverTears.rawValue, SkratchName.lazers.rawValue,SkratchName.phazers.rawValue, SkratchName.crabsCrepes.rawValue, SkratchName.scribbles.rawValue, SkratchName.zigZags.rawValue, SkratchName.swipes.rawValue, SkratchName.waves.rawValue, SkratchName.needleDropping.rawValue]
     
+    var skratchBPMS : [Float] = [79.0,79.0,79.0,79.0,98.0,98.0,98.0,105.0,105.0,92.0,85.0,85.0,85.0,85.0,85.0,92.0,105.0,92.0,92.0,92.0,92.0,92.0,105.0,105.0,105.0,105.0]
+    
     var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
 
     
@@ -70,13 +72,23 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var infinitePeriodicTimer : Repeater!
     
-    func currentNanoseconds()->Int{
-        var info = mach_timebase_info()
-        guard mach_timebase_info(&info) == KERN_SUCCESS else { return -1 }
-        let currentTime = mach_absolute_time()
-        let nanos = currentTime * UInt64(info.numer) / UInt64(info.denom)
-        return Int(nanos)
-    }
+    var desiredTempo : Float = 79.0
+    
+    fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
+    
+    fileprivate let cuttingTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41008, timescale: 1000),CMTime(value: 47046, timescale: 1000),CMTime(value: 53103, timescale: 1000)]
+    
+    fileprivate let reverseCuttingTimes = [CMTime(value: 23424, timescale: 1000),CMTime(value: 29509, timescale: 1000),CMTime(value: 35492, timescale: 1000),CMTime(value: 41616, timescale: 1000)]
+    
+    fileprivate let marchesTimes = [CMTime(value: 46952, timescale: 1000),CMTime(value: 52983, timescale: 1000),CMTime(value: 59032, timescale: 1000),CMTime(value: 65854, timescale: 1000)]
+    
+    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes]
+    
+    fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
+    
+    var skratchIndex = 0
+    
+    
     
     func loadAssetsFromBundleIntoTables(){
         
@@ -127,19 +139,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         })
     }
     
-    fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
     
-    fileprivate let cuttingTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41008, timescale: 1000),CMTime(value: 47046, timescale: 1000),CMTime(value: 53103, timescale: 1000)]
-    
-    fileprivate let reverseCuttingTimes = [CMTime(value: 23424, timescale: 1000),CMTime(value: 29509, timescale: 1000),CMTime(value: 35492, timescale: 1000),CMTime(value: 41616, timescale: 1000)]
-    
-    fileprivate let marchesTimes = [CMTime(value: 46952, timescale: 1000),CMTime(value: 52983, timescale: 1000),CMTime(value: 59032, timescale: 1000),CMTime(value: 65854, timescale: 1000)]
-    
-    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes]
-    
-    fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
-    
-    var skratchIndex = 0
     
     fileprivate func loopQs(){
         loadVideoByName(SkratchName.baby.rawValue)
@@ -162,11 +162,20 @@ class QBot: UIResponder, UIApplicationDelegate {
             randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
             if self.skratchIndex != nextIndex {
                 self.queuePlayer.replaceCurrentItem(with: randomItem)
+                let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+                let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+                self.queuePlayer.rate = (nextItemOriginalTempo/currentItemOriginalTempo) * (self.desiredTempo/nextItemOriginalTempo)
                 self.skratchIndex = nextIndex
+                
             }
         })
         
         
+    }
+    
+    func achieveDesiredTempo() {
+        let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+        self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
     }
     
     @objc func faceDidAppear(_ notification:Notification){
@@ -187,7 +196,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 self.queuePlayer.insert(playerItems.first!, after: nil)
                 self.queuePlayer.play()
-                self.queuePlayer.rate = 2.0
+                achieveDesiredTempo()
 
 
                 break

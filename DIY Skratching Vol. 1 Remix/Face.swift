@@ -53,16 +53,20 @@ class Face: UIViewController {
         self.videoView.layer.addSublayer(videoLayer)
     }
 
-    var viewCenter : CGPoint!
     
     override func viewDidLayoutSubviews() {
     }
     
     override func viewWillLayoutSubviews() {
         self.videoLabel.frame = self.view.bounds
-        self.videoView.frame = self.view.bounds
+        switch UIDevice.current.orientation {
+        case .landscapeLeft,.landscapeRight:
+            self.videoView.frame = CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width/2.0, height: self.view.frame.height))
+            break
+        default:
+            self.videoView.frame = CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width, height: self.view.frame.height/2.0))
+        }
         videoLayer.frame = self.videoView.frame
-        viewCenter = view.center
         
     }
     

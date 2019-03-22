@@ -175,7 +175,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         //6036
         //3018
         //1509
-        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(1509), { (timer) in
+        infinitePeriodicTimer = Repeater.every(Repeater.Interval.milliseconds(3018), { (timer) in
             
             //self.queuePlayer.pause()
             
@@ -188,7 +188,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.queuePlayer.replaceCurrentItem(with: randomItem)
                 let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
                 let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                self.queuePlayer.rate = (nextItemOriginalTempo/currentItemOriginalTempo) * (self.desiredTempo/nextItemOriginalTempo)
+                self.queuePlayer.rate = (self.desiredTempo/nextItemOriginalTempo)
                 self.skratchIndex = nextIndex
                 
             }

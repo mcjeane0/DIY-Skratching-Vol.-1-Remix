@@ -40,6 +40,8 @@ class Face: UIViewController {
     
     var lastTempoTapped : Int = 0
     
+    var averageBPM : Float = 60.0
+    
     @IBAction func tempoTapped(_ sender: Any) {
         
         let currentTempoTapped = currentNanoseconds()
@@ -48,9 +50,10 @@ class Face: UIViewController {
         let period = Float(intPeriod)
         let frequency : Float = 1000000000.0/period
         let bpm = frequency * 60.0
-        let roundedBPM = String.localizedStringWithFormat("%.2f",bpm)
-        tempo.setTitle(roundedBPM, for: UIControl.State.normal)
-        delegate?.handleTempoButtonTapped(bpm: bpm, period: intPeriod)
+        averageBPM = floor(averageBPM + (bpm/4))
+        let roundedPeriod = 60.0/averageBPM
+        tempo.setTitle("\(self.averageBPM)", for: UIControl.State.normal)
+        delegate?.handleTempoButtonTapped(bpm: averageBPM, period: intPeriod)
         
     }
     

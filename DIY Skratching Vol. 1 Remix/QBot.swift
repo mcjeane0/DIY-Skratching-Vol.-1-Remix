@@ -82,7 +82,23 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate let marchesTimes = [CMTime(value: 46952, timescale: 1000),CMTime(value: 52983, timescale: 1000),CMTime(value: 59032, timescale: 1000),CMTime(value: 65854, timescale: 1000)]
     
-    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes]
+    fileprivate let dragsTimes = [CMTime(value: 15458, timescale: 1000),CMTime(value: 25246, timescale: 1000),CMTime(value: 35041, timescale: 1000),CMTime(value: 44841, timescale: 1000)]
+    
+    fileprivate let chirpsTimes = [CMTime(value: 64081, timescale: 1000),CMTime(value: 68963, timescale: 1000),CMTime(value: 73887, timescale: 1000),CMTime(value: 78775, timescale: 1000)]
+    
+    fileprivate let tearsTimes = [CMTime(value: 46952, timescale: 1000),CMTime(value: 52746, timescale: 1000),CMTime(value: 62557, timescale: 1000),CMTime(value: 72326, timescale: 1000)]
+    
+    fileprivate let tipsTimes = [CMTime(value: 27478, timescale: 1000),CMTime(value: 32058, timescale: 1000),CMTime(value: 36620, timescale: 1000),CMTime(value: 41184, timescale: 1000)]
+    
+    fileprivate let longShortTipTearsTimes = [CMTime(value: 49569, timescale: 1000),CMTime(value: 58712, timescale: 1000),CMTime(value: 67742, timescale: 1000),CMTime(value: 76987, timescale: 1000)]
+    
+    fileprivate let fadesTimes = [CMTime(value: 31414, timescale: 1000),CMTime(value: 41845, timescale: 1000),CMTime(value: 52257, timescale: 1000),CMTime(value: 62646, timescale: 1000)]
+    
+    fileprivate let transformerTimes = [CMTime(value: 50968, timescale: 1000),CMTime(value: 62268, timescale: 1000),CMTime(value: 73544, timescale: 1000),CMTime(value: 84826, timescale: 1000)]
+    
+    fileprivate let dicingTimes = [CMTime(value: 33453, timescale: 1000),CMTime(value: 44733, timescale: 1000),CMTime(value: 56045, timescale: 1000),CMTime(value: 67316, timescale: 1000)]
+    
+    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
@@ -146,6 +162,14 @@ class QBot: UIResponder, UIApplicationDelegate {
         loadVideoByName(SkratchName.cutting.rawValue)
         loadVideoByName(SkratchName.reverseCutting.rawValue)
         loadVideoByName(SkratchName.marches.rawValue)
+        loadVideoByName(SkratchName.drags.rawValue)
+        loadVideoByName(SkratchName.chirps.rawValue)
+        loadVideoByName(SkratchName.tears.rawValue)
+        loadVideoByName(SkratchName.tips.rawValue)
+        loadVideoByName(SkratchName.longShortTipTears.rawValue)
+        loadVideoByName(SkratchName.fades.rawValue)
+        loadVideoByName(SkratchName.transformer.rawValue)
+        loadVideoByName(SkratchName.dicing.rawValue)
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         
         //6036

@@ -21,6 +21,7 @@ extension Head : FaceDelegate {
         }
         else {
             queuePlayer.play()
+            infinitePeriodicTimer.reset(nil)
             infinitePeriodicTimer.start()
             achieveDesiredTempo()
             face.playPause.setTitle("Pause", for: UIControl.State.normal)

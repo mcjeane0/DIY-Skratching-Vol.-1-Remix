@@ -179,18 +179,17 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
+                
                 let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
                 let itemTimes = self.times[nextIndex]
                 let randomItem = self.playerItems[nextIndex]
+                randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
                 if self.skratchIndex != nextIndex {
                     self.queuePlayer.replaceCurrentItem(with: randomItem)
-                    let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                    //let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                    self.queuePlayer.rate = (self.desiredTempo/nextItemOriginalTempo)
+                    self.achieveDesiredTempo()
                     self.skratchIndex = nextIndex
                     
                 }
-                randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
             }
             
             
@@ -203,6 +202,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     func achieveDesiredTempo() {
         let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
         self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
+        NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
+        NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
     }
     
     @objc func faceDidAppear(_ notification:Notification){

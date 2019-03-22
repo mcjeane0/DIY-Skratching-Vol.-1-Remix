@@ -184,6 +184,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let itemTimes = self.times[nextIndex]
                 let randomItem = self.playerItems[nextIndex]
                 randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+                AudioServicesPlayAlertSound(SystemSoundID(1322))
                 if self.skratchIndex != nextIndex {
                     self.queuePlayer.replaceCurrentItem(with: randomItem)
                     self.achieveDesiredTempo()

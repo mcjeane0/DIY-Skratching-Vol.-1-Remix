@@ -202,7 +202,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                     self.achieveDesiredTempo()
                 }
                 self.chooseRandomItem()
-                self.currentPhrase = (self.currentPhrase + 1) % self.desiredPhrase
+                self.currentPhrase = self.currentPhrase + 1
             }
             
             

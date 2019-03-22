@@ -41,6 +41,7 @@ extension Head : FaceDelegate {
     
     func handlePhraseButtonTapped(count: Int) {
         desiredPhrase = count
+        currentPhrase = 1
     }
     
     

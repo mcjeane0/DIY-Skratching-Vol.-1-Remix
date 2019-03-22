@@ -156,7 +156,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var randomItem : AVPlayerItem!
-    var currentPhrase = 0
+    var currentPhrase = 1
     var desiredPhrase = 4
     
     func chooseRandomItem(){

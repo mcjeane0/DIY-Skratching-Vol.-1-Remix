@@ -197,10 +197,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPause(false)
                 }
-                else {
-                    self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                    self.achieveDesiredTempo()
-                }
+                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                self.achieveDesiredTempo()
                 self.chooseRandomItem()
                 self.currentPhrase = self.currentPhrase + 1
             }

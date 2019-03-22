@@ -213,8 +213,11 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     func achieveDesiredTempo() {
-        let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-        self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
+        if self.queuePlayer.rate > 0 {
+            let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+            self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
+
+        }
         //NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
         //NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
     }

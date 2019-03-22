@@ -44,7 +44,8 @@ class Face: UIViewController {
     @IBAction func tempoTapped(_ sender: Any) {
         
         let currentTempoTapped = currentNanoseconds()
-        let intPeriod = currentTempoTapped - lastTempoTapped
+        let intPeriod = currentTempoTapped - lastTempoTapped > 2000000000 ? 2000000000 : currentTempoTapped - lastTempoTapped
+        lastTempoTapped = currentTempoTapped
         let period = Float(intPeriod)
         let frequency : Float = 1000000000.0/period
         let bpm = frequency * 60.0

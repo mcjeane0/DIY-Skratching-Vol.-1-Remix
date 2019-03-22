@@ -55,9 +55,9 @@ class Face: UIViewController {
             tempoComponents.append(title)
             if tempoComponents.count > 3 {
                 tempoComponents.removeFirst()
-                let bpm = Float(tempoComponents[0...2].joined())!
-                tempo.setTitle("\(bpm)", for: UIControl.State.normal)
             }
+            let bpm = Float(tempoComponents.joined())!
+            tempo.setTitle("\(bpm)", for: UIControl.State.normal)
         }
         
     }

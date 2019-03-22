@@ -154,9 +154,8 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zX7-Ak-wa7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
                                 <rect key="frame" x="8" y="497" width="120" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Phrase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -198,9 +197,11 @@
                             <constraint firstItem="e5w-Mw-FWB" firstAttribute="leading" secondItem="KQf-MY-ZkE" secondAttribute="trailing" constant="89" id="dYe-I5-WtA"/>
                             <constraint firstItem="cs7-ho-ZHE" firstAttribute="top" secondItem="vLn-6p-naK" secondAttribute="bottom" constant="2" id="fxg-yM-9Sv"/>
                             <constraint firstItem="p8N-qw-cYE" firstAttribute="baseline" secondItem="vLn-6p-naK" secondAttribute="firstBaseline" id="hcd-6u-mre"/>
+                            <constraint firstItem="KQf-MY-ZkE" firstAttribute="top" secondItem="1wC-Jt-9qA" secondAttribute="bottom" constant="1" id="k4c-bP-IRc"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l6y-UE-KD4"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="e5w-Mw-FWB" secondAttribute="bottom" constant="80" id="lYM-UP-D1V"/>
                             <constraint firstItem="8oQ-1Q-CXp" firstAttribute="leading" secondItem="mCe-EZ-NDg" secondAttribute="trailing" constant="17" id="pCa-94-2PR"/>
+                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="centerX" secondItem="KQf-MY-ZkE" secondAttribute="centerX" id="pXg-dF-HVM"/>
                             <constraint firstItem="ach-dH-Jla" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="suq-1h-nFK"/>
                             <constraint firstItem="Yds-1u-SFf" firstAttribute="centerY" secondItem="z4Y-St-Cd3" secondAttribute="centerY" id="svD-P1-dgg"/>
                             <constraint firstItem="oYR-eJ-KC2" firstAttribute="top" secondItem="mCe-EZ-NDg" secondAttribute="bottom" constant="11" id="tS5-i9-Djy"/>

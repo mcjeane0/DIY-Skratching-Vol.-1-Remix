@@ -198,7 +198,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.achieveDesiredTempo()
                 DispatchQueue.main.async {
                     self.chooseRandomItem()
-                    NSLog("\((before-after)/1000)")
+                    NSLog("\((beforeNano-afterNano)/1000)")
                 }
             }
             

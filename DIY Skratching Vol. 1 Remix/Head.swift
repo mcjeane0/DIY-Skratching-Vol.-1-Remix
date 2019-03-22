@@ -13,23 +13,28 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
-    func playPause(){
+    func playPause(_ global:Bool){
         if queuePlayer.rate > 0.0 {
             queuePlayer.pause()
-            //infinitePeriodicTimer.pause()
+            if global {
+                infinitePeriodicTimer.pause()
+            }
+            
             face.playPause.setTitle("Play", for: UIControl.State.normal)
         }
         else {
             queuePlayer.play()
-            //infinitePeriodicTimer.reset(nil)
-            //infinitePeriodicTimer.start()
+            if global {
+                infinitePeriodicTimer.reset(nil)
+                infinitePeriodicTimer.start()
+            }
             achieveDesiredTempo()
             face.playPause.setTitle("Pause", for: UIControl.State.normal)
         }
     }
     
     func handlePlayPauseButtonTapped() {
-        playPause()
+        playPause(true)
     }
     
     func handleTempoButtonTapped(bpm: Float, period:Int) {

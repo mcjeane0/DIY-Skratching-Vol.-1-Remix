@@ -125,6 +125,8 @@ class Face: UIViewController {
             
             phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
             delegate?.handlePhraseButtonTapped(count:Int(phraseCount))
+            hideNumeric()
+            digitComponents.removeAll()
         }
         else if !numericKeypadDisplayed {
             selectedButton = phrase

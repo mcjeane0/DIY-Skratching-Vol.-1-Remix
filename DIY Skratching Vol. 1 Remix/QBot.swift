@@ -192,14 +192,9 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
-                let beforeNano = currentNanoseconds()
                 self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                let afterNano = currentNanoseconds()
                 self.achieveDesiredTempo()
-                DispatchQueue.main.async {
-                    self.chooseRandomItem()
-                    NSLog("\((beforeNano-afterNano)/1000)")
-                }
+                self.chooseRandomItem()
             }
             
             

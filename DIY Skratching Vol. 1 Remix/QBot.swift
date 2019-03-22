@@ -187,8 +187,8 @@ class QBot: UIResponder, UIApplicationDelegate {
             if self.skratchIndex != nextIndex {
                 self.queuePlayer.replaceCurrentItem(with: randomItem)
                 let nextItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-                self.queuePlayer.rate = (nextItemOriginalTempo/self.desiredTempo)
+                //let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+                self.queuePlayer.rate = (self.desiredTempo/nextItemOriginalTempo)
                 self.skratchIndex = nextIndex
                 
             }
@@ -199,7 +199,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func achieveDesiredTempo() {
         let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-        self.queuePlayer.rate = (currentItemOriginalTempo/self.desiredTempo)
+        self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
     }
     
     @objc func faceDidAppear(_ notification:Notification){

@@ -51,9 +51,9 @@ class Face: UIViewController {
         let frequency : Float = 1000000000.0/period
         let bpm = frequency * 60.0
         averageBPM = floor(averageBPM + (bpm/4))
-        let roundedPeriod = 60.0/averageBPM
+        let roundedPeriod = Int((60.0/averageBPM)*1000000000)
         tempo.setTitle("\(self.averageBPM)", for: UIControl.State.normal)
-        delegate?.handleTempoButtonTapped(bpm: averageBPM, period: intPeriod)
+        delegate?.handleTempoButtonTapped(bpm: averageBPM, period: roundedPeriod)
         
     }
     

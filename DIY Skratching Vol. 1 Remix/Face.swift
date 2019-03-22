@@ -9,6 +9,13 @@
 import UIKit
 import AVKit
 
+func currentNanoseconds()->Int{
+    var info = mach_timebase_info()
+    guard mach_timebase_info(&info) == KERN_SUCCESS else { return -1 }
+    let currentTime = mach_absolute_time()
+    let nanos = currentTime * UInt64(info.numer) / UInt64(info.denom)
+    return Int(nanos)
+}
 
 @objc protocol FaceDelegate {
     @objc optional func handleTrackButtonTapped()
@@ -30,14 +37,6 @@ import AVKit
 class Face: UIViewController {
     
     @IBOutlet weak var tempo: UIButton!
-    
-    func currentNanoseconds()->Int{
-        var info = mach_timebase_info()
-        guard mach_timebase_info(&info) == KERN_SUCCESS else { return -1 }
-        let currentTime = mach_absolute_time()
-        let nanos = currentTime * UInt64(info.numer) / UInt64(info.denom)
-        return Int(nanos)
-    }
     
     var lastTempoTapped : Int = 0
     

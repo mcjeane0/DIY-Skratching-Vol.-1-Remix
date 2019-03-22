@@ -157,7 +157,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
-    var desiredPhrase = 4
+    var desiredPhrase = 16
     
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))

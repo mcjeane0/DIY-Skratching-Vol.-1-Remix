@@ -36,24 +36,80 @@ func currentNanoseconds()->Int{
 
 class Face: UIViewController {
     
+    
+    @IBOutlet weak var four: UIButton!
+    @IBOutlet weak var seven: UIButton!
+    @IBOutlet weak var three: UIButton!
+    @IBOutlet weak var zero: UIButton!
+    @IBOutlet weak var nine: UIButton!
+    @IBOutlet weak var five: UIButton!
+    @IBOutlet weak var eight: UIButton!
+    @IBOutlet weak var two: UIButton!
+    @IBOutlet weak var one: UIButton!
+    @IBOutlet weak var six: UIButton!
+    
+    
+    @IBAction func tappedNumeric(_ sender: UIButton) {
+        
+        if let title = sender.title(for: .normal) {
+            tempoComponents.append(title)
+            if tempoComponents.count > 3 {
+                tempoComponents.removeFirst()
+                let bpm = Float(tempoComponents[0...2].joined())!
+                tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+            }
+        }
+        
+    }
+    
+    
+    
     @IBOutlet weak var tempo: UIButton!
     
-    var lastTempoTapped : Int = 0
+    var tempoComponents : [String] = []
     
-    var averageBPM : Float = 60.0
+    var tempoKeypadDisplayed = false
+    
+    func hideNumeric(){
+        one.isHidden = true
+        two.isHidden = true
+        three.isHidden = true
+        four.isHidden = true
+        five.isHidden = true
+        six.isHidden = true
+        seven.isHidden = true
+        eight.isHidden = true
+        nine.isHidden = true
+        zero.isHidden = true
+        tempoKeypadDisplayed = false
+    }
+    
+    func showNumeric(){
+        one.isHidden = false
+        two.isHidden = false
+        three.isHidden = false
+        four.isHidden = false
+        five.isHidden = false
+        six.isHidden = false
+        seven.isHidden = false
+        eight.isHidden = false
+        nine.isHidden = false
+        zero.isHidden = false
+        tempoKeypadDisplayed = true
+    }
     
     @IBAction func tempoTapped(_ sender: Any) {
         
-        let currentTempoTapped = currentNanoseconds()
-        let intPeriod = currentTempoTapped - lastTempoTapped > 2000000000 ? 2000000000 : currentTempoTapped - lastTempoTapped
-        lastTempoTapped = currentTempoTapped
-        let period = Float(intPeriod)
-        let frequency : Float = 1000000000.0/period
-        let bpm = frequency * 60.0
-        averageBPM = floor((averageBPM + bpm)/2.0)
-        let roundedPeriod = Int((60.0/averageBPM)*1000000000)
-        tempo.setTitle("\(self.averageBPM)", for: UIControl.State.normal)
-        delegate?.handleTempoButtonTapped(bpm: averageBPM, period: roundedPeriod)
+        if tempoKeypadDisplayed {
+            let bpm = Float(tempoComponents.joined())!
+            let roundedPeriod = Int((60.0/bpm)*1000000000)
+            tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+            delegate?.handleTempoButtonTapped(bpm: bpm, period: roundedPeriod)
+            hideNumeric()
+        }
+        else {
+            showNumeric()
+        }
         
     }
     

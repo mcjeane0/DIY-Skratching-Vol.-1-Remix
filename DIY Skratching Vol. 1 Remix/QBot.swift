@@ -156,6 +156,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var randomItem : AVPlayerItem!
+    var currentPhrase = 0
+    var desiredPhrase = 4
     
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
@@ -163,7 +165,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         self.randomItem = self.playerItems[nextIndex]
         if self.skratchIndex != nextIndex {
             randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
-            
             self.skratchIndex = nextIndex
             
         }
@@ -193,8 +194,12 @@ class QBot: UIResponder, UIApplicationDelegate {
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
                 self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                if self.currentPhrase % self.desiredPhrase == 0 {
+                    self.playPause()
+                }
                 self.achieveDesiredTempo()
                 self.chooseRandomItem()
+                self.currentPhrase = (self.currentPhrase + 1) % self.desiredPhrase
             }
             
             

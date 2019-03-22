@@ -154,6 +154,17 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zX7-Ak-wa7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
+                                <rect key="frame" x="8" y="497" width="120" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
+                                <state key="normal" title="Phrase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="phraseTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpC-zr-Xxx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -206,6 +217,7 @@
                         <outlet property="four" destination="oYR-eJ-KC2" id="lmK-NU-gix"/>
                         <outlet property="nine" destination="p8N-qw-cYE" id="WgK-Gu-ekV"/>
                         <outlet property="one" destination="mCe-EZ-NDg" id="yqv-0r-8vf"/>
+                        <outlet property="phrase" destination="1wC-Jt-9qA" id="bZa-6d-9D9"/>
                         <outlet property="playPause" destination="ach-dH-Jla" id="vgT-Fx-86C"/>
                         <outlet property="seven" destination="e5w-Mw-FWB" id="eYr-WO-es5"/>
                         <outlet property="six" destination="z4Y-St-Cd3" id="cUJ-GL-CmG"/>

@@ -25,6 +25,7 @@ func currentNanoseconds()->Int{
     @objc optional func handleBattleButtonTapped()
     @objc optional func handleDemoButtonTapped()
     func handleTempoButtonTapped(bpm:Float, period:Int)
+    func handlePhraseButtonTapped(count:Int)
     @objc optional func handleFastForwardButtonTapped()
     @objc optional func handleStopButtonTapped()
     @objc optional func handleDifficultyButtonTapped()
@@ -36,6 +37,9 @@ func currentNanoseconds()->Int{
 
 class Face: UIViewController {
     
+    
+    
+    @IBOutlet weak var phrase: UIButton!
     
     @IBOutlet weak var four: UIButton!
     @IBOutlet weak var seven: UIButton!
@@ -52,23 +56,23 @@ class Face: UIViewController {
     @IBAction func tappedNumeric(_ sender: UIButton) {
         
         if let title = sender.title(for: .normal) {
-            tempoComponents.append(title)
-            if tempoComponents.count > 3 {
-                tempoComponents.removeFirst()
+            digitComponents.append(title)
+            if digitComponents.count > 3 {
+                digitComponents.removeFirst()
             }
-            let bpm = Float(tempoComponents.joined())!
-            tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+            let bpm = Float(digitComponents.joined())!
+            selectedButton.setTitle("\(bpm)", for: UIControl.State.normal)
         }
         
     }
     
-    
+    var selectedButton : UIButton!
     
     @IBOutlet weak var tempo: UIButton!
     
-    var tempoComponents : [String] = []
+    var digitComponents : [String] = []
     
-    var tempoKeypadDisplayed = false
+    var numericKeypadDisplayed = false
     
     func hideNumeric(){
         one.isHidden = true
@@ -81,7 +85,7 @@ class Face: UIViewController {
         eight.isHidden = true
         nine.isHidden = true
         zero.isHidden = true
-        tempoKeypadDisplayed = false
+        numericKeypadDisplayed = false
     }
     
     func showNumeric(){
@@ -95,19 +99,35 @@ class Face: UIViewController {
         eight.isHidden = false
         nine.isHidden = false
         zero.isHidden = false
-        tempoKeypadDisplayed = true
+        numericKeypadDisplayed = true
     }
     
     @IBAction func tempoTapped(_ sender: Any) {
         
-        if tempoKeypadDisplayed {
-            let bpm = Float(tempoComponents.joined())!
+        if numericKeypadDisplayed && selectedButton == tempo{
+            let bpm = Float(digitComponents.joined())!
             let roundedPeriod = Int((60.0/bpm)*1000000000)
             tempo.setTitle("\(bpm)", for: UIControl.State.normal)
             delegate?.handleTempoButtonTapped(bpm: bpm, period: roundedPeriod)
             hideNumeric()
+            digitComponents.removeAll()
         }
-        else {
+        else if !numericKeypadDisplayed {
+            selectedButton = tempo
+            showNumeric()
+        }
+        
+    }
+    
+    @IBAction func phraseTapped(_sender: Any) {
+        if numericKeypadDisplayed && selectedButton == phrase{
+            let phraseCount = Float(digitComponents.joined())!
+            
+            phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
+            delegate?.handlePhraseButtonTapped(count:Int(phraseCount))
+        }
+        else if !numericKeypadDisplayed {
+            selectedButton = phrase
             showNumeric()
         }
         

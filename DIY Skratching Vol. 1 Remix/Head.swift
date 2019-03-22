@@ -13,7 +13,7 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
-    func handlePlayPauseButtonTapped() {
+    func playPause(){
         if queuePlayer.rate > 0.0 {
             queuePlayer.pause()
             infinitePeriodicTimer.pause()
@@ -28,11 +28,19 @@ extension Head : FaceDelegate {
         }
     }
     
+    func handlePlayPauseButtonTapped() {
+        playPause()
+    }
+    
     func handleTempoButtonTapped(bpm: Float, period:Int) {
         desiredTempo = bpm
         achieveDesiredTempo()
         infinitePeriodicTimer.reset(Repeater.Interval.nanoseconds(4*period))
         
+    }
+    
+    func handlePhraseButtonTapped(count: Int) {
+        desiredPhrase = count
     }
     
     

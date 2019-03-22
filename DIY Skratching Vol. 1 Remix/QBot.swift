@@ -193,7 +193,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
-                NSLog("\(currentPhrase)")
+                NSLog("\(self.currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPause()
                 }

@@ -154,8 +154,8 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zX7-Ak-wa7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
-                                <rect key="frame" x="8" y="497" width="120" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
+                                <rect key="frame" x="6" y="497" width="120" height="51"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Phrase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -172,8 +172,8 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-gm-NLp">
-                                <rect key="frame" x="26" y="403" width="80" height="51"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
+                                <rect key="frame" x="42" y="409" width="58" height="40"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <state key="normal" title="Time">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -186,7 +186,6 @@
                             <constraint firstItem="jg6-hD-Rpg" firstAttribute="leading" secondItem="p8N-qw-cYE" secondAttribute="leading" id="4qu-S0-gB3"/>
                             <constraint firstItem="e5w-Mw-FWB" firstAttribute="top" secondItem="oYR-eJ-KC2" secondAttribute="bottom" constant="23" id="7Sw-42-LGx"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="-20" id="7YX-NJ-K2u"/>
-                            <constraint firstItem="sUn-gm-NLp" firstAttribute="centerX" secondItem="MF1-Zq-nKh" secondAttribute="centerX" id="8vp-zf-0YR"/>
                             <constraint firstItem="Yds-1u-SFf" firstAttribute="leading" secondItem="vLn-6p-naK" secondAttribute="leading" id="9wX-aA-JLx"/>
                             <constraint firstItem="Yds-1u-SFf" firstAttribute="top" secondItem="8oQ-1Q-CXp" secondAttribute="bottom" constant="12" id="BAU-ed-ePI"/>
                             <constraint firstItem="vLn-6p-naK" firstAttribute="leading" secondItem="cs7-ho-ZHE" secondAttribute="leading" id="Cse-Yc-kZ8"/>
@@ -199,14 +198,15 @@
                             <constraint firstItem="jg6-hD-Rpg" firstAttribute="baseline" secondItem="8oQ-1Q-CXp" secondAttribute="firstBaseline" id="Ksj-py-Zsn"/>
                             <constraint firstItem="QbS-tq-SvO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LXO-8R-36M"/>
                             <constraint firstItem="oYR-eJ-KC2" firstAttribute="leading" secondItem="e5w-Mw-FWB" secondAttribute="leading" id="MKc-qF-8cF"/>
+                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="top" secondItem="sUn-gm-NLp" secondAttribute="bottom" constant="48" id="NWi-6F-d1X"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="QbS-tq-SvO" secondAttribute="bottom" constant="-10" id="QbN-er-lwL"/>
                             <constraint firstItem="z4Y-St-Cd3" firstAttribute="top" secondItem="jg6-hD-Rpg" secondAttribute="bottom" constant="8" symbolic="YES" id="V5W-bb-8DY"/>
                             <constraint firstAttribute="trailing" secondItem="ZJA-uU-9N8" secondAttribute="trailing" id="W4I-XP-J7h"/>
                             <constraint firstItem="mCe-EZ-NDg" firstAttribute="leading" secondItem="oYR-eJ-KC2" secondAttribute="leading" id="Xew-48-inj"/>
                             <constraint firstItem="8oQ-1Q-CXp" firstAttribute="baseline" secondItem="jg6-hD-Rpg" secondAttribute="baseline" id="ZdW-cb-lmt"/>
-                            <constraint firstItem="MF1-Zq-nKh" firstAttribute="top" secondItem="sUn-gm-NLp" secondAttribute="bottom" constant="-6" id="adr-SE-Bdy"/>
                             <constraint firstItem="z4Y-St-Cd3" firstAttribute="leading" secondItem="Yds-1u-SFf" secondAttribute="trailing" constant="9" id="axT-vD-PeN"/>
                             <constraint firstItem="jg6-hD-Rpg" firstAttribute="leading" secondItem="8oQ-1Q-CXp" secondAttribute="trailing" constant="14" id="bJd-Mh-yQc"/>
+                            <constraint firstItem="mCe-EZ-NDg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sUn-gm-NLp" secondAttribute="trailing" constant="8" symbolic="YES" id="blQ-Fi-dhb"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="p8N-qw-cYE" secondAttribute="bottom" constant="82" id="cJY-DO-WWX"/>
                             <constraint firstAttribute="trailing" secondItem="QbS-tq-SvO" secondAttribute="trailing" id="dFU-Vc-Zkv"/>
                             <constraint firstItem="oYR-eJ-KC2" firstAttribute="centerY" secondItem="z4Y-St-Cd3" secondAttribute="centerY" id="dQG-RP-GVq"/>
@@ -225,6 +225,7 @@
                             <constraint firstItem="oYR-eJ-KC2" firstAttribute="top" secondItem="mCe-EZ-NDg" secondAttribute="bottom" constant="11" id="tS5-i9-Djy"/>
                             <constraint firstItem="p8N-qw-cYE" firstAttribute="top" secondItem="z4Y-St-Cd3" secondAttribute="bottom" constant="17" id="vvA-Jq-pLV"/>
                             <constraint firstAttribute="trailing" secondItem="ach-dH-Jla" secondAttribute="trailing" constant="259" id="vxw-WM-XJj"/>
+                            <constraint firstItem="sUn-gm-NLp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="wek-Yi-Cgj"/>
                             <constraint firstItem="ach-dH-Jla" firstAttribute="top" secondItem="KQf-MY-ZkE" secondAttribute="bottom" constant="8" id="xBa-L0-9Lr"/>
                             <constraint firstItem="8oQ-1Q-CXp" firstAttribute="trailing" secondItem="Yds-1u-SFf" secondAttribute="trailing" id="xsL-hK-WbB"/>
                             <constraint firstItem="jg6-hD-Rpg" firstAttribute="centerX" secondItem="z4Y-St-Cd3" secondAttribute="centerX" id="y0w-uM-rv7"/>
@@ -243,7 +244,6 @@
                         <outlet property="six" destination="z4Y-St-Cd3" id="cUJ-GL-CmG"/>
                         <outlet property="tempo" destination="KQf-MY-ZkE" id="CBw-yI-net"/>
                         <outlet property="three" destination="jg6-hD-Rpg" id="64a-9h-FLF"/>
-                        <outlet property="time" destination="sUn-gm-NLp" id="6o1-ct-FzL"/>
                         <outlet property="two" destination="8oQ-1Q-CXp" id="5VM-mz-bLV"/>
                         <outlet property="videoLabel" destination="QbS-tq-SvO" id="DLz-Db-2Xg"/>
                         <outlet property="videoView" destination="ZJA-uU-9N8" id="rox-Yg-rHZ"/>

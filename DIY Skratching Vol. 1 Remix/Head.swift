@@ -26,7 +26,9 @@ extension Head : FaceDelegate {
             
         }
         else {
+            if !self.answering {
             queuePlayer.play()
+            }
             if global {
                 infinitePeriodicTimer.reset(nil)
                 infinitePeriodicTimer.start()

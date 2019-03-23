@@ -192,14 +192,6 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var points = 0
     
-    func play(){
-        achieveDesiredTempo()
-    }
-    
-    func pause(){
-        self.queuePlayer.rate = 0.0
-    }
-    
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
         let itemTimes = self.times[nextIndex]
@@ -210,6 +202,8 @@ class QBot: UIResponder, UIApplicationDelegate {
             
         }
     }
+    
+    var answering : Bool = false
     
     fileprivate func loopQs(){
         for name in skratchNames {
@@ -228,6 +222,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 //NSLog("\(self.currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPause(false)
+                    self.answering = !self.answering
                 }
                 if self.queuePlayer.rate > 0 {
                     self.points += 1
@@ -262,7 +257,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             self.face = viewController
             viewController.delegate = self
             
-            switch play {
+            switch playerState {
             default:
                 
                 queuePlayer = AVQueuePlayer(playerItem: nil)

@@ -275,8 +275,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 
                 self.queuePlayer.insert(playerItems.first!, after: nil)
-                self.queuePlayer.play()
-                achieveDesiredTempo()
+                playPlayer()
 
 
                 break

@@ -244,6 +244,7 @@
                         <outlet property="six" destination="z4Y-St-Cd3" id="cUJ-GL-CmG"/>
                         <outlet property="tempo" destination="KQf-MY-ZkE" id="CBw-yI-net"/>
                         <outlet property="three" destination="jg6-hD-Rpg" id="64a-9h-FLF"/>
+                        <outlet property="time" destination="sUn-gm-NLp" id="d3e-qe-JPW"/>
                         <outlet property="two" destination="8oQ-1Q-CXp" id="5VM-mz-bLV"/>
                         <outlet property="videoLabel" destination="QbS-tq-SvO" id="DLz-Db-2Xg"/>
                         <outlet property="videoView" destination="ZJA-uU-9N8" id="rox-Yg-rHZ"/>

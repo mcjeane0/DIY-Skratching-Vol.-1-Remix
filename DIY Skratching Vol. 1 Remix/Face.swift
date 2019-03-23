@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import Repeat
 
 func currentNanoseconds()->Int{
     var info = mach_timebase_info()
@@ -37,8 +38,19 @@ func currentNanoseconds()->Int{
 
 class Face: UIViewController {
     
+    var totalTime = 0
     
+    lazy var secondTimer = Repeater.every(Repeater.Interval.seconds(1.0)) { (timer) in
+        self.totalTime += 1
+        let h = self.totalTime / 3600;
+        let m = (self.totalTime / 60) % 60;
+        let s = self.totalTime % 60;
+        
+        let formattedTime = String(format:"%u:%02u:%02u", [h, m, s])
+        self.time.setTitle(formattedTime, for: UIControl.State.normal)
+    }
     
+    @IBOutlet weak var time: UIButton!
     
     @IBOutlet weak var points: UIButton!
     
@@ -194,7 +206,8 @@ class Face: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: Face.didAppearNotification, object: self)
-
+        totalTime = 0
+        secondTimer.start()
     }
     
     override func viewDidLoad() {

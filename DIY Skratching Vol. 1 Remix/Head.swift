@@ -18,18 +18,19 @@ extension Head : FaceDelegate {
             queuePlayer.pause()
             if global {
                 infinitePeriodicTimer.pause()
+                face.playPause.setTitle("Play", for: UIControl.State.normal)
+
             }
             
-            face.playPause.setTitle("Play", for: UIControl.State.normal)
         }
         else {
             queuePlayer.play()
             if global {
                 infinitePeriodicTimer.reset(nil)
                 infinitePeriodicTimer.start()
+                face.playPause.setTitle("Pause", for: UIControl.State.normal)
             }
             achieveDesiredTempo()
-            face.playPause.setTitle("Pause", for: UIControl.State.normal)
         }
     }
     

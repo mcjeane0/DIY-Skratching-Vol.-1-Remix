@@ -214,7 +214,6 @@ class Face: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.post(name: Face.didAppearNotification, object: self)
-        totalTime = 0
         secondTimer.start()
     }
     

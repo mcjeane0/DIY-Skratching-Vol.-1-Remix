@@ -342,6 +342,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         if queuePlayer.rate > 0.0 {
             playbackInterrupted = true
         }
+        face.secondTimer.pause()
+        globalPause()
         
     }
 
@@ -362,8 +364,6 @@ class QBot: UIResponder, UIApplicationDelegate {
             achieveDesiredTempo()
             playbackInterrupted = false
         }
-        face.secondTimer.start()
-        globalPlay()
         DispatchQueue.main.async {
             self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
         }
@@ -372,11 +372,16 @@ class QBot: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        face.secondTimer.start()
+        globalPlay()
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        face.secondTimer.pause()
+        globalPause()
     }
     
 

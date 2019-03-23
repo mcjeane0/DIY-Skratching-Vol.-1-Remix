@@ -361,6 +361,10 @@ class QBot: UIResponder, UIApplicationDelegate {
             playbackInterrupted = false
         }
         
+        DispatchQueue.main.async {
+            self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
+        }
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

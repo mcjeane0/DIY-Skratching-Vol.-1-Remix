@@ -18,7 +18,9 @@ extension Head : FaceDelegate {
             queuePlayer.pause()
             if global {
                 infinitePeriodicTimer.pause()
-                face.playPause.setTitle("Play", for: UIControl.State.normal)
+                DispatchQueue.main.async {
+                    self.face.playPause.setTitle("Play", for: UIControl.State.normal)
+                }
 
             }
             
@@ -28,7 +30,9 @@ extension Head : FaceDelegate {
             if global {
                 infinitePeriodicTimer.reset(nil)
                 infinitePeriodicTimer.start()
-                face.playPause.setTitle("Pause", for: UIControl.State.normal)
+                DispatchQueue.main.async {
+                    self.face.playPause.setTitle("Pause", for: UIControl.State.normal)
+                }
             }
             achieveDesiredTempo()
         }

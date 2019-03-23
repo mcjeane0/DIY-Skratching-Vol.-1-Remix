@@ -78,7 +78,9 @@ class Face: UIViewController {
                 digitComponents.removeFirst()
             }
             let bpm = Float(digitComponents.joined())!
-            selectedButton.setTitle("\(bpm)", for: UIControl.State.normal)
+            DispatchQueue.main.async {
+                self.selectedButton.setTitle("\(bpm)", for: UIControl.State.normal)
+            }
         }
         
     }
@@ -125,7 +127,9 @@ class Face: UIViewController {
             if digitComponents.count > 0 {
                 let bpm = Float(digitComponents.joined())!
                 let roundedPeriod = Int((60.0/bpm)*1000000000)
-                tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+                DispatchQueue.main.async {
+                    self.tempo.setTitle("\(bpm)", for: UIControl.State.normal)
+                }
                 delegate?.handleTempoButtonTapped(bpm: bpm, period: roundedPeriod)
             }
             
@@ -145,7 +149,9 @@ class Face: UIViewController {
             if digitComponents.count > 0 {
                 let phraseCount = Float(digitComponents.joined())!
                 
-                phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
+                DispatchQueue.main.async {
+                    self.phrase.setTitle("\(phraseCount)", for:UIControl.State.normal)
+                }
                 delegate?.handlePhraseButtonTapped(count:Int(phraseCount))
             }
             

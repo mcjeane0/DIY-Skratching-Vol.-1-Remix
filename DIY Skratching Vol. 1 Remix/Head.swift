@@ -13,35 +13,53 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
-    func playPause(_ global:Bool){
-        if queuePlayer.rate > 0.0 {
-            queuePlayer.pause()
-            if global {
-                infinitePeriodicTimer.pause()
-                DispatchQueue.main.async {
-                    self.face.playPause.setTitle("Play", for: UIControl.State.normal)
-                }
-
-            }
-            
-        }
-        else {
-            if !self.answering {
-            queuePlayer.play()
-            }
-            if global {
-                infinitePeriodicTimer.reset(nil)
-                infinitePeriodicTimer.start()
-                DispatchQueue.main.async {
-                    self.face.playPause.setTitle("Pause", for: UIControl.State.normal)
-                }
-            }
-            achieveDesiredTempo()
+    func pauseTimer(){
+        infinitePeriodicTimer.pause()
+        DispatchQueue.main.async {
+            self.face.playPause.setTitle("Play", for: UIControl.State.normal)
         }
     }
     
+    func resetTimer(){
+        infinitePeriodicTimer.reset(nil)
+        infinitePeriodicTimer.start()
+        DispatchQueue.main.async {
+            self.face.playPause.setTitle("Pause", for: UIControl.State.normal)
+        }
+    }
+    
+    func pausePlayer(){
+        queuePlayer.pause()
+
+    }
+    
+    func playPlayer(){
+        achieveDesiredTempo()
+    }
+    
     func handlePlayPauseButtonTapped() {
-        playPause(true)
+        switch infinitePeriodicTimer.state {
+        case .paused:
+            resetTimer()
+            switch queuePlayer.rate > 0 {
+            case true:
+                break
+            case false:
+                playPlayer()
+                break
+            }
+            break
+        case .running,.executing,.finished:
+            pauseTimer()
+            switch queuePlayer.rate > 0 {
+            case true:
+                pausePlayer()
+                break
+            case false:
+                break
+            }
+            break
+        }
     }
     
     func handleTempoButtonTapped(bpm: Float, period:Int) {

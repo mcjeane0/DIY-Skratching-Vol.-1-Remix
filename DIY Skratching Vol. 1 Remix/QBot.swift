@@ -203,7 +203,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    var answering : Bool = false
     
     fileprivate func loopQs(){
         for name in skratchNames {
@@ -221,8 +220,15 @@ class QBot: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.sync {
                 //NSLog("\(self.currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
-                    self.playPause(false)
-                    self.answering = !self.answering
+                    switch self.queuePlayer.rate > 0 {
+                    case true:
+                        self.pausePlayer()
+                        break
+                    case false:
+                        self.playPlayer()
+                        break
+                    }
+                    
                 }
                 if self.queuePlayer.rate > 0 {
                     self.points += 1

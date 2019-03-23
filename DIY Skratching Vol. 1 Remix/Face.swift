@@ -47,7 +47,9 @@ class Face: UIViewController {
         let s = self.totalTime % 60;
         
         let formattedTime = String(format:"%u:%02u:%02u", h, m, s)
-        self.time.setTitle(formattedTime, for: UIControl.State.normal)
+        DispatchQueue.main.async {
+            self.time.setTitle(formattedTime, for: UIControl.State.normal)
+        }
     }
     
     @IBOutlet weak var time: UIButton!

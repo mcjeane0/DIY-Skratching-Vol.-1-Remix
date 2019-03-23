@@ -42,6 +42,7 @@ extension Head : FaceDelegate {
         switch infinitePeriodicTimer.state {
         case .paused:
             resetTimer()
+            face.secondTimer.start()
             switch queuePlayer.rate > 0 {
             case true:
                 break
@@ -52,6 +53,7 @@ extension Head : FaceDelegate {
             break
         case .running,.executing,.finished:
             pauseTimer()
+            face.secondTimer.pause()
             switch queuePlayer.rate > 0 {
             case true:
                 pausePlayer()

@@ -17,7 +17,7 @@ import Repeat
 
 class QBot: UIResponder, UIApplicationDelegate {
 
-    var play : Play {
+    var playerState : Play {
         get {
             if let rawValue = UserDefaults.standard.string(forKey: Key.play.rawValue){
                 if let ripeValue = Play(rawValue:rawValue) {
@@ -72,7 +72,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var infinitePeriodicTimer : Repeater!
     
-    var desiredTempo : Float = 79.0
+    var desiredTempo : Float = 60.0
     
     fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
     
@@ -98,7 +98,38 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate let dicingTimes = [CMTime(value: 33453, timescale: 1000),CMTime(value: 44733, timescale: 1000),CMTime(value: 56045, timescale: 1000),CMTime(value: 67316, timescale: 1000)]
     
-    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,tipsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes]
+    
+    fileprivate let oneClickTimes = [CMTime(value: 65955, timescale: 1000),CMTime(value: 77251, timescale: 1000),CMTime(value: 88529, timescale: 1000),CMTime(value: 99829, timescale: 1000)]
+    
+    fileprivate let twoClickTimes = [CMTime(value: 44487, timescale: 1000),CMTime(value: 55762, timescale: 1000),CMTime(value: 67049, timescale: 1000),CMTime(value: 78359, timescale: 1000)]
+    
+    fileprivate let flareTimes = [CMTime(value: 98987, timescale: 1000),CMTime(value: 110292, timescale: 1000),CMTime(value: 121581, timescale: 1000),CMTime(value: 132859, timescale: 1000)]
+    
+    fileprivate let crescentFlareTimes = [CMTime(value: 37111, timescale: 1000),CMTime(value: 47525, timescale: 1000),CMTime(value: 57927, timescale: 1000),CMTime(value: 68352, timescale: 1000)]
+    
+    fileprivate let cloverTearsTimes = [CMTime(value: 44992, timescale: 1000),CMTime(value: 49551, timescale: 1000),CMTime(value: 54124, timescale: 1000),CMTime(value: 58643, timescale: 1000)]
+    
+    fileprivate let chirpFlareTimes = [CMTime(value: 31642, timescale: 1000),CMTime(value: 42062, timescale: 1000),CMTime(value: 52464, timescale: 1000),CMTime(value: 62868, timescale: 1000)]
+    
+    fileprivate let lazersTimes = [CMTime(value: 43966, timescale: 1000),CMTime(value: 49175, timescale: 1000),CMTime(value: 54441, timescale: 1000),CMTime(value: 59570, timescale: 1000)]
+    
+    fileprivate let phazersTimes = [CMTime(value: 23113, timescale: 1000),CMTime(value: 28315, timescale: 1000),CMTime(value: 33525, timescale: 1000),CMTime(value: 38743, timescale: 1000)]
+    
+    fileprivate let crabsTimes = [CMTime(value: 58572, timescale: 1000),CMTime(value: 69075, timescale: 1000),CMTime(value: 79394, timescale: 1000),CMTime(value: 89810, timescale: 1000)]
+    
+    fileprivate let scribblesTimes = [CMTime(value: 44093, timescale: 1000),CMTime(value: 54497, timescale: 1000),CMTime(value: 64896, timescale: 1000),CMTime(value: 75310, timescale: 1000)]
+    
+    fileprivate let zigZagsTimes = [CMTime(value: 32494, timescale: 1000),CMTime(value: 37055, timescale: 1000),CMTime(value: 41633, timescale: 1000),CMTime(value: 46142, timescale: 1000)]
+    
+    fileprivate let swipesTimes = [CMTime(value: 52603, timescale: 1000),CMTime(value: 57098, timescale: 1000),CMTime(value: 61760, timescale: 1000),CMTime(value: 66291, timescale: 1000)]
+    
+    fileprivate let wavesTimes = [CMTime(value: 22449, timescale: 1000),CMTime(value: 31583, timescale: 1000),CMTime(value: 40736, timescale: 1000),CMTime(value: 49882, timescale: 1000)]
+    
+    fileprivate let needleDroppingTimes = [CMTime(value: 54434, timescale: 1000),CMTime(value: 63591, timescale: 1000),CMTime(value: 72751, timescale: 1000),CMTime(value: 81883, timescale: 1000)]
+    
+    
+    
+    fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,tipsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes,oneClickTimes,twoClickTimes,flareTimes, crescentFlareTimes,cloverTearsTimes,chirpFlareTimes,lazersTimes,phazersTimes,crabsTimes,scribblesTimes,zigZagsTimes,swipesTimes,wavesTimes,needleDroppingTimes]
     
     fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
     
@@ -161,6 +192,14 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var points = 0
     
+    func play(){
+        achieveDesiredTempo()
+    }
+    
+    func pause(){
+        self.queuePlayer.rate = 0.0
+    }
+    
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
         let itemTimes = self.times[nextIndex]
@@ -173,18 +212,9 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func loopQs(){
-        loadVideoByName(SkratchName.baby.rawValue)
-        loadVideoByName(SkratchName.cutting.rawValue)
-        loadVideoByName(SkratchName.reverseCutting.rawValue)
-        loadVideoByName(SkratchName.marches.rawValue)
-        loadVideoByName(SkratchName.drags.rawValue)
-        loadVideoByName(SkratchName.chirps.rawValue)
-        loadVideoByName(SkratchName.tears.rawValue)
-        loadVideoByName(SkratchName.tips.rawValue)
-        loadVideoByName(SkratchName.longShortTipTears.rawValue)
-        loadVideoByName(SkratchName.fades.rawValue)
-        loadVideoByName(SkratchName.transformer.rawValue)
-        loadVideoByName(SkratchName.dicing.rawValue)
+        for name in skratchNames {
+            loadVideoByName(name)
+        }
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         chooseRandomItem()
         

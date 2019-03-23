@@ -125,7 +125,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     func loadBattleAssetForName(_ name:String){
-        NSLog("\(name)")
+        //NSLog("\(name)")
         
         let battleURL = Bundle.main.url(forResource: name, withExtension:"m4v")!
         
@@ -137,7 +137,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func loadSkratchAssetForName(_ string:String){
-        NSLog("\(string)")
+        //NSLog("\(string)")
         let angle1 = "\(string) Angle 1"
         let angle1URL = Bundle.main.url(forResource: angle1, withExtension: "m4v")!
         let angle1Video = ThudRumbleVideoClip(name: angle1, loop: nil, angles: [], tracks: [], url: angle1URL)
@@ -158,6 +158,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
     var desiredPhrase = 1
+    
+    var points = 0
     
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
@@ -193,14 +195,19 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
-                NSLog("\(self.currentPhrase)")
+                //NSLog("\(self.currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPause(false)
+                }
+                if self.queuePlayer.rate > 0 {
+                    self.points += 1
+                    self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
                 }
                 self.queuePlayer.replaceCurrentItem(with: self.randomItem)
                 self.achieveDesiredTempo()
                 self.chooseRandomItem()
                 self.currentPhrase = self.currentPhrase + 1
+                
             }
             
             
@@ -255,7 +262,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
         var name : String = string
-        NSLog("name:\(name)")
+        //NSLog("name:\(name)")
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
             name = "\(string) Angle 1"
             let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
@@ -311,7 +318,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
+        self.points = 0
         
     }
 
@@ -320,6 +327,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         configureAudioSession()
         if playbackInterrupted {
             queuePlayer.play()
+            achieveDesiredTempo()
             playbackInterrupted = false
         }
     }
@@ -345,7 +353,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             try AVAudioSession.sharedInstance().setActive(true, options: AVAudioSession.SetActiveOptions.notifyOthersOnDeactivation)
         }
         catch{
-            NSLog("catch configure audio session")
+            //NSLog("catch configure audio session")
         }
     }
 

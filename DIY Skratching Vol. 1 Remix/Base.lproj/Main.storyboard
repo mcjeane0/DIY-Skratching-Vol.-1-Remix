@@ -164,6 +164,13 @@
                                     <action selector="phraseTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpC-zr-Xxx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF1-Zq-nKh">
+                                <rect key="frame" x="6" y="448" width="120" height="51"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
+                                <state key="normal" title="Points">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -195,11 +202,13 @@
                             <constraint firstAttribute="trailing" secondItem="QbS-tq-SvO" secondAttribute="trailing" id="dFU-Vc-Zkv"/>
                             <constraint firstItem="oYR-eJ-KC2" firstAttribute="centerY" secondItem="z4Y-St-Cd3" secondAttribute="centerY" id="dQG-RP-GVq"/>
                             <constraint firstItem="e5w-Mw-FWB" firstAttribute="leading" secondItem="KQf-MY-ZkE" secondAttribute="trailing" constant="89" id="dYe-I5-WtA"/>
+                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="top" secondItem="MF1-Zq-nKh" secondAttribute="bottom" constant="-2" id="edd-m0-Kja"/>
                             <constraint firstItem="cs7-ho-ZHE" firstAttribute="top" secondItem="vLn-6p-naK" secondAttribute="bottom" constant="2" id="fxg-yM-9Sv"/>
                             <constraint firstItem="p8N-qw-cYE" firstAttribute="baseline" secondItem="vLn-6p-naK" secondAttribute="firstBaseline" id="hcd-6u-mre"/>
                             <constraint firstItem="KQf-MY-ZkE" firstAttribute="top" secondItem="1wC-Jt-9qA" secondAttribute="bottom" constant="1" id="k4c-bP-IRc"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l6y-UE-KD4"/>
                             <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="e5w-Mw-FWB" secondAttribute="bottom" constant="80" id="lYM-UP-D1V"/>
+                            <constraint firstItem="MF1-Zq-nKh" firstAttribute="centerX" secondItem="1wC-Jt-9qA" secondAttribute="centerX" id="orH-0m-D8J"/>
                             <constraint firstItem="8oQ-1Q-CXp" firstAttribute="leading" secondItem="mCe-EZ-NDg" secondAttribute="trailing" constant="17" id="pCa-94-2PR"/>
                             <constraint firstItem="1wC-Jt-9qA" firstAttribute="centerX" secondItem="KQf-MY-ZkE" secondAttribute="centerX" id="pXg-dF-HVM"/>
                             <constraint firstItem="ach-dH-Jla" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="suq-1h-nFK"/>
@@ -220,6 +229,7 @@
                         <outlet property="one" destination="mCe-EZ-NDg" id="yqv-0r-8vf"/>
                         <outlet property="phrase" destination="1wC-Jt-9qA" id="bZa-6d-9D9"/>
                         <outlet property="playPause" destination="ach-dH-Jla" id="vgT-Fx-86C"/>
+                        <outlet property="points" destination="MF1-Zq-nKh" id="vwM-se-G5Y"/>
                         <outlet property="seven" destination="e5w-Mw-FWB" id="eYr-WO-es5"/>
                         <outlet property="six" destination="z4Y-St-Cd3" id="cUJ-GL-CmG"/>
                         <outlet property="tempo" destination="KQf-MY-ZkE" id="CBw-yI-net"/>

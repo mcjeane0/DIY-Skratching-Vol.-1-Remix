@@ -39,6 +39,9 @@ class Face: UIViewController {
     
     
     
+    
+    @IBOutlet weak var points: UIButton!
+    
     @IBOutlet weak var phrase: UIButton!
     
     @IBOutlet weak var four: UIButton!

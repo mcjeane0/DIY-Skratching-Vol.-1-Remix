@@ -46,7 +46,7 @@ class Face: UIViewController {
         let m = (self.totalTime / 60) % 60;
         let s = self.totalTime % 60;
         
-        let formattedTime = String(format:"%u:%02u:%02u", [h, m, s])
+        let formattedTime = String(format:"%u:%02u:%02u", h, m, s)
         self.time.setTitle(formattedTime, for: UIControl.State.normal)
     }
     

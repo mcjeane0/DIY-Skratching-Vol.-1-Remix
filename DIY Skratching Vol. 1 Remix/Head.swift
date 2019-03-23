@@ -34,6 +34,7 @@ extension Head : FaceDelegate {
     }
     
     func playPlayer(){
+        self.queuePlayer.play()
         achieveDesiredTempo()
     }
     

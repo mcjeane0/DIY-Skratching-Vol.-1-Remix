@@ -13,6 +13,16 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
+    func globalPause(){
+        pausePlayer()
+        pauseTimer()
+    }
+    
+    func globalPlay(){
+        playPlayer()
+        resetTimer()
+    }
+    
     func pauseTimer(){
         infinitePeriodicTimer.pause()
         DispatchQueue.main.async {

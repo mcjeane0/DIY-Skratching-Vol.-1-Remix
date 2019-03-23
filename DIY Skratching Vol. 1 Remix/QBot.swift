@@ -350,6 +350,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         self.points = 0
         face.totalTime = 0
+        face.secondTimer.pause()
+        globalPause()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -360,7 +362,8 @@ class QBot: UIResponder, UIApplicationDelegate {
             achieveDesiredTempo()
             playbackInterrupted = false
         }
-        
+        face.secondTimer.start()
+        globalPlay()
         DispatchQueue.main.async {
             self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
         }

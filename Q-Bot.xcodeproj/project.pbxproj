@@ -11,39 +11,6 @@
 		4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */; };
 		DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */; };
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
-		FB3B42BC223FF5B3005D405F /* Zig-Zags 35 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B424D223FF5A7005D405F /* Zig-Zags 35 Angle 1.m4v */; };
-		FB3B42BE223FF5B3005D405F /* Tears 7 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B424F223FF5A7005D405F /* Tears 7 Angle 1.m4v */; };
-		FB3B42C0223FF5B3005D405F /* Phazers 16 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4251223FF5A7005D405F /* Phazers 16 Angle 1.m4v */; };
-		FB3B42C1223FF5B3005D405F /* Scribbles 17 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4252223FF5A7005D405F /* Scribbles 17 Angle 1.m4v */; };
-		FB3B42C2223FF5B3005D405F /* Clover Tears 33 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4253223FF5A7005D405F /* Clover Tears 33 Angle 1.m4v */; };
-		FB3B42C7223FF5B3005D405F /* Fades 18 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4258223FF5A7005D405F /* Fades 18 Angle 1.m4v */; };
-		FB3B42CA223FF5B3005D405F /* Marches 4 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B425B223FF5A8005D405F /* Marches 4 Angle 1.m4v */; };
-		FB3B42CC223FF5B3005D405F /* 2-Click Flare 39 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B425D223FF5A8005D405F /* 2-Click Flare 39 Angle 1.m4v */; };
-		FB3B42CF223FF5B3005D405F /* Bang.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4260223FF5A8005D405F /* Bang.m4v */; };
-		FB3B42D0223FF5B3005D405F /* Cutting 2 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4261223FF5A8005D405F /* Cutting 2 Angle 1.m4v */; };
-		FB3B42D5223FF5B3005D405F /* Chirps 6 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4266223FF5A9005D405F /* Chirps 6 Angle 1.m4v */; };
-		FB3B42D6223FF5B3005D405F /* DJ Spy-D and The Spawnster.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4267223FF5A9005D405F /* DJ Spy-D and The Spawnster.m4v */; };
-		FB3B42D7223FF5B3005D405F /* Baby 1 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4268223FF5A9005D405F /* Baby 1 Angle 1.m4v */; };
-		FB3B42DB223FF5B3005D405F /* Lazers 15 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B426C223FF5A9005D405F /* Lazers 15 Angle 1.m4v */; };
-		FB3B42DE223FF5B3005D405F /* Dicing 11 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B426F223FF5AA005D405F /* Dicing 11 Angle 1.m4v */; };
-		FB3B42E0223FF5B3005D405F /* Reverse Cutting 3 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4271223FF5AA005D405F /* Reverse Cutting 3 Angle 1.m4v */; };
-		FB3B42E1223FF5B3005D405F /* Vlad Dufmeister.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4272223FF5AA005D405F /* Vlad Dufmeister.m4v */; };
-		FB3B42E3223FF5B3005D405F /* Long-Short Tip Tears 9 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4274223FF5AA005D405F /* Long-Short Tip Tears 9 Angle 1.m4v */; };
-		FB3B42E5223FF5B3005D405F /* Drags 5 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4276223FF5AB005D405F /* Drags 5 Angle 1.m4v */; };
-		FB3B42E7223FF5B3005D405F /* Flare 38 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4278223FF5AB005D405F /* Flare 38 Angle 1.m4v */; };
-		FB3B42EC223FF5B3005D405F /* Deck Demon.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B427D223FF5AB005D405F /* Deck Demon.m4v */; };
-		FB3B42ED223FF5B3005D405F /* Punt Rawk.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B427E223FF5AB005D405F /* Punt Rawk.m4v */; };
-		FB3B42EF223FF5B3005D405F /* Q-Bert Freestyle.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4280223FF5AC005D405F /* Q-Bert Freestyle.m4v */; };
-		FB3B42F0223FF5B3005D405F /* Chirp Flare 14 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4281223FF5AC005D405F /* Chirp Flare 14 Angle 1.m4v */; };
-		FB3B42F7223FF5B3005D405F /* 1-Click Flare 12 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4288223FF5AD005D405F /* 1-Click Flare 12 Angle 1.m4v */; };
-		FB3B4302223FF5B3005D405F /* Needle-Dropping 34 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4293223FF5AE005D405F /* Needle-Dropping 34 Angle 1.m4v */; };
-		FB3B4306223FF5B3005D405F /* Transformer 10 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B4297223FF5AF005D405F /* Transformer 10 Angle 1.m4v */; };
-		FB3B4310223FF5B3005D405F /* Lambchop.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42A1223FF5B0005D405F /* Lambchop.m4v */; };
-		FB3B4312223FF5B3005D405F /* Waves 36 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42A3223FF5B0005D405F /* Waves 36 Angle 1.m4v */; };
-		FB3B431A223FF5B3005D405F /* Tips 8 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42AB223FF5B1005D405F /* Tips 8 Angle 1.m4v */; };
-		FB3B431B223FF5B3005D405F /* Crescent Flare 13 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42AC223FF5B1005D405F /* Crescent Flare 13 Angle 1.m4v */; };
-		FB3B431D223FF5B3005D405F /* Swipes 37 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42AE223FF5B1005D405F /* Swipes 37 Angle 1.m4v */; };
-		FB3B431F223FF5B3005D405F /* Crabs (Crepes) 40 Angle 1.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB3B42B0223FF5B1005D405F /* Crabs (Crepes) 40 Angle 1.m4v */; };
 		FB3B4329223FF5F5005D405F /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B4328223FF5F5005D405F /* Head.swift */; };
 		FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */; };
 		FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB716DFC2173FB18008D090E /* CloudKit.framework */; };
@@ -90,42 +57,42 @@
 		E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.debug.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1904C52154358B0092640A /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		FB3B424D223FF5A7005D405F /* Zig-Zags 35 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zig-Zags 35 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B424F223FF5A7005D405F /* Tears 7 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tears 7 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4251223FF5A7005D405F /* Phazers 16 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Phazers 16 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4252223FF5A7005D405F /* Scribbles 17 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scribbles 17 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4253223FF5A7005D405F /* Clover Tears 33 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Clover Tears 33 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4258223FF5A7005D405F /* Fades 18 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fades 18 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B425B223FF5A8005D405F /* Marches 4 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marches 4 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B425D223FF5A8005D405F /* 2-Click Flare 39 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2-Click Flare 39 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4260223FF5A8005D405F /* Bang.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bang.m4v; sourceTree = "<group>"; };
-		FB3B4261223FF5A8005D405F /* Cutting 2 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cutting 2 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4266223FF5A9005D405F /* Chirps 6 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chirps 6 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4267223FF5A9005D405F /* DJ Spy-D and The Spawnster.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DJ Spy-D and The Spawnster.m4v"; sourceTree = "<group>"; };
-		FB3B4268223FF5A9005D405F /* Baby 1 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baby 1 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B426C223FF5A9005D405F /* Lazers 15 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lazers 15 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B426F223FF5AA005D405F /* Dicing 11 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dicing 11 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4271223FF5AA005D405F /* Reverse Cutting 3 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reverse Cutting 3 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4272223FF5AA005D405F /* Vlad Dufmeister.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vlad Dufmeister.m4v"; sourceTree = "<group>"; };
-		FB3B4274223FF5AA005D405F /* Long-Short Tip Tears 9 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Long-Short Tip Tears 9 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4276223FF5AB005D405F /* Drags 5 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Drags 5 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4278223FF5AB005D405F /* Flare 38 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flare 38 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B427D223FF5AB005D405F /* Deck Demon.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deck Demon.m4v"; sourceTree = "<group>"; };
-		FB3B427E223FF5AB005D405F /* Punt Rawk.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Punt Rawk.m4v"; sourceTree = "<group>"; };
-		FB3B4280223FF5AC005D405F /* Q-Bert Freestyle.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Q-Bert Freestyle.m4v"; sourceTree = "<group>"; };
-		FB3B4281223FF5AC005D405F /* Chirp Flare 14 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chirp Flare 14 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4288223FF5AD005D405F /* 1-Click Flare 12 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1-Click Flare 12 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4293223FF5AE005D405F /* Needle-Dropping 34 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Needle-Dropping 34 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B4297223FF5AF005D405F /* Transformer 10 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Transformer 10 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B42A1223FF5B0005D405F /* Lambchop.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lambchop.m4v; sourceTree = "<group>"; };
-		FB3B42A3223FF5B0005D405F /* Waves 36 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Waves 36 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B42AB223FF5B1005D405F /* Tips 8 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tips 8 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B42AC223FF5B1005D405F /* Crescent Flare 13 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Crescent Flare 13 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B42AE223FF5B1005D405F /* Swipes 37 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swipes 37 Angle 1.m4v"; sourceTree = "<group>"; };
-		FB3B42B0223FF5B1005D405F /* Crabs (Crepes) 40 Angle 1.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Crabs (Crepes) 40 Angle 1.m4v"; sourceTree = "<group>"; };
 		FB3B4328223FF5F5005D405F /* Head.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Head.swift; sourceTree = "<group>"; };
 		FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThudRumbleVideoClip.swift; sourceTree = "<group>"; };
 		FB3B43302244886A005D405F /* ThudRumbleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThudRumbleButton.xib; sourceTree = "<group>"; };
+		FB469DF922470F160042961F /* Tips.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tips.m4v; sourceTree = "<group>"; };
+		FB469DFA22470F170042961F /* Fades.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fades.m4v; sourceTree = "<group>"; };
+		FB469DFB22470F190042961F /* Dicing.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dicing.m4v; sourceTree = "<group>"; };
+		FB469DFC22470F1A0042961F /* 2-Click Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2-Click Flare.m4v"; sourceTree = "<group>"; };
+		FB469DFD22470F1B0042961F /* Chirp Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Chirp Flare.m4v"; sourceTree = "<group>"; };
+		FB469DFE22470F1C0042961F /* Cutting.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cutting.m4v; sourceTree = "<group>"; };
+		FB469DFF22470F1D0042961F /* Marches.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marches.m4v; sourceTree = "<group>"; };
+		FB469E0022470F1F0042961F /* Vlad Dufmeister.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vlad Dufmeister.m4v"; sourceTree = "<group>"; };
+		FB469E0122470F240042961F /* Deck Demon.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deck Demon.m4v"; sourceTree = "<group>"; };
+		FB469E0222470F250042961F /* Drags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drags.m4v; sourceTree = "<group>"; };
+		FB469E0322470F260042961F /* Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Flare.m4v; sourceTree = "<group>"; };
+		FB469E0422470F270042961F /* Needle Dropping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Needle Dropping.m4v"; sourceTree = "<group>"; };
+		FB469E0522470F290042961F /* Bang.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bang.m4v; sourceTree = "<group>"; };
+		FB469E0622470F2A0042961F /* Waves.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Waves.m4v; sourceTree = "<group>"; };
+		FB469E0722470F2B0042961F /* Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tears.m4v; sourceTree = "<group>"; };
+		FB469E0822470F2C0042961F /* Swipes.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Swipes.m4v; sourceTree = "<group>"; };
+		FB469E0922470F2E0042961F /* Crabs.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crabs.m4v; sourceTree = "<group>"; };
+		FB469E0A22470F2F0042961F /* Zig-Zags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zig-Zags.m4v"; sourceTree = "<group>"; };
+		FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Long-Short Tip Tears.m4v"; sourceTree = "<group>"; };
+		FB469E0C22470F320042961F /* Punt Rawk.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Punt Rawk.m4v"; sourceTree = "<group>"; };
+		FB469E0D22470F340042961F /* DJ Spy D and The Spawnster.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DJ Spy D and The Spawnster.m4v"; sourceTree = "<group>"; };
+		FB469E0E22470F360042961F /* Transformer.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Transformer.m4v; sourceTree = "<group>"; };
+		FB469E0F22470F380042961F /* Lambchop.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lambchop.m4v; sourceTree = "<group>"; };
+		FB469E1022470F390042961F /* Reverse Cutting.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reverse Cutting.m4v"; sourceTree = "<group>"; };
+		FB469E1122470F3B0042961F /* Chirps.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chirps.m4v; sourceTree = "<group>"; };
+		FB469E1222470F3D0042961F /* Crescent Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Crescent Flare.m4v"; sourceTree = "<group>"; };
+		FB469E1322470F3E0042961F /* Lazers.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lazers.m4v; sourceTree = "<group>"; };
+		FB469E1422470F400042961F /* Phazers.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Phazers.m4v; sourceTree = "<group>"; };
+		FB469E1522470F440042961F /* Q-Bert.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Q-Bert.m4v"; sourceTree = "<group>"; };
+		FB469E1622470F460042961F /* Clover Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Clover Tears.m4v"; sourceTree = "<group>"; };
+		FB469E1722470F490042961F /* 1-Click Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1-Click Flare.m4v"; sourceTree = "<group>"; };
+		FB469E1822470F4A0042961F /* Baby.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baby.m4v; sourceTree = "<group>"; };
+		FB469E1922470F4C0042961F /* Scribbles.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Scribbles.m4v; sourceTree = "<group>"; };
 		FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIY Skratching Vol. 1 Remix.entitlements"; sourceTree = "<group>"; };
 		FB716DFC2173FB18008D090E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FB78ABF2214C10030010039E /* Q-Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q-Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,42 +158,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FB3B4249223FF465005D405F /* Videos */ = {
+		FB469DF82247024C0042961F /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				FB3B4288223FF5AD005D405F /* 1-Click Flare 12 Angle 1.m4v */,
-				FB3B425D223FF5A8005D405F /* 2-Click Flare 39 Angle 1.m4v */,
-				FB3B4268223FF5A9005D405F /* Baby 1 Angle 1.m4v */,
-				FB3B42A1223FF5B0005D405F /* Lambchop.m4v */,
-				FB3B427D223FF5AB005D405F /* Deck Demon.m4v */,
-				FB3B427E223FF5AB005D405F /* Punt Rawk.m4v */,
-				FB3B4272223FF5AA005D405F /* Vlad Dufmeister.m4v */,
-				FB3B4260223FF5A8005D405F /* Bang.m4v */,
-				FB3B4267223FF5A9005D405F /* DJ Spy-D and The Spawnster.m4v */,
-				FB3B4281223FF5AC005D405F /* Chirp Flare 14 Angle 1.m4v */,
-				FB3B4266223FF5A9005D405F /* Chirps 6 Angle 1.m4v */,
-				FB3B4253223FF5A7005D405F /* Clover Tears 33 Angle 1.m4v */,
-				FB3B42B0223FF5B1005D405F /* Crabs (Crepes) 40 Angle 1.m4v */,
-				FB3B42AC223FF5B1005D405F /* Crescent Flare 13 Angle 1.m4v */,
-				FB3B4261223FF5A8005D405F /* Cutting 2 Angle 1.m4v */,
-				FB3B426F223FF5AA005D405F /* Dicing 11 Angle 1.m4v */,
-				FB3B4276223FF5AB005D405F /* Drags 5 Angle 1.m4v */,
-				FB3B4258223FF5A7005D405F /* Fades 18 Angle 1.m4v */,
-				FB3B4278223FF5AB005D405F /* Flare 38 Angle 1.m4v */,
-				FB3B426C223FF5A9005D405F /* Lazers 15 Angle 1.m4v */,
-				FB3B4274223FF5AA005D405F /* Long-Short Tip Tears 9 Angle 1.m4v */,
-				FB3B425B223FF5A8005D405F /* Marches 4 Angle 1.m4v */,
-				FB3B4293223FF5AE005D405F /* Needle-Dropping 34 Angle 1.m4v */,
-				FB3B4251223FF5A7005D405F /* Phazers 16 Angle 1.m4v */,
-				FB3B4280223FF5AC005D405F /* Q-Bert Freestyle.m4v */,
-				FB3B4271223FF5AA005D405F /* Reverse Cutting 3 Angle 1.m4v */,
-				FB3B4252223FF5A7005D405F /* Scribbles 17 Angle 1.m4v */,
-				FB3B42AE223FF5B1005D405F /* Swipes 37 Angle 1.m4v */,
-				FB3B424F223FF5A7005D405F /* Tears 7 Angle 1.m4v */,
-				FB3B42AB223FF5B1005D405F /* Tips 8 Angle 1.m4v */,
-				FB3B4297223FF5AF005D405F /* Transformer 10 Angle 1.m4v */,
-				FB3B42A3223FF5B0005D405F /* Waves 36 Angle 1.m4v */,
-				FB3B424D223FF5A7005D405F /* Zig-Zags 35 Angle 1.m4v */,
+				FB469E1722470F490042961F /* 1-Click Flare.m4v */,
+				FB469DFC22470F1A0042961F /* 2-Click Flare.m4v */,
+				FB469E1822470F4A0042961F /* Baby.m4v */,
+				FB469E0522470F290042961F /* Bang.m4v */,
+				FB469DFD22470F1B0042961F /* Chirp Flare.m4v */,
+				FB469E1122470F3B0042961F /* Chirps.m4v */,
+				FB469E1622470F460042961F /* Clover Tears.m4v */,
+				FB469E0922470F2E0042961F /* Crabs.m4v */,
+				FB469E1222470F3D0042961F /* Crescent Flare.m4v */,
+				FB469DFE22470F1C0042961F /* Cutting.m4v */,
+				FB469E0122470F240042961F /* Deck Demon.m4v */,
+				FB469DFB22470F190042961F /* Dicing.m4v */,
+				FB469E0D22470F340042961F /* DJ Spy D and The Spawnster.m4v */,
+				FB469E0222470F250042961F /* Drags.m4v */,
+				FB469DFA22470F170042961F /* Fades.m4v */,
+				FB469E0322470F260042961F /* Flare.m4v */,
+				FB469E0F22470F380042961F /* Lambchop.m4v */,
+				FB469E1322470F3E0042961F /* Lazers.m4v */,
+				FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */,
+				FB469DFF22470F1D0042961F /* Marches.m4v */,
+				FB469E0422470F270042961F /* Needle Dropping.m4v */,
+				FB469E1422470F400042961F /* Phazers.m4v */,
+				FB469E0C22470F320042961F /* Punt Rawk.m4v */,
+				FB469E1522470F440042961F /* Q-Bert.m4v */,
+				FB469E1022470F390042961F /* Reverse Cutting.m4v */,
+				FB469E1922470F4C0042961F /* Scribbles.m4v */,
+				FB469E0822470F2C0042961F /* Swipes.m4v */,
+				FB469E0722470F2B0042961F /* Tears.m4v */,
+				FB469DF922470F160042961F /* Tips.m4v */,
+				FB469E0E22470F360042961F /* Transformer.m4v */,
+				FB469E0022470F1F0042961F /* Vlad Dufmeister.m4v */,
+				FB469E0622470F2A0042961F /* Waves.m4v */,
+				FB469E0A22470F2F0042961F /* Zig-Zags.m4v */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -274,8 +241,8 @@
 				FB3B4328223FF5F5005D405F /* Head.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
 				FB78ABF7214C10030010039E /* Face.swift */,
+				FB469DF82247024C0042961F /* Videos */,
 				FB78ABF9214C10030010039E /* Main.storyboard */,
-				FB3B4249223FF465005D405F /* Videos */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
 				FB78AC01214C10040010039E /* LaunchScreen.storyboard */,
 				FB78AC04214C10040010039E /* Info.plist */,
@@ -431,42 +398,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB3B431A223FF5B3005D405F /* Tips 8 Angle 1.m4v in Resources */,
-				FB3B42DE223FF5B3005D405F /* Dicing 11 Angle 1.m4v in Resources */,
-				FB3B42E5223FF5B3005D405F /* Drags 5 Angle 1.m4v in Resources */,
-				FB3B42EC223FF5B3005D405F /* Deck Demon.m4v in Resources */,
-				FB3B42F7223FF5B3005D405F /* 1-Click Flare 12 Angle 1.m4v in Resources */,
-				FB3B42E1223FF5B3005D405F /* Vlad Dufmeister.m4v in Resources */,
-				FB3B42EF223FF5B3005D405F /* Q-Bert Freestyle.m4v in Resources */,
-				FB3B431F223FF5B3005D405F /* Crabs (Crepes) 40 Angle 1.m4v in Resources */,
-				FB3B42D7223FF5B3005D405F /* Baby 1 Angle 1.m4v in Resources */,
-				FB3B42E3223FF5B3005D405F /* Long-Short Tip Tears 9 Angle 1.m4v in Resources */,
-				FB3B42DB223FF5B3005D405F /* Lazers 15 Angle 1.m4v in Resources */,
-				FB3B42BC223FF5B3005D405F /* Zig-Zags 35 Angle 1.m4v in Resources */,
-				FB3B42BE223FF5B3005D405F /* Tears 7 Angle 1.m4v in Resources */,
-				FB3B42C1223FF5B3005D405F /* Scribbles 17 Angle 1.m4v in Resources */,
-				FB3B42C0223FF5B3005D405F /* Phazers 16 Angle 1.m4v in Resources */,
-				FB3B4312223FF5B3005D405F /* Waves 36 Angle 1.m4v in Resources */,
-				FB3B42C7223FF5B3005D405F /* Fades 18 Angle 1.m4v in Resources */,
-				FB3B42ED223FF5B3005D405F /* Punt Rawk.m4v in Resources */,
-				FB3B42D5223FF5B3005D405F /* Chirps 6 Angle 1.m4v in Resources */,
-				FB3B42D0223FF5B3005D405F /* Cutting 2 Angle 1.m4v in Resources */,
-				FB3B42F0223FF5B3005D405F /* Chirp Flare 14 Angle 1.m4v in Resources */,
-				FB3B4302223FF5B3005D405F /* Needle-Dropping 34 Angle 1.m4v in Resources */,
-				FB3B42CF223FF5B3005D405F /* Bang.m4v in Resources */,
-				FB3B4306223FF5B3005D405F /* Transformer 10 Angle 1.m4v in Resources */,
-				FB3B42CC223FF5B3005D405F /* 2-Click Flare 39 Angle 1.m4v in Resources */,
-				FB3B4310223FF5B3005D405F /* Lambchop.m4v in Resources */,
-				FB3B42E7223FF5B3005D405F /* Flare 38 Angle 1.m4v in Resources */,
-				FB3B431D223FF5B3005D405F /* Swipes 37 Angle 1.m4v in Resources */,
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
-				FB3B42C2223FF5B3005D405F /* Clover Tears 33 Angle 1.m4v in Resources */,
 				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,
-				FB3B431B223FF5B3005D405F /* Crescent Flare 13 Angle 1.m4v in Resources */,
-				FB3B42D6223FF5B3005D405F /* DJ Spy-D and The Spawnster.m4v in Resources */,
-				FB3B42E0223FF5B3005D405F /* Reverse Cutting 3 Angle 1.m4v in Resources */,
-				FB3B42CA223FF5B3005D405F /* Marches 4 Angle 1.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

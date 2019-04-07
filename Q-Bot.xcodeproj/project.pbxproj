@@ -34,7 +34,7 @@
 		FBF1E0E4225AA22E00F58E22 /* Chirp Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFD22470F1B0042961F /* Chirp Flare.m4v */; };
 		FBF1E0E5225AA22E00F58E22 /* Chirps.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1122470F3B0042961F /* Chirps.m4v */; };
 		FBF1E0E6225AA22E00F58E22 /* Clover Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1622470F460042961F /* Clover Tears.m4v */; };
-		FBF1E0E7225AA22E00F58E22 /* Crabs.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0922470F2E0042961F /* Crabs.m4v */; };
+		FBF1E0E7225AA22E00F58E22 /* Crabs (Crepes).m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0922470F2E0042961F /* Crabs (Crepes).m4v */; };
 		FBF1E0E8225AA22E00F58E22 /* Crescent Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1222470F3D0042961F /* Crescent Flare.m4v */; };
 		FBF1E0E9225AA22E00F58E22 /* Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFE22470F1C0042961F /* Cutting.m4v */; };
 		FBF1E0EA225AA22E00F58E22 /* Deck Demon.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0122470F240042961F /* Deck Demon.m4v */; };
@@ -109,7 +109,7 @@
 		FB469E0622470F2A0042961F /* Waves.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Waves.m4v; sourceTree = "<group>"; };
 		FB469E0722470F2B0042961F /* Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tears.m4v; sourceTree = "<group>"; };
 		FB469E0822470F2C0042961F /* Swipes.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Swipes.m4v; sourceTree = "<group>"; };
-		FB469E0922470F2E0042961F /* Crabs.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crabs.m4v; sourceTree = "<group>"; };
+		FB469E0922470F2E0042961F /* Crabs (Crepes).m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Crabs (Crepes).m4v"; sourceTree = "<group>"; };
 		FB469E0A22470F2F0042961F /* Zig-Zags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zig-Zags.m4v"; sourceTree = "<group>"; };
 		FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Long-Short Tip Tears.m4v"; sourceTree = "<group>"; };
 		FB469E0C22470F320042961F /* Punt Rawk.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Punt Rawk.m4v"; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				FB469DFD22470F1B0042961F /* Chirp Flare.m4v */,
 				FB469E1122470F3B0042961F /* Chirps.m4v */,
 				FB469E1622470F460042961F /* Clover Tears.m4v */,
-				FB469E0922470F2E0042961F /* Crabs.m4v */,
+				FB469E0922470F2E0042961F /* Crabs (Crepes).m4v */,
 				FB469E1222470F3D0042961F /* Crescent Flare.m4v */,
 				FB469DFE22470F1C0042961F /* Cutting.m4v */,
 				FB469E0122470F240042961F /* Deck Demon.m4v */,
@@ -439,7 +439,7 @@
 				FBF1E0FE225AA22E00F58E22 /* Vlad Dufmeister.m4v in Resources */,
 				FBF1E0EB225AA22E00F58E22 /* Dicing.m4v in Resources */,
 				FBF1E0E5225AA22E00F58E22 /* Chirps.m4v in Resources */,
-				FBF1E0E7225AA22E00F58E22 /* Crabs.m4v in Resources */,
+				FBF1E0E7225AA22E00F58E22 /* Crabs (Crepes).m4v in Resources */,
 				FBF1E0FA225AA22E00F58E22 /* Swipes.m4v in Resources */,
 				FBF1E0F2225AA22E00F58E22 /* Long-Short Tip Tears.m4v in Resources */,
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,

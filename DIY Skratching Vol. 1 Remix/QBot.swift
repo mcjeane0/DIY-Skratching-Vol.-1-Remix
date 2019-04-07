@@ -294,7 +294,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         var name : String = string
         //NSLog("name:\(name)")
         if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-            name = "\(string) Angle 1"
+            name = "\(string)"
             let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
                 if video.name == name {
                     return true

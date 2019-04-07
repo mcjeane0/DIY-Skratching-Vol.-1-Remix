@@ -47,7 +47,7 @@
 		FBF1E0F1225AA22E00F58E22 /* Lazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1322470F3E0042961F /* Lazers.m4v */; };
 		FBF1E0F2225AA22E00F58E22 /* Long-Short Tip Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */; };
 		FBF1E0F3225AA22E00F58E22 /* Marches.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFF22470F1D0042961F /* Marches.m4v */; };
-		FBF1E0F4225AA22E00F58E22 /* Needle Dropping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0422470F270042961F /* Needle Dropping.m4v */; };
+		FBF1E0F4225AA22E00F58E22 /* Needle-Dropping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0422470F270042961F /* Needle-Dropping.m4v */; };
 		FBF1E0F5225AA22E00F58E22 /* Phazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1422470F400042961F /* Phazers.m4v */; };
 		FBF1E0F6225AA22E00F58E22 /* Punt Rawk.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0C22470F320042961F /* Punt Rawk.m4v */; };
 		FBF1E0F7225AA22E00F58E22 /* Q-Bert.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1522470F440042961F /* Q-Bert.m4v */; };
@@ -104,7 +104,7 @@
 		FB469E0122470F240042961F /* Deck Demon.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deck Demon.m4v"; sourceTree = "<group>"; };
 		FB469E0222470F250042961F /* Drags.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drags.m4v; sourceTree = "<group>"; };
 		FB469E0322470F260042961F /* Flare.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Flare.m4v; sourceTree = "<group>"; };
-		FB469E0422470F270042961F /* Needle Dropping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Needle Dropping.m4v"; sourceTree = "<group>"; };
+		FB469E0422470F270042961F /* Needle-Dropping.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Needle-Dropping.m4v"; sourceTree = "<group>"; };
 		FB469E0522470F290042961F /* Bang.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bang.m4v; sourceTree = "<group>"; };
 		FB469E0622470F2A0042961F /* Waves.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Waves.m4v; sourceTree = "<group>"; };
 		FB469E0722470F2B0042961F /* Tears.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tears.m4v; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 				FB469E1322470F3E0042961F /* Lazers.m4v */,
 				FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */,
 				FB469DFF22470F1D0042961F /* Marches.m4v */,
-				FB469E0422470F270042961F /* Needle Dropping.m4v */,
+				FB469E0422470F270042961F /* Needle-Dropping.m4v */,
 				FB469E1422470F400042961F /* Phazers.m4v */,
 				FB469E0C22470F320042961F /* Punt Rawk.m4v */,
 				FB469E1522470F440042961F /* Q-Bert.m4v */,
@@ -431,7 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBF1E0F4225AA22E00F58E22 /* Needle Dropping.m4v in Resources */,
+				FBF1E0F4225AA22E00F58E22 /* Needle-Dropping.m4v in Resources */,
 				FBF1E0E9225AA22E00F58E22 /* Cutting.m4v in Resources */,
 				FBF1E0F8225AA22E00F58E22 /* Reverse Cutting.m4v in Resources */,
 				FBF1E0EE225AA22E00F58E22 /* Fades.m4v in Resources */,

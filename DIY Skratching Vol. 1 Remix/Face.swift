@@ -170,7 +170,7 @@ class Face: UIViewController {
     @IBAction func playPauseTapped(_ sender: Any) {
      
         delegate?.handlePlayPauseButtonTapped()
-        //
+        //add metronome click
         
     }
     

@@ -27,6 +27,39 @@
 		FBADD57A217BC2C100A5EB31 /* Mouth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADD579217BC2C100A5EB31 /* Mouth.swift */; };
 		FBADD57C217BC2D200A5EB31 /* Ears.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADD57B217BC2D200A5EB31 /* Ears.swift */; };
 		FBADD57E217E15FB00A5EB31 /* SkratchName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBADD57D217E15FB00A5EB31 /* SkratchName.swift */; };
+		FBF1E0E0225AA22E00F58E22 /* 1-Click Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1722470F490042961F /* 1-Click Flare.m4v */; };
+		FBF1E0E1225AA22E00F58E22 /* 2-Click Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFC22470F1A0042961F /* 2-Click Flare.m4v */; };
+		FBF1E0E2225AA22E00F58E22 /* Baby.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1822470F4A0042961F /* Baby.m4v */; };
+		FBF1E0E3225AA22E00F58E22 /* Bang.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0522470F290042961F /* Bang.m4v */; };
+		FBF1E0E4225AA22E00F58E22 /* Chirp Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFD22470F1B0042961F /* Chirp Flare.m4v */; };
+		FBF1E0E5225AA22E00F58E22 /* Chirps.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1122470F3B0042961F /* Chirps.m4v */; };
+		FBF1E0E6225AA22E00F58E22 /* Clover Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1622470F460042961F /* Clover Tears.m4v */; };
+		FBF1E0E7225AA22E00F58E22 /* Crabs.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0922470F2E0042961F /* Crabs.m4v */; };
+		FBF1E0E8225AA22E00F58E22 /* Crescent Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1222470F3D0042961F /* Crescent Flare.m4v */; };
+		FBF1E0E9225AA22E00F58E22 /* Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFE22470F1C0042961F /* Cutting.m4v */; };
+		FBF1E0EA225AA22E00F58E22 /* Deck Demon.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0122470F240042961F /* Deck Demon.m4v */; };
+		FBF1E0EB225AA22E00F58E22 /* Dicing.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFB22470F190042961F /* Dicing.m4v */; };
+		FBF1E0EC225AA22E00F58E22 /* DJ Spy D and The Spawnster.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0D22470F340042961F /* DJ Spy D and The Spawnster.m4v */; };
+		FBF1E0ED225AA22E00F58E22 /* Drags.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0222470F250042961F /* Drags.m4v */; };
+		FBF1E0EE225AA22E00F58E22 /* Fades.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFA22470F170042961F /* Fades.m4v */; };
+		FBF1E0EF225AA22E00F58E22 /* Flare.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0322470F260042961F /* Flare.m4v */; };
+		FBF1E0F0225AA22E00F58E22 /* Lambchop.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0F22470F380042961F /* Lambchop.m4v */; };
+		FBF1E0F1225AA22E00F58E22 /* Lazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1322470F3E0042961F /* Lazers.m4v */; };
+		FBF1E0F2225AA22E00F58E22 /* Long-Short Tip Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0B22470F300042961F /* Long-Short Tip Tears.m4v */; };
+		FBF1E0F3225AA22E00F58E22 /* Marches.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DFF22470F1D0042961F /* Marches.m4v */; };
+		FBF1E0F4225AA22E00F58E22 /* Needle Dropping.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0422470F270042961F /* Needle Dropping.m4v */; };
+		FBF1E0F5225AA22E00F58E22 /* Phazers.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1422470F400042961F /* Phazers.m4v */; };
+		FBF1E0F6225AA22E00F58E22 /* Punt Rawk.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0C22470F320042961F /* Punt Rawk.m4v */; };
+		FBF1E0F7225AA22E00F58E22 /* Q-Bert.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1522470F440042961F /* Q-Bert.m4v */; };
+		FBF1E0F8225AA22E00F58E22 /* Reverse Cutting.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1022470F390042961F /* Reverse Cutting.m4v */; };
+		FBF1E0F9225AA22E00F58E22 /* Scribbles.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E1922470F4C0042961F /* Scribbles.m4v */; };
+		FBF1E0FA225AA22E00F58E22 /* Swipes.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0822470F2C0042961F /* Swipes.m4v */; };
+		FBF1E0FB225AA22E00F58E22 /* Tears.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0722470F2B0042961F /* Tears.m4v */; };
+		FBF1E0FC225AA22E00F58E22 /* Tips.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469DF922470F160042961F /* Tips.m4v */; };
+		FBF1E0FD225AA22E00F58E22 /* Transformer.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0E22470F360042961F /* Transformer.m4v */; };
+		FBF1E0FE225AA22E00F58E22 /* Vlad Dufmeister.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0022470F1F0042961F /* Vlad Dufmeister.m4v */; };
+		FBF1E0FF225AA22E00F58E22 /* Waves.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0622470F2A0042961F /* Waves.m4v */; };
+		FBF1E100225AA22E00F58E22 /* Zig-Zags.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0A22470F2F0042961F /* Zig-Zags.m4v */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,9 +431,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF1E0F4225AA22E00F58E22 /* Needle Dropping.m4v in Resources */,
+				FBF1E0E9225AA22E00F58E22 /* Cutting.m4v in Resources */,
+				FBF1E0F8225AA22E00F58E22 /* Reverse Cutting.m4v in Resources */,
+				FBF1E0EE225AA22E00F58E22 /* Fades.m4v in Resources */,
+				FBF1E0E0225AA22E00F58E22 /* 1-Click Flare.m4v in Resources */,
+				FBF1E0FE225AA22E00F58E22 /* Vlad Dufmeister.m4v in Resources */,
+				FBF1E0EB225AA22E00F58E22 /* Dicing.m4v in Resources */,
+				FBF1E0E5225AA22E00F58E22 /* Chirps.m4v in Resources */,
+				FBF1E0E7225AA22E00F58E22 /* Crabs.m4v in Resources */,
+				FBF1E0FA225AA22E00F58E22 /* Swipes.m4v in Resources */,
+				FBF1E0F2225AA22E00F58E22 /* Long-Short Tip Tears.m4v in Resources */,
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
+				FBF1E0FB225AA22E00F58E22 /* Tears.m4v in Resources */,
+				FBF1E0E8225AA22E00F58E22 /* Crescent Flare.m4v in Resources */,
+				FBF1E0FC225AA22E00F58E22 /* Tips.m4v in Resources */,
+				FBF1E0E3225AA22E00F58E22 /* Bang.m4v in Resources */,
+				FBF1E0F7225AA22E00F58E22 /* Q-Bert.m4v in Resources */,
+				FBF1E0EF225AA22E00F58E22 /* Flare.m4v in Resources */,
+				FBF1E0EA225AA22E00F58E22 /* Deck Demon.m4v in Resources */,
+				FBF1E0E1225AA22E00F58E22 /* 2-Click Flare.m4v in Resources */,
+				FBF1E0F6225AA22E00F58E22 /* Punt Rawk.m4v in Resources */,
+				FBF1E0E4225AA22E00F58E22 /* Chirp Flare.m4v in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
+				FBF1E0FD225AA22E00F58E22 /* Transformer.m4v in Resources */,
+				FBF1E0EC225AA22E00F58E22 /* DJ Spy D and The Spawnster.m4v in Resources */,
+				FBF1E0F3225AA22E00F58E22 /* Marches.m4v in Resources */,
+				FBF1E0F1225AA22E00F58E22 /* Lazers.m4v in Resources */,
+				FBF1E0ED225AA22E00F58E22 /* Drags.m4v in Resources */,
 				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,
+				FBF1E100225AA22E00F58E22 /* Zig-Zags.m4v in Resources */,
+				FBF1E0E2225AA22E00F58E22 /* Baby.m4v in Resources */,
+				FBF1E0FF225AA22E00F58E22 /* Waves.m4v in Resources */,
+				FBF1E0F5225AA22E00F58E22 /* Phazers.m4v in Resources */,
+				FBF1E0E6225AA22E00F58E22 /* Clover Tears.m4v in Resources */,
+				FBF1E0F0225AA22E00F58E22 /* Lambchop.m4v in Resources */,
+				FBF1E0F9225AA22E00F58E22 /* Scribbles.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

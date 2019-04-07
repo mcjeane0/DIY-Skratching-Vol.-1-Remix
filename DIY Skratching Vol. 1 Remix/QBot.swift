@@ -194,7 +194,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
-        NSLog("nextIndex:\(nextIndex)")
+        NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]
         if self.skratchIndex != nextIndex {

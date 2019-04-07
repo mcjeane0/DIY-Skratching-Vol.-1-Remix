@@ -207,6 +207,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     fileprivate func loopQs(){
         for name in skratchNames {
             loadVideoByName(name)
+            NSLog("\(name)")
         }
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         chooseRandomItem()

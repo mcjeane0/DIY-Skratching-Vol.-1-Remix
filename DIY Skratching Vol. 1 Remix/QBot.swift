@@ -207,7 +207,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     fileprivate func loopQs(){
         for name in skratchNames {
             loadVideoByName(name)
-            NSLog("\(name)")
+            //NSLog("\(name)")
         }
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         chooseRandomItem()
@@ -218,7 +218,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         infinitePeriodicTimer = Repeater.every(Repeater.Interval.seconds(4), { (timer) in
             
             //self.queuePlayer.pause()
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 //NSLog("\(self.currentPhrase)")
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     switch self.queuePlayer.rate > 0 {

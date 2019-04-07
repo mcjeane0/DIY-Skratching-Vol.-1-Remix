@@ -295,29 +295,27 @@ class QBot: UIResponder, UIApplicationDelegate {
         let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
         var name : String = string
         //NSLog("name:\(name)")
-        if string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-            name = "\(string)"
-            let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
-                if video.name == name {
-                    return true
-                }
-                else {
-                    return false
-                }
-                }.first
-            if matchingVideo != nil {
-                let asset = AVAsset(url: matchingVideo!.url)
-               
-                let playerItem = AVPlayerItem(asset: asset)
-                playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-                playerItem.audioTimePitchAlgorithm = .varispeed
-                let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
-                let selectedOption = selectionGroup.options[1]
-                playerItem.select(selectedOption, in: selectionGroup)
-                playerItems.append(playerItem)
+        name = "\(string)"
+        let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
+            if video.name == name {
+                return true
             }
             else {
+                return false
             }
+            }.first
+        if matchingVideo != nil {
+            let asset = AVAsset(url: matchingVideo!.url)
+            
+            let playerItem = AVPlayerItem(asset: asset)
+            playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+            playerItem.audioTimePitchAlgorithm = .varispeed
+            let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
+            let selectedOption = selectionGroup.options[1]
+            playerItem.select(selectedOption, in: selectionGroup)
+            playerItems.append(playerItem)
+        }
+        else {
         }
     }
    

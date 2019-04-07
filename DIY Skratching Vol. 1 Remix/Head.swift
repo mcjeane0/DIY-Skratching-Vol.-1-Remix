@@ -78,7 +78,8 @@ extension Head : FaceDelegate {
     func handleTempoButtonTapped(bpm: Float, period:Int) {
         desiredTempo = bpm
         achieveDesiredTempo()
-        let interval = Repeater.Interval.nanoseconds(4*period)
+        let interval = Repeater.Interval.milliseconds(4*period/1000) //Repeater.Interval.nanoseconds(4*period)
+        
         DispatchQueue.main.async {
             self.infinitePeriodicTimer.reset(interval)
         }

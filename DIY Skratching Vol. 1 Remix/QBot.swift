@@ -235,12 +235,16 @@ class QBot: UIResponder, UIApplicationDelegate {
         //6036
         //3018
         //1509
-        let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*4.0)))
+        let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*1.0)))
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
             
             //self.queuePlayer.pause()
             DispatchQueue.main.async {
                 //NSLog("\(self.currentPhrase)")
+                //self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
+
+                /*
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     switch self.queuePlayer.rate > 0 {
                     case true:
@@ -259,12 +263,12 @@ class QBot: UIResponder, UIApplicationDelegate {
                     self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
                 }
                 
-                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                
                 self.achieveDesiredTempo()
                 self.chooseRandomItem()
                 
                 self.currentPhrase = self.currentPhrase + 1
-                
+                */
             }
             
             

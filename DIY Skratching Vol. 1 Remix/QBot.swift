@@ -231,7 +231,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             //NSLog("\(name)")
         }
         playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
-        chooseRandomItem()
+        //chooseRandomItem()
         
         //6036
         //3018

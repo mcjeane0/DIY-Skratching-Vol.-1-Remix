@@ -218,7 +218,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         static var order : [Int] = [deckDemon.rawValue,spyD.rawValue,puntRawk.rawValue,bang.rawValue,vlad.rawValue,lambchop.rawValue,q.rawValue]
         
         static postfix func ++(_ difficulty:inout Difficulty){
-            difficulty = Difficulty(rawValue:Difficulty.order[(Difficulty.order.firstIndex(of: difficulty.rawValue)! + 1 % Difficulty.order.count)])!
+            let index = Difficulty.order.firstIndex(of: difficulty.rawValue)! + 1
+            difficulty = Difficulty(rawValue:Difficulty.order[(index > Difficulty.order.count - 1 ? 0 : index)])!
         }
         
     }

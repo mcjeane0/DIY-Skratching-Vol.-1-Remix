@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Repeat
+import AVKit
 typealias Head = QBot
 
 extension Head : FaceDelegate {
@@ -83,6 +84,7 @@ extension Head : FaceDelegate {
         //Repeater.Interval.milliseconds(4*period/1000) 
         
         DispatchQueue.main.async {
+            self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
             self.infinitePeriodicTimer.reset(interval)
         }
         

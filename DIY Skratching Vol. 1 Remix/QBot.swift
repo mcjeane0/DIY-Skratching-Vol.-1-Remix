@@ -248,7 +248,7 @@ class QBot: UIResponder, UIApplicationDelegate {
 
                     switch self.queuePlayer.rate > 0 {
                     case true:
-                        self.pausePlayer()
+                        //self.pausePlayer()
                         self.queuePlayer.replaceCurrentItem(with: self.randomItem)
                         self.chooseRandomItem()
                         self.points += 1
@@ -256,7 +256,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                         break
                     case false:
                         
-                        self.playPlayer()
+                        //self.playPlayer()
                         self.achieveDesiredTempo()
                         break
                     }

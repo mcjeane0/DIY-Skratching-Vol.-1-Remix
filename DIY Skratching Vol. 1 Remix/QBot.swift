@@ -243,7 +243,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*4.0)))
         let quarterNoteInterval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
         quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.metronomeClicker.seek(to: CMTime.zero)
                 self.metronomeClicker.play()
             }

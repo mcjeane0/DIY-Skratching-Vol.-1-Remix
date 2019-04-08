@@ -360,11 +360,13 @@ class QBot: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         configureAudioSession()
+        /*
         if playbackInterrupted {
             queuePlayer.play()
             achieveDesiredTempo()
             playbackInterrupted = false
         }
+        */
         DispatchQueue.main.async {
             self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
         }

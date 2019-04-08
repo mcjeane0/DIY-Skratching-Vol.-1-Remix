@@ -197,11 +197,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]
-        if self.skratchIndex != nextIndex {
-            randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
-            self.skratchIndex = nextIndex
-            
-        }
+        randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+        self.skratchIndex = nextIndex
     }
     
     var difficultyIndex : Difficulty = Difficulty.deckDemon

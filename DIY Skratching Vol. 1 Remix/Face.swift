@@ -202,6 +202,8 @@ class Face: UIViewController {
     
     override func viewWillLayoutSubviews() {
         self.videoLabel.frame = self.view.bounds
+        self.videoView.frame = self.view.bounds
+        /*
         switch UIDevice.current.orientation {
         case .landscapeLeft,.landscapeRight:
             self.videoView.frame = CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width/2.0, height: self.view.frame.height))
@@ -209,6 +211,7 @@ class Face: UIViewController {
         default:
             self.videoView.frame = CGRect(origin: self.view.frame.origin, size: CGSize(width: self.view.frame.width, height: self.view.frame.height/2.0))
         }
+        */
         videoLayer.frame = self.videoView.frame
         
     }

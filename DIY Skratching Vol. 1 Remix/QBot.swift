@@ -72,7 +72,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var infinitePeriodicTimer : Repeater!
     
-    var desiredTempo : Float = 60.0
+    var desiredTempo : Float = 85.0
     
     fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
     
@@ -187,8 +187,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var randomItem : AVPlayerItem!
-    var currentPhrase = 1
-    var desiredPhrase = 1
+    var currentPhrase = 2
+    var desiredPhrase = 2
     
     var points = 0
     
@@ -234,7 +234,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         //6036
         //3018
         //1509
-        let interval = Repeater.Interval.seconds(4)
+        let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
             
             //self.queuePlayer.pause()

@@ -216,7 +216,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         //6036
         //3018
         //1509
-        infinitePeriodicTimer = Repeater.every(Repeater.Interval.seconds(4), { (timer) in
+        let interval = Repeater.Interval.seconds(4)
+        infinitePeriodicTimer = Repeater.every(interval, { (timer) in
             
             //self.queuePlayer.pause()
             DispatchQueue.main.async {

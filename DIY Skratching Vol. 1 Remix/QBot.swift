@@ -242,10 +242,11 @@ class QBot: UIResponder, UIApplicationDelegate {
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
                 //NSLog("\(self.currentPhrase)")
-                //self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
+                
+                //self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
 
-                /*
+                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     switch self.queuePlayer.rate > 0 {
                     case true:
@@ -264,12 +265,11 @@ class QBot: UIResponder, UIApplicationDelegate {
                     self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
                 }
                 
-                
                 self.achieveDesiredTempo()
                 self.chooseRandomItem()
                 
                 self.currentPhrase = self.currentPhrase + 1
-                */
+                
             }
             
             

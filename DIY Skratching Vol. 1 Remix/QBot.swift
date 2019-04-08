@@ -242,7 +242,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
             DispatchQueue.main.sync {
                 self.metronomeClicker.seek(to: CMTime.zero)
-                self.metronomeClicker.play()
                 
                 if self.currentPhrase % self.desiredPhrase == 0 {
 
@@ -264,6 +263,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                 }
                 
                 self.currentPhrase = self.currentPhrase + 1
+                self.metronomeClicker.play()
+
             }
         })
         quarterNoteMetronome.pause()

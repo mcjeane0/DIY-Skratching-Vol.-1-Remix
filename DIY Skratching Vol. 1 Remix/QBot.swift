@@ -131,7 +131,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,tipsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes,oneClickTimes,twoClickTimes,flareTimes, crescentFlareTimes,cloverTearsTimes,chirpFlareTimes,lazersTimes,phazersTimes,crabsTimes,scribblesTimes,zigZagsTimes,swipesTimes,wavesTimes,needleDroppingTimes]
     
-    fileprivate let aMilli = CMTime(value: 1, timescale: 1000)
+    let aMilli = CMTime(value: 1, timescale: 1000)
     
     var skratchIndex = 0
     

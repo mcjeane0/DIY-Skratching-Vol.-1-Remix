@@ -242,7 +242,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.async {
                 //NSLog("\(self.currentPhrase)")
                 //self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
+                self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
 
                 /*
                 if self.currentPhrase % self.desiredPhrase == 0 {

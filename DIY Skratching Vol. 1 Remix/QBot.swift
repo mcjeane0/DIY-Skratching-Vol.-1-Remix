@@ -193,7 +193,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var points = 0
     
     func chooseRandomItem(){
-        let nextIndex = Int(arc4random_uniform(UInt32(self.playerItems.count)))
+        let nextIndex = Int(arc4random_uniform(UInt32(max(self.difficultyIndex.rawValue,26) % self.playerItems.count)))
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]
@@ -204,6 +204,24 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
+    var difficultyIndex : Difficulty = Difficulty.deckDemon
+    
+    enum Difficulty : Int {
+        case deckDemon = 3
+        case spyD = 6
+        case puntRawk = 16
+        case bang = 21
+        case vlad = 25
+        case lambchop = 26
+        case q = 27
+        
+        static var order : [Int] = [deckDemon.rawValue,spyD.rawValue,puntRawk.rawValue,bang.rawValue,vlad.rawValue,lambchop.rawValue,q.rawValue]
+        
+        static postfix func ++(_ difficulty:inout Difficulty){
+            difficulty = Difficulty(rawValue:Difficulty.order.firstIndex(of: difficulty.rawValue)!)!
+        }
+        
+    }
     
     fileprivate func loopQs(){
         for name in skratchNames {

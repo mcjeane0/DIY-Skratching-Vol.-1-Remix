@@ -29,7 +29,7 @@ func currentNanoseconds()->Int{
     func handlePhraseButtonTapped(count:Int)
     @objc optional func handleFastForwardButtonTapped()
     @objc optional func handleStopButtonTapped()
-    @objc optional func handleDifficultyButtonTapped()
+    func handleDifficultyButtonTapped()
     @objc optional func handlePointsButtonTapped()
     @objc optional func handleLoopButtonTapped()
     @objc optional func handleScratchButtonTapped()
@@ -37,6 +37,13 @@ func currentNanoseconds()->Int{
 
 
 class Face: UIViewController {
+    
+    @IBAction func difficultyButtonTapped(_ sender: Any) {
+        delegate?.handleDifficultyButtonTapped()
+    }
+    
+    
+    @IBOutlet weak var difficulty: UIButton!
     
     var totalTime = 0
     

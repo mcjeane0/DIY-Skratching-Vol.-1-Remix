@@ -93,5 +93,12 @@ extension Head : FaceDelegate {
         currentPhrase = 1
     }
     
+    func handleDifficultyButtonTapped(){
+        self.difficultyIndex++
+        DispatchQueue.main.async {
+            self.face.difficulty.setTitle("Level:\(self.difficultyIndex.rawValue)", for: UIControl.State.normal)
+        }
+    }
+    
     
 }

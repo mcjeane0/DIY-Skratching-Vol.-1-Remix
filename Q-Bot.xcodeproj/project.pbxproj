@@ -60,6 +60,7 @@
 		FBF1E0FE225AA22E00F58E22 /* Vlad Dufmeister.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0022470F1F0042961F /* Vlad Dufmeister.m4v */; };
 		FBF1E0FF225AA22E00F58E22 /* Waves.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0622470F2A0042961F /* Waves.m4v */; };
 		FBF1E100225AA22E00F58E22 /* Zig-Zags.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FB469E0A22470F2F0042961F /* Zig-Zags.m4v */; };
+		FBF1E102225BC20500F58E22 /* urei click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBF1E101225BC20500F58E22 /* urei click.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		FBADD579217BC2C100A5EB31 /* Mouth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouth.swift; sourceTree = "<group>"; };
 		FBADD57B217BC2D200A5EB31 /* Ears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ears.swift; sourceTree = "<group>"; };
 		FBADD57D217E15FB00A5EB31 /* SkratchName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkratchName.swift; sourceTree = "<group>"; };
+		FBF1E101225BC20500F58E22 /* urei click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "urei click.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				FB3B4328223FF5F5005D405F /* Head.swift */,
 				FB1904C52154358B0092640A /* Key.swift */,
 				FB78ABF7214C10030010039E /* Face.swift */,
+				FBF1E101225BC20500F58E22 /* urei click.mp3 */,
 				FB469DF82247024C0042961F /* Videos */,
 				FB78ABF9214C10030010039E /* Main.storyboard */,
 				FB78ABFF214C10040010039E /* Assets.xcassets */,
@@ -464,6 +467,7 @@
 				FBF1E0E2225AA22E00F58E22 /* Baby.m4v in Resources */,
 				FBF1E0FF225AA22E00F58E22 /* Waves.m4v in Resources */,
 				FBF1E0F5225AA22E00F58E22 /* Phazers.m4v in Resources */,
+				FBF1E102225BC20500F58E22 /* urei click.mp3 in Resources */,
 				FBF1E0E6225AA22E00F58E22 /* Clover Tears.m4v in Resources */,
 				FBF1E0F0225AA22E00F58E22 /* Lambchop.m4v in Resources */,
 				FBF1E0F9225AA22E00F58E22 /* Scribbles.m4v in Resources */,

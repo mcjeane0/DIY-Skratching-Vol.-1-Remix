@@ -25,6 +25,7 @@ extension Head : FaceDelegate {
     }
     
     func pauseTimer(){
+        quarterNoteMetronome.pause()
         infinitePeriodicTimer.pause()
         DispatchQueue.main.async {
             self.face.playPause.setTitle("Play", for: UIControl.State.normal)
@@ -32,8 +33,10 @@ extension Head : FaceDelegate {
     }
     
     func resetTimer(){
+        quarterNoteMetronome.reset(nil)
         infinitePeriodicTimer.reset(nil)
         infinitePeriodicTimer.start()
+        quarterNoteMetronome.start()
         DispatchQueue.main.async {
             self.face.playPause.setTitle("Pause", for: UIControl.State.normal)
         }
@@ -80,11 +83,13 @@ extension Head : FaceDelegate {
         desiredTempo = bpm
         achieveDesiredTempo()
         let milliInterval : Int = (period/1000000)*4
+        let quarterMilliInterval = Repeater.Interval.milliseconds(period/1000000)
         let interval = Repeater.Interval.milliseconds(milliInterval)
         //Repeater.Interval.milliseconds(4*period/1000) 
         
         DispatchQueue.main.async {
-            self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
+            //self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
+            self.quarterNoteMetronome.reset(quarterMilliInterval)
             self.infinitePeriodicTimer.reset(interval)
         }
         

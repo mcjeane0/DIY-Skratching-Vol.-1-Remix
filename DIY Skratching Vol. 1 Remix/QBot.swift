@@ -188,7 +188,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
-    var desiredPhrase = 4
+    var desiredPhrase = 8
     
     var points = 0
     
@@ -245,12 +245,12 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.metronomeClicker.play()
 
                 if self.currentPhrase % self.desiredPhrase == 0 {
-
+                    self.playPlayer()
+                    /*
                     switch self.queuePlayer.rate > 0 {
                     case true:
                         //self.pausePlayer()
-                        self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                        self.chooseRandomItem()
+                        
                         self.points += 1
                         self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
                         break
@@ -260,7 +260,13 @@ class QBot: UIResponder, UIApplicationDelegate {
                         self.achieveDesiredTempo()
                         break
                     }
+                    */
                     
+                }
+                else if self.currentPhrase % self.desiredPhrase == 5 {
+                    self.pausePlayer()
+                    self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                    self.chooseRandomItem()
                 }
                 
                 self.currentPhrase = self.currentPhrase + 1

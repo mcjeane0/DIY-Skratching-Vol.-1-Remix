@@ -275,6 +275,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             
             
         })
+        infinitePeriodicTimer.pause()
         
         
     }
@@ -307,7 +308,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 
                 self.queuePlayer.insert(playerItems.first!, after: nil)
-                playPlayer()
+                //playPlayer()
 
 
                 break

@@ -240,7 +240,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
             
             //self.queuePlayer.pause()
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 //NSLog("\(self.currentPhrase)")
                 //self.queuePlayer.replaceCurrentItem(with: self.randomItem)
                 self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)

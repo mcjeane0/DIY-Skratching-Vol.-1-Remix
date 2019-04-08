@@ -228,7 +228,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                         self.pausePlayer()
                         break
                     case false:
+                        self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                        self.achieveDesiredTempo()
                         self.playPlayer()
+                        self.chooseRandomItem()
                         break
                     }
                     
@@ -237,9 +240,6 @@ class QBot: UIResponder, UIApplicationDelegate {
                     self.points += 1
                     self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
                 }
-                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                self.achieveDesiredTempo()
-                self.chooseRandomItem()
                 self.currentPhrase = self.currentPhrase + 1
                 
             }

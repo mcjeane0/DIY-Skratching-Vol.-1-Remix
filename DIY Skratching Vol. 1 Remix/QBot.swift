@@ -193,7 +193,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var points = 0
     
     func chooseRandomItem(){
-        let nextIndex = Int(arc4random_uniform(UInt32(self.difficultyIndex.rawValue < 25 ? self.difficultyIndex.rawValue : 25 % self.playerItems.count)))
+        let nextIndex = Int(arc4random_uniform(UInt32(self.difficultyIndex.rawValue < 25 ? self.difficultyIndex.rawValue : 25 % 26)))
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]

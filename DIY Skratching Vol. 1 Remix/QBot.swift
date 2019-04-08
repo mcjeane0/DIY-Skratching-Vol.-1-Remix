@@ -193,7 +193,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     var points = 0
     
     func chooseRandomItem(){
-        let nextIndex = Int(arc4random_uniform(UInt32(max(self.difficultyIndex.rawValue,26) % self.playerItems.count)))
+        let nextIndex = Int(arc4random_uniform(UInt32(self.difficultyIndex.rawValue < 25 ? self.difficultyIndex.rawValue : 25 % self.playerItems.count)))
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]
@@ -280,6 +280,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     @objc func faceDidAppear(_ notification:Notification){
+        NotificationCenter.default.removeObserver(self, name: Face.didAppearNotification, object: nil)
         if let viewController = notification.object as? Face {
             self.face = viewController
             viewController.delegate = self

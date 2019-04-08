@@ -197,7 +197,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
         let itemTimes = self.times[nextIndex]
         self.randomItem = self.playerItems[nextIndex]
-        //randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
+        randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
         self.skratchIndex = nextIndex
     }
     

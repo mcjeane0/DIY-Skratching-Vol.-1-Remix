@@ -188,7 +188,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
-    var desiredPhrase = 1
+    var desiredPhrase = 4
     
     var points = 0
     
@@ -243,13 +243,35 @@ class QBot: UIResponder, UIApplicationDelegate {
         let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*4.0)))
         let quarterNoteInterval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
         quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 self.metronomeClicker.seek(to: CMTime.zero)
                 self.metronomeClicker.play()
+                
+                if self.currentPhrase % self.desiredPhrase == 0 {
+
+                    switch self.queuePlayer.rate > 0 {
+                    case true:
+                        self.pausePlayer()
+                        self.queuePlayer.replaceCurrentItem(with: self.randomItem)
+                        self.chooseRandomItem()
+                        self.points += 1
+                        self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
+                        break
+                    case false:
+                        
+                        self.playPlayer()
+                        self.achieveDesiredTempo()
+                        break
+                    }
+                    
+                }
+                
+                self.currentPhrase = self.currentPhrase + 1
             }
         })
+        quarterNoteMetronome.pause()
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
-            
+            /*
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
                 //NSLog("\(self.currentPhrase)")
@@ -282,6 +304,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.currentPhrase = self.currentPhrase + 1
                 
             }
+            */
             
             
             

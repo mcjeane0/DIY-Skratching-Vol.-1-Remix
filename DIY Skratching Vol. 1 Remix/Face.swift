@@ -239,7 +239,9 @@ class Face: UIViewController {
         }
         */
         videoLayer.frame = self.videoView.frame
-        videoLayer.zPosition = 0
+        for view in videoView.subviews {
+            view.layer.zPosition = 10
+        }
         
     }
     

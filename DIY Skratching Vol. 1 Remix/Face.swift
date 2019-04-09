@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import Repeat
+import VerticalSlider
 
 func currentNanoseconds()->Int{
     var info = mach_timebase_info()

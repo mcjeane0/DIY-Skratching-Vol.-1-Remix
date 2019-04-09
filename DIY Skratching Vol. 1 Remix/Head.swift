@@ -107,5 +107,25 @@ extension Head : FaceDelegate {
         }
     }
     
+    func handleModulateButtonTapped(){
+        
+    }
+    
+    func handleSyncButtonTapped() {
+        
+    }
+    
+    func handleDemoButtonTapped() {
+        
+    }
+    
+    func handleLoopButtonTapped() {
+        
+    }
+    
+    func handleSliderChanged(value: Float) {
+        
+    }
+    
     
 }

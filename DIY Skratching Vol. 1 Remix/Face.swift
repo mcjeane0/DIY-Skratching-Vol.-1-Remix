@@ -34,10 +34,15 @@ func currentNanoseconds()->Int{
     @objc optional func handlePointsButtonTapped()
     @objc optional func handleLoopButtonTapped()
     @objc optional func handleScratchButtonTapped()
+    func handleSliderChanged(value:Float)
+    func handleModulateButtonTapped()
 }
 
 
 class Face: UIViewController {
+    
+    
+    @IBOutlet weak var tempoSlider: VerticalSlider!
     
     @IBAction func difficultyButtonTapped(_ sender: Any) {
         delegate?.handleDifficultyButtonTapped()
@@ -60,6 +65,11 @@ class Face: UIViewController {
         }
     }
     
+ 
+    @IBOutlet weak var modulate: UIButton!
+    @IBOutlet weak var loopRepeat: UIButton!
+    @IBOutlet weak var sync: UIButton!
+    @IBOutlet weak var demo: UIButton!
     @IBOutlet weak var time: UIButton!
     
     @IBOutlet weak var points: UIButton!
@@ -77,6 +87,16 @@ class Face: UIViewController {
     @IBOutlet weak var one: UIButton!
     @IBOutlet weak var six: UIButton!
     
+    
+    @IBAction func tappedModulate(_ sender: Any) {
+    }
+    @IBAction func tappedDemo(_ sender: Any) {
+    }
+    
+    @IBAction func tappedSync(_ sender: Any) {
+    }
+    @IBAction func tappedRepeat(_ sender: Any) {
+    }
     
     @IBAction func tappedNumeric(_ sender: UIButton) {
         
@@ -229,10 +249,14 @@ class Face: UIViewController {
         secondTimer.start()
     }
     
+    @objc func sliderChanged(){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        tempoSlider.slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
         
 
     }

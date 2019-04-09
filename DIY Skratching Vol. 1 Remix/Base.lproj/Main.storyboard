@@ -21,18 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-uU-9N8">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-uU-9N8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QbS-tq-SvO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="QbS-tq-SvO">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ach-dH-Jla">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ach-dH-Jla">
                                 <rect key="frame" x="16" y="608" width="100" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,8 +44,9 @@
                                     <action selector="playPauseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXp-UA-8vC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-MY-ZkE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-MY-ZkE">
                                 <rect key="frame" x="16" y="549" width="100" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Tempo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,8 +55,9 @@
                                     <action selector="tempoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yII-aB-q3v"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4Y-St-Cd3">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4Y-St-Cd3">
                                 <rect key="frame" x="291" y="459" width="40" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,8 +66,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZD-Vu-U9g"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-EZ-NDg">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-EZ-NDg">
                                 <rect key="frame" x="205" y="400" width="30" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,8 +77,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bqX-uf-y5N"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oQ-1Q-CXp">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oQ-1Q-CXp">
                                 <rect key="frame" x="252" y="400" width="30" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,8 +88,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tkz-2w-qj7"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLn-6p-naK">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLn-6p-naK">
                                 <rect key="frame" x="252" y="533" width="30" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,8 +99,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1g-JF-GT0"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-1u-SFf">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-1u-SFf">
                                 <rect key="frame" x="252" y="463" width="30" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,8 +110,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duE-OL-9rU"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-qw-cYE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8N-qw-cYE">
                                 <rect key="frame" x="296" y="533" width="30" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,8 +121,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ENP-Qs-DFE"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-ho-ZHE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-ho-ZHE">
                                 <rect key="frame" x="252" y="587" width="30" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,8 +132,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ld1-6L-V9c"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-hD-Rpg">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-hD-Rpg">
                                 <rect key="frame" x="296" y="400" width="30" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,8 +143,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UlU-7C-AjP"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-Mw-FWB">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-Mw-FWB">
                                 <rect key="frame" x="205" y="536" width="30" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -141,11 +154,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WGT-3U-HRz"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYR-eJ-KC2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYR-eJ-KC2">
                                 <rect key="frame" x="205" y="462" width="30" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="Zxt-gM-gBl"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,8 +165,9 @@
                                     <action selector="tappedNumeric:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zX7-Ak-wa7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Jt-9qA">
                                 <rect key="frame" x="6" y="497" width="120" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Phrase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -164,22 +176,25 @@
                                     <action selector="phraseTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpC-zr-Xxx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF1-Zq-nKh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MF1-Zq-nKh">
                                 <rect key="frame" x="6" y="448" width="120" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="33"/>
                                 <state key="normal" title="Points">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-gm-NLp">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUn-gm-NLp">
                                 <rect key="frame" x="37" y="409" width="58" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <state key="normal" title="Time">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-JH-FbI">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-JH-FbI">
                                 <rect key="frame" x="29.5" y="381" width="73" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <state key="normal" title="Level">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,59 +203,32 @@
                                     <action selector="difficultyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zu1-Xl-y4S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCA-gf-spE">
+                                <rect key="frame" x="19" y="348" width="87" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                <state key="normal" title="Repeat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSY-NX-asN">
+                                <rect key="frame" x="35" y="311" width="58" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                <state key="normal" title="Demo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3T-pN-JGg">
+                                <rect key="frame" x="36" y="273" width="58" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                <state key="normal" title="Sync">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="ach-dH-Jla" secondAttribute="bottom" constant="8" id="0mh-JE-ltc"/>
-                            <constraint firstItem="vLn-6p-naK" firstAttribute="top" secondItem="p8N-qw-cYE" secondAttribute="top" id="3Td-j2-aNd"/>
-                            <constraint firstItem="jg6-hD-Rpg" firstAttribute="leading" secondItem="p8N-qw-cYE" secondAttribute="leading" id="4qu-S0-gB3"/>
-                            <constraint firstItem="e5w-Mw-FWB" firstAttribute="top" secondItem="oYR-eJ-KC2" secondAttribute="bottom" constant="23" id="7Sw-42-LGx"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="-20" id="7YX-NJ-K2u"/>
-                            <constraint firstItem="Yds-1u-SFf" firstAttribute="leading" secondItem="vLn-6p-naK" secondAttribute="leading" id="9wX-aA-JLx"/>
-                            <constraint firstItem="Yds-1u-SFf" firstAttribute="top" secondItem="8oQ-1Q-CXp" secondAttribute="bottom" constant="12" id="BAU-ed-ePI"/>
-                            <constraint firstItem="vLn-6p-naK" firstAttribute="leading" secondItem="cs7-ho-ZHE" secondAttribute="leading" id="Cse-Yc-kZ8"/>
-                            <constraint firstItem="8oQ-1Q-CXp" firstAttribute="baseline" secondItem="mCe-EZ-NDg" secondAttribute="firstBaseline" id="DJY-n1-11I"/>
-                            <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="ZJA-uU-9N8" secondAttribute="bottom" id="E4z-Yt-Rex"/>
-                            <constraint firstItem="KQf-MY-ZkE" firstAttribute="centerX" secondItem="ach-dH-Jla" secondAttribute="centerX" id="EEu-E0-75C"/>
-                            <constraint firstItem="mCe-EZ-NDg" firstAttribute="top" secondItem="8oQ-1Q-CXp" secondAttribute="top" id="EJM-NF-Ids"/>
-                            <constraint firstItem="mCe-EZ-NDg" firstAttribute="baseline" secondItem="8oQ-1Q-CXp" secondAttribute="baseline" id="GFz-iD-tYt"/>
-                            <constraint firstItem="QbS-tq-SvO" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="-10" id="Hhc-aq-uOX"/>
-                            <constraint firstItem="jg6-hD-Rpg" firstAttribute="baseline" secondItem="8oQ-1Q-CXp" secondAttribute="firstBaseline" id="Ksj-py-Zsn"/>
-                            <constraint firstItem="QbS-tq-SvO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LXO-8R-36M"/>
-                            <constraint firstItem="oYR-eJ-KC2" firstAttribute="leading" secondItem="e5w-Mw-FWB" secondAttribute="leading" id="MKc-qF-8cF"/>
-                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="top" secondItem="sUn-gm-NLp" secondAttribute="bottom" constant="48" id="NWi-6F-d1X"/>
-                            <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="QbS-tq-SvO" secondAttribute="bottom" constant="-10" id="QbN-er-lwL"/>
-                            <constraint firstItem="z4Y-St-Cd3" firstAttribute="top" secondItem="jg6-hD-Rpg" secondAttribute="bottom" constant="8" symbolic="YES" id="V5W-bb-8DY"/>
-                            <constraint firstAttribute="trailing" secondItem="ZJA-uU-9N8" secondAttribute="trailing" id="W4I-XP-J7h"/>
-                            <constraint firstItem="mCe-EZ-NDg" firstAttribute="leading" secondItem="oYR-eJ-KC2" secondAttribute="leading" id="Xew-48-inj"/>
-                            <constraint firstItem="8oQ-1Q-CXp" firstAttribute="baseline" secondItem="jg6-hD-Rpg" secondAttribute="baseline" id="ZdW-cb-lmt"/>
-                            <constraint firstItem="z4Y-St-Cd3" firstAttribute="leading" secondItem="Yds-1u-SFf" secondAttribute="trailing" constant="9" id="axT-vD-PeN"/>
-                            <constraint firstItem="jg6-hD-Rpg" firstAttribute="leading" secondItem="8oQ-1Q-CXp" secondAttribute="trailing" constant="14" id="bJd-Mh-yQc"/>
-                            <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="p8N-qw-cYE" secondAttribute="bottom" constant="82" id="cJY-DO-WWX"/>
-                            <constraint firstAttribute="trailing" secondItem="QbS-tq-SvO" secondAttribute="trailing" id="dFU-Vc-Zkv"/>
-                            <constraint firstItem="oYR-eJ-KC2" firstAttribute="centerY" secondItem="z4Y-St-Cd3" secondAttribute="centerY" id="dQG-RP-GVq"/>
-                            <constraint firstItem="e5w-Mw-FWB" firstAttribute="leading" secondItem="KQf-MY-ZkE" secondAttribute="trailing" constant="89" id="dYe-I5-WtA"/>
-                            <constraint firstItem="sUn-gm-NLp" firstAttribute="firstBaseline" secondItem="wWV-JH-FbI" secondAttribute="baseline" constant="28" symbolType="layoutAnchor" id="eOE-fZ-GXL"/>
-                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="top" secondItem="MF1-Zq-nKh" secondAttribute="bottom" constant="-2" id="edd-m0-Kja"/>
-                            <constraint firstItem="cs7-ho-ZHE" firstAttribute="top" secondItem="vLn-6p-naK" secondAttribute="bottom" constant="2" id="fxg-yM-9Sv"/>
-                            <constraint firstItem="p8N-qw-cYE" firstAttribute="baseline" secondItem="vLn-6p-naK" secondAttribute="firstBaseline" id="hcd-6u-mre"/>
-                            <constraint firstItem="wWV-JH-FbI" firstAttribute="centerX" secondItem="sUn-gm-NLp" secondAttribute="centerX" id="jvF-pE-PWu"/>
-                            <constraint firstItem="KQf-MY-ZkE" firstAttribute="top" secondItem="1wC-Jt-9qA" secondAttribute="bottom" constant="1" id="k4c-bP-IRc"/>
-                            <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l6y-UE-KD4"/>
-                            <constraint firstItem="n8d-Ay-fZ7" firstAttribute="top" secondItem="e5w-Mw-FWB" secondAttribute="bottom" constant="80" id="lYM-UP-D1V"/>
-                            <constraint firstItem="MF1-Zq-nKh" firstAttribute="centerX" secondItem="1wC-Jt-9qA" secondAttribute="centerX" id="orH-0m-D8J"/>
-                            <constraint firstItem="8oQ-1Q-CXp" firstAttribute="leading" secondItem="mCe-EZ-NDg" secondAttribute="trailing" constant="17" id="pCa-94-2PR"/>
-                            <constraint firstItem="1wC-Jt-9qA" firstAttribute="centerX" secondItem="KQf-MY-ZkE" secondAttribute="centerX" id="pXg-dF-HVM"/>
-                            <constraint firstItem="sUn-gm-NLp" firstAttribute="centerX" secondItem="MF1-Zq-nKh" secondAttribute="centerX" id="rr8-4x-MfE"/>
-                            <constraint firstItem="ach-dH-Jla" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="suq-1h-nFK"/>
-                            <constraint firstItem="Yds-1u-SFf" firstAttribute="centerY" secondItem="z4Y-St-Cd3" secondAttribute="centerY" id="svD-P1-dgg"/>
-                            <constraint firstItem="oYR-eJ-KC2" firstAttribute="top" secondItem="mCe-EZ-NDg" secondAttribute="bottom" constant="11" id="tS5-i9-Djy"/>
-                            <constraint firstItem="p8N-qw-cYE" firstAttribute="top" secondItem="z4Y-St-Cd3" secondAttribute="bottom" constant="17" id="vvA-Jq-pLV"/>
-                            <constraint firstAttribute="trailing" secondItem="ach-dH-Jla" secondAttribute="trailing" constant="259" id="vxw-WM-XJj"/>
-                            <constraint firstItem="ach-dH-Jla" firstAttribute="top" secondItem="KQf-MY-ZkE" secondAttribute="bottom" constant="8" id="xBa-L0-9Lr"/>
-                            <constraint firstItem="8oQ-1Q-CXp" firstAttribute="trailing" secondItem="Yds-1u-SFf" secondAttribute="trailing" id="xsL-hK-WbB"/>
-                            <constraint firstItem="jg6-hD-Rpg" firstAttribute="centerX" secondItem="z4Y-St-Cd3" secondAttribute="centerX" id="y0w-uM-rv7"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="difficulty" destination="wWV-JH-FbI" id="ndl-WM-daw"/>

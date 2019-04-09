@@ -9,6 +9,7 @@ target 'Q-Bot' do
 
   # Pods for Q-Bot
   pod 'Repeat'
+  pod 'VerticalSlider'
 
   target 'Q-BotTests' do
     inherit! :search_paths

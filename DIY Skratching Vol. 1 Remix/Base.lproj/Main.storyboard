@@ -351,7 +351,6 @@
                         <outlet property="phrase" destination="1wC-Jt-9qA" id="bZa-6d-9D9"/>
                         <outlet property="playPause" destination="ach-dH-Jla" id="vgT-Fx-86C"/>
                         <outlet property="points" destination="MF1-Zq-nKh" id="vwM-se-G5Y"/>
-                        <outlet property="repeat" destination="sCA-gf-spE" id="AXn-Zq-2WP"/>
                         <outlet property="seven" destination="e5w-Mw-FWB" id="eYr-WO-es5"/>
                         <outlet property="six" destination="z4Y-St-Cd3" id="cUJ-GL-CmG"/>
                         <outlet property="sync" destination="c3T-pN-JGg" id="W6y-7Q-Hek"/>

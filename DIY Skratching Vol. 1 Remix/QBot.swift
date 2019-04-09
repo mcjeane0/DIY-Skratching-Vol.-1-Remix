@@ -223,8 +223,6 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var quarterNoteMetronome : Repeater!
-    lazy var metronomeClicker = AVPlayer(url: Bundle.main.url(forResource: "urei click", withExtension: "mp3")!)
-    
     fileprivate func loopQs(){
         for name in skratchNames {
             loadVideoByName(name)
@@ -241,9 +239,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         let quarterNoteInterval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
         quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
             DispatchQueue.main.sync {
-                self.metronomeClicker.seek(to: CMTime.zero)
-                self.metronomeClicker.play()
-
+                
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPlayer()
                     /*

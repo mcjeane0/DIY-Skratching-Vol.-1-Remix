@@ -207,7 +207,6 @@ class Face: UIViewController {
         return true
     }
     
-    @IBOutlet weak var videoLabel: UILabel!
     
     var videoAnimationView : UIView!
     
@@ -229,7 +228,6 @@ class Face: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        self.videoLabel.frame = self.view.bounds
         self.videoView.frame = self.view.bounds
         /*
         switch UIDevice.current.orientation {

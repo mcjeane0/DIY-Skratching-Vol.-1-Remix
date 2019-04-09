@@ -235,8 +235,11 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-1e-3fW" customClass="VerticalSlider" customModule="VerticalSlider">
-                                        <rect key="frame" x="335" y="25" width="30" height="617"/>
+                                        <rect key="frame" x="335" y="268.5" width="30" height="130"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="JPW-cI-QUx"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
                                                 <real key="value" value="0.5"/>
@@ -287,7 +290,6 @@
                                     <constraint firstItem="e5w-Mw-FWB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wWV-JH-FbI" secondAttribute="trailing" constant="8" symbolic="YES" id="FTw-aN-HvF"/>
                                     <constraint firstItem="Yds-1u-SFf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ach-dH-Jla" secondAttribute="trailing" constant="8" symbolic="YES" id="H9l-2c-qDC"/>
                                     <constraint firstItem="ach-dH-Jla" firstAttribute="leading" secondItem="ZJA-uU-9N8" secondAttribute="leading" constant="25" id="HFp-9X-lhd"/>
-                                    <constraint firstItem="9kV-1e-3fW" firstAttribute="height" secondItem="ZJA-uU-9N8" secondAttribute="height" constant="-50" id="JM5-Io-Y5f"/>
                                     <constraint firstItem="6XL-oI-wA4" firstAttribute="top" secondItem="KQf-MY-ZkE" secondAttribute="bottom" constant="1" id="K5m-VR-u1Z"/>
                                     <constraint firstItem="e5w-Mw-FWB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c3T-pN-JGg" secondAttribute="trailing" constant="8" symbolic="YES" id="Kez-gU-a9S"/>
                                     <constraint firstItem="oYR-eJ-KC2" firstAttribute="centerX" secondItem="Yds-1u-SFf" secondAttribute="centerX" id="LVa-Zy-JVC"/>

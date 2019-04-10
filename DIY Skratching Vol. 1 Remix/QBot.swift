@@ -54,25 +54,26 @@ class QBot: UIResponder, UIApplicationDelegate {
     var face : Face!
 
 
-    var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[],
-                                                   Key.Battles.rawValue:[]]
-    var queuePlayer : AVQueuePlayer!
+    //var videos : [String:[ThudRumbleVideoClip]] = [Key.Skratches.rawValue:[], Key.Battles.rawValue:[]]
+    var player : AVPlayer!
     var window: UIWindow?
     
-    var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue, SkratchName.fades.rawValue, SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue, SkratchName.twoClickFlare.rawValue,SkratchName.flare.rawValue, SkratchName.crescentFlare.rawValue,SkratchName.cloverTears.rawValue, SkratchName.chirpFlare.rawValue, SkratchName.lazers.rawValue,SkratchName.phazers.rawValue, SkratchName.crabsCrepes.rawValue, SkratchName.scribbles.rawValue, SkratchName.zigZags.rawValue, SkratchName.swipes.rawValue, SkratchName.waves.rawValue, SkratchName.needleDropping.rawValue]
+    //var skratchNames = [SkratchName.baby.rawValue,SkratchName.cutting.rawValue,SkratchName.reverseCutting.rawValue,SkratchName.marches.rawValue,SkratchName.drags.rawValue,SkratchName.chirps.rawValue,SkratchName.tears.rawValue,SkratchName.tips.rawValue,SkratchName.longShortTipTears.rawValue, SkratchName.fades.rawValue, SkratchName.transformer.rawValue,SkratchName.dicing.rawValue,SkratchName.oneClickFlare.rawValue, SkratchName.twoClickFlare.rawValue,SkratchName.flare.rawValue, SkratchName.crescentFlare.rawValue,SkratchName.cloverTears.rawValue, SkratchName.chirpFlare.rawValue, SkratchName.lazers.rawValue,SkratchName.phazers.rawValue, SkratchName.crabsCrepes.rawValue, SkratchName.scribbles.rawValue, SkratchName.zigZags.rawValue, SkratchName.swipes.rawValue, SkratchName.waves.rawValue, SkratchName.needleDropping.rawValue]
     
-    var skratchBPMS : [Float] = [79.0,79.0,79.0,79.0,98.0,98.0,98.0,105.0,105.0,92.0,85.0,85.0,85.0,85.0,85.0,92.0,105.0,92.0,92.0,92.0,92.0,92.0,105.0,105.0,105.0,105.0]
+   // var skratchBPMS : [Float] = [79.0,79.0,79.0,79.0,98.0,98.0,98.0,105.0,105.0,92.0,85.0,85.0,85.0,85.0,85.0,92.0,105.0,92.0,92.0,92.0,92.0,92.0,105.0,105.0,105.0,105.0]
     
-    var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
+    //var battleNames = ["Deck Demon", "DJ Spy-D and The Spawnster", "Punt Rawk", "Bang", "Vlad Dufmeister", "Lambchop"]
 
     
-    var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]
+    //var sections = [Key.Skratches.rawValue,Key.Battles.rawValue]
     
-    var playerItems : [AVPlayerItem] = []
+    //var playerItems : [AVPlayerItem] = []
     
     var infinitePeriodicTimer : Repeater!
     
-    var desiredTempo : Float = 85.0
+    var desiredTempo : Float = 79.0
+    
+    /*
     
     fileprivate let babyTimes = [CMTime(value: 34961, timescale: 1000),CMTime(value: 41090, timescale: 1000),CMTime(value: 47099, timescale: 1000),CMTime(value: 53090, timescale: 1000)]
     
@@ -131,11 +132,13 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     fileprivate lazy var times = [babyTimes,cuttingTimes,reverseCuttingTimes,marchesTimes,dragsTimes,chirpsTimes,tearsTimes,tipsTimes,longShortTipTearsTimes,fadesTimes,transformerTimes,dicingTimes,oneClickTimes,twoClickTimes,flareTimes, crescentFlareTimes,cloverTearsTimes,chirpFlareTimes,lazersTimes,phazersTimes,crabsTimes,scribblesTimes,zigZagsTimes,swipesTimes,wavesTimes,needleDroppingTimes]
     
+    */
+    
     let aMilli = CMTime(value: 1, timescale: 1000)
     
-    var skratchIndex = 0
+   // var skratchIndex = 0
     
-    
+    /*
     
     func loadAssetsFromBundleIntoTables(){
         
@@ -177,6 +180,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     
+    
+    
     fileprivate func cycleAllSkratches() {
         for name in skratchNames {
             loadVideoByName(name)
@@ -185,6 +190,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             self.queuePlayer.advanceToNextItem()
         })
     }
+    */
     
     var randomItem : AVPlayerItem!
     var currentPhrase = 1
@@ -192,6 +198,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var points = 0
     
+    /*
     func chooseRandomItem(){
         let nextIndex = Int(arc4random_uniform(UInt32(self.difficultyIndex.rawValue < 25 ? self.difficultyIndex.rawValue : 25 % 26)))
         //NSLog("nextIndex:\(nextIndex), \(self.playerItems.count)")
@@ -200,6 +207,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         randomItem.seek(to: itemTimes[Int(arc4random_uniform(4))], toleranceBefore: self.aMilli, toleranceAfter: self.aMilli, completionHandler: nil)
         self.skratchIndex = nextIndex
     }
+    */
     
     var difficultyIndex : Difficulty = Difficulty.deckDemon
     
@@ -223,23 +231,34 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     var quarterNoteMetronome : Repeater!
+    
+    let seventyNineInterval = Int64((60.0/79.0*1000.0))
+
+    
     fileprivate func loopQs(){
+        /*
         for name in skratchNames {
             loadVideoByName(name)
             //NSLog("\(name)")
         }
-        playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
+        */
+        //playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
         //chooseRandomItem()
         
         //6036
         //3018
         //1509
-        self.achieveDesiredTempo()
+        
+       
         let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*4.0)))
+
         let quarterNoteInterval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
+        self.player.play()
+        self.achieveDesiredTempo()
         quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
             DispatchQueue.main.sync {
                 
+                /*
                 if self.currentPhrase % self.desiredPhrase == 0 {
                     self.playPlayer()
                     /*
@@ -266,11 +285,14 @@ class QBot: UIResponder, UIApplicationDelegate {
                 }
                 
                 self.currentPhrase = self.currentPhrase + 1
+                */
 
             }
         })
         quarterNoteMetronome.pause()
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
+            
+            self.player.seek(to: CMTime(value: self.seventyNineInterval*Int64(arc4random_uniform(100)), timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
             /*
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {
@@ -315,14 +337,15 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     func achieveDesiredTempo() {
-        if self.queuePlayer.rate > 0 {
-            let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
-            self.queuePlayer.rate = (self.desiredTempo/currentItemOriginalTempo)
+        if self.player.rate > 0 {
+            //let currentItemOriginalTempo = self.skratchBPMS[self.skratchIndex]
+            self.player.rate = (self.desiredTempo/79.0)
 
         }
         //NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
         //NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
     }
+    
     
     @objc func faceDidAppear(_ notification:Notification){
         NotificationCenter.default.removeObserver(self, name: Face.didAppearNotification, object: nil)
@@ -333,18 +356,23 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerState {
             default:
                 
-                queuePlayer = AVQueuePlayer(playerItem: nil)
-                face.setLayerPlayer(queuePlayer)
+                let qBotWithBattlesURL = Bundle.main.url(forResource: "QBotWithBattles", withExtension: "mp4")!
+                let asset = AVAsset(url: qBotWithBattlesURL)
+                
+                let playerItem = AVPlayerItem(asset: asset)
+                playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+                playerItem.audioTimePitchAlgorithm = .varispeed
+                
+                self.player = AVPlayer(playerItem: playerItem)
+                face.setLayerPlayer(player)
                 
                 
-                //cycleAllSkratches()
+                
                 loopQs()
                 
                 
-                self.queuePlayer.insert(playerItems.first!, after: nil)
                 face.secondTimer.pause()
                 globalPause()
-                //playPlayer()
 
 
                 break
@@ -353,6 +381,8 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
+    
+    /*
     func loadVideoByName(_ string:String){
         let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
 
@@ -385,13 +415,13 @@ class QBot: UIResponder, UIApplicationDelegate {
         else {
         }
     }
+    */
    
 //
 //    //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)
-        loadAssetsFromBundleIntoTables()
         configureAudioSession()
         return true
     }
@@ -406,7 +436,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         
-        if queuePlayer.rate > 0.0 {
+        if player.rate > 0.0 {
             playbackInterrupted = true
         }
         face.secondTimer.pause()

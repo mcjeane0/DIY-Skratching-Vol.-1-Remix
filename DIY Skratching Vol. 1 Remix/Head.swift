@@ -43,12 +43,12 @@ extension Head : FaceDelegate {
     }
     
     func pausePlayer(){
-        queuePlayer.pause()
+        player.pause()
 
     }
     
     func playPlayer(){
-        self.queuePlayer.play()
+        self.player.play()
         achieveDesiredTempo()
     }
     
@@ -57,7 +57,7 @@ extension Head : FaceDelegate {
         case .paused:
             resetTimer()
             face.secondTimer.start()
-            switch queuePlayer.rate > 0 {
+            switch player.rate > 0 {
             case true:
                 break
             case false:
@@ -68,7 +68,7 @@ extension Head : FaceDelegate {
         case .running,.executing,.finished:
             pauseTimer()
             face.secondTimer.pause()
-            switch queuePlayer.rate > 0 {
+            switch player.rate > 0 {
             case true:
                 pausePlayer()
                 break

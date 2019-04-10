@@ -292,7 +292,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         quarterNoteMetronome.pause()
         infinitePeriodicTimer = Repeater.every(interval, { (timer) in
             
-            self.player.seek(to: CMTime(value: self.seventyNineInterval*Int64(arc4random_uniform(100)), timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
+            //self.player.seek(to: CMTime(value: self.seventyNineInterval*Int64(arc4random_uniform(100)), timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
             /*
             //self.queuePlayer.pause()
             DispatchQueue.main.sync {

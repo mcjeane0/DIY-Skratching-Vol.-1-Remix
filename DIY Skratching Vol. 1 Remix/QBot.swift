@@ -66,8 +66,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     //var playerItems : [AVPlayerItem] = []
     
-    var infinitePeriodicTimer : Repeater!
-    
+
     var desiredTempo : Float {
         get {
             let existingFloat = UserDefaults.standard.float(forKey: "desiredTempo")
@@ -236,7 +235,6 @@ class QBot: UIResponder, UIApplicationDelegate {
         
     }
     
-    var quarterNoteMetronome : Repeater!
     
     let seventyNineInterval = Int64((60.0/79.0*1000.0))
 

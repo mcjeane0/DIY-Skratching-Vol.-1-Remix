@@ -24,13 +24,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJA-uU-9N8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-hR-Vno">
-                                        <rect key="frame" x="90" y="288" width="211" height="91"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="72"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-EO-1Vl">
                                         <rect key="frame" x="272" y="595" width="53" height="22"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
@@ -48,21 +41,28 @@
                                 <constraints>
                                     <constraint firstItem="C9V-6W-9Q5" firstAttribute="bottom" secondItem="pDI-EO-1Vl" secondAttribute="top" constant="-15" id="2li-MG-sAV"/>
                                     <constraint firstItem="C9V-6W-9Q5" firstAttribute="trailing" secondItem="pDI-EO-1Vl" secondAttribute="trailing" id="GQL-i8-owv"/>
-                                    <constraint firstItem="wh8-hR-Vno" firstAttribute="centerY" secondItem="ZJA-uU-9N8" secondAttribute="centerY" id="Gh5-hb-us1"/>
                                     <constraint firstItem="C9V-6W-9Q5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJA-uU-9N8" secondAttribute="leading" constant="20" symbolic="YES" id="Oa3-QR-Mfa"/>
                                     <constraint firstItem="pDI-EO-1Vl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJA-uU-9N8" secondAttribute="leading" constant="20" symbolic="YES" id="SUC-9H-aSd"/>
                                     <constraint firstAttribute="bottom" secondItem="pDI-EO-1Vl" secondAttribute="bottom" constant="50" id="aDJ-1O-4va"/>
                                     <constraint firstItem="pDI-EO-1Vl" firstAttribute="trailing" secondItem="ZJA-uU-9N8" secondAttribute="trailing" constant="-50" id="pV7-Ei-9Lm"/>
-                                    <constraint firstItem="wh8-hR-Vno" firstAttribute="centerX" secondItem="ZJA-uU-9N8" secondAttribute="centerX" constant="8" id="z0c-Us-P4I"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-hR-Vno">
+                                <rect key="frame" x="82" y="288" width="211" height="91"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="72"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZJA-uU-9N8" secondAttribute="trailing" id="0LE-cT-NkD"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gpc-ub-q0S"/>
+                            <constraint firstItem="wh8-hR-Vno" firstAttribute="centerY" secondItem="ZJA-uU-9N8" secondAttribute="centerY" id="Tke-Zl-BTh"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZZy-0z-df3"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="bottom" secondItem="n8d-Ay-fZ7" secondAttribute="top" id="j5F-CW-0Um"/>
+                            <constraint firstItem="wh8-hR-Vno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vdM-nm-4Df"/>
                         </constraints>
                     </view>
                     <connections>

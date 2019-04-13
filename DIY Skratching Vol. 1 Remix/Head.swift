@@ -13,7 +13,7 @@ typealias Head = QBot
 
 extension Head : FaceDelegate {
     
-    //
+    //jj
     
     func pausePlayer(){
         player.pause()

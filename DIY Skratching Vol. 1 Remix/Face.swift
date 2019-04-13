@@ -49,6 +49,7 @@ class Face: UIViewController {
         super.viewDidLoad()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         self.view.addGestureRecognizer(tapGestureRecognizer)
+        
     }
 
     override func viewWillLayoutSubviews() {

@@ -13,6 +13,7 @@
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
 		FB3B4329223FF5F5005D405F /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B4328223FF5F5005D405F /* Head.swift */; };
 		FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */; };
+		FB50B46922626C0B00DCA4C6 /* QBotAllTechniquesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB50B468226269C500DCA4C6 /* QBotAllTechniquesVideo.mp4 */; };
 		FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB716DFC2173FB18008D090E /* CloudKit.framework */; };
 		FB78ABF6214C10030010039E /* QBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* QBot.swift */; };
 		FB78ABF8214C10030010039E /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* Face.swift */; };
@@ -332,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB50B46922626C0B00DCA4C6 /* QBotAllTechniquesVideo.mp4 in Resources */,
 				FB78AC03214C10040010039E /* LaunchScreen.storyboard in Resources */,
 				FB78AC00214C10040010039E /* Assets.xcassets in Resources */,
 				FB78ABFB214C10030010039E /* Main.storyboard in Resources */,

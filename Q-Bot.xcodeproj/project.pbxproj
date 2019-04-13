@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		374B67940A14BDD635836570 /* Pods_Q_Bot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */; };
 		4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */; };
 		DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */; };
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
 		FB3B4329223FF5F5005D405F /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B4328223FF5F5005D405F /* Head.swift */; };
 		FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */; };
 		FB50B46922626C0B00DCA4C6 /* QBotAllTechniquesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FB50B468226269C500DCA4C6 /* QBotAllTechniquesVideo.mp4 */; };
-		FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB716DFC2173FB18008D090E /* CloudKit.framework */; };
 		FB78ABF6214C10030010039E /* QBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF5214C10030010039E /* QBot.swift */; };
 		FB78ABF8214C10030010039E /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB78ABF7214C10030010039E /* Face.swift */; };
 		FB78ABFB214C10030010039E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB78ABF9214C10030010039E /* Main.storyboard */; };
@@ -89,8 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB716DFD2173FB18008D090E /* CloudKit.framework in Frameworks */,
-				374B67940A14BDD635836570 /* Pods_Q_Bot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,10 +285,10 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -672,7 +668,6 @@
 			baseConfigurationReference = F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";
@@ -693,7 +688,6 @@
 			baseConfigurationReference = D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "DIY Skratching Vol. 1 Remix/DIY Skratching Vol. 1 Remix.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BRTG95Y5KR;
 				INFOPLIST_FILE = "DIY Skratching Vol. 1 Remix/Info.plist";

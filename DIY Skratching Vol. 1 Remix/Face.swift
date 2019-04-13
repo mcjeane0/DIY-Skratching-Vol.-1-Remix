@@ -8,8 +8,6 @@
 
 import UIKit
 import AVKit
-import Repeat
-import VerticalSlider
 
 @objc protocol FaceDelegate {
     func handlePlayPauseButtonTapped()

@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import CoreData
 import AVKit
 import MediaPlayer
-import Speech
-import Repeat
 
 @UIApplicationMain
 

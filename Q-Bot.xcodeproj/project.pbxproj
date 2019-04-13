@@ -212,13 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC1D214C10040010039E /* Build configuration list for PBXNativeTarget "Q-Bot" */;
 			buildPhases = (
-				F8FE3241523F9869FD1ACB1A /* [CP] Check Pods Manifest.lock */,
 				FB89D5BD21737969002FAB5D /* ShellScript */,
 				FB78ABEE214C10030010039E /* Sources */,
 				FB78ABEF214C10030010039E /* Frameworks */,
 				FB78ABF0214C10030010039E /* Resources */,
 				FB89D5BC21737968002FAB5D /* ShellScript */,
-				9ECB1317C536B2EDF00C62C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,30 +351,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9ECB1317C536B2EDF00C62C5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Q-Bot/Pods-Q-Bot-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework",
-				"${BUILT_PRODUCTS_DIR}/VerticalSlider/VerticalSlider.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Repeat.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VerticalSlider.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Q-Bot/Pods-Q-Bot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE8BA44EC936F5B98F72DA99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,28 +389,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Q-BotUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8FE3241523F9869FD1ACB1A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Q-Bot-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

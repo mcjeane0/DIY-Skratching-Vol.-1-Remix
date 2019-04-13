@@ -14,6 +14,8 @@ import MediaPlayer
 
 class QBot: UIResponder, UIApplicationDelegate {
 
+    //got rid of all third party libraries
+    
     var playerState : Play {
         get {
             if let rawValue = UserDefaults.standard.string(forKey: Key.play.rawValue){

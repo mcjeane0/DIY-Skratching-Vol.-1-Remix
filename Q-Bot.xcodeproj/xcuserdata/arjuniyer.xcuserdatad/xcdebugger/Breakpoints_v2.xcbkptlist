@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DIY Skratching Vol. 1 Remix/QBot.swift"
-            timestampString = "576628371.173606"
+            timestampString = "576628720.508908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "378"
             endingLineNumber = "378"
-            landmarkName = "faceDidAppear(_:)"
+            landmarkName = "resetQBot(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

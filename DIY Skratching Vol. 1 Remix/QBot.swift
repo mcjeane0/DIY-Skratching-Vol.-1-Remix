@@ -71,7 +71,15 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var infinitePeriodicTimer : Repeater!
     
-    var desiredTempo : Float = 79.0
+    var desiredTempo : Float {
+        get {
+            let existingFloat = UserDefaults.standard.float(forKey: "desiredTempo")
+            return existingFloat <= 1.0 ? 79.0 : existingFloat
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "desiredTempo")
+        }
+    }
     
     /*
     
@@ -346,6 +354,35 @@ class QBot: UIResponder, UIApplicationDelegate {
         //NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
     }
     
+    var fastPractice : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "fastPractice")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "fastPractice")
+        }
+    }
+    
+    @objc func resetQBot(_ notification:Notification){
+        DispatchQueue.main.sync {
+             self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+            fastPractice = !fastPractice
+            //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)
+            let twentyFivePercentFasterTempo = floor(self.desiredTempo*1.25)
+            let twentyFivePercentSlowerAndIncrementallySlower = fmax(self.desiredTempo*(1.0/1.25) - 1, 40.0)
+            switch fastPractice {
+            case true:
+                self.desiredTempo = twentyFivePercentFasterTempo
+                break
+            case false:
+                self.desiredTempo = twentyFivePercentSlowerAndIncrementallySlower
+                break
+            }
+            self.playPlayer()
+            self.achieveDesiredTempo()
+        }
+    }
+    
     
     @objc func faceDidAppear(_ notification:Notification){
         NotificationCenter.default.removeObserver(self, name: Face.didAppearNotification, object: nil)
@@ -356,7 +393,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch playerState {
             default:
                 
-                let qBotWithBattlesURL = Bundle.main.url(forResource: "QBotWithBattles", withExtension: "mp4")!
+                let qBotWithBattlesURL = Bundle.main.url(forResource: "QBotAllTechniquesVideo", withExtension: "mp4")!
                 let asset = AVAsset(url: qBotWithBattlesURL)
                 
                 let playerItem = AVPlayerItem(asset: asset)
@@ -364,15 +401,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 
                 self.player = AVPlayer(playerItem: playerItem)
+                self.player.actionAtItemEnd = .pause
                 face.setLayerPlayer(player)
+                NotificationCenter.default.addObserver(self, selector: #selector(resetQBot), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
                 
-                
-                
-                loopQs()
-                
-                
-                face.secondTimer.pause()
-                globalPause()
 
 
                 break
@@ -436,21 +468,15 @@ class QBot: UIResponder, UIApplicationDelegate {
         
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         
-        if player.rate > 0.0 {
-            playbackInterrupted = true
-        }
-        face.secondTimer.pause()
-        globalPause()
+        
         
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        self.points = 0
-        face.totalTime = 0
-        face.secondTimer.pause()
-        globalPause()
+        pausePlayer()
+       
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -463,9 +489,6 @@ class QBot: UIResponder, UIApplicationDelegate {
             playbackInterrupted = false
         }
         */
-        DispatchQueue.main.async {
-            self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
-        }
         
     }
 
@@ -479,8 +502,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        face.secondTimer.pause()
-        globalPause()
+       
     }
     
 

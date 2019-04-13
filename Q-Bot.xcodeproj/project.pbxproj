@@ -44,12 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.release.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.release.xcconfig"; sourceTree = "<group>"; };
-		E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.release.xcconfig"; sourceTree = "<group>"; };
-		F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.debug.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.debug.xcconfig"; sourceTree = "<group>"; };
 		FB1904C52154358B0092640A /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		FB3B4328223FF5F5005D405F /* Head.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Head.swift; sourceTree = "<group>"; };
 		FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThudRumbleVideoClip.swift; sourceTree = "<group>"; };
@@ -104,12 +98,6 @@
 		B4CC8FD40C284FDEBDE3755F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */,
-				D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */,
-				5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */,
-				E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */,
-				5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */,
-				E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -122,13 +110,6 @@
 			path = Videos;
 			sourceTree = "<group>";
 		};
-		FB716DFB2173FB18008D090E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FB78ABE9214C10030010039E = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +117,6 @@
 				FB78AC0C214C10040010039E /* DIY Skratching Vol. 1 RemixTests */,
 				FB78AC17214C10040010039E /* DIY Skratching Vol. 1 RemixUITests */,
 				FB78ABF3214C10030010039E /* Products */,
-				FB716DFB2173FB18008D090E /* Frameworks */,
 				B4CC8FD40C284FDEBDE3755F /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -219,7 +199,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC20214C10040010039E /* Build configuration list for PBXNativeTarget "Q-BotTests" */;
 			buildPhases = (
-				BE8BA44EC936F5B98F72DA99 /* [CP] Check Pods Manifest.lock */,
 				FB78AC05214C10040010039E /* Sources */,
 				FB78AC06214C10040010039E /* Frameworks */,
 				FB78AC07214C10040010039E /* Resources */,
@@ -238,7 +217,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB78AC23214C10040010039E /* Build configuration list for PBXNativeTarget "Q-BotUITests" */;
 			buildPhases = (
-				F4709956E5FDF54A37920C29 /* [CP] Check Pods Manifest.lock */,
 				FB78AC10214C10040010039E /* Sources */,
 				FB78AC11214C10040010039E /* Frameworks */,
 				FB78AC12214C10040010039E /* Resources */,
@@ -339,50 +317,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BE8BA44EC936F5B98F72DA99 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Q-BotTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4709956E5FDF54A37920C29 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Q-BotUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FB89D5BC21737968002FAB5D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,7 +539,6 @@
 		};
 		FB78AC1E214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3591A78918475F26A57959C /* Pods-Q-Bot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -632,7 +565,6 @@
 		};
 		FB78AC1F214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -659,7 +591,6 @@
 		};
 		FB78AC21214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -681,7 +612,6 @@
 		};
 		FB78AC22214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -703,7 +633,6 @@
 		};
 		FB78AC24214C10040010039E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -724,7 +653,6 @@
 		};
 		FB78AC25214C10040010039E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

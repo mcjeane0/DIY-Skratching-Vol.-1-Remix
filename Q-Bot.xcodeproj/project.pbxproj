@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */; };
-		DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */; };
 		FB1904C62154358B0092640A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1904C52154358B0092640A /* Key.swift */; };
 		FB3B4329223FF5F5005D405F /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B4328223FF5F5005D405F /* Head.swift */; };
 		FB3B432B2243C75E005D405F /* ThudRumbleVideoClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */; };
@@ -48,9 +46,6 @@
 /* Begin PBXFileReference section */
 		5C6F93FF7FC334B4257375A7 /* Pods-Q-BotUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DE10E84E97F7022480BDF9E /* Pods-Q-BotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.debug.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_BotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_BotUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Q_Bot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F9FF11C08916F059E94635 /* Pods-Q-Bot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-Bot.release.xcconfig"; path = "Target Support Files/Pods-Q-Bot/Pods-Q-Bot.release.xcconfig"; sourceTree = "<group>"; };
 		E4BB50E097703887CC8ABBAE /* Pods-Q-BotUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotUITests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotUITests/Pods-Q-BotUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E71B429B196F5F70D9D8C59D /* Pods-Q-BotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Q-BotTests.release.xcconfig"; path = "Target Support Files/Pods-Q-BotTests/Pods-Q-BotTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +55,6 @@
 		FB3B432A2243C75D005D405F /* ThudRumbleVideoClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThudRumbleVideoClip.swift; sourceTree = "<group>"; };
 		FB50B468226269C500DCA4C6 /* QBotAllTechniquesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = QBotAllTechniquesVideo.mp4; sourceTree = "<group>"; };
 		FB716DFA2173FB16008D090E /* DIY Skratching Vol. 1 Remix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIY Skratching Vol. 1 Remix.entitlements"; sourceTree = "<group>"; };
-		FB716DFC2173FB18008D090E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FB78ABF2214C10030010039E /* Q-Bot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q-Bot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB78ABF5214C10030010039E /* QBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QBot.swift; sourceTree = "<group>"; };
 		FB78ABF7214C10030010039E /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
@@ -94,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7DAE9D98829A1DF2B323B6 /* Pods_Q_BotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDD47630B581376B3159F139 /* Pods_Q_BotUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,10 +125,6 @@
 		FB716DFB2173FB18008D090E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FB716DFC2173FB18008D090E /* CloudKit.framework */,
-				C72313103E7A41A437E80595 /* Pods_Q_Bot.framework */,
-				9CE4651681F5D876C127BC6F /* Pods_Q_BotTests.framework */,
-				A5B6518B7D2E2215B3403F6E /* Pods_Q_BotUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

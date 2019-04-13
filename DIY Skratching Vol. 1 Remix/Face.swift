@@ -50,13 +50,13 @@ class Face: UIViewController {
     }
     
     func primaryHanded(){
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.videoView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
     
     func secondaryHanded(){
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.videoView.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }

@@ -335,6 +335,14 @@ class QBot: UIResponder, UIApplicationDelegate {
                     self.updateRemainingTime()
                 }
                 face.setLayerPlayer(player)
+                switch self.secondaryHand {
+                case true:
+                    face.secondaryHanded()
+                    break
+                case false:
+                    face.primaryHanded()
+                    break
+                }
                 NotificationCenter.default.addObserver(self, selector: #selector(resetQBot), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
                 
 

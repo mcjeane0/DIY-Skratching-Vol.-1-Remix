@@ -333,7 +333,6 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 self.player = AVPlayer(playerItem: playerItem)
                 self.player.actionAtItemEnd = .pause
-                updateRemainingTime()
                 self.player.addPeriodicTimeObserver(forInterval: CMTime(value: 1000, timescale: 1000), queue: DispatchQueue.main) { (time) in
                     self.updateRemainingTime()
                 }

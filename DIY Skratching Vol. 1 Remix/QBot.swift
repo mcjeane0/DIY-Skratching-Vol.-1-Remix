@@ -78,6 +78,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "desiredTempo")
+            face.tempoLabel.text = "\(newValue)"
         }
     }
     
@@ -242,107 +243,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     let seventyNineInterval = Int64((60.0/79.0*1000.0))
 
-    
-    fileprivate func loopQs(){
-        /*
-        for name in skratchNames {
-            loadVideoByName(name)
-            //NSLog("\(name)")
-        }
-        */
-        //playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: aMilli, toleranceAfter: aMilli)
-        //chooseRandomItem()
-        
-        //6036
-        //3018
-        //1509
-        
-       
-        let interval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0*4.0)))
-
-        let quarterNoteInterval = Repeater.Interval.milliseconds(Int((60.0/self.desiredTempo*1000.0)))
-        self.player.play()
-        self.achieveDesiredTempo()
-        quarterNoteMetronome = Repeater.every(quarterNoteInterval, { (timer) in
-            DispatchQueue.main.sync {
-                
-                /*
-                if self.currentPhrase % self.desiredPhrase == 0 {
-                    self.playPlayer()
-                    /*
-                    switch self.queuePlayer.rate > 0 {
-                    case true:
-                        //self.pausePlayer()
-                        
-                        self.points += 1
-                        self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
-                        break
-                    case false:
-                        
-                        //self.playPlayer()
-                        self.achieveDesiredTempo()
-                        break
-                    }
-                    */
-                    
-                }
-                else if self.currentPhrase % self.desiredPhrase == 5 {
-                    self.pausePlayer()
-                    self.chooseRandomItem()
-                    self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-                }
-                
-                self.currentPhrase = self.currentPhrase + 1
-                */
-
-            }
-        })
-        quarterNoteMetronome.pause()
-        infinitePeriodicTimer = Repeater.every(interval, { (timer) in
-            
-            //self.player.seek(to: CMTime(value: self.seventyNineInterval*Int64(arc4random_uniform(100)), timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
-            /*
-            //self.queuePlayer.pause()
-            DispatchQueue.main.sync {
-                //NSLog("\(self.currentPhrase)")
-                
-                //self.playerItems.first!.seek(to: CMTime(value: 34961, timescale: 1000), toleranceBefore: self.aMilli, toleranceAfter: self.aMilli)
-
-                self.queuePlayer.replaceCurrentItem(with: self.randomItem)
-
-                if self.currentPhrase % self.desiredPhrase == 0 {
-                    switch self.queuePlayer.rate > 0 {
-                    case true:
-                        self.pausePlayer()
-                        break
-                    case false:
-                        
-                        self.playPlayer()
-                        
-                        break
-                    }
-                    
-                }
-                if self.queuePlayer.rate > 0 {
-                    self.points += 1
-                    self.face.points.setTitle("\(self.points)", for: UIControl.State.normal)
-                }
-                
-                self.achieveDesiredTempo()
-                self.chooseRandomItem()
-                
-                self.currentPhrase = self.currentPhrase + 1
-                
-            }
-            */
-            
-            
-            
-        })
-        infinitePeriodicTimer.pause()
-        
-        
-    }
+   
     
     func achieveDesiredTempo() {
         if self.player.rate > 0 {
@@ -352,6 +253,15 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
         //NSLog("\(self.queuePlayer.rate),\((self.desiredTempo/currentItemOriginalTempo))")
         //NSLog("\(self.desiredTempo),\(currentItemOriginalTempo)")
+    }
+    
+    var secondaryHand : Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "secondaryHand")
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: "secondaryHand")
+        }
     }
     
     var fastPractice : Bool {
@@ -366,16 +276,25 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func resetQBot(_ notification:Notification){
         DispatchQueue.main.sync {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-            fastPractice = !fastPractice
+            secondaryHand = !secondaryHand
             //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)
-            let twentyFivePercentFasterTempo = floor(self.desiredTempo*1.25)
-            let twentyFivePercentSlowerAndIncrementallySlower = fmax(self.desiredTempo*(1.0/1.25) - 1, 40.0)
-            switch fastPractice {
+            switch secondaryHand {
             case true:
-                self.desiredTempo = twentyFivePercentFasterTempo
+                face.secondaryHanded()
                 break
             case false:
-                self.desiredTempo = twentyFivePercentSlowerAndIncrementallySlower
+                face.primaryHanded()
+                let twentyFivePercentFasterTempo = floor(self.desiredTempo*1.25)
+                let twentyFivePercentSlowerAndIncrementallySlower = fmax(self.desiredTempo*(1.0/1.25) - 1, 40.0)
+                fastPractice = !fastPractice
+                switch fastPractice {
+                case true:
+                    self.desiredTempo = twentyFivePercentFasterTempo
+                    break
+                case false:
+                    self.desiredTempo = twentyFivePercentSlowerAndIncrementallySlower
+                    break
+                }
                 break
             }
             self.playPlayer()
@@ -383,6 +302,18 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func getFormattedTime(FromTime timeDuration:Int) -> String {
+        
+        let minutes = Int(timeDuration) / 60 % 60
+        let seconds = Int(timeDuration) % 60
+        let strDuration = String(format:"%02d:%02d", minutes, seconds)
+        return strDuration
+    }
+    
+    
+    func updateRemainingTime(){
+        self.face.timeLeft.text = self.getFormattedTime(FromTime: Int(CMTimeGetSeconds(self.player.currentItem!.duration)) - Int(CMTimeGetSeconds(self.player.currentTime())))
+    }
     
     @objc func faceDidAppear(_ notification:Notification){
         NotificationCenter.default.removeObserver(self, name: Face.didAppearNotification, object: nil)
@@ -402,6 +333,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 self.player = AVPlayer(playerItem: playerItem)
                 self.player.actionAtItemEnd = .pause
+                updateRemainingTime()
+                self.player.addPeriodicTimeObserver(forInterval: CMTime(value: 1000, timescale: 1000), queue: DispatchQueue.main) { (time) in
+                    self.updateRemainingTime()
+                }
                 face.setLayerPlayer(player)
                 NotificationCenter.default.addObserver(self, selector: #selector(resetQBot), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
                 
@@ -413,44 +348,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         }
     }
     
-    
-    /*
-    func loadVideoByName(_ string:String){
-        let arrayOfArrayOfVideos : [[ThudRumbleVideoClip]] = videos.map { (arg: (key: String, value: [ThudRumbleVideoClip])) -> [ThudRumbleVideoClip] in
-
-            let (_, value) = arg
-            return value
-        }
-        let arrayOfVideos = arrayOfArrayOfVideos.flatMap{$0}
-        var name : String = string
-        //NSLog("name:\(name)")
-        name = "\(string)"
-        let matchingVideo = arrayOfVideos.filter { (video) -> Bool in
-            if video.name == name {
-                return true
-            }
-            else {
-                return false
-            }
-            }.first
-        if matchingVideo != nil {
-            let asset = AVAsset(url: matchingVideo!.url)
-            
-            let playerItem = AVPlayerItem(asset: asset)
-            playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-            playerItem.audioTimePitchAlgorithm = .varispeed
-            let selectionGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .audible)!
-            let selectedOption = selectionGroup.options[1]
-            playerItem.select(selectedOption, in: selectionGroup)
-            playerItems.append(playerItem)
-        }
-        else {
-        }
-    }
-    */
-   
-//
-//    //
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(faceDidAppear(_:)), name: Face.didAppearNotification, object: nil)

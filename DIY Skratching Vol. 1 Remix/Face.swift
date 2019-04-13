@@ -19,6 +19,12 @@ import VerticalSlider
 
 class Face: UIViewController {
     
+    
+    @IBOutlet weak var tempoLabel: UILabel!
+    
+    @IBOutlet weak var timeLeft: UILabel!
+    
+    
     @IBOutlet weak var playPause: UILabel!
     
     @IBOutlet weak var videoView: UIView!
@@ -43,6 +49,18 @@ class Face: UIViewController {
     func setLayerPlayer(_ player:AVPlayer) {
         videoLayer.player = player
         self.videoView.layer.addSublayer(videoLayer)
+    }
+    
+    func primaryHanded(){
+        DispatchQueue.main.sync {
+            self.videoView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
+    
+    func secondaryHanded(){
+        DispatchQueue.main.sync {
+            self.videoView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
     }
     
     override func viewDidLoad() {

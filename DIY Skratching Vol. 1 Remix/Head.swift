@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Repeat
 import AVKit
 typealias Head = QBot
 

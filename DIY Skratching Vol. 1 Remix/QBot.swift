@@ -309,7 +309,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func updateRemainingTime(){
-        guard self.player.status == .readyToPlay else {
+        guard self.player.currentItem!.status == .readyToPlay else {
             return
         }
         self.face.timeLeft.text = self.getFormattedTime(FromTime: Int(CMTimeGetSeconds(self.player.currentItem!.duration)) - Int(CMTimeGetSeconds(self.player.currentTime())))

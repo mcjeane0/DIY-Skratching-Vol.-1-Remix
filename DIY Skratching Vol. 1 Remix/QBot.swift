@@ -309,7 +309,19 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func updateRemainingTime(){
+        guard self.player.status == .ready else {
+            return
+        }
         self.face.timeLeft.text = self.getFormattedTime(FromTime: Int(CMTimeGetSeconds(self.player.currentItem!.duration)) - Int(CMTimeGetSeconds(self.player.currentTime())))
+    }
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if player == object as? AVPlayer && keyPath == "status" {
+            if player.status == .readyToPlay {
+                
+            }
+        }
     }
     
     @objc func faceDidAppear(_ notification:Notification){

@@ -322,7 +322,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             default:
                 
                 face.tempoLabel.text = "\(desiredTempo)"
-                let qBotWithBattlesURL = Bundle.main.url(forResource: "QBotAllTechniquesVideo", withExtension: "mp4")!
+                let qBotWithBattlesURL = Bundle.main.url(forResource: "QBotAllTechniques", withExtension: "m4v")!
                 let asset = AVAsset(url: qBotWithBattlesURL)
                 
                 let playerItem = AVPlayerItem(asset: asset)

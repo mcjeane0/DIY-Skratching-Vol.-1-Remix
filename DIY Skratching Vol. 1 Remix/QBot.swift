@@ -339,6 +339,7 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 let playerItem = AVPlayerItem(asset: asset)
                 let seekToTime = CMTimeGetSeconds(playerItem.duration) - 1.0
+                NSLog("seekToTime:\(seekToTime)")
                 playerItem.seek(to: CMTime(seconds: seekToTime, preferredTimescale: 1))
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 

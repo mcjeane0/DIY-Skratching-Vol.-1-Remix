@@ -59,9 +59,9 @@ class QBot: UIResponder, UIApplicationDelegate {
     
 
     fileprivate func warpTimeForPlayerItem(_ newValue: Float) {
-        let fractionPlayedSoFar = Double(remainingSecondsAtDesiredTempo)/Double(durationAtDesiredTempo)
+        let fractionRemaining = Double(remainingSecondsAtDesiredTempo)/Double(durationAtDesiredTempo)
         durationAtDesiredTempo = Int(ceil((newValue/79.0) * seventyNineBPMDuration))
-        remainingSecondsAtDesiredTempo = durationAtDesiredTempo - Int(ceil(fractionPlayedSoFar * Double(durationAtDesiredTempo)))
+        remainingSecondsAtDesiredTempo = Int(ceil(fractionRemaining * Double(durationAtDesiredTempo)))
     }
     
     var desiredTempo : Float {

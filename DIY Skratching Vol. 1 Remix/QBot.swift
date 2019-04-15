@@ -273,18 +273,18 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func resetQBot(_ notification:Notification){
         DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-            secondaryHand = !secondaryHand
+            self.secondaryHand = !self.secondaryHand
             //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)
-            switch secondaryHand {
+            switch self.secondaryHand {
             case true:
-                face.secondaryHanded()
+                self.face.secondaryHanded()
                 break
             case false:
-                face.primaryHanded()
+                self.face.primaryHanded()
                 let twentyFivePercentFasterTempo = floor(self.desiredTempo*1.25)
                 let twentyFivePercentSlowerAndIncrementallySlower = fmax(self.desiredTempo*(1.0/1.25) - 1, 40.0)
-                fastPractice = !fastPractice
-                switch fastPractice {
+                self.fastPractice = !self.fastPractice
+                switch self.fastPractice {
                 case true:
                     self.desiredTempo = twentyFivePercentFasterTempo
                     break

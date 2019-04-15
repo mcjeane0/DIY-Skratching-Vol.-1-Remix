@@ -338,7 +338,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let asset = AVAsset(url: qBotWithBattlesURL)
                 
                 let playerItem = AVPlayerItem(asset: asset)
-                playerItem.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+                let seekToTime = CMTimeGetSeconds(playerItem.duration) - 1.0
+                playerItem.seek(to: CMTime(seconds: seekToTime, preferredTimescale: 1))
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 
                 self.player = AVPlayer(playerItem: playerItem)
@@ -390,7 +391,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        self.player.seek(to: CMTime.zero)
+        
         pausePlayer()
        
     }

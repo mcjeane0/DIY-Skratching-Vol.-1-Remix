@@ -95,7 +95,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     var secondaryHand : Bool {
         get {
-            return true //UserDefaults.standard.bool(forKey: "secondaryHand")
+            return UserDefaults.standard.bool(forKey: "secondaryHand")
         }
         set{
             UserDefaults.standard.set(newValue, forKey: "secondaryHand")
@@ -120,7 +120,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func resetQBot(_ notification:Notification){
         DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-            self.secondaryHand = !self.secondaryHand
+            self.secondaryHand = false//!self.secondaryHand
             //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)
             switch self.secondaryHand {
             case true:

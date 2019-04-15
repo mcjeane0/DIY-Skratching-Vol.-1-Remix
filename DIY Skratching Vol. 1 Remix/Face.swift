@@ -47,6 +47,7 @@ class Face: UIViewController {
     func setLayerPlayer(_ player:AVPlayer) {
         videoLayer.player = player
         self.videoView.layer.addSublayer(videoLayer)
+        self.videoView.contentMode = .scaleToFill
     }
     
     func primaryHanded(){

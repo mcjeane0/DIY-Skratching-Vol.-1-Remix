@@ -159,8 +159,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func updateRemainingTime(){
-        remainingSecondsAtDesiredTempo -= 1
         self.face.timeLeft.text = self.getFormattedTime(FromTime: remainingSecondsAtDesiredTempo)
+        remainingSecondsAtDesiredTempo -= 1
     }
     
     

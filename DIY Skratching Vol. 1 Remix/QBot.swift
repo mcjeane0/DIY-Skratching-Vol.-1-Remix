@@ -120,8 +120,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func resetQBot(_ notification:Notification){
         DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
-            self.secondaryHand = false//!self.secondaryHand
-            //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)
+            self.secondaryHand = !self.secondaryHand
             switch self.secondaryHand {
             case true:
                 self.face.secondaryHanded()
@@ -156,7 +155,8 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     
     func updateRemainingTime(){
-        self.face.timeLeft.text = self.getFormattedTime(FromTime: remainingSecondsAtDesiredTempo-1)
+        remainingSecondsAtDesiredTempo -= 1
+        self.face.timeLeft.text = self.getFormattedTime(FromTime: remainingSecondsAtDesiredTempo)
     }
     
     
@@ -182,11 +182,6 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let asset = AVAsset(url: qBotWithBattlesURL)
                 
                 let playerItem = AVPlayerItem(asset: asset)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.0) {
-                    let seekToTime = CMTimeGetSeconds(playerItem.duration) - 1.0
-                    NSLog("seekToTime:\(seekToTime)")
-                    playerItem.seek(to: CMTime(seconds: seekToTime, preferredTimescale: 1))
-                }
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 
                 self.player = AVPlayer(playerItem: playerItem)

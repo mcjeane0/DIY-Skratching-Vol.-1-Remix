@@ -271,7 +271,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     @objc func resetQBot(_ notification:Notification){
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
             secondaryHand = !secondaryHand
             //let incrementallySlowerTempo = fmax(self.desiredTempo - 1.0,40.0)

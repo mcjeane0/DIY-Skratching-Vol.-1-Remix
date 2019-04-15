@@ -58,6 +58,12 @@ class QBot: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
 
+    fileprivate func warpTimeForPlayerItem(_ newValue: Float) {
+        let fractionPlayedSoFar = Double(remainingSecondsAtDesiredTempo)/Double(durationAtDesiredTempo)
+        durationAtDesiredTempo = Int(ceil((newValue/79.0) * seventyNineBPMDuration))
+        remainingSecondsAtDesiredTempo = durationAtDesiredTempo - Int(ceil(fractionPlayedSoFar * Double(durationAtDesiredTempo)))
+    }
+    
     var desiredTempo : Float {
         get {
             let existingFloat = UserDefaults.standard.float(forKey: "desiredTempo")
@@ -66,9 +72,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         set {
             UserDefaults.standard.set(newValue, forKey: "desiredTempo")
             face.tempoLabel.text = "\(newValue)"
-            let fractionPlayedSoFar = Double(remainingSecondsAtDesiredTempo)/Double(durationAtDesiredTempo)
-            durationAtDesiredTempo = Int(ceil((newValue/79.0) * seventyNineBPMDuration))
-            remainingSecondsAtDesiredTempo = Int(ceil(fractionPlayedSoFar * Double(durationAtDesiredTempo)))
+            warpTimeForPlayerItem(newValue)
         }
     }
     
@@ -183,9 +187,10 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
                 let playerItem = AVPlayerItem(asset: asset)
                 playerItem.audioTimePitchAlgorithm = .varispeed
-                
+                self.warpTimeForPlayerItem(self.desiredTempo)
                 self.player = AVPlayer(playerItem: playerItem)
                 self.player.actionAtItemEnd = .pause
+                
                 self.player.addPeriodicTimeObserver(forInterval: CMTime(value: 1000, timescale: 1000), queue: DispatchQueue.main) { (time) in
                     self.updateRemainingTime()
                 }

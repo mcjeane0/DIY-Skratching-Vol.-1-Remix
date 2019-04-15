@@ -338,9 +338,11 @@ class QBot: UIResponder, UIApplicationDelegate {
                 let asset = AVAsset(url: qBotWithBattlesURL)
                 
                 let playerItem = AVPlayerItem(asset: asset)
-                let seekToTime = CMTimeGetSeconds(playerItem.duration) - 1.0
-                NSLog("seekToTime:\(seekToTime)")
-                playerItem.seek(to: CMTime(seconds: seekToTime, preferredTimescale: 1))
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1.0) {
+                    let seekToTime = CMTimeGetSeconds(playerItem.duration) - 1.0
+                    NSLog("seekToTime:\(seekToTime)")
+                    playerItem.seek(to: CMTime(seconds: seekToTime, preferredTimescale: 1))
+                }
                 playerItem.audioTimePitchAlgorithm = .varispeed
                 
                 self.player = AVPlayer(playerItem: playerItem)

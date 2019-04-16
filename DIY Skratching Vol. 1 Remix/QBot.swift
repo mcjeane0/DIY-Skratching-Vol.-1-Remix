@@ -125,7 +125,7 @@ class QBot: UIResponder, UIApplicationDelegate {
         DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
             self.remainingSecondsAtDesiredTempo = self.durationAtDesiredTempo
-            self.updateRemainingTime()
+            self.updateRemainingTime(self.timeRemainingTimer)
             self.secondaryHand = !self.secondaryHand
             switch self.secondaryHand {
             case true:
@@ -161,7 +161,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     
-    @objc func updateRemainingTime(){
+    @objc func updateRemainingTime(_ timer:Timer){
         self.face.timeLeft.text = self.getFormattedTime(FromTime: remainingSecondsAtDesiredTempo)
         remainingSecondsAtDesiredTempo -= 1
     }
@@ -179,7 +179,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func resetTimer(){
         DispatchQueue.main.async {
-            self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(self.updateRemainingTime), userInfo: nil, repeats: true)
+            self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(self.updateRemainingTime(_:)), userInfo: nil, repeats: true)
             self.timeRemainingTimer.fire()
         }
     }

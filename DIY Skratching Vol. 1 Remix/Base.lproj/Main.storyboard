@@ -26,25 +26,25 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-EO-1Vl">
-                                <rect key="frame" x="208.5" y="70" width="156.5" height="40.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="183.5" y="70" width="156.5" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-6W-9Q5">
-                                <rect key="frame" x="249" y="120" width="116" height="40.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="224" y="120" width="116" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh8-hR-Vno">
-                                <rect key="frame" x="10" y="526" width="211" height="91"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="33" y="525" width="211" height="92"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="72"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,12 +53,12 @@
                             <constraint firstItem="C9V-6W-9Q5" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="100" id="4yC-Ns-jjl"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gpc-ub-q0S"/>
                             <constraint firstItem="wh8-hR-Vno" firstAttribute="bottom" secondItem="n8d-Ay-fZ7" secondAttribute="top" constant="-50" id="Tke-Zl-BTh"/>
-                            <constraint firstItem="C9V-6W-9Q5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-10" id="XJ9-3F-tnB"/>
+                            <constraint firstItem="C9V-6W-9Q5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-35" id="XJ9-3F-tnB"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZZy-0z-df3"/>
-                            <constraint firstItem="pDI-EO-1Vl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-10" id="b5A-mY-o3b"/>
+                            <constraint firstItem="pDI-EO-1Vl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-35" id="b5A-mY-o3b"/>
                             <constraint firstItem="pDI-EO-1Vl" firstAttribute="top" secondItem="mQA-zv-CVI" secondAttribute="bottom" constant="50" id="hcZ-Ak-EXs"/>
                             <constraint firstItem="ZJA-uU-9N8" firstAttribute="bottom" secondItem="n8d-Ay-fZ7" secondAttribute="top" id="j5F-CW-0Um"/>
-                            <constraint firstItem="wh8-hR-Vno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="vdM-nm-4Df"/>
+                            <constraint firstItem="wh8-hR-Vno" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="33" id="vdM-nm-4Df"/>
                         </constraints>
                     </view>
                     <connections>

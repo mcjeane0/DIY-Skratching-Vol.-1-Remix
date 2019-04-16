@@ -46,6 +46,7 @@ class Face: UIViewController {
 
     func setLayerPlayer(_ player:AVPlayer) {
         videoLayer.player = player
+        videoLayer.videoGravity = .resize
         self.videoView.layer.addSublayer(videoLayer)
         self.videoView.contentMode = .scaleToFill
     }
@@ -70,9 +71,11 @@ class Face: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
-        self.videoView.frame = CGRect(x: self.view.frame.origin.x-(self.view.frame.width/1.5), y: self.view.frame.origin.y, width: self.view.frame.width*1.5, height: self.view.frame.height)
+        self.videoView.frame = self.view.bounds
         
-        videoLayer.frame = self.videoView.frame
+        let orientation = UIDevice.current.orientation
+        
+        videoLayer.frame = CGRect(x: self.videoView.frame.origin.x, y: self.videoView.frame.origin.y, width: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.width, height: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.height)
         
         
     }

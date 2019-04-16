@@ -178,8 +178,10 @@ class QBot: UIResponder, UIApplicationDelegate {
     var timeRemainingTimer : Timer!
     
     func resetTimer(){
-        self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(updateRemainingTime), userInfo: nil, repeats: true)
-        self.timeRemainingTimer.fire()
+        DispatchQueue.main.async {
+            self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(updateRemainingTime), userInfo: nil, repeats: true)
+            self.timeRemainingTimer.fire()
+        }
     }
     
     @objc func faceDidAppear(_ notification:Notification){

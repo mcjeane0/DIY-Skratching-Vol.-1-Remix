@@ -124,11 +124,13 @@ class QBot: UIResponder, UIApplicationDelegate {
     @objc func resetQBot(_ notification:Notification){
         DispatchQueue.main.async {
              self.player.currentItem!.seek(to: CMTime(seconds: 0, preferredTimescale: 1000))
+            self.remainingSecondsAtDesiredTempo = self.durationAtDesiredTempo
+            self.updateRemainingTime()
             self.secondaryHand = !self.secondaryHand
             switch self.secondaryHand {
             case true:
                 self.face.secondaryHanded()
-                self.updateRemainingTime()
+                
                 break
             case false:
                 self.face.primaryHanded()
@@ -159,7 +161,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     }
     
     
-    func updateRemainingTime(){
+    @objc func updateRemainingTime(){
         self.face.timeLeft.text = self.getFormattedTime(FromTime: remainingSecondsAtDesiredTempo)
         remainingSecondsAtDesiredTempo -= 1
     }
@@ -171,6 +173,13 @@ class QBot: UIResponder, UIApplicationDelegate {
                 
             }
         }
+    }
+    
+    var timeRemainingTimer : Timer!
+    
+    func resetTimer(){
+        self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(updateRemainingTime), userInfo: nil, repeats: true)
+        self.timeRemainingTimer.fire()
     }
     
     @objc func faceDidAppear(_ notification:Notification){
@@ -191,10 +200,8 @@ class QBot: UIResponder, UIApplicationDelegate {
                 self.warpTimeForPlayerItem(self.desiredTempo)
                 self.player = AVPlayer(playerItem: playerItem)
                 self.player.actionAtItemEnd = .pause
+        
                 
-                self.player.addPeriodicTimeObserver(forInterval: CMTime(value: 1000, timescale: 1000), queue: DispatchQueue.main) { (time) in
-                    self.updateRemainingTime()
-                }
                 face.setLayerPlayer(player)
                 switch self.secondaryHand {
                 case true:

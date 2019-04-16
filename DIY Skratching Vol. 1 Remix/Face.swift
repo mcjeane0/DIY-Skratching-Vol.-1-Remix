@@ -70,7 +70,7 @@ class Face: UIViewController {
     }
 
     override func viewWillLayoutSubviews() {
-        self.videoView.frame = self.view.bounds
+        self.videoView.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width*1.25, height: self.view.frame.height)
         
         videoLayer.frame = self.videoView.frame
         

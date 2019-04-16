@@ -17,11 +17,13 @@ extension Head : FaceDelegate {
     
     func pausePlayer(){
         player.pause()
+        timeRemainingTimer.invalidate()
         face.playPause.isHidden = false
 
     }
     
     func playPlayer(){
+        resetTimer()
         self.player.play()
         achieveDesiredTempo()
         face.playPause.isHidden = true

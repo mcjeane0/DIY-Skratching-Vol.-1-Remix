@@ -75,7 +75,7 @@ class Face: UIViewController {
         
         let orientation = UIDevice.current.orientation
         
-        videoLayer.frame = CGRect(x: self.videoView.frame.origin.x, y: self.videoView.frame.origin.y, width: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.width, height: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.height)
+        videoLayer.frame = CGRect(x: self.videoView.frame.origin.x, y: self.videoView.frame.origin.y, width: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.width, height: orientation == .portrait ? self.videoView.frame.height : self.videoView.frame.width)
         
         
     }

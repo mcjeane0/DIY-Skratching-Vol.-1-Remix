@@ -179,7 +179,7 @@ class QBot: UIResponder, UIApplicationDelegate {
     
     func resetTimer(){
         DispatchQueue.main.async {
-            self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(updateRemainingTime), userInfo: nil, repeats: true)
+            self.timeRemainingTimer = Timer.init(timeInterval: 1.0, target: self, selector: #selector(self.updateRemainingTime), userInfo: nil, repeats: true)
             self.timeRemainingTimer.fire()
         }
     }

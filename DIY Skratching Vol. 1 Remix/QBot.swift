@@ -128,6 +128,7 @@ class QBot: UIResponder, UIApplicationDelegate {
             switch self.secondaryHand {
             case true:
                 self.face.secondaryHanded()
+                self.updateRemainingTime()
                 break
             case false:
                 self.face.primaryHanded()

@@ -79,7 +79,7 @@ class Face: UIViewController {
         
         switch orientation {
         case .portrait,.portraitUpsideDown,.faceDown,.faceUp,.unknown:
-            layerRect = CGRect(x: self.videoView.frame.origin.x-210.0, y: self.videoView.frame.origin.y, width: self.videoView.frame.height*960.0/540, height: self.videoView.frame.height)
+            layerRect = CGRect(x: self.videoView.frame.origin.x-(210.0*960.0/540), y: self.videoView.frame.origin.y, width: self.videoView.frame.height*960.0/540, height: self.videoView.frame.height)
             break
         case .landscapeLeft,.landscapeRight:
             layerRect = CGRect(x: self.videoView.frame.origin.x, y: self.videoView.frame.origin.y, width: self.videoView.frame.width, height: self.videoView.frame.height)
